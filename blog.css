@@ -1,0 +1,348 @@
+/* ============================================
+   blog.css — styles ONLY for /blog/ pages.
+   Loaded in addition to style.css and style-additions.css,
+   which is why the header/footer already look correct.
+   Uses the same fonts and brand color (#82FF1F) as the main site.
+   ============================================ */
+
+.blog-main {
+    padding: 60px 40px 100px;
+    min-height: 60vh;
+}
+
+/* ---------- Blog index ---------- */
+.blog-index-title {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    font-size: 48px;
+    letter-spacing: -1px;
+    color: #0A0A0A;
+    margin-bottom: 12px;
+}
+
+.blog-index-subtitle {
+    font-family: 'Manrope', sans-serif;
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 48px;
+    max-width: 560px;
+}
+
+.blog-post-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    align-items: stretch;
+}
+
+.blog-post-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.blog-post-card-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.blog-post-card p {
+    flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.blog-read-more {
+    margin-top: auto;
+}
+
+@media (max-width: 900px) {
+    .blog-post-list { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+    .blog-post-list { grid-template-columns: 1fr; }
+}
+
+.blog-post-card {
+    display: block;
+    padding: 28px 32px;
+    border: 1px solid #ECECEC;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.blog-post-card:hover {
+    border-color: #82FF1F;
+    transform: translateY(-2px);
+}
+
+.blog-post-card h2 {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    font-size: 24px;
+    color: #0A0A0A;
+    margin-bottom: 6px;
+    letter-spacing: -0.5px;
+}
+
+.blog-post-card time {
+    display: block;
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #82FF1F;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+}
+
+.blog-post-card p {
+    font-family: 'Manrope', sans-serif;
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 14px;
+}
+
+.blog-read-more {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: #0A0A0A;
+}
+
+/* ---------- Single post ---------- */
+.blog-post {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.blog-back {
+    margin-bottom: 24px;
+}
+
+.blog-back a {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: #555;
+    text-decoration: none;
+}
+
+.blog-back a:hover {
+    color: #0A0A0A;
+}
+
+.blog-post-title {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    font-size: 42px;
+    letter-spacing: -1px;
+    color: #0A0A0A;
+    margin-bottom: 12px;
+    line-height: 1.15;
+}
+
+.blog-post-date {
+    display: block;
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #82FF1F;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 40px;
+}
+
+.blog-post-body {
+    font-family: 'Manrope', sans-serif;
+    font-size: 18px;
+    line-height: 1.75;
+    color: #222;
+}
+
+.blog-post-body p {
+    margin-bottom: 22px;
+}
+
+.blog-post-body h2 {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    font-size: 28px;
+    color: #0A0A0A;
+    margin: 40px 0 16px;
+    letter-spacing: -0.5px;
+}
+
+.blog-post-body h3 {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: #0A0A0A;
+    margin: 32px 0 14px;
+}
+
+.blog-post-body a {
+    color: #0A0A0A;
+    text-decoration: underline;
+    text-decoration-color: #82FF1F;
+    text-decoration-thickness: 2px;
+}
+
+.blog-post-body img {
+    max-width: 100%;
+    border-radius: 16px;
+    margin: 24px 0;
+}
+
+.blog-post-body ul,
+.blog-post-body ol {
+    margin: 0 0 22px 22px;
+}
+
+.blog-post-body li {
+    margin-bottom: 10px;
+}
+
+.blog-post-body blockquote {
+    border-left: 3px solid #82FF1F;
+    padding-left: 20px;
+    margin: 28px 0;
+    color: #555;
+    font-style: italic;
+}
+
+.blog-post-body code {
+    background: #F5F5F5;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+@media (max-width: 640px) {
+    .blog-main { padding: 40px 20px 80px; }
+    .blog-index-title { font-size: 34px; }
+    .blog-post-title { font-size: 30px; }
+    .blog-post-body { font-size: 17px; }
+}
+
+/* ---------- Featured images ---------- */
+.blog-post-card {
+    display: block;
+}
+
+.blog-post-card.has-image {
+    padding: 0;
+    overflow: hidden;
+}
+
+.blog-post-card-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #F5F5F5;
+}
+
+.blog-post-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.blog-post-card.has-image .blog-post-card-content {
+    padding: 24px 32px 28px;
+}
+
+.blog-post-card.has-image h2,
+.blog-post-card.has-image time,
+.blog-post-card.has-image p,
+.blog-post-card.has-image .blog-read-more {
+    margin-left: 0;
+}
+
+.blog-post-featured-image {
+    width: 100%;
+    margin: 24px 0 36px;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.blog-post-featured-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width: 640px) {
+    .blog-post-card-content { padding: 18px 20px 22px; }
+    .blog-post-featured-image { margin: 18px 0 28px; border-radius: 12px; }
+}
+
+/* ---------- Case studies ---------- */
+.case-study-meta-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.case-study-tag {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    color: #0A0A0A;
+    background: #F0FFDF;
+    border: 1px solid #82FF1F;
+    border-radius: 999px;
+    padding: 4px 12px;
+}
+
+.case-study-client {
+    font-family: 'Manrope', sans-serif;
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 14px;
+}
+
+.case-study-client strong {
+    color: #0A0A0A;
+}
+
+.case-study .blog-post-title {
+    margin-bottom: 10px;
+}
+
+.case-study-results {
+    background: #F7F7F7;
+    border-radius: 16px;
+    padding: 24px 28px;
+    margin: 28px 0;
+}
+
+.case-study-results-title {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    color: #0A0A0A;
+    margin-bottom: 10px;
+}
+
+.case-study-results p {
+    font-family: 'Manrope', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+}
+
+.case-study-cta {
+    margin-top: 40px;
+}
