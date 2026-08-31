@@ -346,3 +346,40 @@
 .case-study-cta {
     margin-top: 40px;
 }
+
+.case-study-quick-facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    background: #F7F7F7;
+    border-radius: 16px;
+    padding: 20px 28px;
+    margin: 28px 0;
+}
+
+.quick-fact {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 130px;
+}
+
+.quick-fact-label {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #888;
+}
+
+.quick-fact-value {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: #0A0A0A;
+}
+
+@media (max-width: 640px) {
+    .case-study-quick-facts { gap: 16px; padding: 16px 20px; }
+}
