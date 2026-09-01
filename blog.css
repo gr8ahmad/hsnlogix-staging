@@ -383,3 +383,43 @@
 @media (max-width: 640px) {
     .case-study-quick-facts { gap: 16px; padding: 16px 20px; }
 }
+
+/* ---------- Service pages ---------- */
+.service-intro {
+    font-family: 'Manrope', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+    margin: 20px 0 32px;
+}
+
+.service-section {
+    margin-bottom: 36px;
+}
+
+.service-section-title {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    font-size: 24px;
+    color: #0A0A0A;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+}
+
+.service-list {
+    margin: 0;
+    padding-left: 22px;
+}
+
+.service-list li {
+    font-family: 'Manrope', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.service-cta {
+    margin-top: 40px;
+}
+

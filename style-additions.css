@@ -46,3 +46,17 @@
 .on-shopify {
     font-size: 56px;
 }
+
+/* "Learn more" links inside the Services accordion, which sits on a dark
+   gradient background (see .service-description color: #FFF in style.css) */
+.service-learn-more {
+    display: inline-block;
+    margin-top: 14px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: #82FF1F;
+    text-decoration: underline;
+    text-decoration-color: #82FF1F;
+    text-decoration-thickness: 2px;
+}
