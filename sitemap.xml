@@ -1,8 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://hsnlogix.com/</loc>
-    <lastmod>2026-02-14</lastmod>
-    <priority>1.0</priority>
-  </url>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>https://gr8ahmad.github.io/hsnlogix-staging/case-studies/laboostudio/</loc>
+<lastmod>2026-08-28T00:00:00+00:00</lastmod>
+</url>
+<url>
+<loc>https://gr8ahmad.github.io/hsnlogix-staging/case-studies/lockassure/</loc>
+<lastmod>2026-08-28T00:00:00+00:00</lastmod>
+</url>
+<url>
+<loc>https://gr8ahmad.github.io/hsnlogix-staging/case-studies/mave/</loc>
+<lastmod>2026-08-31T00:00:00+00:00</lastmod>
+</url>
+<url>
+<loc>https://gr8ahmad.github.io/hsnlogix-staging/case-studies/wholenights/</loc>
+<lastmod>2026-08-31T00:00:00+00:00</lastmod>
+</url>
+<url>
+<loc>https://gr8ahmad.github.io/hsnlogix-staging/blog/welcome-to-the-hsnlogix-blog/</loc>
+<lastmod>2026-07-23T00:00:00+00:00</lastmod>
+</url>
+<url>
+<loc>https://gr8ahmad.github.io/hsnlogix-staging/blog/why-custom-shopify-code-outperforms-app-integrations/</loc>
+<lastmod>2026-08-15T00:00:00+00:00</lastmod>
+</url>
+<url>
+<loc>https://gr8ahmad.github.io/hsnlogix-staging/blog/how-much-does-a-custom-shopify-store-cost-2026/</loc>
+<lastmod>2026-08-16T00:00:00+00:00</lastmod>
+</url>
+<url>
+<loc>https://gr8ahmad.github.io/hsnlogix-staging/services/app-integration/</loc>
+<lastmod>2026-09-01T00:00:00+00:00</lastmod>
+</url>
+<url>
+<loc>https://gr8ahmad.github.io/hsnlogix-staging/services/b2b-wholesale/</loc>
+<lastmod>2026-09-01T00:00:00+00:00</lastmod>
+</url>
+<url>
+<loc>https://gr8ahmad.github.io/hsnlogix-staging/services/platform-migration/</loc>
+<lastmod>2026-09-01T00:00:00+00:00</lastmod>
+</url>
+<url>
+<loc>https://gr8ahmad.github.io/hsnlogix-staging/services/speed-optimization/</loc>
+<lastmod>2026-09-01T00:00:00+00:00</lastmod>
+</url>
+<url>
+<loc>https://gr8ahmad.github.io/hsnlogix-staging/services/store-setup/</loc>
+<lastmod>2026-09-01T00:00:00+00:00</lastmod>
+</url>
+<url>
+<loc>https://gr8ahmad.github.io/hsnlogix-staging/services/theme-development/</loc>
+<lastmod>2026-09-01T00:00:00+00:00</lastmod>
+</url>
+<url>
+<loc>https://gr8ahmad.github.io/hsnlogix-staging/blog/</loc>
+</url>
+<url>
+<loc>https://gr8ahmad.github.io/hsnlogix-staging/case-studies/</loc>
+</url>
+<url>
+<loc>https://gr8ahmad.github.io/hsnlogix-staging/</loc>
+</url>
 </urlset>

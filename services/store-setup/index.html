@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <link rel="icon" type="image/png" href="/hsnlogix-staging/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="/hsnlogix-staging/favicon.svg" />
-  <link rel="shortcut icon" href="/hsnlogix-staging/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/hsnlogix-staging/apple-touch-icon.png" />
-  <link rel="manifest" href="/hsnlogix-staging/site.webmanifest" />
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Complete Shopify store setup services — product pages to checkout, configured, branded, and ready to launch fast.">
@@ -19,9 +19,19 @@
   <title>Shopify Store Setup Services | HSNLOGIX</title>
 
   <!-- Same stylesheets as the main site, so header/footer/fonts match exactly -->
-  <link rel="stylesheet" href="/hsnlogix-staging/style.css">
-  <link rel="stylesheet" href="/hsnlogix-staging/style-additions.css">
-  <link rel="stylesheet" href="/hsnlogix-staging/blog.css"></head>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/style-additions.css">
+  <link rel="stylesheet" href="/blog.css">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2XBBSKSGBJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2XBBSKSGBJ');
+  </script>
+</head>
 <body>
   <!-- HEADER (same markup as the main site) -->
   <header class="site-header">
@@ -33,22 +43,22 @@
       </button>
 
       <div class="logo">
-        <a href="/hsnlogix-staging/">
+        <a href="/">
           <span class="logo-hsn">HSN</span>
           <span class="logo-logix">Logix</span>
         </a>
       </div>
 
       <nav class="site-header__menu">
-        <a href="/hsnlogix-staging/#testimonials" class="site-header__link">Testimonials</a>
-        <a href="/hsnlogix-staging/#faqs" class="site-header__link">FAQs</a>
+        <a href="/#testimonials" class="site-header__link">Testimonials</a>
+        <a href="/#faqs" class="site-header__link">FAQs</a>
         
-        <a href="/hsnlogix-staging/blog/" class="site-header__link">Blog</a>
-        <a href="/hsnlogix-staging/case-studies/" class="site-header__link">Case Studies</a>
-        <a href="/hsnlogix-staging/#contact" class="site-header__link">Contact</a>
+        <a href="/blog/" class="site-header__link">Blog</a>
+        <a href="/case-studies/" class="site-header__link">Case Studies</a>
+        <a href="/#contact" class="site-header__link">Contact</a>
       </nav>
 
-      <a href="/hsnlogix-staging/#contact" rel="noopener" class="cta-button header-cta">
+      <a href="/#contact" rel="noopener" class="cta-button header-cta">
         <div class="button-text">
           <p>Book a Call</p>
         </div>
@@ -63,7 +73,7 @@
 
   <main class="blog-main container">
     <article class="blog-post service-page">
-  <p class="blog-back"><a href="/hsnlogix-staging/#services">&larr; Back to services</a></p>
+  <p class="blog-back"><a href="/#services">&larr; Back to services</a></p>
 
   <h1 class="blog-post-title">Store Setup & Customization</h1>
 
@@ -95,7 +105,7 @@
   </div>
 
   <div class="service-cta">
-    <a href="/hsnlogix-staging/#contact" class="cta-button">
+    <a href="/#contact" class="cta-button">
       <div class="button-text">
         <p>Book a free consultation</p>
       </div>
@@ -123,7 +133,7 @@
               <div class="hsn-logix-avatar">
                 <div class="hsn-logix-profile-pic">
                   <div class="hsn-logix-img-wrapper">
-                    <img src="/hsnlogix-staging/hussain-profile-picture.webp" alt="Hussain A - Senior Shopify Developer">
+                    <img src="/hussain-profile-picture.webp" alt="Hussain A - Senior Shopify Developer">
                   </div>
                 </div>
               </div>
@@ -134,7 +144,7 @@
                     <p>Shopify Theme Developer & Front-End Specialist</p>
                   </div>
                   <a href="https://www.upwork.com/freelancers/~01e91c15509859436e" target="_blank" rel="noopener" class="upwork-link">
-                    <img src="/hsnlogix-staging/upwork-icon.webp" alt="Upwork">
+                    <img src="/upwork-icon.webp" alt="Upwork">
                   </a>
                 </div>
               </div>
@@ -143,7 +153,7 @@
               <h3><span class="highlight">Book a free consultation</span> — I'll walk you through custom themes, integrations, and how we can <span class="highlight">elevate your store's design & conversions.</span></h3>
             </div>
             <div class="cta-buttons">
-              <a href="/hsnlogix-staging/#contact" rel="noopener" class="cta-button">
+              <a href="/#contact" rel="noopener" class="cta-button">
                 <div class="button-text">
                   <p>Book a Call</p>
                 </div>
@@ -173,7 +183,7 @@
           <div class="footer-left">
             <div class="footer-logo">
               <div class="logo">
-                <a href="/hsnlogix-staging/">
+                <a href="/">
                   <span class="logo-hsn">HSN</span>
                   <span class="logo-logix">Logix</span>
                 </a>
@@ -215,5 +225,8 @@
         lastScroll = currentScroll;
       });
     });
-  </script></body>
+  </script>
+
+  <script src="/hsnlogix-tracking.js"></script>
+</body>
 </html>
