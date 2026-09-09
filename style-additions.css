@@ -69,3 +69,107 @@
 .white-label-page .faq-questions .question-title {
     color: #0A0A0A;
 }
+
+/* ---------- Customer-first hero (sits above the personal hero) ---------- */
+.customer-hero {
+    background-color: #EEF3E9;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+}
+
+.customer-hero__inner {
+    padding: 90px 40px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.customer-hero__headline {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 52px;
+    letter-spacing: -1.6px;
+    line-height: 1.15;
+    color: #0A0A0A;
+    max-width: 700px;
+    margin: 0 0 24px;
+}
+
+.customer-hero__subhead {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 17px;
+    letter-spacing: -0.3px;
+    line-height: 1.55;
+    color: #5A5A5A;
+    max-width: 480px;
+    margin: 0 0 36px;
+}
+
+.customer-hero__cta-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+/* Organic highlighter-marker mark behind "ecommerce growth" -- a rotated,
+   asymmetric blob sitting behind the text (z-index:-1), not a hard box, and
+   inset far enough past the text box on all sides that it never clips
+   descenders (the "g" in "growth"). Distinct from the red underline style
+   used on the personal hero below. */
+.highlight-mark {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+}
+
+.highlight-mark::before {
+    content: "";
+    position: absolute;
+    inset: -4px -12px -10px -12px;
+    background-color: #82FF1F;
+    border-radius: 50% 50% 45% 55% / 55% 45% 55% 45%;
+    transform: rotate(-1.2deg);
+    z-index: -1;
+}
+
+/* Secondary (dark) variant of the site's standard .cta-button, for the
+   "Book a Call" button sitting next to a primary green CTA. No new colors
+   introduced -- #0A0A0A and #FFF are already used throughout the site. */
+.cta-button.cta-button--dark {
+    background-color: #0A0A0A;
+    box-shadow: none;
+}
+
+.cta-button.cta-button--dark .button-text p {
+    color: #FFFFFF;
+}
+
+.cta-button.cta-button--dark:hover {
+    box-shadow: 0 16px 48px rgba(10, 10, 10, 0.28);
+}
+
+@media (min-width: 641px) {
+    .customer-hero {
+        min-height: 100vh;
+    }
+}
+
+@media (max-width: 640px) {
+    .customer-hero__inner {
+        padding: 64px 20px;
+    }
+    .customer-hero__headline {
+        font-size: 32px;
+        letter-spacing: -1px;
+        margin-bottom: 18px;
+    }
+    .customer-hero__subhead {
+        font-size: 15px;
+        margin-bottom: 28px;
+    }
+    .highlight-mark {
+        white-space: normal;
+    }
+}
