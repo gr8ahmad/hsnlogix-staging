@@ -60,3 +60,12 @@
     text-decoration-color: #82FF1F;
     text-decoration-thickness: 2px;
 }
+
+/* .question-title defaults to color: #FFF in style.css (correct for the
+   dark-background service accordion elsewhere on the site). The white-label
+   page's FAQ is wrapped in .service-section, not .faq-section, so it falls
+   through to that white-on-white default -- fix scoped to this page only. */
+.white-label-page .service-section .question-title,
+.white-label-page .faq-questions .question-title {
+    color: #0A0A0A;
+}
