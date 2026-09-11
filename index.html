@@ -110,6 +110,26 @@ Cal("init", {origin:"https://cal.com"});
 
     <!-- Customer-first hero (sits above the personal hero and stats ticker) -->
     <section class="customer-hero">
+        <!-- Placeholder background video: no <source> by default -- one is only injected by the
+             script below on desktop widths with no reduced-motion preference, so mobile and
+             reduced-motion visitors never trigger the mp4 download and just see the poster. -->
+        <video class="customer-hero__video" id="customer-hero-video" poster="/hsnlogix-staging/assets/video/hero-demo-poster.jpg" muted loop playsinline preload="none" aria-hidden="true"></video>
+        <div class="customer-hero__scrim"></div>
+        <script>
+            (function () {
+                var desktop = window.matchMedia('(min-width: 768px)').matches;
+                var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                if (desktop && !reducedMotion) {
+                    var video = document.getElementById('customer-hero-video');
+                    var source = document.createElement('source');
+                    source.src = '/hsnlogix-staging/assets/video/hero-demo.mp4';
+                    source.type = 'video/mp4';
+                    video.appendChild(source);
+                    video.load();
+                    video.play().catch(function () {});
+                }
+            })();
+        </script>
         <div class="container customer-hero__inner">
             <h1 class="customer-hero__headline">Your Shopify store shouldn't hold your <span class="highlight-mark">ecommerce growth</span> back.</h1>
             <p class="customer-hero__subhead">Providing custom development, performance improvements and technical solutions for Shopify stores that need more than off-the-shelf themes and apps.</p>
