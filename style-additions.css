@@ -72,7 +72,6 @@
 
 /* ---------- Customer-first hero (sits above the personal hero) ---------- */
 .customer-hero {
-    position: relative;
     background-color: #EEF3E9;
     display: flex;
     align-items: center;
@@ -80,31 +79,7 @@
     overflow: hidden;
 }
 
-/* Placeholder background video (staging preview only). No <source> is present
-   until the inline script in index.html injects one -- on desktop widths with
-   no prefers-reduced-motion, only -- so the poster image is what mobile and
-   reduced-motion visitors actually see. */
-.customer-hero__video {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
-}
-
-/* Dark scrim between the video and the text, tuned so the headline/subhead/
-   CTAs stay legible over the busiest moment of the placeholder clip. */
-.customer-hero__scrim {
-    position: absolute;
-    inset: 0;
-    background: rgba(10, 10, 10, 0.6);
-    z-index: 1;
-}
-
 .customer-hero__inner {
-    position: relative;
-    z-index: 2;
     padding: 90px 40px;
     width: 100%;
     box-sizing: border-box;
@@ -116,10 +91,7 @@
     font-size: 52px;
     letter-spacing: -1.6px;
     line-height: 1.15;
-    /* White (was #0A0A0A) -- the section now has a video/poster + dark scrim
-       behind it instead of the flat light-green background, so dark text is
-       no longer legible here. */
-    color: #FFFFFF;
+    color: #0A0A0A;
     max-width: 700px;
     margin: 0 0 24px;
 }
@@ -130,8 +102,7 @@
     font-size: 17px;
     letter-spacing: -0.3px;
     line-height: 1.55;
-    /* Light gray (was #5A5A5A) -- same legibility reason as the headline above. */
-    color: #D8D8D8;
+    color: #5A5A5A;
     max-width: 480px;
     margin: 0 0 36px;
 }
@@ -151,10 +122,6 @@
     position: relative;
     z-index: 1;
     display: inline-block;
-    /* The blob behind this span is opaque bright green, so it needs its own
-       dark text regardless of the section's video/scrim background -- the
-       headline around it is white, this word stays dark for contrast. */
-    color: #0A0A0A;
 }
 
 .highlight-mark::before {
