@@ -1,3 +1,5 @@
+﻿---
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +12,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Senior Shopify Developer with 100+ successful projects. Custom theme development, performance optimization & conversion-focused design. Top Rated on Upwork.">
-  <meta name="robots" content="noindex, nofollow">
+  <meta name="robots" content="{{ site.robots | default: 'index, follow' }}">
   <link rel="canonical" href="https://hsnlogix.com/">
 <meta property="og:title" content="Hussain A | Senior Shopify Developer - 100+ Projects">
 <meta property="og:description" content="Top Rated Shopify developer specializing in custom themes and high-converting stores. 5+ years experience, 100+ successful projects.">
@@ -68,9 +70,9 @@ Cal("init", {origin:"https://cal.com"});
   <!-- HEADER -->
 <header class="site-header">
   <div class="container site-header__inner">
-    <!-- Logo — far left -->
+    <!-- Logo â€” far left -->
     <div class="logo">
-      <a href="/hsnlogix-staging/">
+      <a href="{{ '/' | relative_url }}">
         <span class="logo-hsn">HSN</span>
         <span class="logo-logix">Logix</span>
       </a>
@@ -80,7 +82,7 @@ Cal("init", {origin:"https://cal.com"});
     <div class="header-right">
       <!-- Inline nav links (hidden below 480px, those widths use the drawer) -->
       <nav class="header-inline-nav" aria-label="Primary navigation">
-        <a href="/hsnlogix-staging/case-studies" class="header-inline-link">Case Studies</a>
+        <a href="{{ '/case-studies' | relative_url }}" class="header-inline-link">Case Studies</a>
         <a href="#testimonials" class="header-inline-link">Testimonials</a>
       </nav>
 
@@ -96,7 +98,7 @@ Cal("init", {origin:"https://cal.com"});
         </div>
       </a>
 
-      <!-- Hamburger — far right, with gap from CTA -->
+      <!-- Hamburger â€” far right, with gap from CTA -->
       <button class="menu-toggle" aria-label="Toggle menu">
         <span class="bar"></span>
         <span class="bar"></span>
@@ -109,7 +111,7 @@ Cal("init", {origin:"https://cal.com"});
 <!-- Drawer overlay (click to close) -->
 <div class="nav-overlay" id="navOverlay"></div>
 
-<!-- Off-canvas nav drawer — slides in from the right -->
+<!-- Off-canvas nav drawer â€” slides in from the right -->
 <aside class="nav-drawer" id="navDrawer" aria-label="Site navigation">
     <button class="nav-drawer__close" id="navDrawerClose" aria-label="Close menu">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor">
@@ -118,11 +120,11 @@ Cal("init", {origin:"https://cal.com"});
     </button>
     <nav class="nav-drawer__nav">
         <!-- Shown in drawer only when inline header links are hidden (< 480px) -->
-        <a href="/hsnlogix-staging/case-studies" class="nav-drawer__link nav-drawer__link--mobile-only">Case Studies</a>
+        <a href="{{ '/case-studies' | relative_url }}" class="nav-drawer__link nav-drawer__link--mobile-only">Case Studies</a>
         <a href="#testimonials" class="nav-drawer__link nav-drawer__link--mobile-only">Testimonials</a>
         <!-- Always in drawer -->
         <a href="#faqs" class="nav-drawer__link">FAQs</a>
-        <a href="/hsnlogix-staging/white-label" class="nav-drawer__link">For Agencies</a>
+        <a href="{{ '/white-label' | relative_url }}" class="nav-drawer__link">For Agencies</a>
     </nav>
 </aside>
 
@@ -254,7 +256,7 @@ Cal("init", {origin:"https://cal.com"});
       lastTime = time;
       currentRate += (targetRate - currentRate) * 0.25;
 
-      // ✅ move from right to left (reverse direction)
+      // âœ… move from right to left (reverse direction)
       pos = (pos - baseSpeed * currentRate * dt) % loopWidth;
       track.style.transform = `translateX(${pos}px)`;
 
@@ -267,205 +269,6 @@ Cal("init", {origin:"https://cal.com"});
     ticker.addEventListener('mouseleave', () => targetRate = 1);
   });
 </script>
-
-    <div class="hero-container">
-        <div class="hero-grid">
-            <!-- Profile Section -->
-            <div class="profile-section">
-                <div class="profile-content">
-                    <div class="avatar-container">
-                        <div class="hsn-logix-avatar">
-  <div class="hsn-logix-profile-pic">
-    <div class="hsn-logix-img-wrapper"  data-aos="fade-right" data-aos-duration="750"  data-aos-delay="150">
-      <img
-        src="hussain-profile-picture.webp"
-        alt="Hussain A - Senior Shopify Developer" loading="eager"
-      />
-    </div>
-  </div>
-</div>
-                    </div>
-                    <div class="profile-info">
-                        <div class="profile-name">
-                            <h3 class="name">Hussain A.</h3>
-                            <div class="title">
-                                <p class="title-text">Senior Shopify Lead Developer</p>
-                                <a href="https://www.upwork.com/freelancers/~01e91c15509859436e" target="_blank" rel="noopener" class="social-link">
-                                    <img src="upwork-icon.webp" alt="Upwork" width="35" height="35">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Heading Section -->
-            <div class="heading-section">
-                <div class="main-heading">
-                    <div class="heading-row-1">
-                        <p class="greeting">Hi! I'm</p>
-                        <div class="name-pill"  data-aos="fade-right" data-aos-duration="750">
-                            <p class="name-pill-text">Hussain A.</p>
-                        </div>
-                    </div>
-                    <div class="heading-row-2">
-                        <div class="profession-group">
-                            <p class="profession-text">a</p>
-                            <div class="profession-pill"  data-aos="fade-left" data-aos-duration="750">
-                                <p class="profession-pill-text">Shopify Expert</p>
-                            </div>
-                        </div>
-                        <div class="location-group">
-                            <div class="TextShape-node-container1 helping-bsns">
-
-            <span class="helping-text">helping</span>
-<div class="TextShape-node hero-circle-anim">
-
-  <svg viewBox="0 0 470 100" preserveAspectRatio="xMidYMid meet">
-    <path d="M153,95
-             C253,100 467,95 467,50
-             C467,5 323,0 221,0
-             S-15,5 -15,50
-             S98,100 345,100"
-          vector-effect="non-scaling-stroke"/>
-  </svg>
-</div>
-
-<span class="bold-text">100+ businesses</span>
-
-</div>
-
-<style>
-.TextShape-node svg {
-  display: block;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-  stroke: var(--stroke);
-  stroke-width: var(--stroke-width);
-  stroke-linecap: var(--stroke-linecap);
-  stroke-linejoin: var(--stroke-linejoin);
-  fill: none;
-  opacity: var(--opacity);
-}
-
-.TextShape-node path {
-  stroke-dasharray: 1200;   /* approximate total path length */
-  stroke-dashoffset: 1200;  /* fully hidden */
-  animation: drawCircle 2s ease forwards;
-}
-
-@keyframes drawCircle {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-</style>
-
-</div>
-<div class="line-four">
-
-
-             <div class="TextShape-node-container">
-  <div class="TextShape-node build-and-scale" 
-    style="font-size: 56px; 
-           --stroke: red; 
-           --stroke-width: 0.1em; 
-           --stroke-linecap: square; 
-           --stroke-linejoin: bevel; 
-           --opacity: 1; 
-           width: 100%; 
-           height: 80px; 
-           line-height: 0;">
-
-    <!-- Updated width + proportional height -->
-    <svg viewBox="0 0 488 80" preserveAspectRatio="xMidYMid meet">
-      <path d="M 0,78
-               C 61,75 122,70 244,68
-               C 366,66 427,69 488,70
-               C 493,70.1 485,72 484.7,72.2"
-            vector-effect="non-scaling-stroke" />
-    </svg>
-
-  <span class="build-scale">build & scale</span>
-
- <span class="on-shopify">on 
-  <span class="btn--dark shopify-badge">
-    <img src="shopify-logo.webp" alt="Shopify logo" width="30" height="30"> Shopify
-</span>
-</span>
-  </div>
-</div>
-
-<style>
-.TextShape-node svg {
-  position: absolute;
-  display: block;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-  stroke: var(--stroke);
-  stroke-width: max(1px, var(--stroke-width));
-  stroke-linecap: var(--stroke-linecap);
-  stroke-linejoin: var(--stroke-linejoin);
-  fill: none;
-  opacity: var(--opacity);
-
-}
-.build-and-scale svg {
-    max-width: 470px;
-    top: auto;
-    bottom: -30px;
-}
-</style>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const path = document.querySelector(".TextShape-node path");
-  const length = path.getTotalLength();
-
-  path.style.strokeDasharray = length;
-  path.style.strokeDashoffset = length;
-
-  path.animate(
-    [{ strokeDashoffset: length }, { strokeDashoffset: 0 }],
-    { duration: 1500, easing: "ease", fill: "forwards" }
-  );
-});
-</script>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- CTA Section -->
-            <div class="cta-section">
-                <p class="description">I’m dedicated to building fast, high-converting Shopify stores that look great and perform even better.</p>
-                <div class="cta-button-group">
-                    <a href="#projects" class="cta-button">
-                        <p class="cta-text">View Projects</p>
-                        <div class="cta-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-                                <path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path>
-                            </svg>
-                        </div>
-                    </a>
-                    <a href="#" data-cal-link="hsnlogix" data-cal-config='{"layout":"month_view"}' rel="noopener" class="cta-button">
-                        <p class="cta-text">Book a Call</p>
-                        <div class="cta-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-                                <path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path>
-                            </svg>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <section class="projects-section" id="projects">
       
@@ -487,7 +290,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
 
     <div class="projects-grid">
-        <a href="/hsnlogix-staging/case-studies/laboostudio/" class="project-card">
+        <a href="{{ '/case-studies/laboostudio/' | relative_url }}" class="project-card">
             <div class="project-content">
                 <div class="project-text">
                     <div class="project-meta">
@@ -509,7 +312,7 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
         </a>
 
-        <a href="/hsnlogix-staging/case-studies/lockassure/" class="project-card">
+        <a href="{{ '/case-studies/lockassure/' | relative_url }}" class="project-card">
             <div class="project-content">
                 <div class="project-text">
                     <div class="project-meta">
@@ -534,7 +337,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     <div class="projects-small-container">
         <div class="projects-grid-small">
-            <a href="/hsnlogix-staging/case-studies/wholenights/" class="project-card-small">
+            <a href="{{ '/case-studies/wholenights/' | relative_url }}" class="project-card-small">
                 <div class="project-content-small">
                     <div class="project-text-small">
                         <div class="project-meta">
@@ -556,7 +359,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
             </a>
 
-            <a href="/hsnlogix-staging/case-studies/mave/" class="project-card-small">
+            <a href="{{ '/case-studies/mave/' | relative_url }}" class="project-card-small">
                 <div class="project-content-small">
                     <div class="project-text-small">
                         <div class="project-meta">
@@ -580,7 +383,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
 
         <div class="projects-sidebar">
-            <a href="/hsnlogix-staging/case-studies/" class="view-all-section">
+            <a href="{{ '/case-studies/' | relative_url }}" class="view-all-section">
                 <div class="view-all-container">
                     <div class="view-all-inner">
                         <div class="view-all-content">
@@ -658,9 +461,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
                 <div class="answer-text">
                     <p class="service-description">
-                        Fully custom Shopify themes built from scratch or tailored to your brand — fast, scalable, and optimized for performance.
+                        Fully custom Shopify themes built from scratch or tailored to your brand â€” fast, scalable, and optimized for performance.
                     </p>
-                    <a href="/hsnlogix-staging/services/theme-development/" class="service-learn-more">Learn more &rarr;</a>
+                    <a href="{{ '/services/theme-development/' | relative_url }}" class="service-learn-more">Learn more &rarr;</a>
                 </div>
             </div>
         </div>
@@ -697,9 +500,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
                 <div class="answer-text">
                     <p class="service-description">
-                        Complete Shopify store setup from product pages to checkout — configured, branded, and launch-ready so you can start selling faster.
+                        Complete Shopify store setup from product pages to checkout â€” configured, branded, and launch-ready so you can start selling faster.
                     </p>
-                    <a href="/hsnlogix-staging/services/store-setup/" class="service-learn-more">Learn more &rarr;</a>
+                    <a href="{{ '/services/store-setup/' | relative_url }}" class="service-learn-more">Learn more &rarr;</a>
                 </div>
             </div>
         </div>
@@ -736,9 +539,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
                 <div class="answer-text">
                     <p class="service-description">
-                        Speed improvements, mobile-first fixes, and pixel-perfect responsiveness — making your existing store faster, smoother, and conversion-friendly.
+                        Speed improvements, mobile-first fixes, and pixel-perfect responsiveness â€” making your existing store faster, smoother, and conversion-friendly.
                     </p>
-                    <a href="/hsnlogix-staging/services/speed-optimization/" class="service-learn-more">Learn more &rarr;</a>
+                    <a href="{{ '/services/speed-optimization/' | relative_url }}" class="service-learn-more">Learn more &rarr;</a>
                 </div>
             </div>
         </div>
@@ -775,9 +578,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
                 <div class="answer-text">
                     <p class="service-description">
-                        Third-party app integrations, custom Liquid code, and bespoke features — extending your store's functionality beyond what themes offer out of the box.
+                        Third-party app integrations, custom Liquid code, and bespoke features â€” extending your store's functionality beyond what themes offer out of the box.
                     </p>
-                    <a href="/hsnlogix-staging/services/app-integration/" class="service-learn-more">Learn more &rarr;</a>
+                    <a href="{{ '/services/app-integration/' | relative_url }}" class="service-learn-more">Learn more &rarr;</a>
                 </div>
             </div>
         </div>
@@ -816,7 +619,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <p class="service-description">
                         Seamless migration from WooCommerce, Wix, or Magento to Shopify, preserving SEO rankings, customer data, and order history without downtime.
                     </p>
-                    <a href="/hsnlogix-staging/services/platform-migration/" class="service-learn-more">Learn more &rarr;</a>
+                    <a href="{{ '/services/platform-migration/' | relative_url }}" class="service-learn-more">Learn more &rarr;</a>
                 </div>
             </div>
         </div>
@@ -855,7 +658,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <p class="service-description">
                         Tiered pricing, margin calculators, and wholesale order flows, letting one store serve retail and B2B buyers without compromising either.
                     </p>
-                    <a href="/hsnlogix-staging/services/b2b-wholesale/" class="service-learn-more">Learn more &rarr;</a>
+                    <a href="{{ '/services/b2b-wholesale/' | relative_url }}" class="service-learn-more">Learn more &rarr;</a>
                 </div>
             </div>
         </div>
@@ -1148,7 +951,7 @@ Hussain was an absolute pleasure to work with, and I will hire him again in the 
                     <div class="question-content">
                         <div class="question-text">
                             <p class="question-number">01/</p>
-                            <p class="question-title">What’s your usual project timeline?</p>
+                            <p class="question-title">Whatâ€™s your usual project timeline?</p>
                         </div>
                         <div class="question-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
@@ -1157,7 +960,7 @@ Hussain was an absolute pleasure to work with, and I will hire him again in the 
                         </div>
                     </div>
                     <div class="faq-answer">
-                        <p>Most theme development or customization projects are completed within 1 to 4 weeks, depending on the scope and level of detail required. Once I understand your requirements, I’ll share a clear timeline with milestones for design setup, development, testing, and final delivery.</p>
+                        <p>Most theme development or customization projects are completed within 1 to 4 weeks, depending on the scope and level of detail required. Once I understand your requirements, Iâ€™ll share a clear timeline with milestones for design setup, development, testing, and final delivery.</p>
                     </div>
                 </div>
             </div>
@@ -1195,7 +998,7 @@ Hussain was an absolute pleasure to work with, and I will hire him again in the 
                         </div>
                     </div>
                     <div class="faq-answer">
-                        <p>Definitely. I make sure your Shopify store fully aligns with your brand’s look and feel—colors, typography, layout, and visual tone. Whether you already have detailed brand guidelines or just a reference design, I can implement them precisely and maintain consistency across all pages.</p>
+                        <p>Definitely. I make sure your Shopify store fully aligns with your brandâ€™s look and feelâ€”colors, typography, layout, and visual tone. Whether you already have detailed brand guidelines or just a reference design, I can implement them precisely and maintain consistency across all pages.</p>
                     </div>
                 </div>
             </div>
@@ -1252,7 +1055,7 @@ Hussain was an absolute pleasure to work with, and I will hire him again in the 
         <div class="footer-info">
     <div class="footer-container">
         <div class="footer-heading">
-            <h2 class="footer-title">Let’s build a Shopify store that truly stands out.</h2>
+            <h2 class="footer-title">Letâ€™s build a Shopify store that truly stands out.</h2>
         </div>
         <div class="contact-info">
             <div class="profile-section">
@@ -1279,7 +1082,7 @@ Hussain was an absolute pleasure to work with, and I will hire him again in the 
                 </div>
             </div>
             <div class="contact-description">
-                <h3><span class="highlight">Book a free consultation</span> — I’ll walk you through custom themes, integrations, and how we can <span class="highlight">elevate your store’s design & conversions.</span></h3>
+                <h3><span class="highlight">Book a free consultation</span> â€” Iâ€™ll walk you through custom themes, integrations, and how we can <span class="highlight">elevate your storeâ€™s design & conversions.</span></h3>
             </div>
             <div class="cta-buttons">
             <a href="#" data-cal-link="hsnlogix" data-cal-config='{"layout":"month_view"}' rel="noopener" class="cta-button">
@@ -1312,14 +1115,14 @@ Hussain was an absolute pleasure to work with, and I will hire him again in the 
                 <div class="footer-left">
                     <div class="footer-logo">
                         <div class="logo">
-        <a href="/hsnlogix-staging/">
+        <a href="{{ '/' | relative_url }}">
         <span class="logo-hsn">HSN</span>
         <span class="logo-logix">Logix</span>
     </a>
     </div>
                     </div>
                 </div>
-                    <p class="copyright">Copyright © HSNLogix, 2026</p>
+                    <p class="copyright">Copyright Â© HSNLogix, 2026</p>
             </div>
         </div>
     </div>
