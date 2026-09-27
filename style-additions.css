@@ -310,3 +310,48 @@
         display: none;
     }
 }
+
+/* ---------- Per-project card tinting (Featured Projects section) ---------- */
+/* Each card picks up a subtle border tint and outer glow pulled from its
+   mockup's dominant color. border-color only — never touches border-width/side
+   rules set in style.css (border-right/bottom: 0). */
+
+.project-card--laboostudio {
+    border-color: rgba(70, 105, 215, 0.45);
+    box-shadow: 0 0 32px rgba(70, 105, 215, 0.09);
+    transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card--laboostudio:hover {
+    box-shadow: 0 0 44px rgba(70, 105, 215, 0.18);
+    border-color: rgba(70, 105, 215, 0.65);
+}
+
+.project-card--lockassure {
+    border-color: rgba(210, 98, 38, 0.45);
+    box-shadow: 0 0 32px rgba(210, 98, 38, 0.09);
+    transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card--lockassure:hover {
+    box-shadow: 0 0 44px rgba(210, 98, 38, 0.18);
+    border-color: rgba(210, 98, 38, 0.65);
+}
+
+.project-card--wholenights {
+    border-color: rgba(52, 72, 160, 0.45);
+    box-shadow: 0 0 32px rgba(52, 72, 160, 0.09);
+    transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card--wholenights:hover {
+    box-shadow: 0 0 44px rgba(52, 72, 160, 0.18);
+    border-color: rgba(52, 72, 160, 0.65);
+}
+
+.project-card--drinkmave {
+    border-color: rgba(192, 138, 50, 0.45);
+    box-shadow: 0 0 32px rgba(192, 138, 50, 0.09);
+    transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card--drinkmave:hover {
+    box-shadow: 0 0 44px rgba(192, 138, 50, 0.18);
+    border-color: rgba(192, 138, 50, 0.65);
+}

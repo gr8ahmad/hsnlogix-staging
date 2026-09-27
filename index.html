@@ -68,7 +68,7 @@ Cal("init", {origin:"https://cal.com"});
   <!-- HEADER -->
 <header class="site-header">
   <div class="container site-header__inner">
-    <!-- Logo â€” far left -->
+    <!-- Logo — far left -->
     <div class="logo">
       <a href="/hsnlogix-staging/">
         <span class="logo-hsn">HSN</span>
@@ -96,7 +96,7 @@ Cal("init", {origin:"https://cal.com"});
         </div>
       </a>
 
-      <!-- Hamburger â€” far right, with gap from CTA -->
+      <!-- Hamburger — far right, with gap from CTA -->
       <button class="menu-toggle" aria-label="Toggle menu">
         <span class="bar"></span>
         <span class="bar"></span>
@@ -109,7 +109,7 @@ Cal("init", {origin:"https://cal.com"});
 <!-- Drawer overlay (click to close) -->
 <div class="nav-overlay" id="navOverlay"></div>
 
-<!-- Off-canvas nav drawer â€” slides in from the right -->
+<!-- Off-canvas nav drawer — slides in from the right -->
 <aside class="nav-drawer" id="navDrawer" aria-label="Site navigation">
     <button class="nav-drawer__close" id="navDrawerClose" aria-label="Close menu">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor">
@@ -254,7 +254,7 @@ Cal("init", {origin:"https://cal.com"});
       lastTime = time;
       currentRate += (targetRate - currentRate) * 0.25;
 
-      // âœ… move from right to left (reverse direction)
+      // ✅ move from right to left (reverse direction)
       pos = (pos - baseSpeed * currentRate * dt) % loopWidth;
       track.style.transform = `translateX(${pos}px)`;
 
@@ -267,150 +267,6 @@ Cal("init", {origin:"https://cal.com"});
     ticker.addEventListener('mouseleave', () => targetRate = 1);
   });
 </script>
-
-    <section class="projects-section" id="projects">
-      
-
-      <div class="projects-inner">
-      <div class="process-header">
-            <div class="process-indicator">
-                <div class="status-indicator"></div>
-                <div class="process-tag">Featured Projects</div>
-            </div>
-            <h2 class="process-title">I blend creativity with <br /> technical expertise</h2>
-              <div class="animated-grid absolute top-0 left-0 w-full h-full pointer-events-none opacity-50">
-  <div class="animated-block bg-dark-blue" style="width:70px;height:70px;right:0;bottom:70px;"></div>
-  <div class="animated-block bg-dark-blue" style="width:70px;height:70px;right:140px;bottom:70px;"></div>
-  <div class="animated-block bg-dark-blue" style="width:70px;height:70px;right:0;bottom:0;"></div>
-  <div class="animated-block bg-dark-blue" style="width:70px;height:70px;right:70px;bottom:0;"></div>
-  <div class="animated-block bg-dark-blue" style="width:70px;height:70px;right:210px;bottom:0;"></div>
-</div>
-        </div>
-
-    <div class="projects-grid">
-        <a href="/hsnlogix-staging/case-studies/laboostudio/" class="project-card">
-            <div class="project-content">
-                <div class="project-text">
-                    <div class="project-meta">
-                        <div class="category-tags">
-                            <span class="category-bracket">{</span>
-                            <span class="category-name">Wall Art</span>
-                            <span class="category-bracket">}</span>
-                        </div>
-                    </div>
-                    <h3 class="project-title">Laboostudio</h3>
-                    <p class="project-services"> Web development</p>
-                </div>
-                <div class="project-image">
-                    <div class="project-image-inner">
-                        <span class="site-title">Laboostudio</span>
-                        <img src="laboostudio.webp" alt="Laboostudio" loading="lazy" data-aos="fade-up" data-aos-duration="500">
-                    </div>
-                </div>
-            </div>
-        </a>
-
-        <a href="/hsnlogix-staging/case-studies/lockassure/" class="project-card">
-            <div class="project-content">
-                <div class="project-text">
-                    <div class="project-meta">
-                        <div class="category-tags">
-                            <span class="category-bracket">{</span>
-                            <span class="category-name">Construction</span>
-                            <span class="category-bracket">}</span>
-                        </div>
-                    </div>
-                    <h3 class="project-title">Lockassure</h3>
-                    <p class="project-services">Web development</p>
-                </div>
-                <div class="project-image">
-                    <div class="project-image-inner">
-                        <span class="site-title">Lockassure</span>
-                        <img src="lockassure.webp" alt="Lockassure" loading="lazy" data-aos="fade-up" data-aos-duration="500" data-aos-delay="500">
-                    </div>
-                </div>
-            </div>
-        </a>
-    </div>
-
-    <div class="projects-small-container">
-        <div class="projects-grid-small">
-            <a href="/hsnlogix-staging/case-studies/wholenights/" class="project-card-small">
-                <div class="project-content-small">
-                    <div class="project-text-small">
-                        <div class="project-meta">
-                            <div class="category-tags">
-                                <span class="category-bracket">{</span>
-                                <span class="category-name">Health</span>
-                                <span class="category-bracket">}</span>
-                            </div>
-                        </div>
-                        <h3 class="project-title">WholeNights</h3>
-                        <p class="project-services"></p>
-                    </div>
-                    <div class="project-image-small">
-                        <div class="project-image-inner-small">
-                            <span class="site-title">Wholenights</span>
-                            <img src="whole-nights.webp" alt="Wholenights" loading="lazy" data-aos="fade-up" data-aos-duration="500">
-                        </div>
-                    </div>
-                </div>
-            </a>
-
-            <a href="/hsnlogix-staging/case-studies/mave/" class="project-card-small">
-                <div class="project-content-small">
-                    <div class="project-text-small">
-                        <div class="project-meta">
-                            <div class="category-tags">
-                                <span class="category-bracket">{</span>
-                                <span class="category-name">Beverage</span>
-                                <span class="category-bracket">}</span>
-                            </div>
-                        </div>
-                        <h3 class="project-title">Drinkmave</h3>
-                        <p class="project-services"></p>
-                    </div>
-                    <div class="project-image-small">
-                        <div class="project-image-inner-small">
-                            <span class="site-title">Drinkmave</span>
-                            <img src="drinkmave.webp" alt="Drinkmave" loading="lazy" data-aos="fade-up" data-aos-duration="500"  data-aos-delay="500">
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-        <div class="projects-sidebar">
-            <a href="/hsnlogix-staging/case-studies/" class="view-all-section">
-                <div class="view-all-container">
-                    <div class="view-all-inner">
-                        <div class="view-all-content">
-                            <p class="view-all-text">View all case studies</p>
-                            <div class="view-all-icon">
-                                <svg viewBox="0 0 45 45" preserveAspectRatio="none" width="100%" height="100%">
-                                    <!-- Add your arrow icon SVG path here -->
-                                    <path d="M20 15l5 5-5 5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/ >
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-    </div>
-<!--     <div class="cta-container">
-    <a href="./#projects" class="cta-button">
-                    <p class="cta-text">See what i can do</p>
-                    <div class="cta-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-                            <path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path>
-                        </svg>
-                    </div>
-                </a>
-              </div> -->
-  </div>
-</section>
-
 
 <section class="services-section" id="services">
     <div class="services-container">
@@ -459,7 +315,7 @@ Cal("init", {origin:"https://cal.com"});
                 </div>
                 <div class="answer-text">
                     <p class="service-description">
-                        Fully custom Shopify themes built from scratch or tailored to your brand â€” fast, scalable, and optimized for performance.
+                        Fully custom Shopify themes built from scratch or tailored to your brand — fast, scalable, and optimized for performance.
                     </p>
                     <a href="/hsnlogix-staging/services/theme-development/" class="service-learn-more">Learn more &rarr;</a>
                 </div>
@@ -498,7 +354,7 @@ Cal("init", {origin:"https://cal.com"});
                 </div>
                 <div class="answer-text">
                     <p class="service-description">
-                        Complete Shopify store setup from product pages to checkout â€” configured, branded, and launch-ready so you can start selling faster.
+                        Complete Shopify store setup from product pages to checkout — configured, branded, and launch-ready so you can start selling faster.
                     </p>
                     <a href="/hsnlogix-staging/services/store-setup/" class="service-learn-more">Learn more &rarr;</a>
                 </div>
@@ -537,7 +393,7 @@ Cal("init", {origin:"https://cal.com"});
                 </div>
                 <div class="answer-text">
                     <p class="service-description">
-                        Speed improvements, mobile-first fixes, and pixel-perfect responsiveness â€” making your existing store faster, smoother, and conversion-friendly.
+                        Speed improvements, mobile-first fixes, and pixel-perfect responsiveness — making your existing store faster, smoother, and conversion-friendly.
                     </p>
                     <a href="/hsnlogix-staging/services/speed-optimization/" class="service-learn-more">Learn more &rarr;</a>
                 </div>
@@ -576,7 +432,7 @@ Cal("init", {origin:"https://cal.com"});
                 </div>
                 <div class="answer-text">
                     <p class="service-description">
-                        Third-party app integrations, custom Liquid code, and bespoke features â€” extending your store's functionality beyond what themes offer out of the box.
+                        Third-party app integrations, custom Liquid code, and bespoke features — extending your store's functionality beyond what themes offer out of the box.
                     </p>
                     <a href="/hsnlogix-staging/services/app-integration/" class="service-learn-more">Learn more &rarr;</a>
                 </div>
@@ -664,6 +520,149 @@ Cal("init", {origin:"https://cal.com"});
 </div>
         </div>
     </div>
+</section>
+
+    <section class="projects-section" id="projects">
+
+
+      <div class="projects-inner">
+      <div class="process-header">
+            <div class="process-indicator">
+                <div class="status-indicator"></div>
+                <div class="process-tag">Featured Projects</div>
+            </div>
+            <h2 class="process-title">I blend creativity with <br /> technical expertise</h2>
+              <div class="animated-grid absolute top-0 left-0 w-full h-full pointer-events-none opacity-50">
+  <div class="animated-block bg-dark-blue" style="width:70px;height:70px;right:0;bottom:70px;"></div>
+  <div class="animated-block bg-dark-blue" style="width:70px;height:70px;right:140px;bottom:70px;"></div>
+  <div class="animated-block bg-dark-blue" style="width:70px;height:70px;right:0;bottom:0;"></div>
+  <div class="animated-block bg-dark-blue" style="width:70px;height:70px;right:70px;bottom:0;"></div>
+  <div class="animated-block bg-dark-blue" style="width:70px;height:70px;right:210px;bottom:0;"></div>
+</div>
+        </div>
+
+    <div class="projects-grid">
+        <a href="/hsnlogix-staging/case-studies/laboostudio/" class="project-card project-card--laboostudio">
+            <div class="project-content">
+                <div class="project-text">
+                    <div class="project-meta">
+                        <div class="category-tags">
+                            <span class="category-bracket">{</span>
+                            <span class="category-name">Wall Art</span>
+                            <span class="category-bracket">}</span>
+                        </div>
+                    </div>
+                    <h3 class="project-title">Laboostudio</h3>
+                    <p class="project-services"> Web development</p>
+                </div>
+                <div class="project-image">
+                    <div class="project-image-inner">
+                        <span class="site-title">Laboostudio</span>
+                        <img src="laboostudio.webp" alt="Laboostudio" loading="lazy" data-aos="fade-up" data-aos-duration="500">
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <a href="/hsnlogix-staging/case-studies/lockassure/" class="project-card project-card--lockassure">
+            <div class="project-content">
+                <div class="project-text">
+                    <div class="project-meta">
+                        <div class="category-tags">
+                            <span class="category-bracket">{</span>
+                            <span class="category-name">Construction</span>
+                            <span class="category-bracket">}</span>
+                        </div>
+                    </div>
+                    <h3 class="project-title">Lockassure</h3>
+                    <p class="project-services">Web development</p>
+                </div>
+                <div class="project-image">
+                    <div class="project-image-inner">
+                        <span class="site-title">Lockassure</span>
+                        <img src="lockassure.webp" alt="Lockassure" loading="lazy" data-aos="fade-up" data-aos-duration="500" data-aos-delay="500">
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="projects-small-container">
+        <div class="projects-grid-small">
+            <a href="/hsnlogix-staging/case-studies/wholenights/" class="project-card-small project-card--wholenights">
+                <div class="project-content-small">
+                    <div class="project-text-small">
+                        <div class="project-meta">
+                            <div class="category-tags">
+                                <span class="category-bracket">{</span>
+                                <span class="category-name">Health</span>
+                                <span class="category-bracket">}</span>
+                            </div>
+                        </div>
+                        <h3 class="project-title">WholeNights</h3>
+                        <p class="project-services"></p>
+                    </div>
+                    <div class="project-image-small">
+                        <div class="project-image-inner-small">
+                            <span class="site-title">Wholenights</span>
+                            <img src="whole-nights.webp" alt="Wholenights" loading="lazy" data-aos="fade-up" data-aos-duration="500">
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="/hsnlogix-staging/case-studies/mave/" class="project-card-small project-card--drinkmave">
+                <div class="project-content-small">
+                    <div class="project-text-small">
+                        <div class="project-meta">
+                            <div class="category-tags">
+                                <span class="category-bracket">{</span>
+                                <span class="category-name">Beverage</span>
+                                <span class="category-bracket">}</span>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Drinkmave</h3>
+                        <p class="project-services"></p>
+                    </div>
+                    <div class="project-image-small">
+                        <div class="project-image-inner-small">
+                            <span class="site-title">Drinkmave</span>
+                            <img src="drinkmave.webp" alt="Drinkmave" loading="lazy" data-aos="fade-up" data-aos-duration="500"  data-aos-delay="500">
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="projects-sidebar">
+            <a href="/hsnlogix-staging/case-studies/" class="view-all-section">
+                <div class="view-all-container">
+                    <div class="view-all-inner">
+                        <div class="view-all-content">
+                            <p class="view-all-text">View all case studies</p>
+                            <div class="view-all-icon">
+                                <svg viewBox="0 0 45 45" preserveAspectRatio="none" width="100%" height="100%">
+                                    <!-- Add your arrow icon SVG path here -->
+                                    <path d="M20 15l5 5-5 5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/ >
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+<!--     <div class="cta-container">
+    <a href="./#projects" class="cta-button">
+                    <p class="cta-text">See what i can do</p>
+                    <div class="cta-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                            <path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path>
+                        </svg>
+                    </div>
+                </a>
+              </div> -->
+  </div>
 </section>
 
 <section class="hsnlogix-portfolio" id="testimonials">
@@ -949,7 +948,7 @@ Hussain was an absolute pleasure to work with, and I will hire him again in the 
                     <div class="question-content">
                         <div class="question-text">
                             <p class="question-number">01/</p>
-                            <p class="question-title">Whatâ€™s your usual project timeline?</p>
+                            <p class="question-title">What's your usual project timeline?</p>
                         </div>
                         <div class="question-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
@@ -958,7 +957,7 @@ Hussain was an absolute pleasure to work with, and I will hire him again in the 
                         </div>
                     </div>
                     <div class="faq-answer">
-                        <p>Most theme development or customization projects are completed within 1 to 4 weeks, depending on the scope and level of detail required. Once I understand your requirements, Iâ€™ll share a clear timeline with milestones for design setup, development, testing, and final delivery.</p>
+                        <p>Most theme development or customization projects are completed within 1 to 4 weeks, depending on the scope and level of detail required. Once I understand your requirements, I'll share a clear timeline with milestones for design setup, development, testing, and final delivery.</p>
                     </div>
                 </div>
             </div>
@@ -996,7 +995,7 @@ Hussain was an absolute pleasure to work with, and I will hire him again in the 
                         </div>
                     </div>
                     <div class="faq-answer">
-                        <p>Definitely. I make sure your Shopify store fully aligns with your brandâ€™s look and feelâ€”colors, typography, layout, and visual tone. Whether you already have detailed brand guidelines or just a reference design, I can implement them precisely and maintain consistency across all pages.</p>
+                        <p>Definitely. I make sure your Shopify store fully aligns with your brand's look and feel — colors, typography, layout, and visual tone. Whether you already have detailed brand guidelines or just a reference design, I can implement them precisely and maintain consistency across all pages.</p>
                     </div>
                 </div>
             </div>
@@ -1053,7 +1052,7 @@ Hussain was an absolute pleasure to work with, and I will hire him again in the 
         <div class="footer-info">
     <div class="footer-container">
         <div class="footer-heading">
-            <h2 class="footer-title">Letâ€™s build a Shopify store that truly stands out.</h2>
+            <h2 class="footer-title">Let's build a Shopify store that truly stands out.</h2>
         </div>
         <div class="contact-info">
             <div class="profile-section">
@@ -1080,7 +1079,7 @@ Hussain was an absolute pleasure to work with, and I will hire him again in the 
                 </div>
             </div>
             <div class="contact-description">
-                <h3><span class="highlight">Book a free consultation</span> â€” Iâ€™ll walk you through custom themes, integrations, and how we can <span class="highlight">elevate your storeâ€™s design & conversions.</span></h3>
+                <h3><span class=”highlight”>Book a free consultation</span> — I'll walk you through custom themes, integrations, and how we can <span class=”highlight”>elevate your store's design & conversions.</span></h3>
             </div>
             <div class="cta-buttons">
             <a href="#" data-cal-link="hsnlogix" data-cal-config='{"layout":"month_view"}' rel="noopener" class="cta-button">
@@ -1120,7 +1119,7 @@ Hussain was an absolute pleasure to work with, and I will hire him again in the 
     </div>
                     </div>
                 </div>
-                    <p class="copyright">Copyright Â© HSNLogix, 2026</p>
+                    <p class="copyright">Copyright © HSNLogix, 2026</p>
             </div>
         </div>
     </div>
