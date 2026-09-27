@@ -76,11 +76,13 @@
     display: flex;
     align-items: center;
     width: 100%;
-    overflow: hidden;
+    /* overflow: hidden removed — was harmless here but keeping it out avoids
+       any future risk of clipping content near the section boundary */
 }
 
 .customer-hero__inner {
-    padding: 52px 40px;
+    /* top padding clears the fixed transparent header (~88px) with room to breathe */
+    padding: 100px 40px 60px;
     width: 100%;
     box-sizing: border-box;
 }
@@ -88,9 +90,9 @@
 .customer-hero__headline {
     font-family: 'Manrope', sans-serif;
     font-weight: 700;
-    font-size: 52px;
-    letter-spacing: -1.6px;
-    line-height: 1.15;
+    font-size: 62px;
+    letter-spacing: -2px;
+    line-height: 1.1;
     color: #0A0A0A;
     max-width: 700px;
     margin: 0 0 16px;
@@ -196,18 +198,99 @@
 
 @media (max-width: 640px) {
     .customer-hero__inner {
-        padding: 64px 20px;
+        /* top padding still clears the fixed header on mobile */
+        padding: 92px 20px 48px;
     }
     .customer-hero__headline {
-        font-size: 32px;
-        letter-spacing: -1px;
-        margin-bottom: 18px;
+        font-size: 38px;
+        letter-spacing: -1.2px;
+        margin-bottom: 14px;
     }
     .customer-hero__subhead {
         font-size: 15px;
-        margin-bottom: 28px;
+        margin-bottom: 24px;
     }
-    .highlight-mark {
-        white-space: normal;
-    }
+}
+
+/* ---------- Off-canvas nav drawer (right side) ---------- */
+
+/* Clickable backdrop — always in DOM, fades in/out via opacity so transition works */
+.nav-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1099;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+.nav-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Drawer panel */
+.nav-drawer {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 280px;
+    height: 100vh;
+    height: 100dvh;
+    background: #fff;
+    z-index: 1100;
+    padding: 72px 36px 40px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -4px 0 32px rgba(0, 0, 0, 0.12);
+    overflow-y: auto;
+    transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.nav-drawer.active {
+    right: 0;
+}
+
+/* Close (×) button inside drawer */
+.nav-drawer__close {
+    position: absolute;
+    top: 18px;
+    right: 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    color: #0A0A0A;
+    line-height: 0;
+    border-radius: 6px;
+    transition: background 0.15s ease;
+}
+.nav-drawer__close:hover {
+    background: #f0f0f0;
+}
+.nav-drawer__close svg {
+    width: 22px;
+    height: 22px;
+    display: block;
+}
+
+/* Nav links inside drawer */
+.nav-drawer__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin-top: 8px;
+}
+.nav-drawer__link {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: #0A0A0A;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color 0.2s ease;
+}
+.nav-drawer__link:hover {
+    color: #82FF1F;
 }

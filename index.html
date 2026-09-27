@@ -82,16 +82,6 @@ Cal("init", {origin:"https://cal.com"});
       </a>
     </div>
 
-    <!-- Navigation Menu -->
-    <nav class="site-header__menu">
-      <a href="/hsnlogix-staging/case-studies" class="site-header__link">CASE STUDIES</a>
-      <a href="#testimonials" class="site-header__link">Testimonials</a>
-      <a href="#faqs" class="site-header__link">FAQs</a>
-      <a href="/hsnlogix-staging/blog" class="site-header__link">BLOG</a>
-      <a href="/hsnlogix-staging/white-label" class="site-header__link">FOR AGENCIES</a>
-      <a href="#contact" class="site-header__link">Contact</a>
-    </nav>
-
     <!-- Book a Call - outside nav so it's always visible -->
     <a href="#" data-cal-link="hsnlogix" data-cal-config='{"layout":"month_view"}' rel="noopener" class="cta-button header-cta">
       <div class="button-text">
@@ -106,7 +96,24 @@ Cal("init", {origin:"https://cal.com"});
   </div>
 </header>
 
+<!-- Drawer overlay (click to close) -->
+<div class="nav-overlay" id="navOverlay"></div>
 
+<!-- Off-canvas nav drawer — slides in from the right -->
+<aside class="nav-drawer" id="navDrawer" aria-label="Site navigation">
+    <button class="nav-drawer__close" id="navDrawerClose" aria-label="Close menu">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor">
+            <path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path>
+        </svg>
+    </button>
+    <nav class="nav-drawer__nav">
+        <a href="#services" class="nav-drawer__link">Services</a>
+        <a href="/hsnlogix-staging/case-studies" class="nav-drawer__link">Case Studies</a>
+        <a href="#testimonials" class="nav-drawer__link">Testimonials</a>
+        <a href="#faqs" class="nav-drawer__link">FAQs</a>
+        <a href="#contact" class="nav-drawer__link">Contact</a>
+    </nav>
+</aside>
 
     <!-- Customer-first hero (sits above the personal hero and stats ticker) -->
     <section class="customer-hero">
@@ -1394,43 +1401,46 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-  const toggleBtn = document.querySelector(".menu-toggle");
-  const navMenu = document.querySelector(".site-header__menu");
+// Off-canvas nav drawer (slides in from the right)
+(function () {
+  var menuToggle = document.querySelector('.menu-toggle');
+  var navDrawer = document.getElementById('navDrawer');
+  var navOverlay = document.getElementById('navOverlay');
+  var navDrawerClose = document.getElementById('navDrawerClose');
 
-  toggleBtn.addEventListener("click", () => {
-    toggleBtn.classList.toggle("active");
-    navMenu.classList.toggle("active");
+  function openDrawer() {
+    navDrawer.classList.add('active');
+    navOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeDrawer() {
+    navDrawer.classList.remove('active');
+    navOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  if (menuToggle) menuToggle.addEventListener('click', openDrawer);
+  if (navDrawerClose) navDrawerClose.addEventListener('click', closeDrawer);
+  if (navOverlay) navOverlay.addEventListener('click', closeDrawer);
+
+  document.querySelectorAll('.nav-drawer__link').forEach(function (link) {
+    link.addEventListener('click', closeDrawer);
   });
+})();
 
-
-
-document.addEventListener("DOMContentLoaded", () => {
-  const header = document.querySelector(".site-header");
-  let lastScroll = 0;
-  const scrollThreshold = 50;
-
-  window.addEventListener("scroll", () => {
-    const currentScroll = window.scrollY;
-
-    // Always show full header at top of page
-    if (currentScroll <= scrollThreshold) {
-      header.classList.remove("header-hidden");
-      return;
+// Transparent header: apply opaque background once page is scrolled
+(function () {
+  var header = document.querySelector('.site-header');
+  function updateHeader() {
+    if (window.scrollY > 10) {
+      header.classList.add('header-scrolled');
+    } else {
+      header.classList.remove('header-scrolled');
     }
-
-    // Scrolling down — hide nav links
-    if (currentScroll > lastScroll) {
-      header.classList.add("header-hidden");
-    }
-
-    // Scrolling up — show nav links
-    if (currentScroll < lastScroll) {
-      header.classList.remove("header-hidden");
-    }
-
-    lastScroll = currentScroll;
-  });
-});
+  }
+  window.addEventListener('scroll', updateHeader, { passive: true });
+  updateHeader();
+})();
 
 
   </script>
