@@ -294,3 +294,53 @@
 .nav-drawer__link:hover {
     color: #82FF1F;
 }
+
+/* ---------- Header inline links + right-side group ---------- */
+
+/* Right-side flex group: inline links + CTA + hamburger */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 0; /* spacing managed individually below */
+}
+
+/* Inline nav links (Case Studies, Testimonials) */
+.header-inline-nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-right: 20px;
+}
+.header-inline-link {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: #2f2f2f;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+}
+.header-inline-link:hover {
+    color: #82FF1F;
+}
+
+/* Breathing room between Book a Call and hamburger */
+.header-right .menu-toggle {
+    margin-left: 20px;
+}
+
+/* Below 480px: hide the inline links — they appear in the drawer instead */
+@media (max-width: 480px) {
+    .header-inline-nav {
+        display: none;
+    }
+}
+
+/* Drawer mobile-only items: show only when inline links are hidden */
+@media (min-width: 481px) {
+    .nav-drawer__link--mobile-only {
+        display: none;
+    }
+}
