@@ -61,7 +61,7 @@ body {
 }
 
 .site-header__logo img {
-  height: 50px;
+  height: 43px;
   object-fit: contain;
 }
 
@@ -76,7 +76,7 @@ body {
 .site-header__link {
   font-family: 'Manrope', sans-serif;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 14px;
   color: #2f2f2f;
   text-decoration: none;
   transition: color 0.2s ease;
@@ -104,10 +104,10 @@ body {
  display: flex;
  align-items: center;
  justify-content: space-between;
- padding: 20px 40px;
+ padding: 14px 40px;
  }
 .site-header__logo {
- max-width: 120px;
+ max-width: 102px;
  }
 .site-header__btn a {
  background-color: rgb(130, 255, 31);
@@ -136,15 +136,15 @@ body {
         }
         
         .logo-hsn {
-            font-size: 32px;
+            font-size: 27px;
             font-weight: 800;
             color: #2B2B2B;
             letter-spacing: -2px;
             line-height: 1;
         }
-        
+
         .logo-logix {
-            font-size: 27px;
+            font-size: 23px;
             font-weight: 800;
             color: #82ff1f;
             letter-spacing: -.5px;
@@ -3513,21 +3513,21 @@ footer .profile-name h3{
   /*transform: translateY(-1px);*/
 }
 .header-cta {
-    height: 30px;
-    padding: 20px 16px;
+    height: 26px;
+    padding: 17px 14px;
 }
 .header-cta .button-text p {
-    font-size: 16px;
+    font-size: 14px;
 }
 .header-cta .button-text {
-  padding: 0 10px 0 0;
+  padding: 0 8px 0 0;
 }
 .header-cta .button-icon {
-    width: 25px;
-    height: 25px;
+    width: 22px;
+    height: 22px;
 }
 .header-cta .button-icon svg {
-    width: 15px;
+    width: 13px;
 }
 .TextShape-node.hero-circle-anim {
     display: ;

@@ -80,7 +80,7 @@
 }
 
 .customer-hero__inner {
-    padding: 90px 40px;
+    padding: 52px 40px;
     width: 100%;
     box-sizing: border-box;
 }
@@ -93,7 +93,7 @@
     line-height: 1.15;
     color: #0A0A0A;
     max-width: 700px;
-    margin: 0 0 24px;
+    margin: 0 0 16px;
 }
 
 .customer-hero__subhead {
@@ -104,7 +104,7 @@
     line-height: 1.55;
     color: #5A5A5A;
     max-width: 480px;
-    margin: 0 0 36px;
+    margin: 0 0 24px;
 }
 
 .customer-hero__cta-group {
@@ -170,9 +170,7 @@
 }
 
 @media (min-width: 641px) {
-    .customer-hero {
-        min-height: 100vh;
-    }
+    /* min-height: 100vh removed so the stats ticker is visible on initial viewport */
 }
 
 /* Tablet and mobile: stack the copy above the (empty) visual column, and
