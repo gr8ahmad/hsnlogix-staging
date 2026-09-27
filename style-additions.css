@@ -82,7 +82,7 @@
 
 .customer-hero__inner {
     /* top padding clears the fixed transparent header (~88px) with room to breathe */
-    padding: 100px 40px 60px;
+    padding: 130px 40px 70px;
     width: 100%;
     box-sizing: border-box;
 }
