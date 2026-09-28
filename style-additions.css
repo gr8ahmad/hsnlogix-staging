@@ -438,15 +438,45 @@
     aspect-ratio: 4 / 3;
 }
 
-/* Mobile: stack to 1 column */
+/* Column dividers: replace gap with padding + left border on cols 2 & 3 */
+.services-section .answer-content {
+    column-gap: 0;
+}
+
+.services-section .answer-hook,
+.services-section .answer-desc,
+.services-section .answer-img {
+    padding-right: 28px;
+}
+
+.services-section .answer-desc,
+.services-section .answer-img {
+    border-left: 1px solid rgba(255, 255, 255, 0.12);
+    padding-left: 28px;
+}
+
+/* Mobile: stack to 1 column, remove divider borders */
 @media (max-width: 768px) {
     .services-section .answer-content {
         grid-template-columns: 1fr;
         gap: 20px;
+        column-gap: 20px;
         padding: 16px 0 28px;
     }
 
     .services-section .service-hook-text {
         font-size: 18px;
+    }
+
+    .services-section .answer-hook,
+    .services-section .answer-desc,
+    .services-section .answer-img {
+        padding-right: 0;
+    }
+
+    .services-section .answer-desc,
+    .services-section .answer-img {
+        border-left: none;
+        padding-left: 0;
     }
 }
