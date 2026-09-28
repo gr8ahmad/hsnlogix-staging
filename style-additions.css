@@ -355,3 +355,98 @@
     box-shadow: 0 0 44px rgba(192, 138, 50, 0.18);
     border-color: rgba(192, 138, 50, 0.65);
 }
+
+/* ---------- Services accordion: diagonal arrow icon + 3-column panel ---------- */
+
+/* Remove circular border from icon wrapper, services only */
+.services-section .accordion-icon {
+    border: none;
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Arrow closed = ↘ (rotated 90°), muted gray */
+.services-section .plus-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(90deg);
+    transition: transform 0.3s ease, color 0.3s ease;
+    color: #888888;
+}
+
+/* Arrow open = ↗ (no rotation), brand green */
+.services-section .plus-icon.open {
+    transform: rotate(0deg);
+    color: #82FF1F;
+}
+
+.services-section .plus-icon svg {
+    width: 22px;
+    height: 22px;
+    display: block;
+}
+
+/* 3-column expanded panel layout */
+.services-section .answer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+    padding: 24px 0 40px;
+}
+
+.services-section .answer-hook {
+    /* col 1: bold hook text */
+}
+
+.services-section .service-hook-text {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.35;
+    color: #ffffff;
+    margin: 0;
+}
+
+.services-section .answer-desc {
+    /* col 2: description + learn more */
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.services-section .answer-desc .service-description {
+    margin: 0;
+}
+
+.services-section .answer-desc .service-learn-more {
+    margin-top: 16px;
+}
+
+.services-section .answer-img {
+    /* col 3: image */
+}
+
+.services-section .service-panel-img {
+    width: 100%;
+    display: block;
+    border-radius: 8px;
+    object-fit: cover;
+    aspect-ratio: 4 / 3;
+}
+
+/* Mobile: stack to 1 column */
+@media (max-width: 768px) {
+    .services-section .answer-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 16px 0 28px;
+    }
+
+    .services-section .service-hook-text {
+        font-size: 18px;
+    }
+}
