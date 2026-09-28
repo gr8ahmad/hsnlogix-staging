@@ -480,82 +480,61 @@
     }
 }
 
-/* ---------- Hero background pattern (Pattern 2: concentric rings) ---------- */
+/* ---------- Hero background pattern (Pattern 1: dot-grid + glow blobs + dots) ---------- */
 
 .hero-pattern {
     position: absolute;
     inset: 0;
     z-index: 0;
     pointer-events: none;
+    background-image: radial-gradient(circle, rgba(10, 10, 10, 0.06) 1.5px, transparent 1.5px);
+    background-size: 40px 40px;
 }
 
-/* Primary ring cluster — 560px circle bleeding off top-right corner.
-   right:-120px means right edge is 120px off-canvas; center lands at
-   right:160px, top:160px inside the hero. */
-.hero-pattern__rings {
+.hero-pattern__blob {
     position: absolute;
-    width: 560px;
-    height: 560px;
-    right: -120px;
-    top: -120px;
-    background-image: repeating-radial-gradient(
-        circle at center,
-        transparent 0px,
-        transparent 26px,
-        rgba(10, 10, 10, 0.08) 26px,
-        rgba(10, 10, 10, 0.08) 27.5px,
-        transparent 27.5px
-    );
-    -webkit-mask-image: radial-gradient(circle at center, black 28%, transparent 66%);
-    mask-image: radial-gradient(circle at center, black 28%, transparent 66%);
+    border-radius: 50%;
+    filter: blur(70px);
 }
 
-/* Secondary ring cluster — smaller, bottom-left, much subtler */
-.hero-pattern__rings--secondary {
+.hero-pattern__blob--green {
     width: 340px;
     height: 340px;
-    right: auto;
-    top: auto;
-    left: -80px;
-    bottom: -80px;
-    background-image: repeating-radial-gradient(
-        circle at center,
-        transparent 0px,
-        transparent 26px,
-        rgba(10, 10, 10, 0.055) 26px,
-        rgba(10, 10, 10, 0.055) 27.5px,
-        transparent 27.5px
-    );
-    -webkit-mask-image: radial-gradient(circle at center, black 20%, transparent 60%);
-    mask-image: radial-gradient(circle at center, black 20%, transparent 60%);
+    background: rgba(130, 255, 31, 0.16);
+    right: 5%;
+    top: 5%;
 }
 
-/* Single focal accent dot — marks the ring center (right:160px, top:160px) */
+.hero-pattern__blob--dark {
+    width: 260px;
+    height: 260px;
+    background: rgba(10, 10, 10, 0.05);
+    left: 5%;
+    bottom: 0;
+}
+
 .hero-pattern__dot {
     position: absolute;
     background: #82FF1F;
     border-radius: 50%;
 }
 
-.hero-pattern__dot--focal {
-    width: 15px;
-    height: 15px;
-    right: 152px; /* 160px center - 8px half-width */
-    top: 152px;
-    box-shadow: 0 0 16px 6px rgba(130, 255, 31, 0.5);
+.hero-pattern__dot--glow {
+    box-shadow: 0 0 8px 3px rgba(130, 255, 31, 0.45);
 }
 
 @media (max-width: 640px) {
-    .hero-pattern__rings {
-        width: 380px;
-        height: 380px;
-        right: -100px;
-        top: -100px;
-    }
-    .hero-pattern__rings--secondary {
+    .hero-pattern__dot {
         display: none;
     }
-    .hero-pattern__dot--focal {
-        display: none;
+    .hero-pattern__blob--green {
+        width: 200px;
+        height: 200px;
+        right: -5%;
+        top: 0;
+    }
+    .hero-pattern__blob--dark {
+        width: 180px;
+        height: 180px;
     }
 }
