@@ -42,15 +42,16 @@
     display: flex;
     align-items: center;
     width: 100%;
-    /* overflow: hidden removed — was harmless here but keeping it out avoids
-       any future risk of clipping content near the section boundary */
+    position: relative;
+    overflow: hidden;
 }
 
 .customer-hero__inner {
-    /* top padding clears the fixed transparent header (~88px) with room to breathe */
     padding: 130px 40px 70px;
     width: 100%;
     box-sizing: border-box;
+    position: relative;
+    z-index: 1;
 }
 
 .customer-hero__headline {
@@ -476,5 +477,64 @@
         padding-left: 0;
         padding-right: 0;
         height: auto;
+    }
+}
+
+/* ---------- Hero background pattern (Pattern 1: dot-grid + glow blobs + dots) ---------- */
+
+.hero-pattern {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, rgba(10, 10, 10, 0.11) 1.5px, transparent 1.5px);
+    background-size: 26px 26px;
+}
+
+.hero-pattern__blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(70px);
+}
+
+.hero-pattern__blob--green {
+    width: 340px;
+    height: 340px;
+    background: rgba(130, 255, 31, 0.16);
+    right: 5%;
+    top: 5%;
+}
+
+.hero-pattern__blob--dark {
+    width: 260px;
+    height: 260px;
+    background: rgba(10, 10, 10, 0.05);
+    left: 5%;
+    bottom: 0;
+}
+
+.hero-pattern__dot {
+    position: absolute;
+    background: #82FF1F;
+    border-radius: 50%;
+}
+
+.hero-pattern__dot--glow {
+    box-shadow: 0 0 8px 3px rgba(130, 255, 31, 0.45);
+}
+
+@media (max-width: 640px) {
+    .hero-pattern__dot {
+        display: none;
+    }
+    .hero-pattern__blob--green {
+        width: 200px;
+        height: 200px;
+        right: -5%;
+        top: 0;
+    }
+    .hero-pattern__blob--dark {
+        width: 180px;
+        height: 180px;
     }
 }
