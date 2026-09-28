@@ -393,13 +393,16 @@
 .services-section .answer-content {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 40px;
+    column-gap: 0;
+    row-gap: 0;
     align-items: stretch;
     padding: 24px 0 40px;
 }
 
+/* Col 1: hook — no left padding (flush with accordion edge), 28px right */
 .services-section .answer-hook {
-    /* col 1: bold hook text */
+    padding-left: 0;
+    padding-right: 28px;
 }
 
 .services-section .service-hook-text {
@@ -411,8 +414,16 @@
     margin: 0;
 }
 
+/* Col 2 + 3: border-left divider; 28px on each side so line sits centered */
+.services-section .answer-desc,
+.services-section .answer-img {
+    border-left: 1px solid rgba(255, 255, 255, 0.12);
+    padding-left: 28px;
+    padding-right: 28px;
+    height: 100%;
+}
+
 .services-section .answer-desc {
-    /* col 2: description + learn more */
     display: flex;
     flex-direction: column;
     gap: 0;
@@ -420,6 +431,9 @@
 
 .services-section .answer-desc .service-description {
     margin: 0;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.65;
 }
 
 .services-section .answer-desc .service-learn-more {
@@ -427,14 +441,9 @@
     text-decoration: none;
 }
 
-.services-section .answer-desc .service-description {
-    font-size: 18px;
-    font-weight: 300;
-    line-height: 1.65;
-}
-
+/* Col 3: image — no right padding so image fills to the column edge */
 .services-section .answer-img {
-    /* col 3: image */
+    padding-right: 0;
 }
 
 .services-section .service-panel-img {
@@ -445,29 +454,11 @@
     aspect-ratio: 4 / 3;
 }
 
-/* Column dividers: replace gap with padding + left border on cols 2 & 3 */
-.services-section .answer-content {
-    column-gap: 0;
-}
-
-.services-section .answer-hook,
-.services-section .answer-desc,
-.services-section .answer-img {
-    padding-right: 28px;
-}
-
-.services-section .answer-desc,
-.services-section .answer-img {
-    border-left: 1px solid rgba(255, 255, 255, 0.12);
-    padding-left: 28px;
-}
-
 /* Mobile: stack to 1 column, remove divider borders */
 @media (max-width: 768px) {
     .services-section .answer-content {
         grid-template-columns: 1fr;
-        gap: 20px;
-        column-gap: 20px;
+        row-gap: 20px;
         padding: 16px 0 28px;
     }
 
@@ -475,9 +466,7 @@
         font-size: 22px;
     }
 
-    .services-section .answer-hook,
-    .services-section .answer-desc,
-    .services-section .answer-img {
+    .services-section .answer-hook {
         padding-right: 0;
     }
 
@@ -485,5 +474,7 @@
     .services-section .answer-img {
         border-left: none;
         padding-left: 0;
+        padding-right: 0;
+        height: auto;
     }
 }
