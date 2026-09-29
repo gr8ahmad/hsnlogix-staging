@@ -40,16 +40,27 @@
 .customer-hero {
     background-color: #EEF3E9;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: stretch;
     width: 100%;
+    min-height: 100vh;
     position: relative;
     overflow: hidden;
 }
 
 .customer-hero__inner {
-    padding: 130px 40px 70px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 130px 40px 48px;
     width: 100%;
     box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+}
+
+/* Ticker sits above the pattern layer when nested inside the hero */
+.customer-hero .stats-ticker {
     position: relative;
     z-index: 1;
 }
@@ -164,9 +175,11 @@
 }
 
 @media (max-width: 640px) {
+    .customer-hero {
+        min-height: auto; /* don't force 100vh on small screens */
+    }
     .customer-hero__inner {
-        /* top padding still clears the fixed header on mobile */
-        padding: 92px 20px 48px;
+        padding: 92px 20px 32px;
     }
     .customer-hero__headline {
         font-size: 38px;
