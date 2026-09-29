@@ -186,7 +186,7 @@
 
 @media (max-width: 640px) {
     .customer-hero {
-        min-height: auto; /* don't force 100vh on small screens */
+        min-height: 100vh;
     }
     .customer-hero__inner {
         padding: 92px 20px 32px;
