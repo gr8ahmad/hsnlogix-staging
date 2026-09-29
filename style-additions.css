@@ -1002,3 +1002,49 @@
         grid-column: auto;
     }
 }
+
+/* ============================================================
+   FAQ SECTION HEADER — mirrors Testimonials header layout
+   ============================================================ */
+.faq-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    padding: 0 0 60px;
+}
+.faq-header__desc {
+    flex: 1;
+    max-width: 360px;
+    opacity: 0.7;
+    font-weight: 600;
+    font-size: 24px;
+    letter-spacing: -0.96px;
+    line-height: 36px;
+    color: #2F2F2F;
+}
+.faq-header__desc p {
+    margin: 0;
+}
+
+/* Responsive: stack at tablet */
+@media (max-width: 900px) {
+    .faq-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+        padding: 0 0 40px;
+    }
+    .faq-header__desc {
+        max-width: 100%;
+        flex: none;
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: -0.72px;
+    }
+}
+@media (max-width: 640px) {
+    .faq-header {
+        padding: 0 0 30px;
+    }
+}
