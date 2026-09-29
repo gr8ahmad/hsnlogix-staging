@@ -19,9 +19,10 @@
   <title>Custom Shopify Launch Site for a Construction Tech Startup — LockAssure | HSNLOGIX Blog</title>
 
   <!-- Same stylesheets as the main site, so header/footer/fonts match exactly -->
-  <link rel="stylesheet" href="/hsnlogix-staging/style.css?v=agency-footer">
-  <link rel="stylesheet" href="/hsnlogix-staging/style-additions.css?v=agency-footer">
+  <link rel="stylesheet" href="/hsnlogix-staging/style.css?v=shared-header">
+  <link rel="stylesheet" href="/hsnlogix-staging/style-additions.css?v=shared-header">
   <link rel="stylesheet" href="/hsnlogix-staging/blog.css">
+  <style>body { background: #02090A; }</style>
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2XBBSKSGBJ"></script>
@@ -57,31 +58,25 @@
   </script>
 </head>
 <body>
-  <!-- HEADER (same markup as the main site) -->
   <header class="site-header">
-    <div class="container site-header__inner">
-      <button class="menu-toggle" aria-label="Toggle menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </button>
+  <div class="container site-header__inner">
+    <!-- Logo — far left -->
+    <div class="logo">
+      <a href="/hsnlogix-staging/">
+        <span class="logo-hsn">HSN</span>
+        <span class="logo-logix">Logix</span>
+      </a>
+    </div>
 
-      <div class="logo">
-        <a href="/hsnlogix-staging/">
-          <span class="logo-hsn">HSN</span>
-          <span class="logo-logix">Logix</span>
-        </a>
-      </div>
-
-      <nav class="site-header__menu">
-        <a href="/hsnlogix-staging/case-studies/" class="site-header__link">Case Studies</a>
-        <a href="/hsnlogix-staging/#testimonials" class="site-header__link">Testimonials</a>
-        <a href="/hsnlogix-staging/#faqs" class="site-header__link">FAQs</a>
-        <a href="/hsnlogix-staging/blog/" class="site-header__link">Blog</a>
-        <a href="/hsnlogix-staging/white-label/" class="site-header__link">For Agencies</a>
-        <a href="/hsnlogix-staging/#contact" class="site-header__link">Contact</a>
+    <!-- Right-side group: inline links + CTA + hamburger -->
+    <div class="header-right">
+      <!-- Inline nav links (hidden below 480px, those widths use the drawer) -->
+      <nav class="header-inline-nav" aria-label="Primary navigation">
+        <a href="/hsnlogix-staging/case-studies" class="header-inline-link">Case Studies</a>
+        <a href="/hsnlogix-staging/#testimonials" class="header-inline-link">Testimonials</a>
       </nav>
 
+      <!-- Book a Call -->
       <a href="#" data-cal-link="hsnlogix" data-cal-config='{"layout":"month_view"}' rel="noopener" class="cta-button header-cta">
         <div class="button-text">
           <p>Book a Call</p>
@@ -92,8 +87,37 @@
           </svg>
         </div>
       </a>
+
+      <!-- Hamburger — far right, with gap from CTA -->
+      <button class="menu-toggle" aria-label="Toggle menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
     </div>
-  </header>
+  </div>
+</header>
+
+  <!-- Drawer overlay (click to close) -->
+<div class="nav-overlay" id="navOverlay"></div>
+
+<!-- Off-canvas nav drawer — slides in from the right -->
+<aside class="nav-drawer" id="navDrawer" aria-label="Site navigation">
+    <button class="nav-drawer__close" id="navDrawerClose" aria-label="Close menu">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor">
+            <path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path>
+        </svg>
+    </button>
+    <nav class="nav-drawer__nav">
+        <!-- Shown in drawer only when inline header links are hidden (< 480px) -->
+        <a href="/hsnlogix-staging/case-studies" class="nav-drawer__link nav-drawer__link--mobile-only">Case Studies</a>
+        <a href="/hsnlogix-staging/#testimonials" class="nav-drawer__link nav-drawer__link--mobile-only">Testimonials</a>
+        <!-- Always in drawer -->
+        <a href="/hsnlogix-staging/#faqs" class="nav-drawer__link">FAQs</a>
+        <a href="/hsnlogix-staging/white-label" class="nav-drawer__link">For Agencies</a>
+    </nav>
+</aside>
+
 
   <main class="blog-main container">
     <article class="blog-post case-study">
@@ -277,34 +301,46 @@
   </footer>
 
   <script>
-    const toggleBtn = document.querySelector(".menu-toggle");
-    const navMenu = document.querySelector(".site-header__menu");
-    if (toggleBtn && navMenu) {
-      toggleBtn.addEventListener("click", () => {
-        toggleBtn.classList.toggle("active");
-        navMenu.classList.toggle("active");
-      });
-    }
+// Off-canvas nav drawer (slides in from the right)
+(function () {
+  var menuToggle = document.querySelector('.menu-toggle');
+  var navDrawer = document.getElementById('navDrawer');
+  var navOverlay = document.getElementById('navOverlay');
+  var navDrawerClose = document.getElementById('navDrawerClose');
 
-    document.addEventListener("DOMContentLoaded", () => {
-      const header = document.querySelector(".site-header");
-      let lastScroll = 0;
-      const scrollThreshold = 50;
-      window.addEventListener("scroll", () => {
-        const currentScroll = window.scrollY;
-        if (currentScroll <= scrollThreshold) {
-          header.classList.remove("header-hidden");
-          return;
-        }
-        if (currentScroll > lastScroll) {
-          header.classList.add("header-hidden");
-        }
-        if (currentScroll < lastScroll) {
-          header.classList.remove("header-hidden");
-        }
-        lastScroll = currentScroll;
-      });
-    });
+  function openDrawer() {
+    navDrawer.classList.add('active');
+    navOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeDrawer() {
+    navDrawer.classList.remove('active');
+    navOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  if (menuToggle) menuToggle.addEventListener('click', openDrawer);
+  if (navDrawerClose) navDrawerClose.addEventListener('click', closeDrawer);
+  if (navOverlay) navOverlay.addEventListener('click', closeDrawer);
+
+  document.querySelectorAll('.nav-drawer__link').forEach(function (link) {
+    link.addEventListener('click', closeDrawer);
+  });
+})();
+
+// Transparent header: apply opaque background once page is scrolled
+(function () {
+  var header = document.querySelector('.site-header');
+  function updateHeader() {
+    if (window.scrollY > 10) {
+      header.classList.add('header-scrolled');
+    } else {
+      header.classList.remove('header-scrolled');
+    }
+  }
+  window.addEventListener('scroll', updateHeader, { passive: true });
+  updateHeader();
+})();
   </script>
 
   <script src="/hsnlogix-staging/hsnlogix-tracking.js"></script>
