@@ -68,22 +68,22 @@
 .customer-hero__headline {
     font-family: 'Manrope', sans-serif;
     font-weight: 700;
-    font-size: 62px;
+    font-size: clamp(62px, 4.3vw, 112px);
     letter-spacing: -2px;
     line-height: 1.1;
     color: #0A0A0A;
-    max-width: 700px;
+    max-width: clamp(700px, 49vw, 1200px);
     margin: 0 0 16px;
 }
 
 .customer-hero__subhead {
     font-family: 'Manrope', sans-serif;
     font-weight: 500;
-    font-size: 17px;
+    font-size: clamp(17px, 1.18vw, 28px);
     letter-spacing: -0.3px;
     line-height: 1.55;
     color: #5A5A5A;
-    max-width: 480px;
+    max-width: clamp(480px, 33vw, 800px);
     margin: 0 0 24px;
 }
 
@@ -103,7 +103,7 @@
 
 .hero-agency-text {
     flex: 1 1 55%;
-    max-width: 650px;
+    max-width: clamp(650px, 48vw, 1200px);
     min-width: 0;
 }
 

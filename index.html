@@ -236,8 +236,11 @@ Cal("init", {origin:"https://cal.com"});
       loopWidth += item.offsetWidth + parseFloat(style.marginLeft) + parseFloat(style.marginRight);
     });
 
-    // Duplicate items for seamless looping
-    items.forEach(item => track.appendChild(item.cloneNode(true)));
+    // Duplicate enough times to fill the container at any viewport width
+    const copiesNeeded = Math.ceil((ticker.offsetWidth * 2) / loopWidth) + 1;
+    for (let i = 0; i < copiesNeeded; i++) {
+      items.forEach(item => track.appendChild(item.cloneNode(true)));
+    }
 
     let pos = 0;
     let currentRate = 1, targetRate = 1;
