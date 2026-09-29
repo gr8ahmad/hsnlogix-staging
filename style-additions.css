@@ -826,6 +826,8 @@
 .footer-main {
     width: 100%;
     background-color: #02090A;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.055) 1.5px, transparent 1.5px);
+    background-size: 40px 40px;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     padding: 64px 40px;
 }
@@ -912,6 +914,8 @@
 .footer-legal-bar {
     width: 100%;
     background-color: #02090A;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.055) 1.5px, transparent 1.5px);
+    background-size: 40px 40px;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
     padding: 18px 40px;
 }
