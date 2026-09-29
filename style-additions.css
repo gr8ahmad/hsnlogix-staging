@@ -563,6 +563,31 @@
 }
 
 /* =====================================================
+   FEATURED PROJECTS — dot-grid pattern (dark-bg override)
+   Reuses .hero-pattern classes; inverts dot colour so the
+   radial dot-grid is visible on the near-black section bg.
+   ===================================================== */
+
+.projects-section__pattern {
+    /* Invert: light dots on dark bg instead of dark dots on light */
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.055) 1.5px, transparent 1.5px);
+    /* Sit behind project cards (which are z-index: 1 via .projects-inner) */
+    z-index: 0;
+}
+
+/* The dark blob is invisible on a near-black bg; suppress it */
+.projects-section__pattern .hero-pattern__blob--dark {
+    display: none;
+}
+
+/* Green glow blob: slightly stronger on dark to be perceptible */
+.projects-section__pattern .hero-pattern__blob--green {
+    background: rgba(130, 255, 31, 0.12);
+    right: 8%;
+    top: 15%;
+}
+
+/* =====================================================
    FEATURED PROJECTS — Visual redesign
    Match hero / services / addon-grid design language
    ===================================================== */
