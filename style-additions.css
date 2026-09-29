@@ -208,8 +208,7 @@
         gap: 12px;
     }
     .customer-hero__cta-group .cta-button {
-        width: 100%;
-        justify-content: space-between;
+        width: fit-content;
     }
 }
 
