@@ -347,6 +347,15 @@
     margin-top: 40px;
 }
 
+/* In-content CTA buttons sit in block containers and would otherwise stretch
+   to full width. Constrain them to fit-content to match the pill shape used
+   in the header and hero sections. */
+.case-study-cta .cta-button,
+.service-cta .cta-button,
+.wl-closing-cta .cta-button {
+    width: fit-content;
+}
+
 .case-study-quick-facts {
     display: flex;
     flex-wrap: wrap;
