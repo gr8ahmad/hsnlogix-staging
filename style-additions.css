@@ -592,17 +592,23 @@
    Match hero / services / addon-grid design language
    ===================================================== */
 
-/* Grid: horizontal padding + gutters matching addon-grid (12px).
+/* Grid: horizontal padding + gutters.
    Target the grid containers directly so the process-header (which already
    has its own padding: 0 40px) doesn't get double-padded. */
 .projects-section .projects-grid,
 .projects-section .projects-small-container {
     padding-left: 40px;
     padding-right: 40px;
-    gap: 12px;
+}
+.projects-section .projects-grid {
+    gap: 40px;
+    margin-bottom: 40px;
+}
+.projects-section .projects-small-container {
+    gap: 30px;
 }
 .projects-section .projects-grid-small {
-    gap: 12px;
+    gap: 30px;
 }
 
 /* Cards: full borders all sides + rounded corners (16px = addon-card) */
@@ -707,6 +713,7 @@
 }
 .projects-section .view-all-text {
     color: #82FF1F;
+    white-space: nowrap;
 }
 .projects-section .view-all-icon svg {
     fill: #82FF1F;
