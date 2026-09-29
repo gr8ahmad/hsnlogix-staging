@@ -38,24 +38,15 @@
 
 /* ---------- Customer-first hero (sits above the personal hero) ---------- */
 .customer-hero {
-    background-color: #EEF3E9;
-    display: flex;
-    flex-direction: column;
+    /* background-color, display, flex-direction, min-height inlined in index.html <head> for LCP */
     align-items: stretch;
     width: 100%;
-    min-height: 100vh;
-    min-height: 100svh;
     position: relative;
     overflow: hidden;
 }
 
 .customer-hero__inner {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    padding: 130px 40px 48px;
-    width: 100%;
-    box-sizing: border-box;
+    /* flex, display, align-items, padding, width, box-sizing inlined in index.html <head> for LCP */
     position: relative;
     z-index: 1;
 }
@@ -76,16 +67,7 @@
     justify-content: flex-start;
 }
 
-.customer-hero__headline {
-    font-family: 'Manrope', sans-serif;
-    font-weight: 700;
-    font-size: clamp(62px, 4.3vw, 112px);
-    letter-spacing: -2px;
-    line-height: 1.1;
-    color: #0A0A0A;
-    max-width: clamp(700px, 49vw, 1200px);
-    margin: 0 0 16px;
-}
+/* .customer-hero__headline — all visual properties inlined in index.html <head> for LCP; nothing to redeclare here */
 
 .customer-hero__subhead {
     font-family: 'Manrope', sans-serif;
@@ -186,19 +168,8 @@
 }
 
 @media (max-width: 640px) {
-    .customer-hero {
-        min-height: 100svh;
-    }
-    .customer-hero__inner {
-        padding: 110px 24px 48px;
-        align-items: center;
-    }
-    .customer-hero__headline {
-        font-size: 52px;
-        letter-spacing: -1.8px;
-        line-height: 1.05;
-        margin-bottom: 20px;
-    }
+    /* .customer-hero, .customer-hero__inner, .customer-hero__headline mobile overrides
+       inlined in index.html <head> for LCP — not redeclared here */
     .customer-hero__subhead {
         font-size: 16px;
         line-height: 1.6;

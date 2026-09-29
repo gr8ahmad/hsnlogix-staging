@@ -21,8 +21,17 @@
 <meta property="og:url" content="https://hsnlogix.com/">
   <title>HSNLOGIX | Shopify Development &amp; AI-Powered Ecommerce</title>
 
-  <link rel="stylesheet" href="style.css?v=footer-dots">
-  <link rel="stylesheet" href="style-additions.css?v=footer-dots">
+  <!-- LCP-critical CSS: hero background + headline render — no duplication with deferred files -->
+  <style>
+    .customer-hero{background-color:#EEF3E9;display:flex;flex-direction:column;min-height:100vh;min-height:100svh}
+    .customer-hero__inner{flex:1;display:flex;align-items:center;padding:130px 40px 48px;width:100%;box-sizing:border-box}
+    .customer-hero__headline{font-weight:700;font-size:clamp(62px,4.3vw,112px);letter-spacing:-2px;line-height:1.1;color:#0A0A0A;max-width:clamp(700px,49vw,1200px);margin:0 0 16px}
+    @media(max-width:640px){.customer-hero{min-height:100svh}.customer-hero__inner{padding:110px 24px 48px;align-items:center}.customer-hero__headline{font-size:52px;letter-spacing:-1.8px;line-height:1.05;margin-bottom:20px}}
+  </style>
+  <link rel="stylesheet" href="style.css?v=footer-dots" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="style.css?v=footer-dots"></noscript>
+  <link rel="stylesheet" href="style-additions.css?v=footer-dots" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="style-additions.css?v=footer-dots"></noscript>
   <link rel="stylesheet" href="aos.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="aos.css"></noscript>
 
