@@ -732,18 +732,30 @@
 
 /* ---- Agency CTA ---- */
 .footer-cta {
+    position: relative;
+    overflow: hidden;
     background-color: #02090A;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     padding: 96px 40px;
-    text-align: center;
 }
 .footer-cta__inner {
-    max-width: 680px;
+    position: relative;
+    z-index: 1;
+    max-width: 1320px;
     margin: 0 auto;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    gap: 28px;
+    justify-content: space-between;
+    gap: 60px;
+}
+.footer-cta__text {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
 }
 .footer-cta__eyebrow {
     display: inline-flex;
@@ -786,15 +798,31 @@
 }
 .footer-cta__actions {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: stretch;
     gap: 12px;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 0;
+    flex-shrink: 0;
+    width: 260px;
+}
+
+/* Dot-grid pattern overlay for footer CTA */
+.footer-cta__pattern {
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.055) 1.5px, transparent 1.5px);
+    z-index: 0;
+}
+.footer-cta__pattern .hero-pattern__blob--dark {
+    display: none;
+}
+.footer-cta__pattern .hero-pattern__blob--green {
+    background: rgba(130, 255, 31, 0.12);
+    right: 10%;
+    top: 10%;
+    left: auto;
 }
 
 /* ---- Multi-column footer ---- */
 .footer-main {
+    width: 100%;
     background-color: #02090A;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     padding: 64px 40px;
@@ -880,6 +908,7 @@
 
 /* ---- Legal bar ---- */
 .footer-legal-bar {
+    width: 100%;
     background-color: #02090A;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
     padding: 18px 40px;
@@ -926,17 +955,32 @@
         max-width: none;
     }
 }
+@media (max-width: 900px) {
+    .footer-cta__inner {
+        gap: 40px;
+    }
+    .footer-cta__actions {
+        width: 220px;
+    }
+}
 @media (max-width: 640px) {
     .footer-cta {
         padding: 72px 24px;
     }
+    .footer-cta__inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 36px;
+    }
+    .footer-cta__text {
+        gap: 20px;
+    }
+    .footer-cta__actions {
+        width: 100%;
+    }
     .footer-cta__headline {
         font-size: 36px;
         letter-spacing: -1.2px;
-    }
-    .footer-cta__actions {
-        flex-direction: column;
-        align-items: stretch;
     }
     .footer-main {
         padding: 48px 24px;
