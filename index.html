@@ -230,10 +230,11 @@ Cal("init", {origin:"https://cal.com"});
     const track = ticker.querySelector('.ticker-list');
     const items = Array.from(track.children);
 
+    const trackGap = parseFloat(getComputedStyle(track).gap) || parseFloat(getComputedStyle(track).columnGap) || 0;
     let loopWidth = 0;
     items.forEach(item => {
       const style = getComputedStyle(item);
-      loopWidth += item.offsetWidth + parseFloat(style.marginLeft) + parseFloat(style.marginRight);
+      loopWidth += item.offsetWidth + parseFloat(style.marginLeft) + parseFloat(style.marginRight) + trackGap;
     });
 
     // Duplicate enough times to fill the container at any viewport width

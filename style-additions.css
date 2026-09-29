@@ -65,6 +65,16 @@
     z-index: 1;
 }
 
+/* Override the generic .stats-container max-width (1320px) that belongs to
+   the stats-cards section — the ticker's inner container must span the full
+   hero width so the scrolling track isn't constrained to 1240px */
+.stats-ticker .stats-container {
+    max-width: none;
+    padding: 0;
+    gap: 0;
+    justify-content: flex-start;
+}
+
 .customer-hero__headline {
     font-family: 'Manrope', sans-serif;
     font-weight: 700;
