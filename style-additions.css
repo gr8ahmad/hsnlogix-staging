@@ -732,11 +732,13 @@
 
 /* ---- Agency CTA ---- */
 .footer-cta {
+    width: 100%;
     position: relative;
     overflow: hidden;
     background-color: #02090A;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     padding: 96px 40px;
+    box-sizing: border-box;
 }
 .footer-cta__inner {
     position: relative;
@@ -746,8 +748,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    gap: 60px;
+    gap: 0;
 }
 .footer-cta__text {
     flex: 1;
@@ -797,12 +798,12 @@
     margin: 0;
 }
 .footer-cta__actions {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
+    justify-content: center;
     gap: 12px;
-    flex-shrink: 0;
-    width: 260px;
 }
 
 /* Dot-grid pattern overlay for footer CTA */
@@ -955,14 +956,6 @@
         max-width: none;
     }
 }
-@media (max-width: 900px) {
-    .footer-cta__inner {
-        gap: 40px;
-    }
-    .footer-cta__actions {
-        width: 220px;
-    }
-}
 @media (max-width: 640px) {
     .footer-cta {
         padding: 72px 24px;
@@ -976,6 +969,7 @@
         gap: 20px;
     }
     .footer-cta__actions {
+        align-items: flex-start;
         width: 100%;
     }
     .footer-cta__headline {
