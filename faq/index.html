@@ -9,14 +9,14 @@
   <link rel="manifest" href="/hsnlogix-staging/site.webmanifest" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A fast-loading, conversion-focused storefront built to let premium wall art do the selling.">
+  <meta name="description" content="Shopify and web development insights from HSNLOGIX.">
   <meta name="robots" content="noindex, nofollow">
-  <link rel="canonical" href="https://hsnlogix.com/case-studies/laboostudio/">
-  <meta property="og:title" content="Custom Shopify Store for a Premium Wall Art Brand — Laboostudio">
-  <meta property="og:description" content="A fast-loading, conversion-focused storefront built to let premium wall art do the selling.">
+  <link rel="canonical" href="https://hsnlogix.com/faq/">
+  <meta property="og:title" content="FAQ">
+  <meta property="og:description" content="Shopify and web development insights from HSNLOGIX.">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://hsnlogix.com/case-studies/laboostudio/">
-  <title>Custom Shopify Store for a Premium Wall Art Brand — Laboostudio | HSNLOGIX Blog</title>
+  <meta property="og:url" content="https://hsnlogix.com/faq/">
+  <title>FAQ | HSNLOGIX Blog</title>
 
   <!-- Same stylesheets as the main site, so header/footer/fonts match exactly -->
   <link rel="stylesheet" href="/hsnlogix-staging/style.css?v=shared-header">
@@ -30,23 +30,6 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-2XBBSKSGBJ');
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CreativeWork",
-    "name": "Custom Shopify Store for a Premium Wall Art Brand — Laboostudio",
-    "about": "Laboostudio",
-    "author": {
-      "@type": "Person",
-      "name": "Hussain A",
-      "url": "https://hsnlogix.com"
-    },
-    "description": "A fast-loading, conversion-focused storefront built to let premium wall art do the selling.",
-    "datePublished": "2026-08-28T00:00:00+00:00",
-    "url": "https://hsnlogix.com/case-studies/laboostudio/"
-  }
   </script>
 
   <!-- Cal.com Embed (same as the main site, needed for data-cal-link CTAs on this layout) -->
@@ -120,71 +103,226 @@
 
 
   <main class="blog-main container">
-    <article class="blog-post case-study">
-  <p class="blog-back"><a href="/hsnlogix-staging/case-studies/">&larr; Back to case studies</a></p>
+    <style>
+/* Override blog-main defaults for this page */
+.blog-main { padding: 0 !important; }
 
-  <div class="case-study-meta-tags">
-    <span class="case-study-tag">Shopify (custom theme build)</span>
-    <span class="case-study-tag">Home & Décor</span>
-  </div>
+.faq-page {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 80px 40px 100px;
+  box-sizing: border-box;
+}
 
-  <h1 class="blog-post-title">Custom Shopify Store for a Premium Wall Art Brand — Laboostudio</h1>
-  <p class="case-study-client">Client: <strong>Laboostudio</strong></p>
-  <time class="blog-post-date" datetime="2026-08-28T00:00:00+00:00">August 28, 2026</time>
+/* Page header */
+.faq-page__header {
+  margin-bottom: 56px;
+}
+.faq-page__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(130,255,31,0.08);
+  border: 1px solid rgba(130,255,31,0.25);
+  border-radius: 100px;
+  padding: 5px 14px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #2a6600;
+  margin-bottom: 20px;
+}
+.faq-page__eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #82FF1F;
+  flex-shrink: 0;
+}
+.faq-page__heading {
+  font-family: 'Manrope', sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  color: #0A0A0A;
+  margin: 0 0 16px;
+  line-height: 1.1;
+}
+.faq-page__heading span {
+  color: #2F2F2F;
+  font-weight: 400;
+}
+.faq-page__subhead {
+  font-family: 'Manrope', sans-serif;
+  font-size: 17px;
+  color: #555;
+  max-width: 520px;
+  margin: 0;
+  line-height: 1.65;
+}
 
-  
-  <div class="blog-post-featured-image">
-    <img src="/hsnlogix-staging/laboostudio.webp" alt="Laboostudio">
-  </div>
-  
+/* Reuse homepage .faq-item CSS from style.css — just add a subtle divider */
+.faq-page .faq-item + .faq-item {
+  border-top: 1px solid rgba(0,0,0,0.07);
+}
 
-  <div class="case-study-quick-facts">
-    
-    <div class="quick-fact">
-      <span class="quick-fact-label">Role</span>
-      <span class="quick-fact-value">Lead Shopify Developer</span>
+/* Ask CTA at the bottom */
+.faq-page__cta {
+  margin-top: 64px;
+  padding: 40px;
+  background: #f7faf4;
+  border: 1px solid rgba(130,255,31,0.3);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.faq-page__cta-text {
+  font-family: 'Manrope', sans-serif;
+}
+.faq-page__cta-text strong {
+  display: block;
+  font-size: 18px;
+  font-weight: 800;
+  color: #0A0A0A;
+  margin-bottom: 4px;
+}
+.faq-page__cta-text span {
+  font-size: 14px;
+  color: #555;
+}
+
+@media (max-width: 640px) {
+  .faq-page { padding: 56px 24px 80px; }
+  .faq-page__heading { font-size: 36px; letter-spacing: -1px; }
+  .faq-page__cta { flex-direction: column; align-items: flex-start; }
+}
+</style>
+
+<div class="faq-page">
+
+  <!-- Header -->
+  <div class="faq-page__header">
+    <div class="faq-page__eyebrow">
+      <span class="faq-page__eyebrow-dot"></span>
+      FAQ
     </div>
-    
-    
-    <div class="quick-fact">
-      <span class="quick-fact-label">Platform</span>
-      <span class="quick-fact-value">Shopify (custom theme build)</span>
-    </div>
-    
-    
-    
+    <h1 class="faq-page__heading">Still have questions?<br><span>We've got you covered.</span></h1>
+    <p class="faq-page__subhead">Everything you need to know before we get started. If it's not here, just ask.</p>
   </div>
 
-  
-  <div class="case-study-results">
-    <h2 class="case-study-results-title">Results</h2>
-    <p>Localized checkout in 40+ currencies for a global customer base, a size-comparison and gallery-wall planning tool that lets shoppers preview scale before buying, and a 4.9+/5 average review score across the catalog.</p>
-  </div>
-  
-
-  <div class="blog-post-body">
-    <h2 id="the-challenge">The Challenge</h2>
-
-<p>Laboostudio sells premium wall art, a category where the purchase decision is made almost entirely by the image itself. A generic Shopify theme built for general retail wasn’t going to do the artwork justice, and slow-loading, image-heavy product pages are exactly where visually-driven stores lose customers before they ever scroll to “Add to Cart.”</p>
-
-<h2 id="the-approach">The Approach</h2>
-
-<p>Built a custom theme from the ground up designed around the product, not around a template: large-format product imagery given full visual priority, clean navigation that gets out of the way, and custom collection pages structured for browsing rather than searching. Every design decision was weighed against load time, a wall art store lives or dies on the image being both large and fast, which is a harder technical problem than it sounds. On top of the core build, a custom size-comparison and gallery-wall planning tool was added so shoppers could preview how a piece would actually look at scale before buying, directly addressing the biggest hesitation point in art ecommerce. Checkout was configured for a global audience, supporting 40+ currencies, and tested end-to-end before launch.</p>
-
-<h2 id="the-result">The Result</h2>
-
-<p>A fast-loading, conversion-focused storefront that lets the product do the selling instead of fighting the theme for attention. The store now holds a 4.9+/5 average review score across its catalog, and the localized checkout and gallery-wall planning tool have become two of the store’s most-used features, turning a category built on hesitation into one built on confidence.</p>
-
-<p>Visit the live site: <a href="https://laboostudio.com">laboostudio.com</a></p>
-
-  </div>
-
-  
-  <div class="case-study-cta">
-    <a href="https://laboostudio.com" target="_blank" rel="noopener" class="cta-button">
-      <div class="button-text">
-        <p>Visit Laboostudio</p>
+  <!-- FAQ accordion — reuses .faq-item / .faq-question / .faq-answer from style.css -->
+  <div class="faq-questions">
+    
+    <div class="faq-item">
+      <div class="faq-question">
+        <div class="question-content">
+          <div class="question-text">
+            <p class="question-number">01/</p>
+            <p class="question-title">What's your usual project timeline?</p>
+          </div>
+          <div class="question-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+              <path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="faq-answer">
+          <p>Most theme development or customization projects are completed within 1 to 4 weeks, depending on the scope and level of detail required. Once I understand your requirements, I'll share a clear timeline with milestones for design setup, development, testing, and final delivery.</p>
+        </div>
       </div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question">
+        <div class="question-content">
+          <div class="question-text">
+            <p class="question-number">02/</p>
+            <p class="question-title">Do you provide ongoing support after the project?</p>
+          </div>
+          <div class="question-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+              <path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="faq-answer">
+          <p>Yes! I offer ongoing maintenance and support for Shopify stores. This can include performance improvements, bug fixes, layout tweaks, and updates to keep your theme running smoothly as your business evolves.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question">
+        <div class="question-content">
+          <div class="question-text">
+            <p class="question-number">03/</p>
+            <p class="question-title">Can you follow my existing brand guidelines?</p>
+          </div>
+          <div class="question-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+              <path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="faq-answer">
+          <p>Definitely. I make sure your Shopify store fully aligns with your brand's look and feel — colors, typography, layout, and visual tone. Whether you already have detailed brand guidelines or just a reference design, I can implement them precisely and maintain consistency across all pages.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question">
+        <div class="question-content">
+          <div class="question-text">
+            <p class="question-number">04/</p>
+            <p class="question-title">How do you handle revisions and feedback?</p>
+          </div>
+          <div class="question-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+              <path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="faq-answer">
+          <p>Revisions are part of the process. I provide structured feedback rounds where you can review progress and suggest adjustments. I value clear communication and make sure your feedback is implemented quickly and accurately until everything looks and functions as intended.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question">
+        <div class="question-content">
+          <div class="question-text">
+            <p class="question-number">05/</p>
+            <p class="question-title">How much does a Shopify project typically cost?</p>
+          </div>
+          <div class="question-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+              <path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="faq-answer">
+          <p>Projects typically range from $500 for smaller builds to $1,500+ for more advanced custom work, depending on scope. Ongoing maintenance and support starts at $300/month.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  <!-- Bottom CTA -->
+  <div class="faq-page__cta">
+    <div class="faq-page__cta-text">
+      <strong>Still have a question?</strong>
+      <span>Book a free call and we'll answer everything before you commit to anything.</span>
+    </div>
+    <a href="#" data-cal-link="hsnlogix" data-cal-config='{"layout":"month_view"}' rel="noopener" class="cta-button">
+      <div class="button-text"><p>Book a Call</p></div>
       <div class="button-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
           <path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path>
@@ -192,8 +330,73 @@
       </div>
     </a>
   </div>
-  
-</article>
+
+</div>
+
+<!-- FAQPage schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What's your usual project timeline?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most theme development or customization projects are completed within 1 to 4 weeks, depending on the scope and level of detail required. Once I understand your requirements, I'll share a clear timeline with milestones for design setup, development, testing, and final delivery."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide ongoing support after the project?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! I offer ongoing maintenance and support for Shopify stores. This can include performance improvements, bug fixes, layout tweaks, and updates to keep your theme running smoothly as your business evolves."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you follow my existing brand guidelines?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Definitely. I make sure your Shopify store fully aligns with your brand's look and feel — colors, typography, layout, and visual tone. Whether you already have detailed brand guidelines or just a reference design, I can implement them precisely and maintain consistency across all pages."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you handle revisions and feedback?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Revisions are part of the process. I provide structured feedback rounds where you can review progress and suggest adjustments. I value clear communication and make sure your feedback is implemented quickly and accurately until everything looks and functions as intended."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does a Shopify project typically cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Projects typically range from $500 for smaller builds to $1,500+ for more advanced custom work, depending on scope. Ongoing maintenance and support starts at $300/month."
+      }
+    }
+    
+  ]
+}
+</script>
+
+<!-- FAQ accordion JS (same logic as homepage) -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var items = document.querySelectorAll('.faq-page .faq-item');
+  items.forEach(function (item) {
+    item.querySelector('.faq-question').addEventListener('click', function () {
+      var isActive = item.classList.contains('active');
+      items.forEach(function (i) { i.classList.remove('active'); });
+      if (!isActive) item.classList.add('active');
+    });
+  });
+});
+</script>
 
   </main>
 
