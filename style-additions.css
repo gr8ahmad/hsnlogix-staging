@@ -190,7 +190,7 @@
     }
     .customer-hero__inner {
         padding: 110px 24px 48px;
-        align-items: flex-start;
+        align-items: center;
     }
     .customer-hero__headline {
         font-size: 52px;
