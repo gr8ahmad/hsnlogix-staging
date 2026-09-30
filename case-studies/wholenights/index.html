@@ -106,7 +106,7 @@
     <nav class="nav-drawer__nav">
         <!-- Shown in drawer only when inline header links are hidden (< 480px) -->
         <a href="/hsnlogix-staging/case-studies/" class="nav-drawer__link nav-drawer__link--mobile-only">Case Studies</a>
-        <a href="/hsnlogix-staging/#testimonials" class="nav-drawer__link nav-drawer__link--mobile-only">Testimonials</a>
+        <a href="/hsnlogix-staging/testimonials/" class="nav-drawer__link nav-drawer__link--mobile-only">Testimonials</a>
         <!-- Always in drawer -->
         <a href="/hsnlogix-staging/services/" class="nav-drawer__link">Services</a>
         <a href="/hsnlogix-staging/faq/" class="nav-drawer__link">FAQs</a>
@@ -118,7 +118,36 @@
 
   <main class="blog-main container">
     <article class="blog-post case-study">
-  <p class="blog-back"><a href="/hsnlogix-staging/case-studies/">&larr; Back to case studies</a></p>
+  <style>
+.breadcrumbs__inner {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  padding: 0.5rem 0;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+  font-size: 0.8rem;
+}
+.breadcrumb-link { color: #888; text-decoration: none; }
+.breadcrumb-link:hover { color: #111; text-decoration: underline; }
+.breadcrumb-sep { color: #bbb; }
+.breadcrumb-current { color: #111; font-weight: 600; }
+</style>
+<nav aria-label="Breadcrumb">
+  <div class="breadcrumbs__inner">
+    <a href="/hsnlogix-staging/" class="breadcrumb-link">Home</a>
+    
+    <span class="breadcrumb-sep" aria-hidden="true">/</span>
+    <a href="/hsnlogix-staging/case-studies/" class="breadcrumb-link">Case Studies</a>
+    
+    
+    <span class="breadcrumb-sep" aria-hidden="true">/</span>
+    <span class="breadcrumb-current" aria-current="page">WholeNights</span>
+    
+  </div>
+</nav>
+
 
   <div class="case-study-meta-tags">
     <span class="case-study-tag">Shopify (Dawn, custom Liquid)</span>
@@ -274,7 +303,7 @@
           <ul class="footer-col__links">
             <li><a href="/hsnlogix-staging/case-studies/">Case Studies</a></li>
             <li><a href="/hsnlogix-staging/white-label/">White-Label Development</a></li>
-            <li><a href="/hsnlogix-staging/#testimonials">Testimonials</a></li>
+            <li><a href="/hsnlogix-staging/testimonials/">Testimonials</a></li>
             <li><a href="/hsnlogix-staging/#faqs">FAQ</a></li>
             <li><a href="/hsnlogix-staging/team/hussain/">Meet Hussain</a></li>
           </ul>

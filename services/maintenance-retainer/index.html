@@ -105,7 +105,7 @@
     <nav class="nav-drawer__nav">
         <!-- Shown in drawer only when inline header links are hidden (< 480px) -->
         <a href="/hsnlogix-staging/case-studies/" class="nav-drawer__link nav-drawer__link--mobile-only">Case Studies</a>
-        <a href="/hsnlogix-staging/#testimonials" class="nav-drawer__link nav-drawer__link--mobile-only">Testimonials</a>
+        <a href="/hsnlogix-staging/testimonials/" class="nav-drawer__link nav-drawer__link--mobile-only">Testimonials</a>
         <!-- Always in drawer -->
         <a href="/hsnlogix-staging/services/" class="nav-drawer__link">Services</a>
         <a href="/hsnlogix-staging/faq/" class="nav-drawer__link">FAQs</a>
@@ -116,14 +116,116 @@
 
 
   <main class="blog-main container">
-    <article class="blog-post service-page">
-  <p class="blog-back"><a href="/hsnlogix-staging/#services">&larr; Back to services</a></p>
+    <style>
+.service-hero {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+.service-hero__content { min-width: 0; }
+.service-hero__eyebrow { margin-bottom: 0.75rem; }
+.service-hero__icon-wrap {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  background: rgba(0,0,0,0.05);
+  flex-shrink: 0;
+}
+.service-hero__icon-wrap svg {
+  width: 40px;
+  height: 40px;
+}
+.service-hero__cta { margin-top: 1.25rem; }
+.related-services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+@media (max-width: 600px) {
+  .service-hero {
+    grid-template-columns: 1fr;
+  }
+  .service-hero__icon-wrap {
+    order: -1;
+    width: 64px;
+    height: 64px;
+    margin-bottom: 0.25rem;
+  }
+  .service-hero__icon-wrap svg {
+    width: 32px;
+    height: 32px;
+  }
+}
+</style>
+<article class="blog-post service-page">
 
-  <h1 class="blog-post-title">Ongoing Maintenance Retainer</h1>
+  <style>
+.breadcrumbs__inner {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  padding: 0.5rem 0;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+  font-size: 0.8rem;
+}
+.breadcrumb-link { color: #888; text-decoration: none; }
+.breadcrumb-link:hover { color: #111; text-decoration: underline; }
+.breadcrumb-sep { color: #bbb; }
+.breadcrumb-current { color: #111; font-weight: 600; }
+</style>
+<nav aria-label="Breadcrumb">
+  <div class="breadcrumbs__inner">
+    <a href="/hsnlogix-staging/" class="breadcrumb-link">Home</a>
+    
+    <span class="breadcrumb-sep" aria-hidden="true">/</span>
+    <a href="/hsnlogix-staging/services/" class="breadcrumb-link">Services</a>
+    
+    
+    <span class="breadcrumb-sep" aria-hidden="true">/</span>
+    <span class="breadcrumb-current" aria-current="page">Ongoing Maintenance Retainer</span>
+    
+  </div>
+</nav>
+
 
   
-  <p class="service-intro">Your store, looked after. Monthly retainer coverage so updates, fixes, and small improvements happen without you having to chase anyone down.</p>
   
+
+  <div class="service-hero">
+    <div class="service-hero__content">
+      <div class="service-hero__eyebrow">
+        <div class="tag-badge"><div class="tag-text">Shopify Service</div></div>
+      </div>
+      <h1 class="blog-post-title">Ongoing Maintenance Retainer</h1>
+      <p class="service-intro">Your store, looked after. Monthly retainer coverage so updates, fixes, and small improvements happen without you having to chase anyone down.</p>
+      <div class="service-hero__cta">
+        <a href="#" data-cal-link="hsnlogix" data-cal-config='{"layout":"month_view"}' rel="noopener" class="cta-button">
+          <div class="button-text">
+            <p>Set up a retainer</p>
+          </div>
+          <div class="button-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="service-hero__icon-wrap" aria-hidden="true">
+      
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l7 4v6c0 5-3.5 8-7 10-3.5-2-7-5-7-10V6l7-4z"></path></svg>
+
+
+    </div>
+  </div>
 
   
   <div class="service-section">
@@ -170,6 +272,64 @@
     <h2 class="service-section-title">How It Works</h2>
     <div class="blog-post-body">
       <p>Choose a monthly hour tier → we handle requests as they come in, plus proactive checks → monthly summary of what was done.</p>
+    </div>
+  </div>
+  
+
+  
+  
+  <div class="service-section">
+    <h2 class="service-section-title">Related Services</h2>
+    <div class="related-services-grid">
+      
+        
+        
+        
+        <a href="/hsnlogix-staging/services/troubleshooting-support/" class="addon-card">
+          <div class="addon-visual">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 1-5.4 5.4L4 17l3 3 5.3-5.3a4 4 0 0 1 5.4-5.4l-2.2 2.2-2-2z"></path></svg>
+
+</div>
+          <div class="addon-body">
+            <span class="addon-title">Troubleshooting & Support</span>
+            <p class="addon-desc">Fast, direct Shopify troubleshooting when things break — theme issues, app conflicts, checkout errors, and post-update regressions fixed without a week of back-and-forth.</p>
+            <span class="addon-link">Learn more &rarr;</span>
+          </div>
+        </a>
+        
+      
+        
+        
+        
+        <a href="/hsnlogix-staging/services/website-audit/" class="addon-card">
+          <div class="addon-visual">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><path d="M8 11h6"></path></svg>
+
+</div>
+          <div class="addon-body">
+            <span class="addon-title">Website Audit & Performance</span>
+            <p class="addon-desc">Full Shopify store audit covering Core Web Vitals, app bloat, image optimization, and render-blocking code — with a prioritized fix list that actually moves the needle.</p>
+            <span class="addon-link">Learn more &rarr;</span>
+          </div>
+        </a>
+        
+      
+        
+        
+        
+        <a href="/hsnlogix-staging/services/conversion-rate-optimization/" class="addon-card">
+          <div class="addon-visual">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"></path><path d="M15 7h6v6"></path></svg>
+
+</div>
+          <div class="addon-body">
+            <span class="addon-title">Conversion Rate Optimization</span>
+            <p class="addon-desc">Data-driven Shopify CRO — funnel analysis, product page optimization, cart and checkout friction reduction, and A/B testing to close the gap between visitors and buyers.</p>
+            <span class="addon-link">Learn more &rarr;</span>
+          </div>
+        </a>
+        
+      
     </div>
   </div>
   
@@ -260,7 +420,7 @@
           <ul class="footer-col__links">
             <li><a href="/hsnlogix-staging/case-studies/">Case Studies</a></li>
             <li><a href="/hsnlogix-staging/white-label/">White-Label Development</a></li>
-            <li><a href="/hsnlogix-staging/#testimonials">Testimonials</a></li>
+            <li><a href="/hsnlogix-staging/testimonials/">Testimonials</a></li>
             <li><a href="/hsnlogix-staging/#faqs">FAQ</a></li>
             <li><a href="/hsnlogix-staging/team/hussain/">Meet Hussain</a></li>
           </ul>
