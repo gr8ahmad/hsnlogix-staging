@@ -658,20 +658,196 @@
   </div>
 </section>
 
-<section class="hsnlogix-portfolio founder-section">
-    <div class="testimonials-header">
-        <div class="header-content">
-            <div class="tag-badge">
-                <div class="tag-text">about</div>
-            </div>
-            <div class="headline-container">
-                <h2 class="headline-text">Who's Behind HSNLOGIX</h2>
-            </div>
+<style>
+.founder-section {
+  background-color: #02090A;
+  padding: 80px 40px;
+  overflow: hidden;
+}
+.founder-section__inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.founder-section__photo-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+.founder-section .hsn-logix-profile-pic {
+  width: 160px;
+  height: 160px;
+}
+.founder-section .hsn-logix-img-wrapper img {
+  object-position: top center;
+  border: 2px solid #82FF1F;
+  box-shadow: 0 0 32px rgba(130, 255, 31, 0.18);
+  border-radius: 50%;
+}
+.founder-name-pill {
+  background: #fff;
+  border-radius: 110px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 24px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+.founder-name-pill span {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.5px;
+  color: #2F2F2F;
+}
+.founder-expert-pill {
+  background: #2F2F2F;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 110px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+}
+.founder-expert-pill span {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
+}
+.founder-upwork-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 100px;
+  padding: 8px 16px 8px 10px;
+  text-decoration: none;
+  color: rgba(255,255,255,0.8);
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  transition: border-color 0.2s, background 0.2s;
+}
+.founder-upwork-badge:hover {
+  border-color: rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.12);
+}
+.founder-upwork-badge img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+.founder-section__text-col h2 {
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(28px, 3.5vw, 42px);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  color: #fff;
+  margin: 0 0 20px;
+  line-height: 1.1;
+}
+.founder-section__text-col p {
+  font-family: 'Manrope', sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.65);
+  margin: 0 0 32px;
+  max-width: 520px;
+}
+.founder-section__actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+@media (max-width: 800px) {
+  .founder-section {
+    padding: 60px 24px;
+  }
+  .founder-section__inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .founder-section__photo-col {
+    align-items: flex-start;
+  }
+  .founder-section__text-col h2 {
+    font-size: 28px;
+  }
+}
+@media (max-width: 480px) {
+  .founder-section__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .founder-section__actions .cta-button {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+</style>
+
+<section class="founder-section">
+  <div class="founder-section__inner">
+
+    <!-- LEFT: Photo / badge block (from hsnlogix-updated profile-section pattern) -->
+    <div class="founder-section__photo-col">
+      <div class="hsn-logix-avatar">
+        <div class="hsn-logix-profile-pic">
+          <div class="hsn-logix-img-wrapper">
+            <img
+              src="/hsnlogix-staging/hussain-profile-picture.webp"
+              alt="Hussain Ahmad — Senior Shopify Developer"
+            />
+          </div>
         </div>
-        <div class="description">
-            <p>HSNLOGIX is led by Hussain Ahmad, a senior Shopify developer with 7+ years of hands-on experience and Top Rated status on Upwork across 180+ completed projects and 92 client reviews. As HSNLOGIX grows into a small team, every project is still scoped and overseen directly by Hussain, so you're working with the person who actually builds Shopify stores, not an account manager layer.</p>
-        </div>
+      </div>
+      <div class="founder-name-pill">
+        <span>Hussain A.</span>
+      </div>
+      <div class="founder-expert-pill">
+        <span>Shopify Expert</span>
+      </div>
+      <a
+        href="https://www.upwork.com/freelancers/~01e91c15509859436e"
+        target="_blank"
+        rel="noopener"
+        class="founder-upwork-badge"
+      >
+        <img src="/hsnlogix-staging/upwork-icon.webp" alt="">
+        Top Rated on Upwork
+      </a>
     </div>
+
+    <!-- RIGHT: Heading, description, and CTA buttons -->
+    <div class="founder-section__text-col">
+      <h2>Who's Behind HSNLOGIX</h2>
+      <p>HSNLOGIX is led by Hussain Ahmad, a senior Shopify developer with 7+ years of hands-on experience and Top Rated status on Upwork across 180+ completed projects and 92 client reviews. As HSNLOGIX grows into a small team, every project is still scoped and overseen directly by Hussain, so you're working with the person who actually builds Shopify stores, not an account manager layer.</p>
+      <div class="founder-section__actions">
+        <a href="https://www.upwork.com/freelancers/~01e91c15509859436e" target="_blank" rel="noopener" class="cta-button">
+          <div class="button-text"><p>View Upwork Profile</p></div>
+          <div class="button-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>
+          </div>
+        </a>
+        <a href="#" data-cal-link="hsnlogix" data-cal-config='{"layout":"month_view"}' rel="noopener" class="cta-button cta-button--dark">
+          <div class="button-text"><p>Book a Call</p></div>
+          <div class="button-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>
+          </div>
+        </a>
+      </div>
+    </div>
+
+  </div>
 </section>
 
 <section class="hsnlogix-portfolio" id="testimonials">
