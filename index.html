@@ -666,22 +666,39 @@
   overflow: hidden;
   width: 100%;
   box-sizing: border-box;
+  position: relative;
 }
+
+/* Dot-grid + glow pattern (identical treatment to footer-cta and projects-section) */
+.founder-section__pattern {
+  background-image: radial-gradient(circle, rgba(255,255,255,0.055) 1.5px, transparent 1.5px);
+  z-index: 0;
+}
+.founder-section__pattern .hero-pattern__blob--dark { display: none; }
+.founder-section__pattern .hero-pattern__blob--green {
+  background: rgba(130, 255, 31, 0.12);
+  right: 10%;
+  top: 10%;
+  left: auto;
+}
+
 .founder-section__inner {
   max-width: 1320px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 /* --- Left: photo / name / title / badge column --- */
 .founder-section__photo-col {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 0;
+  align-items: center;
+  gap: 16px;
 }
 /* Reset conflicting profile-section rules from footer context */
 .founder-section .profile-section {
@@ -741,21 +758,40 @@
   margin: 0;
 }
 .founder-section .social-link {
+  display: block;
+  width: 35px;
+  text-decoration: none;
+}
+.founder-section .social-link img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* "Top Rated on Upwork" pill — restored from b8009e2 */
+.founder-upwork-badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  width: auto;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 100px;
+  padding: 8px 16px 8px 10px;
   text-decoration: none;
   color: rgba(255,255,255,0.8);
   font-family: 'Manrope', sans-serif;
   font-size: 13px;
   font-weight: 600;
+  transition: border-color 0.2s, background 0.2s;
 }
-.founder-section .social-link img {
+.founder-upwork-badge:hover {
+  border-color: rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.12);
+}
+.founder-upwork-badge img {
   width: 22px;
   height: 22px;
   object-fit: contain;
-  flex-shrink: 0;
 }
 
 /* --- Right: text column --- */
@@ -782,6 +818,9 @@
   gap: 12px;
   flex-wrap: wrap;
 }
+.founder-section__actions .cta-button {
+  flex-shrink: 0;
+}
 
 /* --- Responsive --- */
 @media (max-width: 800px) {
@@ -791,6 +830,9 @@
   .founder-section__inner {
     grid-template-columns: 1fr;
     gap: 2.5rem;
+  }
+  .founder-section__photo-col {
+    align-items: flex-start;
   }
   .founder-section__text-col h2 {
     font-size: 28px;
@@ -809,9 +851,16 @@
 </style>
 
 <section class="founder-section">
+  <div class="hero-pattern founder-section__pattern" aria-hidden="true">
+    <div class="hero-pattern__blob hero-pattern__blob--green"></div>
+    <div class="hero-pattern__blob hero-pattern__blob--dark"></div>
+    <div class="hero-pattern__dot hero-pattern__dot--glow" style="width:5px;height:5px;left:18%;top:30%;"></div>
+    <div class="hero-pattern__dot" style="width:8px;height:8px;left:6%;top:60%;"></div>
+    <div class="hero-pattern__dot hero-pattern__dot--glow" style="width:4px;height:4px;right:12%;top:70%;"></div>
+  </div>
   <div class="founder-section__inner">
 
-    <!-- LEFT: Photo / name / title / badge block (verbatim from hsnlogix-updated/index.html profile-section, lines 111–137) -->
+    <!-- LEFT: Photo / name / title / badge column -->
     <div class="founder-section__photo-col">
       <div class="profile-section">
         <div class="profile-content">
@@ -833,14 +882,17 @@
               <div class="title">
                 <p class="title-text">Senior Shopify Theme Developer</p>
                 <a href="https://www.upwork.com/freelancers/~01e91c15509859436e" target="_blank" rel="noopener" class="social-link">
-                  <img src="/hsnlogix-staging/upwork-icon.webp" alt="">
-                  Top Rated on Upwork
+                  <img src="/hsnlogix-staging/upwork-icon.webp" alt="Upwork" width="35" height="35">
                 </a>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <a href="https://www.upwork.com/freelancers/~01e91c15509859436e" target="_blank" rel="noopener" class="founder-upwork-badge">
+        <img src="/hsnlogix-staging/upwork-icon.webp" alt="">
+        Top Rated on Upwork
+      </a>
     </div>
 
     <!-- RIGHT: Heading, description, and CTA buttons -->
