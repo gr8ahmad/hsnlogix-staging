@@ -1274,3 +1274,10 @@
   .faq-page { padding: 56px 24px 80px; }
   .faq-page__cta { flex-direction: column; align-items: flex-start; }
 }
+
+/* ─── Footer logo HSN wordmark fix ──────────────────────────────────────────
+   Base .logo-hsn { color: #2B2B2B } in style.css would render dark grey on
+   the dark footer background. The existing .footer-logo span.logo-hsn rule
+   in style.css targets the old .footer-logo class; the current footer uses
+   .logo, so we override here with the correct selector. */
+.footer .logo .logo-hsn { color: #fff; }
