@@ -1164,6 +1164,7 @@
   background: rgba(130,255,31,0.08);
   border-color: rgba(130,255,31,0.25);
   margin-top: 20px;
+  width: fit-content;
 }
 .page-hero .tag-text { color: var(--accent-on-light); }
 /* Heading */
@@ -1217,7 +1218,8 @@
   align-items: center;
   justify-content: center;
   border-radius: 18px;
-  background: rgba(0,0,0,0.05);
+  background: #162019;
+  color: #82FF1F;
   flex-shrink: 0;
 }
 .service-hero__icon-wrap svg { width: 40px; height: 40px; }

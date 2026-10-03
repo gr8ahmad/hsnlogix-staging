@@ -352,6 +352,7 @@
    in the header and hero sections. */
 .case-study-cta .cta-button,
 .service-cta .cta-button,
+.service-hero__cta .cta-button,
 .wl-closing-cta .cta-button {
     width: fit-content;
 }
@@ -462,6 +463,7 @@
 
 .feature-grid-item {
     background: #F7F7F7;
+    border: 1px solid rgba(0,0,0,0.08);
     border-radius: 16px;
     padding: 24px 28px;
 }
@@ -489,6 +491,7 @@
 .wl-process-step {
     display: block;
     background: #F7F7F7;
+    border: 1px solid rgba(0,0,0,0.08);
     border-radius: 16px;
     padding: 24px 28px;
     position: relative;
