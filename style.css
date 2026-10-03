@@ -225,7 +225,7 @@ body {
 
  /* Projects Section Styles */
 .projects-section {
- background-color: #02090A;
+ background: radial-gradient(60% 50% at 80% 0%, rgba(130,255,31,0.10), transparent 70%), var(--bg-lifted);
  color: #fff;
  display: flex;
  flex-direction: column;
@@ -1437,18 +1437,18 @@ body {
  width: 100%;
 }
 .addon-card {
- border: 1px solid #262626;
+ border: 1px solid var(--line);
  border-radius: 16px;
  overflow: hidden;
  display: flex;
  flex-direction: column;
- background: #131311;
+ background: var(--bg-card);
  text-decoration: none;
  transition: background 0.3s ease, border-color 0.3s ease;
 }
 .addon-card:hover {
- background: #181815;
- border-color: #333;
+ background: var(--bg-card-hover);
+ border-color: var(--line);
 }
 .addon-visual {
  height: 110px;

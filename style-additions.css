@@ -1,3 +1,13 @@
+:root {
+  --bg-base: #02090A;
+  --bg-lifted: #0A1314;
+  --bg-card: #101B1C;
+  --bg-card-hover: #162425;
+  --line: rgba(255,255,255,0.08);
+  --accent: #82FF1F;
+  --accent-on-light: #2F7A00;
+}
+
 /* ============================================
    HSNLogix style.css
    ============================================
@@ -624,14 +634,16 @@
 
 /* Cards: full borders all sides + rounded corners (16px = addon-card) */
 .projects-section .project-card {
-    border: 1px solid #262626;
+    background: var(--bg-card);
+    border: 1px solid var(--line);
     border-radius: 16px;
     overflow: hidden;
     transition: background-color 0.25s ease, border-color 0.25s ease,
                 box-shadow 0.25s ease;
 }
 .projects-section .project-card-small {
-    border: 1px solid #262626;
+    background: var(--bg-card);
+    border: 1px solid var(--line);
     border-radius: 16px;
     overflow: hidden;
     transition: background-color 0.25s ease, border-color 0.25s ease,
@@ -641,7 +653,7 @@
 /* Hover: lime glow (mirrors hero glowing accent dot motif) */
 .projects-section .project-card:hover,
 .projects-section .project-card-small:hover {
-    background-color: #081210;
+    background: var(--bg-card-hover);
     border-color: rgba(130, 255, 31, 0.5);
     box-shadow: 0 0 0 1px rgba(130, 255, 31, 0.12),
                 0 0 24px rgba(130, 255, 31, 0.12),
@@ -1062,4 +1074,13 @@
     .faq-header {
         padding: 0 0 30px;
     }
+}
+
+/* Light-section accent override: .hsnlogix-portfolio + .faq-section have light/white
+   backgrounds where neon #82FF1F is unreadable — use the darker on-light variant */
+.hsnlogix-portfolio .tag-text,
+.hsnlogix-portfolio .badge-text,
+.faq-section .tag-text,
+.faq-section .badge-text {
+    color: var(--accent-on-light);
 }
