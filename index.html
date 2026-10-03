@@ -1,6 +1,3 @@
-﻿---
-date: 2026-09-29
----
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +12,7 @@ date: 2026-09-29
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="HSNLOGIX builds and scales Shopify stores with custom development, performance engineering, and AI-powered solutions for ambitious D2C brands.">
-  <meta name="robots" content="{{ site.robots | default: 'index, follow' }}">
+  <meta name="robots" content="noindex, nofollow">
   <link rel="canonical" href="https://hsnlogix.com/">
 <meta property="og:title" content="HSNLOGIX | Shopify Development & AI-Powered Ecommerce">
 <meta property="og:description" content="HSNLOGIX builds and scales Shopify stores with custom development, performance engineering, and AI-powered solutions for ambitious D2C brands.">
@@ -111,8 +108,68 @@ date: 2026-09-29
 </head>
 <body>
   <!-- HEADER -->
-{% include header.html %}
-{% include nav-drawer.html %}
+<header class="site-header">
+  <div class="container site-header__inner">
+    <!-- Logo — far left -->
+    <div class="logo">
+      <a href="/hsnlogix-staging/">
+        <span class="logo-hsn">HSN</span>
+        <span class="logo-logix">Logix</span>
+      </a>
+    </div>
+
+    <!-- Right-side group: inline links + CTA + hamburger -->
+    <div class="header-right">
+      <!-- Inline nav links (hidden below 480px, those widths use the drawer) -->
+      <nav class="header-inline-nav" aria-label="Primary navigation">
+        <a href="/hsnlogix-staging/case-studies/" class="header-inline-link">Case Studies</a>
+        <a href="/hsnlogix-staging/#testimonials" class="header-inline-link">Testimonials</a>
+      </nav>
+
+      <!-- Book a Call -->
+      <a href="https://cal.com/hsnlogix" data-cal-link="hsnlogix" data-cal-config='{"layout":"month_view"}' rel="noopener" class="cta-button header-cta">
+        <div class="button-text">
+          <p>Book a Call</p>
+        </div>
+        <div class="button-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+            <path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path>
+          </svg>
+        </div>
+      </a>
+
+      <!-- Hamburger — far right, with gap from CTA -->
+      <button class="menu-toggle" aria-label="Toggle menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Drawer overlay (click to close) -->
+<div class="nav-overlay" id="navOverlay"></div>
+
+<!-- Off-canvas nav drawer — slides in from the right -->
+<aside class="nav-drawer" id="navDrawer" aria-label="Site navigation">
+    <button class="nav-drawer__close" id="navDrawerClose" aria-label="Close menu">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor">
+            <path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path>
+        </svg>
+    </button>
+    <nav class="nav-drawer__nav">
+        <!-- Shown in drawer only when inline header links are hidden (< 480px) -->
+        <a href="/hsnlogix-staging/case-studies/" class="nav-drawer__link nav-drawer__link--mobile-only">Case Studies</a>
+        <a href="/hsnlogix-staging/testimonials/" class="nav-drawer__link nav-drawer__link--mobile-only">Testimonials</a>
+        <!-- Always in drawer -->
+        <a href="/hsnlogix-staging/services/" class="nav-drawer__link">Services</a>
+        <a href="/hsnlogix-staging/faq/" class="nav-drawer__link">FAQs</a>
+        <a href="/hsnlogix-staging/blog/" class="nav-drawer__link">Blog</a>
+        <a href="/hsnlogix-staging/white-label/" class="nav-drawer__link">For Agencies</a>
+    </nav>
+</aside>
+
 
     <!-- Customer-first hero (sits above the personal hero and stats ticker) -->
     <section class="customer-hero">
@@ -298,7 +355,7 @@ date: 2026-09-29
                 </div>
                 <div class="answer-desc">
                     <p class="service-description">Our team builds fully custom Shopify themes from scratch or tailored to your existing brand guidelines, engineered for speed, mobile responsiveness, and real conversion lift. Whether you need a completely bespoke storefront or a refined version of your current theme, we handle the design, development, and testing so it launches exactly how it should.</p>
-                    <a href="{{ '/services/theme-development/' | relative_url }}" class="service-learn-more">Learn more &rarr;</a>
+                    <a href="/hsnlogix-staging/services/theme-development/" class="service-learn-more">Learn more &rarr;</a>
                 </div>
                 <div class="answer-img">
                     <img src="laboostudio.webp" alt="Laboostudio Shopify homepage: 'Shop Modern, Timeless Japanese Wall Art' hero with framed wall art in a styled room and a Kusama prints row" class="service-panel-img">
@@ -328,7 +385,7 @@ date: 2026-09-29
                 </div>
                 <div class="answer-desc">
                     <p class="service-description">We handle complete Shopify store setup from product pages to checkout, configured, branded, and launch-ready so you can start selling faster. That includes structuring your catalog, setting up payment and shipping, connecting essential apps, and making sure every page matches your brand before you go live.</p>
-                    <a href="{{ '/services/store-setup/' | relative_url }}" class="service-learn-more">Learn more &rarr;</a>
+                    <a href="/hsnlogix-staging/services/store-setup/" class="service-learn-more">Learn more &rarr;</a>
                 </div>
                 <div class="answer-img">
                     <img src="drinkmave.webp" alt="Mavé Shopify homepage: retro cream and navy design with a soda can hero and 'Soda-Pop Water, zero sugars' tagline" class="service-panel-img" loading="lazy">
@@ -358,7 +415,7 @@ date: 2026-09-29
                 </div>
                 <div class="answer-desc">
                     <p class="service-description">We audit your existing store for speed and usability issues, then apply targeted fixes across page load time, mobile layout, and cross-device responsiveness. The result is a store that feels faster, looks polished on every screen size, and converts more of the traffic you're already getting.</p>
-                    <a href="{{ '/services/speed-optimization/' | relative_url }}" class="service-learn-more">Learn more &rarr;</a>
+                    <a href="/hsnlogix-staging/services/speed-optimization/" class="service-learn-more">Learn more &rarr;</a>
                 </div>
                 <div class="answer-img">
                     <img src="lockassure.webp" alt="LockAssure Shopify homepage: 'Accountability you can trust' hero over a padlocked chain-link fence, with theft and burglary stats below" class="service-panel-img" loading="lazy">
@@ -388,7 +445,7 @@ date: 2026-09-29
                 </div>
                 <div class="answer-desc">
                     <p class="service-description">We integrate the third-party apps your store needs and write custom Liquid code for features no off-the-shelf app or theme covers, from bespoke product configurators to custom checkout logic. If your store needs to do something specific, we build it properly instead of forcing a workaround.</p>
-                    <a href="{{ '/services/app-integration/' | relative_url }}" class="service-learn-more">Learn more &rarr;</a>
+                    <a href="/hsnlogix-staging/services/app-integration/" class="service-learn-more">Learn more &rarr;</a>
                 </div>
                 <div class="answer-img">
                     <img src="whole-nights.webp" alt="WholeNights Shopify homepage: dusk photo of a man wearing the Calma Clip sleep device, with 'Sound sleep without the sound' headline" class="service-panel-img" loading="lazy">
@@ -405,7 +462,7 @@ date: 2026-09-29
         <div class="addon-services-heading">Additional services</div>
     </div>
     <div class="addon-grid">
-        <a href="{{ '/services/website-audit/' | relative_url }}" class="addon-card">
+        <a href="/hsnlogix-staging/services/website-audit/" class="addon-card">
             <div class="addon-visual"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><path d="M8 11h6"></path></svg></div>
             <div class="addon-body">
                 <span class="addon-title">Website Audit &amp; Performance</span>
@@ -413,7 +470,7 @@ date: 2026-09-29
                 <span class="addon-link">Learn more &rarr;</span>
             </div>
         </a>
-        <a href="{{ '/services/troubleshooting-support/' | relative_url }}" class="addon-card">
+        <a href="/hsnlogix-staging/services/troubleshooting-support/" class="addon-card">
             <div class="addon-visual"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 1-5.4 5.4L4 17l3 3 5.3-5.3a4 4 0 0 1 5.4-5.4l-2.2 2.2-2-2z"></path></svg></div>
             <div class="addon-body">
                 <span class="addon-title">Troubleshooting &amp; Support</span>
@@ -421,7 +478,7 @@ date: 2026-09-29
                 <span class="addon-link">Learn more &rarr;</span>
             </div>
         </a>
-        <a href="{{ '/services/product-collection-setup/' | relative_url }}" class="addon-card">
+        <a href="/hsnlogix-staging/services/product-collection-setup/" class="addon-card">
             <div class="addon-visual"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7L12 3 4 7l8 4 8-4z"></path><path d="M4 7v10l8 4 8-4V7"></path><path d="M12 11v10"></path></svg></div>
             <div class="addon-body">
                 <span class="addon-title">Product &amp; Collection Setup</span>
@@ -429,7 +486,7 @@ date: 2026-09-29
                 <span class="addon-link">Learn more &rarr;</span>
             </div>
         </a>
-        <a href="{{ '/services/conversion-rate-optimization/' | relative_url }}" class="addon-card">
+        <a href="/hsnlogix-staging/services/conversion-rate-optimization/" class="addon-card">
             <div class="addon-visual"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"></path><path d="M15 7h6v6"></path></svg></div>
             <div class="addon-body">
                 <span class="addon-title">Conversion Rate Optimization</span>
@@ -437,7 +494,7 @@ date: 2026-09-29
                 <span class="addon-link">Learn more &rarr;</span>
             </div>
         </a>
-        <a href="{{ '/services/maintenance-retainer/' | relative_url }}" class="addon-card">
+        <a href="/hsnlogix-staging/services/maintenance-retainer/" class="addon-card">
             <div class="addon-visual"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l7 4v6c0 5-3.5 8-7 10-3.5-2-7-5-7-10V6l7-4z"></path></svg></div>
             <div class="addon-body">
                 <span class="addon-title">Ongoing Maintenance Retainer</span>
@@ -445,7 +502,7 @@ date: 2026-09-29
                 <span class="addon-link">Learn more &rarr;</span>
             </div>
         </a>
-        <a href="{{ '/services/platform-migration/' | relative_url }}" class="addon-card">
+        <a href="/hsnlogix-staging/services/platform-migration/" class="addon-card">
             <div class="addon-visual"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="8" height="10" rx="1"></rect><path d="M10 12h8"></path><polyline points="15 9 18 12 15 15"></polyline></svg></div>
             <div class="addon-body">
                 <span class="addon-title">Platform Migration</span>
@@ -453,7 +510,7 @@ date: 2026-09-29
                 <span class="addon-link">Learn more &rarr;</span>
             </div>
         </a>
-        <a href="{{ '/services/b2b-wholesale/' | relative_url }}" class="addon-card">
+        <a href="/hsnlogix-staging/services/b2b-wholesale/" class="addon-card">
             <div class="addon-visual"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
             <div class="addon-body">
                 <span class="addon-title">B2B &amp; Wholesale Setup</span>
@@ -488,7 +545,7 @@ date: 2026-09-29
         </div>
 
     <div class="projects-grid">
-        <a href="{{ '/case-studies/laboostudio/' | relative_url }}" class="project-card project-card--laboostudio">
+        <a href="/hsnlogix-staging/case-studies/laboostudio/" class="project-card project-card--laboostudio">
             <div class="project-content">
                 <div class="project-text">
                     <div class="project-meta">
@@ -508,7 +565,7 @@ date: 2026-09-29
             </div>
         </a>
 
-        <a href="{{ '/case-studies/lockassure/' | relative_url }}" class="project-card project-card--lockassure">
+        <a href="/hsnlogix-staging/case-studies/lockassure/" class="project-card project-card--lockassure">
             <div class="project-content">
                 <div class="project-text">
                     <div class="project-meta">
@@ -531,7 +588,7 @@ date: 2026-09-29
 
     <div class="projects-small-container">
         <div class="projects-grid-small">
-            <a href="{{ '/case-studies/wholenights/' | relative_url }}" class="project-card-small project-card--wholenights">
+            <a href="/hsnlogix-staging/case-studies/wholenights/" class="project-card-small project-card--wholenights">
                 <div class="project-content-small">
                     <div class="project-text-small">
                         <div class="project-meta">
@@ -551,7 +608,7 @@ date: 2026-09-29
                 </div>
             </a>
 
-            <a href="{{ '/case-studies/mave/' | relative_url }}" class="project-card-small project-card--drinkmave">
+            <a href="/hsnlogix-staging/case-studies/mave/" class="project-card-small project-card--drinkmave">
                 <div class="project-content-small">
                     <div class="project-text-small">
                         <div class="project-meta">
@@ -573,7 +630,7 @@ date: 2026-09-29
         </div>
 
         <div class="projects-sidebar">
-            <a href="{{ '/case-studies/' | relative_url }}" class="view-all-section">
+            <a href="/hsnlogix-staging/case-studies/" class="view-all-section">
                 <div class="view-all-container">
                     <div class="view-all-inner">
                         <div class="view-all-content">
@@ -623,7 +680,239 @@ date: 2026-09-29
             <p>Real stories from real businesses who achieved lasting growth with our help</p>
         </div>
     </div>
-{% include testimonial-slider.html %}
+<div id="hsnlogix-portfolio-slider">
+  <div class="hsnlogix-slider-track">
+
+    <div class="hsnlogix-slider-item">
+<div class="testimonial-card">
+  <div class="testimonial-header">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true" viewBox="0 0 24 24" role="img"><path vector-effect="non-scaling-stroke" stroke="var(--icon-color, #001e00)" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5" d="M12 21a9 9 0 100-18 9 9 0 000 18z"></path><path vector-effect="non-scaling-stroke" stroke="var(--icon-color, #001e00)" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5" d="M12 11.73a2.97 2.97 0 100-5.94 2.97 2.97 0 000 5.94zm0 1.89c-2.88 0-5.31 2.34-5.31 5.31v.36C8.22 20.37 10.02 21 12 21c1.98 0 3.78-.63 5.31-1.71v-.36c0-2.88-2.43-5.31-5.31-5.31z"></path></svg>
+    <div class="testimonial-rating">
+      <div data-v-a20e6904="" data-ev-sublocation="!rating" class="air3-rating wm-feedback-scores">
+        <svg xmlns="http://www.w3.org/2000/svg" class="air3-rating-hidden-icon" style="display: none;">
+          <symbol id="air3-rs" viewBox="0 0 38 38">
+            <path d="M21.28 2.63l3.57 9.6 9.85.55c.49.03.96.2 1.34.52.4.31.68.74.84 1.23.15.49.16 1.02.03 1.51-.14.5-.41.94-.79 1.27l-7.67 6.5 2.57 9.98c.12.5.09 1.03-.08 1.52-.17.49-.47.9-.87 1.21a2.36 2.36 0 01-2.76.06L19 30.95l-8.3 5.59a2.35 2.35 0 01-2.74-.04c-.4-.3-.7-.71-.88-1.2a2.72 2.72 0 01-.1-1.51l2.55-9.95-7.65-6.53a2.58 2.58 0 01-.79-1.27 2.7 2.7 0 01.03-1.51c.16-.49.45-.92.83-1.23.4-.31.86-.5 1.35-.52l9.85-.55 3.57-9.6c.18-.49.5-.9.9-1.19a2.37 2.37 0 012.76 0c.4.3.72.7.9 1.19z"></path>
+          </symbol>
+        </svg>
+        <div class="air3-rating-foreground" style="width: 117px;">
+          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
+          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
+          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
+          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
+          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
+        </div>
+        <div aria-hidden="true" class="air3-rating-value-text">5.0</div>
+      </div>
+    </div>
+  </div>
+  <p class="testimonial-text">Glad I found Hussain. Hard to find people who are proactive in their work, get things done at all hours and don't whine and complain when you want things to be done so everything looks tip top. I will hire him on future work for sure.</p>
+  <p class="testimonial-author">Dante C</p>
+</div>
+    </div>
+
+    <div class="hsnlogix-slider-item">
+<div class="testimonial-card">
+  <div class="testimonial-header">
+    <img src="/hsnlogix-staging/aal-maghrabi.webp" alt="Aal Moghrabi profile photo" class="testimonial-avatar" loading="lazy">
+    <div class="testimonial-rating">
+      <div data-v-a20e6904="" data-ev-sublocation="!rating" class="air3-rating wm-feedback-scores">
+        <svg xmlns="http://www.w3.org/2000/svg" class="air3-rating-hidden-icon" style="display: none;">
+          <symbol id="air3-rs" viewBox="0 0 38 38">
+            <path d="M21.28 2.63l3.57 9.6 9.85.55c.49.03.96.2 1.34.52.4.31.68.74.84 1.23.15.49.16 1.02.03 1.51-.14.5-.41.94-.79 1.27l-7.67 6.5 2.57 9.98c.12.5.09 1.03-.08 1.52-.17.49-.47.9-.87 1.21a2.36 2.36 0 01-2.76.06L19 30.95l-8.3 5.59a2.35 2.35 0 01-2.74-.04c-.4-.3-.7-.71-.88-1.2a2.72 2.72 0 01-.1-1.51l2.55-9.95-7.65-6.53a2.58 2.58 0 01-.79-1.27 2.7 2.7 0 01.03-1.51c.16-.49.45-.92.83-1.23.4-.31.86-.5 1.35-.52l9.85-.55 3.57-9.6c.18-.49.5-.9.9-1.19a2.37 2.37 0 012.76 0c.4.3.72.7.9 1.19z"></path>
+          </symbol>
+        </svg>
+        <div class="air3-rating-foreground" style="width: 117px;">
+          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
+          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
+          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
+          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
+          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
+        </div>
+        <div aria-hidden="true" class="air3-rating-value-text">5.0</div>
+      </div>
+    </div>
+  </div>
+  <p class="testimonial-text">Brilliant &amp; definitely recommend! -- We loved working with Hussain as he is very professional, talented and responsive. He's good at what he does and even though it's the first time he works on our theme, he quickly understood what's needed and handled it very smoothly as if he's been doing it for years. He builds a proper infrastructure from scratch in a clean and scalable way. Would love to collaborate again! :)</p>
+  <p class="testimonial-author">Aal MOGHRABI</p>
+</div>
+    </div>
+
+    <div class="hsnlogix-slider-item">
+<div class="testimonial-card">
+  <div class="testimonial-header">
+    <img src="/hsnlogix-staging/GaryM.webp" alt="Gary M profile photo" class="testimonial-avatar" loading="lazy">
+    <div class="testimonial-rating">
+      <div data-v-a20e6904="" data-ev-sublocation="!rating" class="air3-rating wm-feedback-scores">
+        <svg xmlns="http://www.w3.org/2000/svg" class="air3-rating-hidden-icon" style="display: none;">
+          <symbol id="air3-rs" viewBox="0 0 38 38">
+            <path d="M21.28 2.63l3.57 9.6 9.85.55c.49.03.96.2 1.34.52.4.31.68.74.84 1.23.15.49.16 1.02.03 1.51-.14.5-.41.94-.79 1.27l-7.67 6.5 2.57 9.98c.12.5.09 1.03-.08 1.52-.17.49-.47.9-.87 1.21a2.36 2.36 0 01-2.76.06L19 30.95l-8.3 5.59a2.35 2.35 0 01-2.74-.04c-.4-.3-.7-.71-.88-1.2a2.72 2.72 0 01-.1-1.51l2.55-9.95-7.65-6.53a2.58 2.58 0 01-.79-1.27 2.7 2.7 0 01.03-1.51c.16-.49.45-.92.83-1.23.4-.31.86-.5 1.35-.52l9.85-.55 3.57-9.6c.18-.49.5-.9.9-1.19a2.37 2.37 0 012.76 0c.4.3.72.7.9 1.19z"></path>
+          </symbol>
+        </svg>
+        <div class="air3-rating-foreground" style="width: 117px;">
+          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
+          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
+          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
+          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
+          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
+        </div>
+        <div aria-hidden="true" class="air3-rating-value-text">5.0</div>
+      </div>
+    </div>
+  </div>
+  <p class="testimonial-text">This guy is an absolute magician when it comes to shopify. I have been a member here for 13 years and I know a good honest freelancer when I find one. Do yourself a huge favour and hire Hussain A he is awesome AAA+++</p>
+  <p class="testimonial-author">Gary M</p>
+</div>
+    </div>
+
+    <div class="hsnlogix-slider-item">
+<div class="testimonial-card">
+  <div class="testimonial-header">
+    <img src="/hsnlogix-staging/kenny.webp" alt="Kenny Dubroff profile photo" class="testimonial-avatar" loading="lazy">
+    <div class="testimonial-rating">
+      <div data-v-a20e6904="" data-ev-sublocation="!rating" class="air3-rating wm-feedback-scores">
+        <svg xmlns="http://www.w3.org/2000/svg" class="air3-rating-hidden-icon" style="display: none;">
+          <symbol id="air3-rs" viewBox="0 0 38 38">
+            <path d="M21.28 2.63l3.57 9.6 9.85.55c.49.03.96.2 1.34.52.4.31.68.74.84 1.23.15.49.16 1.02.03 1.51-.14.5-.41.94-.79 1.27l-7.67 6.5 2.57 9.98c.12.5.09 1.03-.08 1.52-.17.49-.47.9-.87 1.21a2.36 2.36 0 01-2.76.06L19 30.95l-8.3 5.59a2.35 2.35 0 01-2.74-.04c-.4-.3-.7-.71-.88-1.2a2.72 2.72 0 01-.1-1.51l2.55-9.95-7.65-6.53a2.58 2.58 0 01-.79-1.27 2.7 2.7 0 01.03-1.51c.16-.49.45-.92.83-1.23.4-.31.86-.5 1.35-.52l9.85-.55 3.57-9.6c.18-.49.5-.9.9-1.19a2.37 2.37 0 012.76 0c.4.3.72.7.9 1.19z"></path>
+          </symbol>
+        </svg>
+        <div class="air3-rating-foreground" style="width: 117px;">
+          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
+          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
+          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
+          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
+          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
+        </div>
+        <div aria-hidden="true" class="air3-rating-value-text">5.0</div>
+      </div>
+    </div>
+  </div>
+  <p class="testimonial-text">Hussain was an absolute pleasure to work with, and I will hire him again in the future. He completed all requirements on time, and to my satisfaction. On the rare occasion something didn't look the way I intended, he happily went back and changed it until I was satisfied. In addition, he's very courteous and respectful. I highly recommend Hussain to anyone needing front end web design work.</p>
+  <p class="testimonial-author">Kenny Dubroff</p>
+</div>
+    </div>
+
+    <div class="hsnlogix-slider-item">
+<div class="testimonial-card">
+  <div class="testimonial-header">
+    <img src="/hsnlogix-staging/ShacharS.webp" alt="Shachar S profile photo" class="testimonial-avatar" loading="lazy">
+    <div class="testimonial-rating">
+      <div data-v-a20e6904="" data-ev-sublocation="!rating" class="air3-rating wm-feedback-scores">
+        <svg xmlns="http://www.w3.org/2000/svg" class="air3-rating-hidden-icon" style="display: none;">
+          <symbol id="air3-rs" viewBox="0 0 38 38">
+            <path d="M21.28 2.63l3.57 9.6 9.85.55c.49.03.96.2 1.34.52.4.31.68.74.84 1.23.15.49.16 1.02.03 1.51-.14.5-.41.94-.79 1.27l-7.67 6.5 2.57 9.98c.12.5.09 1.03-.08 1.52-.17.49-.47.9-.87 1.21a2.36 2.36 0 01-2.76.06L19 30.95l-8.3 5.59a2.35 2.35 0 01-2.74-.04c-.4-.3-.7-.71-.88-1.2a2.72 2.72 0 01-.1-1.51l2.55-9.95-7.65-6.53a2.58 2.58 0 01-.79-1.27 2.7 2.7 0 01.03-1.51c.16-.49.45-.92.83-1.23.4-.31.86-.5 1.35-.52l9.85-.55 3.57-9.6c.18-.49.5-.9.9-1.19a2.37 2.37 0 012.76 0c.4.3.72.7.9 1.19z"></path>
+          </symbol>
+        </svg>
+        <div class="air3-rating-foreground" style="width: 117px;">
+          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
+          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
+          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
+          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
+          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
+        </div>
+        <div aria-hidden="true" class="air3-rating-value-text">5.0</div>
+      </div>
+    </div>
+  </div>
+  <p class="testimonial-text">It was amazing work and i really like working with Hussain. He is truely professional and very kind person. I will work with him again and recommend anyone to work with him. Thank you for a great project!</p>
+  <p class="testimonial-author">Shachar S</p>
+</div>
+    </div>
+
+    <div class="hsnlogix-slider-item">
+<div class="testimonial-card">
+  <div class="testimonial-header">
+    <img src="/hsnlogix-staging/andrew.webp" alt="Andrew Chwalik profile photo" class="testimonial-avatar" loading="lazy">
+    <div class="testimonial-rating">
+      <div data-v-a20e6904="" data-ev-sublocation="!rating" class="air3-rating wm-feedback-scores">
+        <svg xmlns="http://www.w3.org/2000/svg" class="air3-rating-hidden-icon" style="display: none;">
+          <symbol id="air3-rs" viewBox="0 0 38 38">
+            <path d="M21.28 2.63l3.57 9.6 9.85.55c.49.03.96.2 1.34.52.4.31.68.74.84 1.23.15.49.16 1.02.03 1.51-.14.5-.41.94-.79 1.27l-7.67 6.5 2.57 9.98c.12.5.09 1.03-.08 1.52-.17.49-.47.9-.87 1.21a2.36 2.36 0 01-2.76.06L19 30.95l-8.3 5.59a2.35 2.35 0 01-2.74-.04c-.4-.3-.7-.71-.88-1.2a2.72 2.72 0 01-.1-1.51l2.55-9.95-7.65-6.53a2.58 2.58 0 01-.79-1.27 2.7 2.7 0 01.03-1.51c.16-.49.45-.92.83-1.23.4-.31.86-.5 1.35-.52l9.85-.55 3.57-9.6c.18-.49.5-.9.9-1.19a2.37 2.37 0 012.76 0c.4.3.72.7.9 1.19z"></path>
+          </symbol>
+        </svg>
+        <div class="air3-rating-foreground" style="width: 117px;">
+          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
+          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
+          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
+          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
+          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
+        </div>
+        <div aria-hidden="true" class="air3-rating-value-text">5.0</div>
+      </div>
+    </div>
+  </div>
+  <p class="testimonial-text">Huge fan of Hussain! He originally built two stunning sites from my Figma files. Everything looked solid. However, there were some specific changes I wanted to make to the functionality and design once the WordPress sites were live. He went through and made sure everything was perfectly polished to my liking. Would hire him again for any WordPress site development in a second. Awesome work!</p>
+  <p class="testimonial-author">Andrew Chwalik</p>
+</div>
+    </div>
+
+    <div class="hsnlogix-slider-item">
+<div class="testimonial-card">
+  <div class="testimonial-header">
+    <img src="/hsnlogix-staging/craig.webp" alt="Craig Marty profile photo" class="testimonial-avatar" loading="lazy">
+    <div class="testimonial-rating">
+      <div data-v-a20e6904="" data-ev-sublocation="!rating" class="air3-rating wm-feedback-scores">
+        <svg xmlns="http://www.w3.org/2000/svg" class="air3-rating-hidden-icon" style="display: none;">
+          <symbol id="air3-rs" viewBox="0 0 38 38">
+            <path d="M21.28 2.63l3.57 9.6 9.85.55c.49.03.96.2 1.34.52.4.31.68.74.84 1.23.15.49.16 1.02.03 1.51-.14.5-.41.94-.79 1.27l-7.67 6.5 2.57 9.98c.12.5.09 1.03-.08 1.52-.17.49-.47.9-.87 1.21a2.36 2.36 0 01-2.76.06L19 30.95l-8.3 5.59a2.35 2.35 0 01-2.74-.04c-.4-.3-.7-.71-.88-1.2a2.72 2.72 0 01-.1-1.51l2.55-9.95-7.65-6.53a2.58 2.58 0 01-.79-1.27 2.7 2.7 0 01.03-1.51c.16-.49.45-.92.83-1.23.4-.31.86-.5 1.35-.52l9.85-.55 3.57-9.6c.18-.49.5-.9.9-1.19a2.37 2.37 0 012.76 0c.4.3.72.7.9 1.19z"></path>
+          </symbol>
+        </svg>
+        <div class="air3-rating-foreground" style="width: 117px;">
+          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
+          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
+          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
+          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
+          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
+        </div>
+        <div aria-hidden="true" class="air3-rating-value-text">5.0</div>
+      </div>
+    </div>
+  </div>
+  <p class="testimonial-text">Hussain is a professional web developer. Besides that, he is also a great communicator which is a rare combination. I recommend everyone hire Hussain for website jobs.</p>
+  <p class="testimonial-author">Craig Marty</p>
+</div>
+    </div>
+
+  </div>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const slider = document.getElementById('hsnlogix-portfolio-slider');
+    if (!slider) return;
+    const track = slider.querySelector('.hsnlogix-slider-track');
+    const items = Array.from(track.children);
+
+    let loopWidth = 0;
+    items.forEach(item => {
+      const style = getComputedStyle(item);
+      loopWidth += item.offsetWidth + parseFloat(style.marginLeft) + parseFloat(style.marginRight);
+    });
+
+    items.forEach(item => track.appendChild(item.cloneNode(true)));
+
+    let pos = 0;
+    let currentRate = 1, targetRate = 1;
+    const baseSpeed = window.innerWidth <= 768
+      ? loopWidth / 40
+      : loopWidth / 50;
+    let lastTime = performance.now();
+
+    function animate(time) {
+      const dt = (time - lastTime) / 1000;
+      lastTime = time;
+      currentRate += (targetRate - currentRate) * 0.25;
+      pos = (pos + baseSpeed * currentRate * dt) % loopWidth;
+      track.style.transform = `translateX(${-pos}px)`;
+      requestAnimationFrame(animate);
+    }
+
+    requestAnimationFrame(animate);
+
+    slider.addEventListener('mouseenter', () => targetRate = 0.35);
+    slider.addEventListener('mouseleave', () => targetRate = 1);
+  });
+</script>
+
 
 
 </section>
@@ -648,13 +937,13 @@ date: 2026-09-29
             </div>
         </div>
         <div class="faq-questions">
-            {% for faq in site.data.faqs %}
+            
             <div class="faq-item">
                 <div class="faq-question">
                     <div class="question-content">
                         <div class="question-text">
-                            <p class="question-number">{{ faq.number }}/</p>
-                            <p class="question-title">{{ faq.question }}</p>
+                            <p class="question-number">01/</p>
+                            <p class="question-title">What's your usual project timeline?</p>
                         </div>
                         <div class="question-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
@@ -663,14 +952,90 @@ date: 2026-09-29
                         </div>
                     </div>
                     <div class="faq-answer">
-                        <p>{{ faq.answer }}</p>
+                        <p>Most theme development or customization projects are completed within 1 to 4 weeks, depending on the scope and level of detail required. Once I understand your requirements, I'll share a clear timeline with milestones for design setup, development, testing, and final delivery.</p>
                     </div>
                 </div>
             </div>
-            {% endfor %}
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <div class="question-content">
+                        <div class="question-text">
+                            <p class="question-number">02/</p>
+                            <p class="question-title">Do you provide ongoing support after the project?</p>
+                        </div>
+                        <div class="question-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                                <path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! I offer ongoing maintenance and support for Shopify stores. This can include performance improvements, bug fixes, layout tweaks, and updates to keep your theme running smoothly as your business evolves.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <div class="question-content">
+                        <div class="question-text">
+                            <p class="question-number">03/</p>
+                            <p class="question-title">Can you follow my existing brand guidelines?</p>
+                        </div>
+                        <div class="question-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                                <path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Definitely. I make sure your Shopify store fully aligns with your brand's look and feel — colors, typography, layout, and visual tone. Whether you already have detailed brand guidelines or just a reference design, I can implement them precisely and maintain consistency across all pages.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <div class="question-content">
+                        <div class="question-text">
+                            <p class="question-number">04/</p>
+                            <p class="question-title">How do you handle revisions and feedback?</p>
+                        </div>
+                        <div class="question-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                                <path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Revisions are part of the process. I provide structured feedback rounds where you can review progress and suggest adjustments. I value clear communication and make sure your feedback is implemented quickly and accurately until everything looks and functions as intended.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <div class="question-content">
+                        <div class="question-text">
+                            <p class="question-number">05/</p>
+                            <p class="question-title">How much does a Shopify project typically cost?</p>
+                        </div>
+                        <div class="question-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                                <path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Projects typically range from $500 for smaller builds to $1,500+ for more advanced custom work, depending on scope. Ongoing maintenance and support starts at $300/month.</p>
+                    </div>
+                </div>
+            </div>
+            
         </div>
         <div style="margin-top:40px;text-align:center;">
-            <a href="{{ '/faq/' | relative_url }}" style="font-family:'Manrope',sans-serif;font-size:15px;font-weight:700;color:#0A0A0A;text-decoration:none;border-bottom:2px solid #82FF1F;padding-bottom:2px;">View all FAQs &rarr;</a>
+            <a href="/hsnlogix-staging/faq/" style="font-family:'Manrope',sans-serif;font-size:15px;font-weight:700;color:#0A0A0A;text-decoration:none;border-bottom:2px solid #82FF1F;padding-bottom:2px;">View all FAQs &rarr;</a>
         </div>
     </div>
 </section>
@@ -893,7 +1258,7 @@ date: 2026-09-29
             <div class="hsn-logix-avatar">
               <div class="hsn-logix-profile-pic">
                 <div class="hsn-logix-img-wrapper" data-aos="fade-right" data-aos-duration="750" data-aos-delay="150">
-                  <img src="{{ '/hussain-profile-picture.webp' | relative_url }}" alt="Hussain A - Senior Shopify Developer" loading="eager">
+                  <img src="/hsnlogix-staging/hussain-profile-picture.webp" alt="Hussain A - Senior Shopify Developer" loading="eager">
                 </div>
               </div>
             </div>
@@ -904,7 +1269,7 @@ date: 2026-09-29
               <div class="title">
                 <p class="title-text">Senior Shopify Theme Developer</p>
                 <a href="https://www.upwork.com/freelancers/~01e91c15509859436e" target="_blank" rel="noopener" class="founder-upwork-badge">
-                  <img src="{{ '/upwork-icon.webp' | relative_url }}" alt="">
+                  <img src="/hsnlogix-staging/upwork-icon.webp" alt="">
                   Top Rated on Upwork
                 </a>
               </div>
@@ -967,7 +1332,7 @@ date: 2026-09-29
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>
                     </div>
                 </a>
-                <a href="{{ '/case-studies/' | relative_url }}" class="cta-button cta-button--dark">
+                <a href="/hsnlogix-staging/case-studies/" class="cta-button cta-button--dark">
                     <div class="button-text"><p>View Case Studies</p></div>
                     <div class="button-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>
@@ -984,7 +1349,7 @@ date: 2026-09-29
             <!-- Brand column -->
             <div class="footer-col footer-col--brand">
                 <div class="logo">
-                    <a href="{{ '/' | relative_url }}">
+                    <a href="/hsnlogix-staging/">
                         <span class="logo-hsn">HSN</span><span class="logo-logix">Logix</span>
                     </a>
                 </div>
@@ -1000,12 +1365,12 @@ date: 2026-09-29
             <div class="footer-col">
                 <h4 class="footer-col__heading">Services</h4>
                 <ul class="footer-col__links">
-                    <li><a href="{{ '/services/theme-development/' | relative_url }}">Custom Theme Development</a></li>
-                    <li><a href="{{ '/services/store-setup/' | relative_url }}">Store Setup &amp; Customization</a></li>
-                    <li><a href="{{ '/services/speed-optimization/' | relative_url }}">Speed Optimization</a></li>
-                    <li><a href="{{ '/services/app-integration/' | relative_url }}">App Integration &amp; Features</a></li>
-                    <li><a href="{{ '/services/b2b-wholesale/' | relative_url }}">B2B &amp; Wholesale Setup</a></li>
-                    <li><a href="{{ '/services/platform-migration/' | relative_url }}">Platform Migration</a></li>
+                    <li><a href="/hsnlogix-staging/services/theme-development/">Custom Theme Development</a></li>
+                    <li><a href="/hsnlogix-staging/services/store-setup/">Store Setup &amp; Customization</a></li>
+                    <li><a href="/hsnlogix-staging/services/speed-optimization/">Speed Optimization</a></li>
+                    <li><a href="/hsnlogix-staging/services/app-integration/">App Integration &amp; Features</a></li>
+                    <li><a href="/hsnlogix-staging/services/b2b-wholesale/">B2B &amp; Wholesale Setup</a></li>
+                    <li><a href="/hsnlogix-staging/services/platform-migration/">Platform Migration</a></li>
                 </ul>
             </div>
 
@@ -1013,10 +1378,10 @@ date: 2026-09-29
             <div class="footer-col">
                 <h4 class="footer-col__heading">Company</h4>
                 <ul class="footer-col__links">
-                    <li><a href="{{ '/case-studies/' | relative_url }}">Case Studies</a></li>
-                    <li><a href="{{ '/testimonials/' | relative_url }}">Testimonials</a></li>
-                    <li><a href="/#faqs">FAQ</a></li>
-                    <li><a href="{{ '/team/hussain/' | relative_url }}">Meet Hussain</a></li>
+                    <li><a href="/hsnlogix-staging/case-studies/">Case Studies</a></li>
+                    <li><a href="/hsnlogix-staging/testimonials/">Testimonials</a></li>
+                    <li><a href="/hsnlogix-staging/faq/">FAQ</a></li>
+                    <li><a href="/hsnlogix-staging/team/hussain/">Meet Hussain</a></li>
                 </ul>
             </div>
 
@@ -1037,8 +1402,8 @@ date: 2026-09-29
         <div class="footer-legal-bar__inner">
             <p class="copyright">© 2026 HSNLogix. All rights reserved.</p>
             <div class="footer-legal">
-                <a href="{{ '/privacy-policy/' | relative_url }}" class="footer-legal__link">Privacy Policy</a>
-                <a href="{{ '/terms-of-service/' | relative_url }}" class="footer-legal__link">Terms of Service</a>
+                <a href="/hsnlogix-staging/privacy-policy/" class="footer-legal__link">Privacy Policy</a>
+                <a href="/hsnlogix-staging/terms-of-service/" class="footer-legal__link">Terms of Service</a>
             </div>
         </div>
     </div>
