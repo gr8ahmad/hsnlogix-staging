@@ -1086,29 +1086,31 @@
     color: var(--accent-on-light);
 }
 
-/* Ghost variant: transparent background for light-section CTAs */
-.cta-button.cta-button--ghost {
+/* Ghost variant: hero second button — scoped to .customer-hero__cta-group
+   for specificity (0,3,0) so it beats the base .cta-button lime rules.
+   Arrow SVG uses fill (not stroke). Icon circle dark, arrow white. */
+.customer-hero__cta-group .cta-button.cta-button--ghost {
     background: transparent;
     box-shadow: none;
-    border: 1px solid rgba(2,9,10,0.25);
+    border: 1px solid rgba(2,9,10,0.35);
 }
 
-.cta-button.cta-button--ghost .button-text p {
+.customer-hero__cta-group .cta-button.cta-button--ghost .button-text p {
     color: #02090A;
 }
 
-.cta-button.cta-button--ghost .button-icon {
-    background-color: transparent;
+.customer-hero__cta-group .cta-button.cta-button--ghost .button-icon {
+    background-color: #02090A;
 }
 
-.cta-button.cta-button--ghost .button-icon svg {
-    fill: #02090A;
-    color: #02090A;
+.customer-hero__cta-group .cta-button.cta-button--ghost .button-icon svg {
+    fill: #FFFFFF;
+    color: #FFFFFF;
 }
 
-.cta-button.cta-button--ghost:hover {
+.customer-hero__cta-group .cta-button.cta-button--ghost:hover {
     background: rgba(2,9,10,0.06);
-    border-color: rgba(2,9,10,0.45);
+    border-color: rgba(2,9,10,0.6);
 }
 
 @media (prefers-reduced-motion: no-preference) {
