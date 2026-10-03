@@ -1083,7 +1083,7 @@ body {
 
 /* Services Section Styles */
 .services-section {
- background: linear-gradient(315deg, rgb(31, 30, 30) -9%, rgb(17, 17, 17) 69%);
+ background: var(--bg-base);
  border-top: 1px solid #222;
  padding: 40px;
  display: flex;
@@ -2070,7 +2070,7 @@ body {
  width: 100%;
  height: auto;
  position: relative;
- background-color: #1C1C1C;
+ background-color: var(--bg-base);
 }
 .cta-buttons {
     display: flex;
