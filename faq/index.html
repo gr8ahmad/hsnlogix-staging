@@ -100,126 +100,43 @@
 
 
   <main class="blog-main container">
-    <style>
-/* Override blog-main defaults for this page */
-.blog-main { padding: 0 !important; }
+    
 
-.faq-page {
-  max-width: 860px;
-  margin: 0 auto;
-  padding: 80px 40px 100px;
-  box-sizing: border-box;
-}
 
-/* Page header */
-.faq-page__header {
-  margin-bottom: 56px;
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://hsnlogix.com/"},
+    {"@type":"ListItem","position":2,"name":"FAQ","item":"https://hsnlogix.com/faq/"}
+  ]
 }
-.faq-page__eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(130,255,31,0.08);
-  border: 1px solid rgba(130,255,31,0.25);
-  border-radius: 100px;
-  padding: 5px 14px;
-  font-family: 'Manrope', sans-serif;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #2a6600;
-  margin-bottom: 20px;
-}
-.faq-page__eyebrow-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #82FF1F;
-  flex-shrink: 0;
-}
-.faq-page__heading {
-  font-family: 'Manrope', sans-serif;
-  font-size: 48px;
-  font-weight: 800;
-  letter-spacing: -1.5px;
-  color: #0A0A0A;
-  margin: 0 0 16px;
-  line-height: 1.1;
-}
-.faq-page__heading span {
-  color: #2F2F2F;
-  font-weight: 400;
-}
-.faq-page__subhead {
-  font-family: 'Manrope', sans-serif;
-  font-size: 17px;
-  color: #555;
-  max-width: 520px;
-  margin: 0;
-  line-height: 1.65;
-}
+</script>
+<section class="page-hero">
+  <div class="hero-pattern" aria-hidden="true">
+    <div class="hero-pattern__blob hero-pattern__blob--green"></div>
+    <div class="hero-pattern__blob hero-pattern__blob--dark"></div>
+  </div>
+  <div class="page-hero__inner">
+    <nav aria-label="Breadcrumb">
+      <div class="breadcrumbs__inner">
+        <a href="/hsnlogix-staging/" class="breadcrumb-link">Home</a>
+        
+        <span class="breadcrumb-sep" aria-hidden="true">/</span>
+        <span class="breadcrumb-current" aria-current="page">FAQ</span>
+      </div>
+    </nav>
+    <div class="tag-badge page-hero__eyebrow-wrap">
+      <div class="tag-text">FAQ</div>
+    </div>
+    <h1 class="page-hero__heading"><span class="ph-pale">Still have questions?</span><span class="ph-dark">We've got you covered.</span></h1>
+    <p class="page-hero__lede">Everything you need to know before we get started. If it's not here, just ask.</p>
+  </div>
+</section>
 
-/* Reuse homepage .faq-item CSS from style.css — just add a subtle divider */
-.faq-page .faq-item + .faq-item {
-  border-top: 1px solid rgba(0,0,0,0.07);
-}
-
-/* Global .question-title defaults to color:#FFF (dark sections on homepage).
-   Override to dark text for this light-background page. */
-.faq-page .question-title {
-  color: #0A0A0A;
-}
-.faq-page .question-number {
-  color: rgba(0,0,0,0.35);
-}
-
-/* Ask CTA at the bottom */
-.faq-page__cta {
-  margin-top: 64px;
-  padding: 40px;
-  background: #f7faf4;
-  border: 1px solid rgba(130,255,31,0.3);
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  flex-wrap: wrap;
-}
-.faq-page__cta-text {
-  font-family: 'Manrope', sans-serif;
-}
-.faq-page__cta-text strong {
-  display: block;
-  font-size: 18px;
-  font-weight: 800;
-  color: #0A0A0A;
-  margin-bottom: 4px;
-}
-.faq-page__cta-text span {
-  font-size: 14px;
-  color: #555;
-}
-
-@media (max-width: 640px) {
-  .faq-page { padding: 56px 24px 80px; }
-  .faq-page__heading { font-size: 36px; letter-spacing: -1px; }
-  .faq-page__cta { flex-direction: column; align-items: flex-start; }
-}
-</style>
 
 <div class="faq-page">
-
-  <!-- Header -->
-  <div class="faq-page__header">
-    <div class="faq-page__eyebrow">
-      <span class="faq-page__eyebrow-dot"></span>
-      FAQ
-    </div>
-    <h1 class="faq-page__heading">Still have questions?<br><span>We've got you covered.</span></h1>
-    <p class="faq-page__subhead">Everything you need to know before we get started. If it's not here, just ask.</p>
-  </div>
 
   <!-- FAQ accordion — reuses .faq-item / .faq-question / .faq-answer from style.css -->
   <div class="faq-questions">

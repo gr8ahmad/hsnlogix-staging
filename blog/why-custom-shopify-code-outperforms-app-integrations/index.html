@@ -100,38 +100,46 @@
 
 
   <main class="blog-main container">
-    <article class="blog-post">
-  <style>
-.breadcrumbs__inner {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-  padding: 0.5rem 0;
-  margin-bottom: 2rem;
-  border-bottom: 1px solid rgba(0,0,0,0.07);
-  font-size: 0.8rem;
+    
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://hsnlogix.com/"},
+    {"@type":"ListItem","position":2,"name":"Blog","item":"https://hsnlogix.com/blog/"},
+    {"@type":"ListItem","position":3,"name":"Why Custom Shopify Code Outperforms App Integrations","item":"https://hsnlogix.com/blog/why-custom-shopify-code-outperforms-app-integrations/"}
+  ]
 }
-.breadcrumb-link { color: #888; text-decoration: none; }
-.breadcrumb-link:hover { color: #111; text-decoration: underline; }
-.breadcrumb-sep { color: #bbb; }
-.breadcrumb-current { color: #111; font-weight: 600; }
-</style>
-<nav aria-label="Breadcrumb">
-  <div class="breadcrumbs__inner">
-    <a href="/hsnlogix-staging/" class="breadcrumb-link">Home</a>
-    
-    <span class="breadcrumb-sep" aria-hidden="true">/</span>
-    <a href="/hsnlogix-staging/blog/" class="breadcrumb-link">Blog</a>
-    
-    
-    <span class="breadcrumb-sep" aria-hidden="true">/</span>
-    <span class="breadcrumb-current" aria-current="page">Why Custom Shopify Code Outperforms App Integrations</span>
+</script>
+<section class="page-hero">
+  <div class="hero-pattern" aria-hidden="true">
+    <div class="hero-pattern__blob hero-pattern__blob--green"></div>
+    <div class="hero-pattern__blob hero-pattern__blob--dark"></div>
+  </div>
+  <div class="page-hero__inner">
+    <nav aria-label="Breadcrumb">
+      <div class="breadcrumbs__inner">
+        <a href="/hsnlogix-staging/" class="breadcrumb-link">Home</a>
+        
+        <span class="breadcrumb-sep" aria-hidden="true">/</span>
+        <a href="/hsnlogix-staging/blog/" class="breadcrumb-link">Blog</a>
+        
+        <span class="breadcrumb-sep" aria-hidden="true">/</span>
+        <span class="breadcrumb-current" aria-current="page">Why Custom Shopify Code Outperforms App Integrations</span>
+      </div>
+    </nav>
+    <div class="tag-badge page-hero__eyebrow-wrap">
+      <div class="tag-text">Blog</div>
+    </div>
+    <h1 class="page-hero__heading"><span class="ph-dark">Why Custom Shopify Code Outperforms App Integrations</span></h1>
     
   </div>
-</nav>
+</section>
 
-  <h1 class="blog-post-title">Why Custom Shopify Code Outperforms App Integrations</h1>
+<article class="blog-post">
   <time class="blog-post-date" datetime="2026-08-15T00:00:00+00:00">August 15, 2026</time>
   
   <div class="blog-post-featured-image">

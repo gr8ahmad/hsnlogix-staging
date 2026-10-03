@@ -100,37 +100,41 @@
 
 
   <main class="blog-main container">
-    <div class="blog-post">
-  <style>
-.breadcrumbs__inner {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-  padding: 0.5rem 0;
-  margin-bottom: 2rem;
-  border-bottom: 1px solid rgba(0,0,0,0.07);
-  font-size: 0.8rem;
-}
-.breadcrumb-link { color: #888; text-decoration: none; }
-.breadcrumb-link:hover { color: #111; text-decoration: underline; }
-.breadcrumb-sep { color: #bbb; }
-.breadcrumb-current { color: #111; font-weight: 600; }
-</style>
-<nav aria-label="Breadcrumb">
-  <div class="breadcrumbs__inner">
-    <a href="/hsnlogix-staging/" class="breadcrumb-link">Home</a>
     
-    
-    <span class="breadcrumb-sep" aria-hidden="true">/</span>
-    <span class="breadcrumb-current" aria-current="page">Testimonials</span>
-    
-  </div>
-</nav>
 
-  <h1 class="blog-post-title">What Our Clients Say</h1>
-  <p class="service-intro">Real feedback from 92 client reviews from Shopify store owners and agencies we've worked with. Every review below is from a verified Upwork engagement.</p>
-</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://hsnlogix.com/"},
+    {"@type":"ListItem","position":2,"name":"Testimonials","item":"https://hsnlogix.com/testimonials/"}
+  ]
+}
+</script>
+<section class="page-hero">
+  <div class="hero-pattern" aria-hidden="true">
+    <div class="hero-pattern__blob hero-pattern__blob--green"></div>
+    <div class="hero-pattern__blob hero-pattern__blob--dark"></div>
+  </div>
+  <div class="page-hero__inner">
+    <nav aria-label="Breadcrumb">
+      <div class="breadcrumbs__inner">
+        <a href="/hsnlogix-staging/" class="breadcrumb-link">Home</a>
+        
+        <span class="breadcrumb-sep" aria-hidden="true">/</span>
+        <span class="breadcrumb-current" aria-current="page">Testimonials</span>
+      </div>
+    </nav>
+    <div class="tag-badge page-hero__eyebrow-wrap">
+      <div class="tag-text">Testimonials</div>
+    </div>
+    <h1 class="page-hero__heading"><span class="ph-dark">What Our Clients Say</span></h1>
+    <p class="page-hero__lede">Real feedback from 92 client reviews from Shopify store owners and agencies we've worked with. Every review below is from a verified Upwork engagement.</p>
+  </div>
+</section>
+
 <section class="hsnlogix-portfolio" id="testimonials">
   <div id="hsnlogix-portfolio-slider">
   <div class="hsnlogix-slider-track">
