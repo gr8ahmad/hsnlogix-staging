@@ -94,7 +94,7 @@
       </a>
 
       <!-- Hamburger — far right, with gap from CTA -->
-      <button class="menu-toggle" aria-label="Toggle menu">
+      <button class="menu-toggle" aria-expanded="false" aria-controls="navDrawer" aria-label="Toggle menu">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
@@ -153,7 +153,7 @@
 
   <ul>
     <li><strong>Contact information</strong> you provide voluntarily (e.g. name, email) when you book a call or reach out to us.</li>
-    <li><strong>Usage data</strong> collected automatically via analytics tools (e.g. pages visited, browser type, referring URLs).</li>
+    <li><strong>Usage data</strong> collected automatically via Google Analytics (GA4), including pages visited, browser type, and referring URLs.</li>
   </ul>
 
   <h2 id="how-we-use-your-information">How We Use Your Information</h2>
@@ -163,12 +163,13 @@
   <ul>
     <li>Respond to your enquiries and schedule consultations</li>
     <li>Improve the site and our services</li>
-    <li>Send occasional updates if you have opted in</li>
   </ul>
 
   <h2 id="third-party-services">Third-Party Services</h2>
 
   <p>We use Cal.com for scheduling calls. Their privacy policy governs any data you submit through that booking flow.</p>
+
+  <p>We use Google Analytics (GA4) to understand how visitors use this site. Google’s privacy policy applies to data collected through this service.</p>
 
   <h2 id="data-retention">Data Retention</h2>
 
@@ -304,11 +305,13 @@
     navDrawer.classList.add('active');
     navOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
+    if (menuToggle) menuToggle.setAttribute('aria-expanded', 'true');
   }
   function closeDrawer() {
     navDrawer.classList.remove('active');
     navOverlay.classList.remove('active');
     document.body.style.overflow = '';
+    if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
   }
 
   if (menuToggle) menuToggle.addEventListener('click', openDrawer);

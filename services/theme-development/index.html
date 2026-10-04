@@ -106,7 +106,7 @@
       </a>
 
       <!-- Hamburger — far right, with gap from CTA -->
-      <button class="menu-toggle" aria-label="Toggle menu">
+      <button class="menu-toggle" aria-expanded="false" aria-controls="navDrawer" aria-label="Toggle menu">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
@@ -287,7 +287,7 @@
       
       <div class="faq-item">
         <div class="faq-question">
-          <button type="button" class="question-content faq-trigger" aria-expanded="false">
+          <button type="button" class="question-content faq-trigger" aria-expanded="false" aria-controls="service-faq-answer-1">
             <div class="question-text">
               <p class="question-number">1/</p>
               <p class="question-title">Who builds the theme?</p>
@@ -298,7 +298,7 @@
               </svg>
             </div>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="service-faq-answer-1">
             <p>Hussain builds it personally, with specialists brought in for specific components on larger projects. No account-manager layer — the developer scoping the project is the one building it.</p>
           </div>
         </div>
@@ -306,7 +306,7 @@
       
       <div class="faq-item">
         <div class="faq-question">
-          <button type="button" class="question-content faq-trigger" aria-expanded="false">
+          <button type="button" class="question-content faq-trigger" aria-expanded="false" aria-controls="service-faq-answer-2">
             <div class="question-text">
               <p class="question-number">2/</p>
               <p class="question-title">Do I own the theme?</p>
@@ -317,7 +317,7 @@
               </svg>
             </div>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="service-faq-answer-2">
             <p>Yes, outright, after final payment. No licensing fees, no platform lock-in — the code is yours to modify and extend.</p>
           </div>
         </div>
@@ -325,7 +325,7 @@
       
       <div class="faq-item">
         <div class="faq-question">
-          <button type="button" class="question-content faq-trigger" aria-expanded="false">
+          <button type="button" class="question-content faq-trigger" aria-expanded="false" aria-controls="service-faq-answer-3">
             <div class="question-text">
               <p class="question-number">3/</p>
               <p class="question-title">Do you work from an existing design or start from scratch?</p>
@@ -336,7 +336,7 @@
               </svg>
             </div>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="service-faq-answer-3">
             <p>Both. If you have a Figma file, we build pixel-for-pixel from it. If you don't have a design, we work from your brand guidelines and reference direction before the build starts. There's no separate design phase billed unless the project scope calls for one.</p>
           </div>
         </div>
@@ -344,7 +344,7 @@
       
       <div class="faq-item">
         <div class="faq-question">
-          <button type="button" class="question-content faq-trigger" aria-expanded="false">
+          <button type="button" class="question-content faq-trigger" aria-expanded="false" aria-controls="service-faq-answer-4">
             <div class="question-text">
               <p class="question-number">4/</p>
               <p class="question-title">What support is included after launch?</p>
@@ -355,7 +355,7 @@
               </svg>
             </div>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="service-faq-answer-4">
             <p>Every project includes a post-launch window with 2–3 rounds of revisions. For ongoing support beyond that, the Maintenance Retainer keeps a developer watching your store monthly.</p>
           </div>
         </div>
@@ -641,11 +641,13 @@
     navDrawer.classList.add('active');
     navOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
+    if (menuToggle) menuToggle.setAttribute('aria-expanded', 'true');
   }
   function closeDrawer() {
     navDrawer.classList.remove('active');
     navOverlay.classList.remove('active');
     document.body.style.overflow = '';
+    if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
   }
 
   if (menuToggle) menuToggle.addEventListener('click', openDrawer);

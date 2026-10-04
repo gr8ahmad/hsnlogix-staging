@@ -94,7 +94,7 @@
       </a>
 
       <!-- Hamburger — far right, with gap from CTA -->
-      <button class="menu-toggle" aria-label="Toggle menu">
+      <button class="menu-toggle" aria-expanded="false" aria-controls="navDrawer" aria-label="Toggle menu">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
@@ -151,7 +151,7 @@
     
     <div class="faq-item">
       <div class="faq-question">
-        <button type="button" class="question-content faq-trigger" aria-expanded="false">
+        <button type="button" class="question-content faq-trigger" aria-expanded="false" aria-controls="faq-answer-1">
           <div class="question-text">
             <p class="question-number">01/</p>
             <p class="question-title">What's your usual project timeline?</p>
@@ -162,7 +162,7 @@
             </svg>
           </div>
         </button>
-        <div class="faq-answer">
+        <div class="faq-answer" id="faq-answer-1">
           <p>Most theme development or customization projects are completed within 1 to 4 weeks, depending on the scope and level of detail required. Once we understand your requirements, we'll share a clear timeline with milestones for design setup, development, testing, and final delivery.</p>
         </div>
       </div>
@@ -170,7 +170,7 @@
     
     <div class="faq-item">
       <div class="faq-question">
-        <button type="button" class="question-content faq-trigger" aria-expanded="false">
+        <button type="button" class="question-content faq-trigger" aria-expanded="false" aria-controls="faq-answer-2">
           <div class="question-text">
             <p class="question-number">02/</p>
             <p class="question-title">Do you provide ongoing support after the project?</p>
@@ -181,7 +181,7 @@
             </svg>
           </div>
         </button>
-        <div class="faq-answer">
+        <div class="faq-answer" id="faq-answer-2">
           <p>Yes! We offer ongoing maintenance and support for Shopify stores. This can include performance improvements, bug fixes, layout tweaks, and updates to keep your theme running smoothly as your business evolves.</p>
         </div>
       </div>
@@ -189,7 +189,7 @@
     
     <div class="faq-item">
       <div class="faq-question">
-        <button type="button" class="question-content faq-trigger" aria-expanded="false">
+        <button type="button" class="question-content faq-trigger" aria-expanded="false" aria-controls="faq-answer-3">
           <div class="question-text">
             <p class="question-number">03/</p>
             <p class="question-title">Can you follow my existing brand guidelines?</p>
@@ -200,7 +200,7 @@
             </svg>
           </div>
         </button>
-        <div class="faq-answer">
+        <div class="faq-answer" id="faq-answer-3">
           <p>Definitely. We make sure your Shopify store fully aligns with your brand's look and feel, colors, typography, layout, and visual tone. Whether you already have detailed brand guidelines or just a reference design, we can implement them precisely and maintain consistency across all pages.</p>
         </div>
       </div>
@@ -208,7 +208,7 @@
     
     <div class="faq-item">
       <div class="faq-question">
-        <button type="button" class="question-content faq-trigger" aria-expanded="false">
+        <button type="button" class="question-content faq-trigger" aria-expanded="false" aria-controls="faq-answer-4">
           <div class="question-text">
             <p class="question-number">04/</p>
             <p class="question-title">How do you handle revisions and feedback?</p>
@@ -219,7 +219,7 @@
             </svg>
           </div>
         </button>
-        <div class="faq-answer">
+        <div class="faq-answer" id="faq-answer-4">
           <p>Revisions are part of the process. We provide structured feedback rounds where you can review progress and suggest adjustments. We value clear communication and make sure your feedback is implemented quickly and accurately until everything looks and functions as intended.</p>
         </div>
       </div>
@@ -227,7 +227,7 @@
     
     <div class="faq-item">
       <div class="faq-question">
-        <button type="button" class="question-content faq-trigger" aria-expanded="false">
+        <button type="button" class="question-content faq-trigger" aria-expanded="false" aria-controls="faq-answer-5">
           <div class="question-text">
             <p class="question-number">05/</p>
             <p class="question-title">How much does a Shopify project typically cost?</p>
@@ -238,7 +238,7 @@
             </svg>
           </div>
         </button>
-        <div class="faq-answer">
+        <div class="faq-answer" id="faq-answer-5">
           <p>Smaller work like store setup, audits, or troubleshooting typically starts around $500 to $1,000. Custom Shopify theme development, our core service, typically runs $1,500 to $5,000+ depending on scope. Ongoing maintenance and support starts at $300/month.</p>
         </div>
       </div>
@@ -452,11 +452,13 @@ document.addEventListener('DOMContentLoaded', function () {
     navDrawer.classList.add('active');
     navOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
+    if (menuToggle) menuToggle.setAttribute('aria-expanded', 'true');
   }
   function closeDrawer() {
     navDrawer.classList.remove('active');
     navOverlay.classList.remove('active');
     document.body.style.overflow = '';
+    if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
   }
 
   if (menuToggle) menuToggle.addEventListener('click', openDrawer);

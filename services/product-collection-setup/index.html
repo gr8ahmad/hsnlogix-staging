@@ -106,7 +106,7 @@
       </a>
 
       <!-- Hamburger — far right, with gap from CTA -->
-      <button class="menu-toggle" aria-label="Toggle menu">
+      <button class="menu-toggle" aria-expanded="false" aria-controls="navDrawer" aria-label="Toggle menu">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
@@ -286,7 +286,7 @@
       
       <div class="faq-item">
         <div class="faq-question">
-          <button type="button" class="question-content faq-trigger" aria-expanded="false">
+          <button type="button" class="question-content faq-trigger" aria-expanded="false" aria-controls="service-faq-answer-1">
             <div class="question-text">
               <p class="question-number">1/</p>
               <p class="question-title">Who builds the catalog?</p>
@@ -297,7 +297,7 @@
               </svg>
             </div>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="service-faq-answer-1">
             <p>Hussain does the setup personally. No account-manager layer — you're working directly with the developer doing the work.</p>
           </div>
         </div>
@@ -305,7 +305,7 @@
       
       <div class="faq-item">
         <div class="faq-question">
-          <button type="button" class="question-content faq-trigger" aria-expanded="false">
+          <button type="button" class="question-content faq-trigger" aria-expanded="false" aria-controls="service-faq-answer-2">
             <div class="question-text">
               <p class="question-number">2/</p>
               <p class="question-title">What does catalog setup cost?</p>
@@ -316,7 +316,7 @@
               </svg>
             </div>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="service-faq-answer-2">
             <p>Product and collection setup typically runs $500–$1,000 depending on catalog size and complexity. You'll get a clear quote upfront.</p>
           </div>
         </div>
@@ -324,7 +324,7 @@
       
       <div class="faq-item">
         <div class="faq-question">
-          <button type="button" class="question-content faq-trigger" aria-expanded="false">
+          <button type="button" class="question-content faq-trigger" aria-expanded="false" aria-controls="service-faq-answer-3">
             <div class="question-text">
               <p class="question-number">3/</p>
               <p class="question-title">How long does it take?</p>
@@ -335,7 +335,7 @@
               </svg>
             </div>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="service-faq-answer-3">
             <p>Typically 1–2 weeks depending on catalog size, the amount of cleanup needed, and how much metafield architecture is involved.</p>
           </div>
         </div>
@@ -343,7 +343,7 @@
       
       <div class="faq-item">
         <div class="faq-question">
-          <button type="button" class="question-content faq-trigger" aria-expanded="false">
+          <button type="button" class="question-content faq-trigger" aria-expanded="false" aria-controls="service-faq-answer-4">
             <div class="question-text">
               <p class="question-number">4/</p>
               <p class="question-title">How do payments work?</p>
@@ -354,7 +354,7 @@
               </svg>
             </div>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="service-faq-answer-4">
             <p>Both Upwork escrow/milestone payments and direct payment are available.</p>
           </div>
         </div>
@@ -620,11 +620,13 @@
     navDrawer.classList.add('active');
     navOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
+    if (menuToggle) menuToggle.setAttribute('aria-expanded', 'true');
   }
   function closeDrawer() {
     navDrawer.classList.remove('active');
     navOverlay.classList.remove('active');
     document.body.style.overflow = '';
+    if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
   }
 
   if (menuToggle) menuToggle.addEventListener('click', openDrawer);

@@ -107,7 +107,7 @@
       </a>
 
       <!-- Hamburger — far right, with gap from CTA -->
-      <button class="menu-toggle" aria-label="Toggle menu">
+      <button class="menu-toggle" aria-expanded="false" aria-controls="navDrawer" aria-label="Toggle menu">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
@@ -203,11 +203,11 @@
 
 <h2 id="the-approach">The Approach</h2>
 
-<p>Built a <a href="/hsnlogix-staging/services/theme-development/">custom theme</a> from the ground up designed around the product, not around a template: large-format product imagery given full visual priority, clean navigation that gets out of the way, and custom collection pages structured for browsing rather than searching. Every design decision was weighed against load time — a wall art store lives or dies on the image being both large and fast, which is a harder technical problem than it sounds. (For stores that already have a theme but are losing sales to slow images or a sluggish mobile experience, <a href="/hsnlogix-staging/services/speed-optimization/">Theme Optimization &amp; Responsiveness</a> addresses exactly this.) On top of the core build, a custom size-comparison and gallery-wall planning tool was added so shoppers could preview how a piece would actually look at scale before buying, directly addressing the biggest hesitation point in art ecommerce. Checkout was configured for a global audience, supporting 40+ currencies, and tested end-to-end before launch.</p>
+<p>Built a <a href="/hsnlogix-staging/services/theme-development/">custom theme</a> from the ground up designed around the product, not around a template: large-format product imagery given full visual priority, clean navigation that gets out of the way, and custom collection pages structured for browsing rather than searching. Every design decision was weighed against load time — a wall art store lives or dies on the image being both large and fast, which is a harder technical problem than it sounds. (For stores that already have a theme but are losing sales to slow images or a sluggish mobile experience, <a href="/hsnlogix-staging/services/speed-optimization/">Theme Optimization &amp; Responsiveness</a> addresses exactly this.) On top of the core build, a custom size-comparison and gallery-wall planning tool was added so shoppers could preview how a piece would actually look at scale before buying, directly addressing the biggest hesitation point in art ecommerce. Checkout was configured for a global audience, with localized multi-currency support, and tested end-to-end before launch.</p>
 
 <h2 id="the-result">The Result</h2>
 
-<p>A fast-loading, conversion-focused storefront that lets the product do the selling instead of fighting the theme for attention. The store now holds a 4.9+/5 average review score across its catalog, and the localized checkout and gallery-wall planning tool have become two of the store’s most-used features, turning a category built on hesitation into one built on confidence.</p>
+<p>A fast-loading, conversion-focused storefront that lets the product do the selling instead of fighting the theme for attention. The store has seen strong, consistently positive customer reviews, and the localized checkout and gallery-wall planning tool have become standout features for shoppers, turning a category built on hesitation into one built on confidence.</p>
 
 <p>Visit the live site: <a href="https://laboostudio.com">laboostudio.com</a></p>
 
@@ -376,11 +376,13 @@
     navDrawer.classList.add('active');
     navOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
+    if (menuToggle) menuToggle.setAttribute('aria-expanded', 'true');
   }
   function closeDrawer() {
     navDrawer.classList.remove('active');
     navOverlay.classList.remove('active');
     document.body.style.overflow = '';
+    if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
   }
 
   if (menuToggle) menuToggle.addEventListener('click', openDrawer);

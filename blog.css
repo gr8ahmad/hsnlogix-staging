@@ -345,6 +345,10 @@
 
 .case-study-cta {
     margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
 }
 
 /* In-content CTA buttons sit in block containers and would otherwise stretch
@@ -355,6 +359,93 @@
 .service-hero__cta .cta-button,
 .wl-closing-cta .cta-button {
     width: fit-content;
+}
+
+/* Secondary (outlined/ghost) variant for case study "Visit client" CTA */
+.cta-button.cta-button--secondary {
+    background: transparent;
+    box-shadow: none;
+    border: 1.5px solid rgba(10,10,10,0.22);
+}
+.cta-button.cta-button--secondary .button-text p {
+    color: #0A0A0A;
+}
+.cta-button.cta-button--secondary .button-icon {
+    background-color: #0A0A0A;
+}
+.cta-button.cta-button--secondary .button-icon svg {
+    fill: #FFFFFF;
+}
+.cta-button.cta-button--secondary:hover {
+    background: rgba(10,10,10,0.05);
+    border-color: rgba(10,10,10,0.45);
+    box-shadow: none;
+}
+
+/* Related services block on case study pages */
+.case-study-related-services {
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(10,10,10,0.1);
+}
+.case-study-related-title {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: rgba(10,10,10,0.4);
+    margin-bottom: 14px;
+}
+.case-study-related-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.case-study-related-link {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: #0A6640;
+    text-decoration: none;
+    padding: 6px 14px;
+    border-radius: 100px;
+    border: 1px solid rgba(10,102,64,0.25);
+    transition: background 0.18s ease, color 0.18s ease;
+}
+.case-study-related-link:hover {
+    background: #0A6640;
+    color: #FFFFFF;
+}
+
+/* Next case study navigation */
+.case-study-next {
+    margin-top: 24px;
+    padding: 22px 28px;
+    background: #F7F7F7;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.case-study-next-label {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: rgba(10,10,10,0.4);
+}
+.case-study-next-link {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #0A0A0A;
+    text-decoration: none;
+    transition: color 0.18s ease;
+}
+.case-study-next-link:hover {
+    color: #0A6640;
 }
 
 .case-study-quick-facts {

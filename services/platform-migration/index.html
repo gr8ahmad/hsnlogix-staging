@@ -106,7 +106,7 @@
       </a>
 
       <!-- Hamburger — far right, with gap from CTA -->
-      <button class="menu-toggle" aria-label="Toggle menu">
+      <button class="menu-toggle" aria-expanded="false" aria-controls="navDrawer" aria-label="Toggle menu">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
@@ -289,7 +289,7 @@
       
       <div class="faq-item">
         <div class="faq-question">
-          <button type="button" class="question-content faq-trigger" aria-expanded="false">
+          <button type="button" class="question-content faq-trigger" aria-expanded="false" aria-controls="service-faq-answer-1">
             <div class="question-text">
               <p class="question-number">1/</p>
               <p class="question-title">Who handles the migration?</p>
@@ -300,7 +300,7 @@
               </svg>
             </div>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="service-faq-answer-1">
             <p>Hussain manages the migration personally, with specialists brought in for specific components on larger projects. No account-manager layer — the developer scoping the migration is the one executing it.</p>
           </div>
         </div>
@@ -308,7 +308,7 @@
       
       <div class="faq-item">
         <div class="faq-question">
-          <button type="button" class="question-content faq-trigger" aria-expanded="false">
+          <button type="button" class="question-content faq-trigger" aria-expanded="false" aria-controls="service-faq-answer-2">
             <div class="question-text">
               <p class="question-number">2/</p>
               <p class="question-title">What does a migration cost?</p>
@@ -319,7 +319,7 @@
               </svg>
             </div>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="service-faq-answer-2">
             <p>Platform migrations typically run $1,500–$5,000+ depending on store size, the number of products and customers, and how much custom functionality needs to be rebuilt in Shopify. You'll get a clear quote after the audit.</p>
           </div>
         </div>
@@ -327,7 +327,7 @@
       
       <div class="faq-item">
         <div class="faq-question">
-          <button type="button" class="question-content faq-trigger" aria-expanded="false">
+          <button type="button" class="question-content faq-trigger" aria-expanded="false" aria-controls="service-faq-answer-3">
             <div class="question-text">
               <p class="question-number">3/</p>
               <p class="question-title">How long does it take?</p>
@@ -338,7 +338,7 @@
               </svg>
             </div>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="service-faq-answer-3">
             <p>Most migrations run 2–4 weeks from the initial audit to DNS cutover, depending on catalog size and integration complexity.</p>
           </div>
         </div>
@@ -346,7 +346,7 @@
       
       <div class="faq-item">
         <div class="faq-question">
-          <button type="button" class="question-content faq-trigger" aria-expanded="false">
+          <button type="button" class="question-content faq-trigger" aria-expanded="false" aria-controls="service-faq-answer-4">
             <div class="question-text">
               <p class="question-number">4/</p>
               <p class="question-title">How do payments work?</p>
@@ -357,7 +357,7 @@
               </svg>
             </div>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="service-faq-answer-4">
             <p>Both Upwork escrow/milestone payments and direct payment are available.</p>
           </div>
         </div>
@@ -365,7 +365,7 @@
       
       <div class="faq-item">
         <div class="faq-question">
-          <button type="button" class="question-content faq-trigger" aria-expanded="false">
+          <button type="button" class="question-content faq-trigger" aria-expanded="false" aria-controls="service-faq-answer-5">
             <div class="question-text">
               <p class="question-number">5/</p>
               <p class="question-title">Is there an NDA available?</p>
@@ -376,7 +376,7 @@
               </svg>
             </div>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="service-faq-answer-5">
             <p>Yes — if you'd prefer an NDA in place before sharing store access or customer data, that's available on request before work starts.</p>
           </div>
         </div>
@@ -650,11 +650,13 @@
     navDrawer.classList.add('active');
     navOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
+    if (menuToggle) menuToggle.setAttribute('aria-expanded', 'true');
   }
   function closeDrawer() {
     navDrawer.classList.remove('active');
     navOverlay.classList.remove('active');
     document.body.style.overflow = '';
+    if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
   }
 
   if (menuToggle) menuToggle.addEventListener('click', openDrawer);
