@@ -39,9 +39,12 @@
 }
 
 /* .question-title defaults to color: #FFF in style.css (correct for the
-   dark-background service accordion elsewhere on the site). The white-label
-   page's FAQ is wrapped in .service-section, not .faq-section, so it falls
-   through to that white-on-white default -- fix scoped to this page only. */
+   dark-background accordion context). Service FAQ cards have a white
+   background (rgb(255,255,255)), so white text is invisible there. */
+.service-section .faq-questions .question-title {
+    color: #0A0A0A;
+}
+/* White-label page scoped fix (subset of the above, kept for specificity). */
 .white-label-page .service-section .question-title,
 .white-label-page .faq-questions .question-title {
     color: #0A0A0A;
