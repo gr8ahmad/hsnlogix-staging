@@ -402,7 +402,7 @@
       </div>
     </div>
   </div>
-  <p class="testimonial-text">Brilliant &amp; definitely recommend! — We loved working with Hussain as he is very professional, talented and responsive. He's good at what he does and even though it's the first time he works on our theme, he quickly understood what's needed and handled it very smoothly as if he's been doing it for years. He builds a proper infrastructure from scratch in a clean and scalable way. Would love to collaborate again!</p>
+  <p class="testimonial-text">Brilliant &amp; definitely recommend! -- We loved working with Hussain as he is very professional, talented and responsive. He's good at what he does and even though it's the first time he works on our theme, he quickly understood what's needed and handled it very smoothly as if he's been doing it for years. He builds a proper infrastructure from scratch in a clean and scalable way. Would love to collaborate again! :)</p>
   <p class="testimonial-author">Aal MOGHRABI</p>
 </div>
     </div>
@@ -510,7 +510,7 @@
       loopWidth += item.offsetWidth + parseFloat(style.marginLeft) + parseFloat(style.marginRight);
     });
 
-    items.forEach(function (item) { track.appendChild(item.cloneNode(true)); });
+    items.forEach(function (item) { var clone = item.cloneNode(true); clone.setAttribute('aria-hidden', 'true'); track.appendChild(clone); });
 
     var pos = 0, currentRate = 1, targetRate = 1;
     var baseSpeed = window.innerWidth <= 768 ? loopWidth / 40 : loopWidth / 50;

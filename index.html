@@ -888,7 +888,7 @@
       loopWidth += item.offsetWidth + parseFloat(style.marginLeft) + parseFloat(style.marginRight);
     });
 
-    items.forEach(item => track.appendChild(item.cloneNode(true)));
+    items.forEach(item => { const clone = item.cloneNode(true); clone.setAttribute('aria-hidden', 'true'); track.appendChild(clone); });
 
     let pos = 0;
     let currentRate = 1, targetRate = 1;

@@ -1286,3 +1286,34 @@
    in style.css targets the old .footer-logo class; the current footer uses
    .logo, so we override here with the correct selector. */
 .footer .logo .logo-hsn { color: #fff; }
+
+/* ─── Testimonial reviewer names — fix italic styling ───────────────────────
+   style.css:729 sets font-style: italic globally on .testimonial-author;
+   reviewer names should be legible in regular weight, not italic/script. */
+.testimonial-author {
+  font-style: normal;
+}
+
+/* ─── Testimonials page static grid ─────────────────────────────────────────
+   Replaces the marquee/auto-scroll on /testimonials/ with a readable grid.
+   .testimonial-card has max-width: 380px in style.css (correct for the
+   slider context); override here so cards fill their column in the grid. */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding: 40px 0 60px;
+}
+.testimonials-grid .testimonial-card {
+  max-width: none;
+}
+@media (max-width: 900px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+}
