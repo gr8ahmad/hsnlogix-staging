@@ -261,7 +261,7 @@
       
       <div class="faq-item">
         <div class="faq-question">
-          <div class="question-content">
+          <button type="button" class="question-content faq-trigger" aria-expanded="false">
             <div class="question-text">
               <p class="question-number">1/</p>
               <p class="question-title">Who handles the monthly work?</p>
@@ -271,7 +271,7 @@
                 <path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path>
               </svg>
             </div>
-          </div>
+          </button>
           <div class="faq-answer">
             <p>Hussain handles retainer work personally. Because the same developer is always on your store, there's no re-onboarding when something new comes up — context carries forward month to month.</p>
           </div>
@@ -280,7 +280,7 @@
       
       <div class="faq-item">
         <div class="faq-question">
-          <div class="question-content">
+          <button type="button" class="question-content faq-trigger" aria-expanded="false">
             <div class="question-text">
               <p class="question-number">2/</p>
               <p class="question-title">What does the retainer cost?</p>
@@ -290,7 +290,7 @@
                 <path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path>
               </svg>
             </div>
-          </div>
+          </button>
           <div class="faq-answer">
             <p>The Maintenance Retainer is $300/month. The monthly hour allotment covers fixes, tweaks, and small improvements. Larger scoped work is quoted separately.</p>
           </div>
@@ -299,7 +299,7 @@
       
       <div class="faq-item">
         <div class="faq-question">
-          <div class="question-content">
+          <button type="button" class="question-content faq-trigger" aria-expanded="false">
             <div class="question-text">
               <p class="question-number">3/</p>
               <p class="question-title">How do payments work?</p>
@@ -309,7 +309,7 @@
                 <path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path>
               </svg>
             </div>
-          </div>
+          </button>
           <div class="faq-answer">
             <p>Both Upwork escrow/milestone payments and direct payment are available.</p>
           </div>
@@ -318,7 +318,7 @@
       
       <div class="faq-item">
         <div class="faq-question">
-          <div class="question-content">
+          <button type="button" class="question-content faq-trigger" aria-expanded="false">
             <div class="question-text">
               <p class="question-number">4/</p>
               <p class="question-title">Is there a minimum commitment?</p>
@@ -328,7 +328,7 @@
                 <path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path>
               </svg>
             </div>
-          </div>
+          </button>
           <div class="faq-answer">
             <p>There's no long-term lock-in. The retainer runs month to month — you can adjust or stop at any time.</p>
           </div>
@@ -386,10 +386,17 @@
   document.querySelectorAll('.service-faq').forEach(function (container) {
     var items = container.querySelectorAll('.faq-item');
     items.forEach(function (item) {
-      item.querySelector('.faq-question').addEventListener('click', function () {
+      var trigger = item.querySelector('.faq-trigger');
+      trigger.addEventListener('click', function () {
         var isActive = item.classList.contains('active');
-        items.forEach(function (i) { i.classList.remove('active'); });
-        if (!isActive) item.classList.add('active');
+        items.forEach(function (i) {
+          i.classList.remove('active');
+          i.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+        });
+        if (!isActive) {
+          item.classList.add('active');
+          trigger.setAttribute('aria-expanded', 'true');
+        }
       });
     });
   });

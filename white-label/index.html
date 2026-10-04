@@ -231,17 +231,17 @@
     <div class="faq-questions">
       <div class="faq-item">
         <div class="faq-question">
-          <div class="question-content">
+          <button type="button" class="question-content faq-trigger" aria-expanded="false">
             <div class="question-text">
               <p class="question-number">01/</p>
               <p class="question-title">How does the NDA work?</p>
             </div>
             <div class="question-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" aria-hidden="true">
                 <path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path>
               </svg>
             </div>
-          </div>
+          </button>
           <div class="faq-answer">
             <p>Every white-label engagement starts with an NDA before any project details are shared. We don't disclose client names, project scope, or the arrangement itself.</p>
           </div>
@@ -250,17 +250,17 @@
 
       <div class="faq-item">
         <div class="faq-question">
-          <div class="question-content">
+          <button type="button" class="question-content faq-trigger" aria-expanded="false">
             <div class="question-text">
               <p class="question-number">02/</p>
               <p class="question-title">Will we talk to your client directly?</p>
             </div>
             <div class="question-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" aria-hidden="true">
                 <path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path>
               </svg>
             </div>
-          </div>
+          </button>
           <div class="faq-answer">
             <p>No, unless you want us to. All communication runs through you by default.</p>
           </div>
@@ -269,17 +269,17 @@
 
       <div class="faq-item">
         <div class="faq-question">
-          <div class="question-content">
+          <button type="button" class="question-content faq-trigger" aria-expanded="false">
             <div class="question-text">
               <p class="question-number">03/</p>
               <p class="question-title">What's the minimum project size?</p>
             </div>
             <div class="question-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" aria-hidden="true">
                 <path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path>
               </svg>
             </div>
-          </div>
+          </button>
           <div class="faq-answer">
             <p>No fixed minimum — we're happy to start with a small trial project so you can evaluate the work before committing to anything ongoing.</p>
           </div>
@@ -307,16 +307,19 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    const faqItems = document.querySelectorAll('.faq-item');
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        question.addEventListener('click', function() {
-            item.classList.toggle('active');
-            faqItems.forEach(otherItem => {
-                if (otherItem !== item) {
-                    otherItem.classList.remove('active');
-                }
+    var faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(function(item) {
+        var trigger = item.querySelector('.faq-trigger');
+        trigger.addEventListener('click', function() {
+            var isActive = item.classList.contains('active');
+            faqItems.forEach(function(i) {
+                i.classList.remove('active');
+                i.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
             });
+            if (!isActive) {
+                item.classList.add('active');
+                trigger.setAttribute('aria-expanded', 'true');
+            }
         });
     });
 });

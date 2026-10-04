@@ -266,7 +266,7 @@
       
       <div class="faq-item">
         <div class="faq-question">
-          <div class="question-content">
+          <button type="button" class="question-content faq-trigger" aria-expanded="false">
             <div class="question-text">
               <p class="question-number">1/</p>
               <p class="question-title">Who handles the migration?</p>
@@ -276,7 +276,7 @@
                 <path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path>
               </svg>
             </div>
-          </div>
+          </button>
           <div class="faq-answer">
             <p>Hussain manages the migration personally, with specialists brought in for specific components on larger projects. No account-manager layer — the developer scoping the migration is the one executing it.</p>
           </div>
@@ -285,7 +285,7 @@
       
       <div class="faq-item">
         <div class="faq-question">
-          <div class="question-content">
+          <button type="button" class="question-content faq-trigger" aria-expanded="false">
             <div class="question-text">
               <p class="question-number">2/</p>
               <p class="question-title">What does a migration cost?</p>
@@ -295,7 +295,7 @@
                 <path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path>
               </svg>
             </div>
-          </div>
+          </button>
           <div class="faq-answer">
             <p>Platform migrations typically run $1,500–$5,000+ depending on store size, the number of products and customers, and how much custom functionality needs to be rebuilt in Shopify. You'll get a clear quote after the audit.</p>
           </div>
@@ -304,7 +304,7 @@
       
       <div class="faq-item">
         <div class="faq-question">
-          <div class="question-content">
+          <button type="button" class="question-content faq-trigger" aria-expanded="false">
             <div class="question-text">
               <p class="question-number">3/</p>
               <p class="question-title">How long does it take?</p>
@@ -314,7 +314,7 @@
                 <path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path>
               </svg>
             </div>
-          </div>
+          </button>
           <div class="faq-answer">
             <p>Most migrations run 2–4 weeks from the initial audit to DNS cutover, depending on catalog size and integration complexity.</p>
           </div>
@@ -323,7 +323,7 @@
       
       <div class="faq-item">
         <div class="faq-question">
-          <div class="question-content">
+          <button type="button" class="question-content faq-trigger" aria-expanded="false">
             <div class="question-text">
               <p class="question-number">4/</p>
               <p class="question-title">How do payments work?</p>
@@ -333,7 +333,7 @@
                 <path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path>
               </svg>
             </div>
-          </div>
+          </button>
           <div class="faq-answer">
             <p>Both Upwork escrow/milestone payments and direct payment are available.</p>
           </div>
@@ -342,7 +342,7 @@
       
       <div class="faq-item">
         <div class="faq-question">
-          <div class="question-content">
+          <button type="button" class="question-content faq-trigger" aria-expanded="false">
             <div class="question-text">
               <p class="question-number">5/</p>
               <p class="question-title">Is there an NDA available?</p>
@@ -352,7 +352,7 @@
                 <path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path>
               </svg>
             </div>
-          </div>
+          </button>
           <div class="faq-answer">
             <p>Yes — if you'd prefer an NDA in place before sharing store access or customer data, that's available on request before work starts.</p>
           </div>
@@ -418,10 +418,17 @@
   document.querySelectorAll('.service-faq').forEach(function (container) {
     var items = container.querySelectorAll('.faq-item');
     items.forEach(function (item) {
-      item.querySelector('.faq-question').addEventListener('click', function () {
+      var trigger = item.querySelector('.faq-trigger');
+      trigger.addEventListener('click', function () {
         var isActive = item.classList.contains('active');
-        items.forEach(function (i) { i.classList.remove('active'); });
-        if (!isActive) item.classList.add('active');
+        items.forEach(function (i) {
+          i.classList.remove('active');
+          i.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+        });
+        if (!isActive) {
+          item.classList.add('active');
+          trigger.setAttribute('aria-expanded', 'true');
+        }
       });
     });
   });

@@ -258,7 +258,7 @@
       
       <div class="faq-item">
         <div class="faq-question">
-          <div class="question-content">
+          <button type="button" class="question-content faq-trigger" aria-expanded="false">
             <div class="question-text">
               <p class="question-number">1/</p>
               <p class="question-title">Who runs the audit?</p>
@@ -268,7 +268,7 @@
                 <path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path>
               </svg>
             </div>
-          </div>
+          </button>
           <div class="faq-answer">
             <p>Hussain does the audit personally and writes the findings report. Not an automated PageSpeed PDF — a real review of your specific store with annotated findings and a prioritized fix list.</p>
           </div>
@@ -277,66 +277,47 @@
       
       <div class="faq-item">
         <div class="faq-question">
-          <div class="question-content">
+          <button type="button" class="question-content faq-trigger" aria-expanded="false">
             <div class="question-text">
               <p class="question-number">2/</p>
-              <p class="question-title">What does an audit cost?</p>
+              <p class="question-title">What does the audit actually cover?</p>
             </div>
             <div class="question-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" aria-hidden="true">
                 <path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path>
               </svg>
             </div>
-          </div>
+          </button>
           <div class="faq-answer">
-            <p>The audit typically runs $500–$1,000 depending on store complexity. You'll get a clear quote upfront before anything starts.</p>
+            <p>Three areas: performance (Core Web Vitals — LCP, CLS, TBT — on desktop and mobile), conversion friction (checkout flow, mobile UX, layout issues that lose sales before the cart), and theme code quality (render-blocking scripts, unused CSS, conflicting apps, legacy bloat). You get a written report with annotated findings and a fix list ranked by impact.</p>
           </div>
         </div>
       </div>
       
       <div class="faq-item">
         <div class="faq-question">
-          <div class="question-content">
+          <button type="button" class="question-content faq-trigger" aria-expanded="false">
             <div class="question-text">
               <p class="question-number">3/</p>
-              <p class="question-title">How long does it take?</p>
+              <p class="question-title">What happens after the audit?</p>
             </div>
             <div class="question-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" aria-hidden="true">
                 <path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path>
               </svg>
             </div>
-          </div>
+          </button>
           <div class="faq-answer">
-            <p>The diagnostic and findings report is typically completed in 2–3 days from when store access is shared.</p>
+            <p>You get a prioritized fix list with clear next steps. If you want the fixes implemented, Theme Optimization & Responsiveness covers the implementation side — quoted separately once the scope is clear from the report. The audit stands on its own: you can take the findings to any developer, or implement them yourself.</p>
           </div>
         </div>
       </div>
       
       <div class="faq-item">
         <div class="faq-question">
-          <div class="question-content">
+          <button type="button" class="question-content faq-trigger" aria-expanded="false">
             <div class="question-text">
               <p class="question-number">4/</p>
-              <p class="question-title">How do payments work?</p>
-            </div>
-            <div class="question-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" aria-hidden="true">
-                <path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path>
-              </svg>
-            </div>
-          </div>
-          <div class="faq-answer">
-            <p>Both Upwork escrow/milestone payments and direct payment are available.</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">
-          <div class="question-content">
-            <div class="question-text">
-              <p class="question-number">5/</p>
               <p class="question-title">Is there an NDA available?</p>
             </div>
             <div class="question-icon">
@@ -344,7 +325,7 @@
                 <path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path>
               </svg>
             </div>
-          </div>
+          </button>
           <div class="faq-answer">
             <p>Yes — if you'd prefer an NDA in place before sharing store access, that's available on request before work starts.</p>
           </div>
@@ -370,26 +351,18 @@
     },
     {
       "@type": "Question",
-      "name": "What does an audit cost?",
+      "name": "What does the audit actually cover?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The audit typically runs $500–$1,000 depending on store complexity. You'll get a clear quote upfront before anything starts."
+        "text": "Three areas: performance (Core Web Vitals — LCP, CLS, TBT — on desktop and mobile), conversion friction (checkout flow, mobile UX, layout issues that lose sales before the cart), and theme code quality (render-blocking scripts, unused CSS, conflicting apps, legacy bloat). You get a written report with annotated findings and a fix list ranked by impact."
       }
     },
     {
       "@type": "Question",
-      "name": "How long does it take?",
+      "name": "What happens after the audit?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The diagnostic and findings report is typically completed in 2–3 days from when store access is shared."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do payments work?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Both Upwork escrow/milestone payments and direct payment are available."
+        "text": "You get a prioritized fix list with clear next steps. If you want the fixes implemented, Theme Optimization & Responsiveness covers the implementation side — quoted separately once the scope is clear from the report. The audit stands on its own: you can take the findings to any developer, or implement them yourself."
       }
     },
     {
@@ -410,10 +383,17 @@
   document.querySelectorAll('.service-faq').forEach(function (container) {
     var items = container.querySelectorAll('.faq-item');
     items.forEach(function (item) {
-      item.querySelector('.faq-question').addEventListener('click', function () {
+      var trigger = item.querySelector('.faq-trigger');
+      trigger.addEventListener('click', function () {
         var isActive = item.classList.contains('active');
-        items.forEach(function (i) { i.classList.remove('active'); });
-        if (!isActive) item.classList.add('active');
+        items.forEach(function (i) {
+          i.classList.remove('active');
+          i.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+        });
+        if (!isActive) {
+          item.classList.add('active');
+          trigger.setAttribute('aria-expanded', 'true');
+        }
       });
     });
   });

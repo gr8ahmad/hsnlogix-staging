@@ -1317,3 +1317,16 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* FAQ accordion button reset — .question-content is now a <button> (.faq-trigger);
+   existing layout/flex styles come from .question-content in style.css */
+button.faq-trigger {
+  appearance: none;
+  -webkit-appearance: none;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}

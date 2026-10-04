@@ -263,7 +263,7 @@
       
       <div class="faq-item">
         <div class="faq-question">
-          <div class="question-content">
+          <button type="button" class="question-content faq-trigger" aria-expanded="false">
             <div class="question-text">
               <p class="question-number">1/</p>
               <p class="question-title">Who diagnoses and fixes the issue?</p>
@@ -273,7 +273,7 @@
                 <path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path>
               </svg>
             </div>
-          </div>
+          </button>
           <div class="faq-answer">
             <p>Hussain does the diagnosis personally. No ticket queue, no junior handoff — one direct conversation with the developer looking at your store.</p>
           </div>
@@ -282,7 +282,7 @@
       
       <div class="faq-item">
         <div class="faq-question">
-          <div class="question-content">
+          <button type="button" class="question-content faq-trigger" aria-expanded="false">
             <div class="question-text">
               <p class="question-number">2/</p>
               <p class="question-title">What does troubleshooting cost?</p>
@@ -292,7 +292,7 @@
                 <path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path>
               </svg>
             </div>
-          </div>
+          </button>
           <div class="faq-answer">
             <p>Most one-off fixes run $500–$1,000 depending on the complexity of the issue. You'll get a clear scope and quote before any work begins.</p>
           </div>
@@ -301,7 +301,7 @@
       
       <div class="faq-item">
         <div class="faq-question">
-          <div class="question-content">
+          <button type="button" class="question-content faq-trigger" aria-expanded="false">
             <div class="question-text">
               <p class="question-number">3/</p>
               <p class="question-title">How do payments work?</p>
@@ -311,7 +311,7 @@
                 <path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path>
               </svg>
             </div>
-          </div>
+          </button>
           <div class="faq-answer">
             <p>Both Upwork escrow/milestone payments and direct payment are available.</p>
           </div>
@@ -320,7 +320,7 @@
       
       <div class="faq-item">
         <div class="faq-question">
-          <div class="question-content">
+          <button type="button" class="question-content faq-trigger" aria-expanded="false">
             <div class="question-text">
               <p class="question-number">4/</p>
               <p class="question-title">What if the same issues keep coming back?</p>
@@ -330,7 +330,7 @@
                 <path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path>
               </svg>
             </div>
-          </div>
+          </button>
           <div class="faq-answer">
             <p>If your store needs ongoing attention beyond one-off fixes, the Maintenance Retainer provides monthly developer hours, proactive monitoring, and priority response — so problems get caught before customers see them.</p>
           </div>
@@ -388,10 +388,17 @@
   document.querySelectorAll('.service-faq').forEach(function (container) {
     var items = container.querySelectorAll('.faq-item');
     items.forEach(function (item) {
-      item.querySelector('.faq-question').addEventListener('click', function () {
+      var trigger = item.querySelector('.faq-trigger');
+      trigger.addEventListener('click', function () {
         var isActive = item.classList.contains('active');
-        items.forEach(function (i) { i.classList.remove('active'); });
-        if (!isActive) item.classList.add('active');
+        items.forEach(function (i) {
+          i.classList.remove('active');
+          i.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+        });
+        if (!isActive) {
+          item.classList.add('active');
+          trigger.setAttribute('aria-expanded', 'true');
+        }
       });
     });
   });
