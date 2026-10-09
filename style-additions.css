@@ -1748,3 +1748,11 @@ button.accordion-question {
   .contact-page__layout { grid-template-columns: 1fr; gap: 36px; }
   .contact-page__alt-col { border-top: 1px solid var(--line); padding-top: 32px; }
 }
+
+/* sr-only utility for screen-reader-only headings */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+/* service page: secondary contact link below CTA */
+.service-cta__alt-link { margin-top: 14px; font-size: 14px; color: rgba(255,255,255,0.45); }
+.service-cta__alt-link a { color: rgba(255,255,255,0.6); text-decoration: underline; }
+.service-cta__alt-link a:hover { color: var(--accent); }
