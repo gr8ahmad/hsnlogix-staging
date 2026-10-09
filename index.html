@@ -21,8 +21,8 @@
 <meta property="og:url" content="https://hsnlogix.com/">
   <title>HSNLOGIX | Shopify Development &amp; Ecommerce Growth</title>
 
-  <link rel="stylesheet" href="style.css?v=1791550569">
-  <link rel="stylesheet" href="style-additions.css?v=1791550569">
+  <link rel="stylesheet" href="style.css?v=1791551766">
+  <link rel="stylesheet" href="style-additions.css?v=1791551766">
   <link rel="stylesheet" href="aos.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="aos.css"></noscript>
 
@@ -1369,6 +1369,90 @@
   </div>
 </section>
 
+<section class="contact-section" id="contact">
+  <div class="contact-section__inner">
+    <div class="contact-section__header">
+      <div class="services-badge"><span class="badge-text">contact</span></div>
+      <h2 class="contact-section__heading">Discuss Your Store</h2>
+      <p class="contact-section__intro">Share some details about your project and what you need. You will receive a reply by email.</p>
+    </div>
+
+    <form class="contact-form" id="contact-form" novalidate>
+      <!-- Web3Forms config -->
+      <input type="hidden" name="access_key" value="PASTE_KEY_HERE">
+      <input type="hidden" name="subject" value="New HSNLOGIX lead">
+      <input type="hidden" name="from_name" value="HSNLOGIX website">
+      <!-- Honeypot: filled by bots, ignored by users -->
+      <input type="checkbox" name="botcheck" id="botcheck" class="contact-form__honeypot" tabindex="-1" aria-hidden="true" autocomplete="off">
+
+      <div class="contact-form__grid">
+
+        <div class="contact-form__field">
+          <label class="contact-form__label" for="cf-name">Name <span aria-hidden="true">*</span></label>
+          <input class="contact-form__input" type="text" id="cf-name" name="name"
+            required aria-required="true" autocomplete="name"
+            aria-describedby="cf-name-err">
+          <span class="contact-form__error" id="cf-name-err" aria-live="polite"></span>
+        </div>
+
+        <div class="contact-form__field">
+          <label class="contact-form__label" for="cf-email">Email <span aria-hidden="true">*</span></label>
+          <input class="contact-form__input" type="email" id="cf-email" name="email"
+            required aria-required="true" autocomplete="email"
+            aria-describedby="cf-email-err">
+          <span class="contact-form__error" id="cf-email-err" aria-live="polite"></span>
+        </div>
+
+        <div class="contact-form__field contact-form__field--full">
+          <label class="contact-form__label" for="cf-url">Store URL <span class="contact-form__optional">(optional)</span></label>
+          <input class="contact-form__input" type="url" id="cf-url" name="store_url"
+            autocomplete="url" placeholder="https://yourstore.myshopify.com">
+        </div>
+
+        <div class="contact-form__field">
+          <label class="contact-form__label" for="cf-service">What do you need?</label>
+          <select class="contact-form__input contact-form__select" id="cf-service" name="service">
+            <option value="">Select a service</option>
+            <option value="Custom theme development">Custom theme development</option>
+            <option value="Shopify migration">Shopify migration</option>
+            <option value="Large commerce or Shopify Plus setup">Large commerce or Shopify Plus setup</option>
+            <option value="Store setup and customization">Store setup and customization</option>
+            <option value="Speed and performance">Speed and performance</option>
+            <option value="App integration and custom features">App integration and custom features</option>
+            <option value="Maintenance retainer">Maintenance retainer</option>
+            <option value="Not sure yet">Not sure yet</option>
+          </select>
+        </div>
+
+        <div class="contact-form__field">
+          <label class="contact-form__label" for="cf-budget">Budget</label>
+          <select class="contact-form__input contact-form__select" id="cf-budget" name="budget">
+            <option value="">Select a range</option>
+            <option value="Under $1k">Under $1k</option>
+            <option value="$1k to $3k">$1k to $3k</option>
+            <option value="$4k+">$4k+</option>
+          </select>
+        </div>
+
+        <div class="contact-form__field contact-form__field--full">
+          <label class="contact-form__label" for="cf-message">Message <span class="contact-form__optional">(optional)</span></label>
+          <textarea class="contact-form__input contact-form__textarea" id="cf-message" name="message" rows="5"></textarea>
+        </div>
+
+      </div>
+
+      <div class="contact-form__footer">
+        <button type="submit" class="contact-form__submit" id="cf-submit">
+          Send message
+        </button>
+        <p class="contact-form__privacy">Your details are processed by our form provider and used only to reply. <a href="/hsnlogix-staging/privacy-policy/" class="contact-form__privacy-link">Privacy Policy</a></p>
+      </div>
+
+      <div class="contact-form__status" id="cf-status" role="status" aria-live="polite" aria-atomic="true"></div>
+    </form>
+  </div>
+</section>
+
   </main>
 
 
@@ -1546,7 +1630,77 @@
 </script>
 
 
-    <script src="aos.js?v=1791550569"></script>
+<script>
+// Contact form: Web3Forms submission with consent-gated GA4 event
+(function () {
+  document.addEventListener('DOMContentLoaded', function () {
+    var form = document.getElementById('contact-form');
+    if (!form) return;
+    var submitBtn = document.getElementById('cf-submit');
+    var statusEl  = document.getElementById('cf-status');
+    var nameErr   = document.getElementById('cf-name-err');
+    var emailErr  = document.getElementById('cf-email-err');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Reset inline errors
+      nameErr.textContent  = '';
+      emailErr.textContent = '';
+
+      var nameVal  = document.getElementById('cf-name').value.trim();
+      var emailVal = document.getElementById('cf-email').value.trim();
+      var valid = true;
+
+      if (!nameVal) {
+        nameErr.textContent = 'Name is required.';
+        valid = false;
+      }
+      if (!emailVal) {
+        emailErr.textContent = 'Email is required.';
+        valid = false;
+      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) {
+        emailErr.textContent = 'Please enter a valid email address.';
+        valid = false;
+      }
+      if (!valid) return;
+
+      statusEl.textContent  = '';
+      statusEl.className    = 'contact-form__status';
+      submitBtn.disabled    = true;
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: new FormData(form)
+      })
+        .then(function (res) { return res.json(); })
+        .then(function (json) {
+          if (json.success) {
+            statusEl.textContent = 'Thanks, your message was sent.';
+            statusEl.className   = 'contact-form__status contact-form__status--success';
+            form.reset();
+            try {
+              if (localStorage.getItem('hsn_consent') === 'granted' && typeof gtag === 'function') {
+                gtag('event', 'generate_lead', {
+                  event_category: 'conversion',
+                  event_label: 'discuss_your_store'
+                });
+              }
+            } catch (err) {}
+          } else {
+            throw new Error('failed');
+          }
+        })
+        .catch(function () {
+          statusEl.textContent = 'Something went wrong. Please try again or email hussain@hsnlogix.com.';
+          statusEl.className   = 'contact-form__status contact-form__status--error';
+          submitBtn.disabled   = false;
+        });
+    });
+  });
+})();
+</script>
+    <script src="aos.js?v=1791551766"></script>
   <script>
     // Defer AOS init until after load + next frame so it doesn't
     // force a synchronous layout recalc right after the aos.css media-swap.
@@ -1678,7 +1832,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   </script>
 
-<script src="hsnlogix-tracking.js?v=1791550569"></script>
+<script src="hsnlogix-tracking.js?v=1791551766"></script>
 
 <!-- Cal.com embed bootstrap — deferred to end of body to avoid blocking render -->
 <script>
