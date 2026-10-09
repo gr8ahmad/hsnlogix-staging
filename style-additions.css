@@ -1732,3 +1732,19 @@ button.accordion-question {
     transition: none;
   }
 }
+
+/* Phase 20d: contact page layout */
+.contact-page { max-width: 940px; margin: 0 auto; }
+.contact-page__layout { display: grid; grid-template-columns: 1fr 300px; gap: 56px; align-items: start; }
+.contact-page__alt-heading { font-size: 20px; font-weight: 700; color: #fff; margin: 0 0 12px; letter-spacing: -0.5px; }
+.contact-page__alt-body { font-size: 15px; line-height: 1.7; color: rgba(255,255,255,0.55); margin-bottom: 24px; }
+.contact-page__cal-btn { width: 100%; justify-content: center; margin-bottom: 4px; }
+.contact-page__alt-email-label { font-size: 13px; color: rgba(255,255,255,0.35); margin: 20px 0 6px; }
+.contact-page__alt-email { font-size: 15px; color: rgba(255,255,255,0.75); }
+.founder-section__contact-link { margin-top: 16px; font-size: 14px; }
+.founder-section__contact-link a { color: rgba(255,255,255,0.55); text-decoration: underline; }
+.founder-section__contact-link a:hover { color: var(--accent); }
+@media (max-width: 760px) {
+  .contact-page__layout { grid-template-columns: 1fr; gap: 36px; }
+  .contact-page__alt-col { border-top: 1px solid var(--line); padding-top: 32px; }
+}
