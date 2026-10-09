@@ -21,8 +21,8 @@
 <meta property="og:url" content="https://hsnlogix.com/">
   <title>HSNLOGIX | Shopify Development &amp; Ecommerce Growth</title>
 
-  <link rel="stylesheet" href="style.css?v=1791538880">
-  <link rel="stylesheet" href="style-additions.css?v=1791538880">
+  <link rel="stylesheet" href="style.css?v=1791540805">
+  <link rel="stylesheet" href="style-additions.css?v=1791540805">
   <link rel="stylesheet" href="aos.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="aos.css"></noscript>
 
@@ -356,37 +356,10 @@
                 <p class="header-description">Custom themes, store setup, speed optimization and app integrations, plus the specialist work below.</p>
             </div>
 
-<div class="featured-services">
-  <a href="/hsnlogix-staging/services/platform-migration/" class="addon-card featured-card">
-    <div class="addon-visual"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="8" height="10" rx="1"></rect><path d="M10 12h8"></path><polyline points="15 9 18 12 15 15"></polyline></svg></div>
-    <div class="addon-body">
-      <span class="addon-title">Shopify Migration Development</span>
-      <p class="addon-desc">Moving from WooCommerce, Wix or Magento? We plan the move first: URL and 301 redirect mapping, product and customer data transfer, a staged rollout and a rollback plan.</p>
-      <span class="addon-link">Learn more &rarr;</span>
-    </div>
-  </a>
-  <a href="/hsnlogix-staging/services/b2b-wholesale/" class="addon-card featured-card">
-    <div class="addon-visual"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
-    <div class="addon-body">
-      <span class="addon-title">Large Commerce Setups</span>
-      <p class="addon-desc">Big catalogs, many variants, B2B pricing or custom integrations need a structure that stays fast and manageable. We build it that way from the start.</p>
-      <span class="addon-link">Learn more &rarr;</span>
-    </div>
-  </a>
-  <a href="/hsnlogix-staging/services/theme-development/" class="addon-card featured-card">
-    <div class="addon-visual"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l7 4v6c0 5-3.5 8-7 10-3.5-2-7-5-7-10V6l7-4z"></path></svg></div>
-    <div class="addon-body">
-      <span class="addon-title">Built to Grow Into Shopify Plus</span>
-      <p class="addon-desc">Heading toward Shopify Plus? We structure your theme, catalog and integrations so the move doesn't mean a rebuild.</p>
-      <span class="addon-link">Learn more &rarr;</span>
-    </div>
-  </a>
-</div>
-
 <div class="accordion-container">
-    <!-- Custom Theme Development (Open) -->
+    <!-- 1. Custom Theme Development (Open) -->
     <div class="accordion-item active">
-        <div class="accordion-question">
+        <button class="accordion-question" aria-expanded="true" aria-controls="acc-theme">
             <h3 class="question-title">Custom Theme Development</h3>
             <div class="accordion-icon">
                 <div class="plus-icon open">
@@ -395,8 +368,8 @@
                     </svg>
                 </div>
             </div>
-        </div>
-        <div class="accordion-answer">
+        </button>
+        <div class="accordion-answer" id="acc-theme">
             <div class="answer-content">
                 <div class="answer-hook">
                     <p class="service-hook-text">Custom Shopify themes, built to convert. Fast, scalable, fully yours.</p>
@@ -414,10 +387,10 @@
 
     <div class="accordion-divider"></div>
 
-    <!-- Store Setup & Customization -->
+    <!-- 2. Shopify Migration Development -->
     <div class="accordion-item">
-        <div class="accordion-question">
-            <h3 class="question-title">Store Setup & Customization</h3>
+        <button class="accordion-question" aria-expanded="false" aria-controls="acc-migration">
+            <h3 class="question-title">Shopify Migration Development</h3>
             <div class="accordion-icon">
                 <div class="plus-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -425,8 +398,68 @@
                     </svg>
                 </div>
             </div>
+        </button>
+        <div class="accordion-answer" id="acc-migration">
+            <div class="answer-content">
+                <div class="answer-hook">
+                    <p class="service-hook-text">Moving platforms without losing rankings, data or revenue.</p>
+                </div>
+                <div class="answer-desc">
+                    <p class="service-description">We map every URL and 301 redirect before touching your data, then transfer products, customers and order history with a staged rollout and a rollback plan on standby. Platform migrations should be invisible to your customers and harmless to your search rankings.</p>
+                    <a href="/hsnlogix-staging/services/platform-migration/" class="service-learn-more">Learn more &rarr;</a>
+                </div>
+                <div class="answer-img">
+                    <img src="lockassure.webp" alt="LockAssure case study: store migration project built on Shopify" class="service-panel-img" loading="lazy" width="488" height="366">
+                </div>
+            </div>
         </div>
-        <div class="accordion-answer">
+    </div>
+
+    <div class="accordion-divider"></div>
+
+    <!-- 3. Large Catalogs, B2B and Shopify Plus -->
+    <div class="accordion-item">
+        <button class="accordion-question" aria-expanded="false" aria-controls="acc-b2b">
+            <h3 class="question-title">Large Catalogs, B2B and Shopify Plus</h3>
+            <div class="accordion-icon">
+                <div class="plus-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="19" x2="19" y2="5"/><polyline points="9 5 19 5 19 15"/>
+                    </svg>
+                </div>
+            </div>
+        </button>
+        <div class="accordion-answer" id="acc-b2b">
+            <div class="answer-content">
+                <div class="answer-hook">
+                    <p class="service-hook-text">Big catalogs and complex structures, built to scale cleanly.</p>
+                </div>
+                <div class="answer-desc">
+                    <p class="service-description">Large variant counts, B2B wholesale pricing and complex integrations need a store architecture that handles them without slowing down. We build the data structure and theme scaffolding that works at scale now and steps into Shopify Plus without a rebuild.</p>
+                    <a href="/hsnlogix-staging/services/b2b-wholesale/" class="service-learn-more">Learn more &rarr;</a>
+                </div>
+                <div class="answer-img">
+                    <img src="drinkmave.webp" alt="Mave Shopify store: a complex D2C setup with multiple product variants and subscription options" class="service-panel-img" loading="lazy" width="500" height="375">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="accordion-divider"></div>
+
+    <!-- 4. Store Setup & Customization -->
+    <div class="accordion-item">
+        <button class="accordion-question" aria-expanded="false" aria-controls="acc-setup">
+            <h3 class="question-title">Store Setup &amp; Customization</h3>
+            <div class="accordion-icon">
+                <div class="plus-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="19" x2="19" y2="5"/><polyline points="9 5 19 5 19 15"/>
+                    </svg>
+                </div>
+            </div>
+        </button>
+        <div class="accordion-answer" id="acc-setup">
             <div class="answer-content">
                 <div class="answer-hook">
                     <p class="service-hook-text">A store that's ready to sell. Configured, branded, and live fast.</p>
@@ -444,10 +477,10 @@
 
     <div class="accordion-divider"></div>
 
-    <!-- Theme Optimization & Responsiveness -->
+    <!-- 5. Shopify Speed & Performance Optimization -->
     <div class="accordion-item">
-        <div class="accordion-question">
-            <h3 class="question-title">Shopify Speed & Performance Optimization</h3>
+        <button class="accordion-question" aria-expanded="false" aria-controls="acc-speed">
+            <h3 class="question-title">Shopify Speed &amp; Performance Optimization</h3>
             <div class="accordion-icon">
                 <div class="plus-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -455,8 +488,8 @@
                     </svg>
                 </div>
             </div>
-        </div>
-        <div class="accordion-answer">
+        </button>
+        <div class="accordion-answer" id="acc-speed">
             <div class="answer-content">
                 <div class="answer-hook">
                     <p class="service-hook-text">Make your store faster everywhere. Speed and polish, dialed in.</p>
@@ -474,10 +507,10 @@
 
     <div class="accordion-divider"></div>
 
-    <!-- App Integration & Custom Features -->
+    <!-- 6. App Integration & Custom Features -->
     <div class="accordion-item">
-        <div class="accordion-question">
-            <h3 class="question-title">App Integration & Custom Features</h3>
+        <button class="accordion-question" aria-expanded="false" aria-controls="acc-apps">
+            <h3 class="question-title">App Integration &amp; Custom Features</h3>
             <div class="accordion-icon">
                 <div class="plus-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -485,8 +518,8 @@
                     </svg>
                 </div>
             </div>
-        </div>
-        <div class="accordion-answer">
+        </button>
+        <div class="accordion-answer" id="acc-apps">
             <div class="answer-content">
                 <div class="answer-hook">
                     <p class="service-hook-text">Extend Shopify beyond the defaults. Integrations and custom code, done right.</p>
@@ -567,6 +600,7 @@
                 <div class="process-tag">Featured Projects</div>
             </div>
             <h2 class="process-title">Shopify Stores We've Built &amp; Improved</h2>
+            <p class="process-header__desc">A selection of D2C Shopify stores we have designed, built and optimized across fashion, health, food and home.</p>
         </div>
 
         <!-- Dot-grid pattern: reuses hero-pattern classes; dark-bg overrides applied in style-additions.css -->
@@ -1512,46 +1546,41 @@
 </script>
 
 
-    <script src="aos.js?v=1791538880"></script>
+    <script src="aos.js?v=1791540805"></script>
   <script>
     // Defer AOS init until after load + next frame so it doesn't
     // force a synchronous layout recalc right after the aos.css media-swap.
     window.addEventListener('load', function() {
       requestAnimationFrame(function() { AOS.init(); });
     });
-    // Add this JavaScript to make the accordion interactive
+    // Services accordion — keyboard accessible via button.accordion-question
 document.addEventListener('DOMContentLoaded', function() {
-    const accordionQuestions = document.querySelectorAll('.accordion-question');
-    
-    accordionQuestions.forEach(question => {
+    const accordionQuestions = document.querySelectorAll('.services-section .accordion-question');
+
+    accordionQuestions.forEach(function(question) {
         question.addEventListener('click', function() {
-            const accordionItem = this.parentElement;
+            const accordionItem = this.closest('.accordion-item');
             const isOpen = accordionItem.classList.contains('active');
-            
-            // Close all accordion items
-            document.querySelectorAll('.accordion-item').forEach(item => {
+
+            // Close all
+            document.querySelectorAll('.services-section .accordion-item').forEach(function(item) {
                 item.classList.remove('active');
+                const btn = item.querySelector('.accordion-question');
+                if (btn) btn.setAttribute('aria-expanded', 'false');
                 const icon = item.querySelector('.plus-icon');
-                if (icon) {
-                    icon.classList.remove('open');
-                }
+                if (icon) icon.classList.remove('open');
                 const number = item.querySelector('.question-number');
-                if (number) {
-                    number.classList.add('closed');
-                }
+                if (number) number.classList.add('closed');
             });
-            
-            // If the clicked item wasn't open, open it
+
+            // Open clicked if it was closed
             if (!isOpen) {
                 accordionItem.classList.add('active');
+                this.setAttribute('aria-expanded', 'true');
                 const icon = this.querySelector('.plus-icon');
-                if (icon) {
-                    icon.classList.add('open');
-                }
+                if (icon) icon.classList.add('open');
                 const number = this.querySelector('.question-number');
-                if (number) {
-                    number.classList.remove('closed');
-                }
+                if (number) number.classList.remove('closed');
             }
         });
     });
@@ -1649,7 +1678,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   </script>
 
-<script src="hsnlogix-tracking.js?v=1791538880"></script>
+<script src="hsnlogix-tracking.js?v=1791540805"></script>
 
 <!-- Cal.com embed bootstrap — deferred to end of body to avoid blocking render -->
 <script>

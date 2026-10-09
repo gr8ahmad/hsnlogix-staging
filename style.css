@@ -1383,13 +1383,10 @@ body {
    shared .question-title / .accordion-question classes on the FAQ
    accordion are left untouched). */
 .services-section .question-title {
- font-size: 42px;
+ font-size: 32px;
  font-weight: 800;
  line-height: 1.08;
  letter-spacing: -0.02em;
-}
-.services-section .accordion-question {
- padding: 34px 0;
 }
 .services-section .accordion-icon {
  width: 40px;

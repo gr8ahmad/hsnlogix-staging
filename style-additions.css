@@ -1457,43 +1457,59 @@ button.footer-legal__link {
   cursor: pointer;
 }
 
-/* Phase 19: Featured services cards and 5-card addon grid */
-.featured-services {
+/* Phase 20: 3-col two-row addon grid */
+.addon-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-bottom: 32px;
-}
-.featured-card {
-  display: flex;
-  flex-direction: column;
-}
-.featured-card .addon-desc {
-  display: block;
+  gap: 18px;
 }
 @media (max-width: 900px) {
-  .featured-services {
+  .addon-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 560px) {
+  .addon-grid {
     grid-template-columns: 1fr;
   }
 }
 
-.addon-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 16px;
+/* Phase 20: button reset for .accordion-question converted to <button> */
+button.accordion-question {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  padding: 0;
+  color: inherit;
+  font: inherit;
 }
-.addon-grid .addon-card {
-  flex: 0 0 calc(20% - 14px);
-  min-width: 160px;
+
+/* Phase 20: Featured Projects two-column header */
+.process-header {
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.process-header__desc {
+  flex: 1;
+  max-width: 350px;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: -0.72px;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.5);
+  text-wrap: balance;
+  margin-bottom: 14px;
 }
 @media (max-width: 900px) {
-  .addon-grid .addon-card {
-    flex: 0 0 calc(50% - 8px);
+  .process-header {
+    flex-direction: column;
+    align-items: flex-start;
   }
-}
-@media (max-width: 560px) {
-  .addon-grid .addon-card {
-    flex: 0 0 100%;
+  .process-header__desc {
+    max-width: 100%;
+    margin-top: 12px;
   }
 }
