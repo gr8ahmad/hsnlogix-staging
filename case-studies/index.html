@@ -25,18 +25,42 @@
   <meta name="twitter:image" content="https://hsnlogix.com/HSNLogix-logo.jpg">
   <title>Shopify Case Studies | HSNLOGIX</title>
 
-  <link rel="stylesheet" href="/hsnlogix-staging/style.css?v=shared-header">
-  <link rel="stylesheet" href="/hsnlogix-staging/style-additions.css?v=shared-header">
-  <link rel="stylesheet" href="/hsnlogix-staging/blog.css?v=shared-header">
+  <link rel="stylesheet" href="/hsnlogix-staging/style.css?v=1791538510">
+  <link rel="stylesheet" href="/hsnlogix-staging/style-additions.css?v=1791538510">
+  <link rel="stylesheet" href="/hsnlogix-staging/blog.css?v=1791538510">
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2XBBSKSGBJ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+  <!-- Analytics: Consent Mode v2 defaults + GA4 (production only) -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent','default',{
+    ad_storage:'denied',
+    ad_user_data:'denied',
+    ad_personalization:'denied',
+    analytics_storage:'denied',
+    wait_for_update:500
+  });
+  try {
+    var _hsn_c = localStorage.getItem('hsn_consent');
+    if (_hsn_c === 'granted' || _hsn_c === 'denied') {
+      gtag('consent','update',{
+        analytics_storage: _hsn_c,
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied'
+      });
+    }
+  } catch(e) {}
+  if (location.hostname === 'hsnlogix.com' || location.hostname === 'www.hsnlogix.com') {
+    var _ga4s = document.createElement('script');
+    _ga4s.async = true;
+    _ga4s.src = 'https://www.googletagmanager.com/gtag/js?id=G-2XBBSKSGBJ';
+    document.head.appendChild(_ga4s);
     gtag('js', new Date());
     gtag('config', 'G-2XBBSKSGBJ');
-  </script>
+  }
+</script>
+
 
   <script type="application/ld+json">
   {
@@ -54,6 +78,7 @@
         "@type": "Person",
         "@id": "https://hsnlogix.com/team/hussain/#person",
         "name": "Hussain Ahmad",
+        "jobTitle": "Founder & Lead Shopify Developer",
         "url": "https://hsnlogix.com/team/hussain/",
         "worksFor": {"@id": "https://hsnlogix.com/#organization"}
       }
@@ -126,7 +151,7 @@
 </aside>
 
 
-  <main class="blog-main container">
+  <main class="blog-main">
     
 <section class="page-hero">
   <div class="hero-pattern" aria-hidden="true">
@@ -143,6 +168,7 @@
   </div>
 </section>
 
+<div class="page-content">
 <div class="blog-index">
   <div class="blog-post-list">
     
@@ -219,6 +245,7 @@
     </a>
     
   </div>
+</div>
 </div>
 
   </main>
@@ -318,11 +345,84 @@
       <div class="footer-legal">
         <a href="/hsnlogix-staging/privacy-policy/" class="footer-legal__link">Privacy Policy</a>
         <a href="/hsnlogix-staging/terms-of-service/" class="footer-legal__link">Terms of Service</a>
+        <button type="button" id="hsn-cookie-settings" class="footer-legal__link">Cookie settings</button>
       </div>
     </div>
   </div>
 
 </footer>
+
+  <!-- Cookie consent banner -->
+<div id="hsn-cookie-banner" class="hsn-cookie-banner" role="region" aria-label="Cookie consent" hidden>
+  <div class="hsn-cookie-banner__inner">
+    <p class="hsn-cookie-banner__text">
+      We use cookies to understand how visitors use this site. You can accept or reject analytics cookies.
+      <a href="/hsnlogix-staging/privacy-policy/" class="hsn-cookie-banner__link">Privacy Policy</a>
+    </p>
+    <div class="hsn-cookie-banner__actions">
+      <button type="button" id="hsn-cookie-reject" class="hsn-cookie-banner__btn">Reject</button>
+      <button type="button" id="hsn-cookie-accept" class="hsn-cookie-banner__btn hsn-cookie-banner__btn--accept">Accept</button>
+    </div>
+  </div>
+</div>
+<script>
+(function () {
+  var banner = document.getElementById('hsn-cookie-banner');
+
+  function showBanner() {
+    if (banner) banner.removeAttribute('hidden');
+  }
+
+  function hideBanner() {
+    if (banner) banner.setAttribute('hidden', '');
+  }
+
+  function handleChoice(choice) {
+    try { localStorage.setItem('hsn_consent', choice); } catch(e) {}
+    if (typeof gtag === 'function') {
+      gtag('consent', 'update', {
+        analytics_storage: choice,
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied'
+      });
+    }
+    document.dispatchEvent(new CustomEvent('hsn_consent_update', {
+      detail: { analytics_storage: choice }
+    }));
+    hideBanner();
+  }
+
+  var savedConsent = null;
+  try { savedConsent = localStorage.getItem('hsn_consent'); } catch(e) {}
+  if (!savedConsent) {
+    showBanner();
+  }
+
+  var acceptBtn = document.getElementById('hsn-cookie-accept');
+  var rejectBtn = document.getElementById('hsn-cookie-reject');
+  if (acceptBtn) acceptBtn.addEventListener('click', function () { handleChoice('granted'); });
+  if (rejectBtn) rejectBtn.addEventListener('click', function () { handleChoice('denied'); });
+
+  var settingsBtn = document.getElementById('hsn-cookie-settings');
+  if (settingsBtn) {
+    settingsBtn.addEventListener('click', function () {
+      try { localStorage.removeItem('hsn_consent'); } catch(e) {}
+      showBanner();
+    });
+  } else {
+    document.addEventListener('DOMContentLoaded', function () {
+      var btn = document.getElementById('hsn-cookie-settings');
+      if (btn) {
+        btn.addEventListener('click', function () {
+          try { localStorage.removeItem('hsn_consent'); } catch(e) {}
+          showBanner();
+        });
+      }
+    });
+  }
+})();
+</script>
 
 
   <script>
@@ -370,7 +470,7 @@
 })();
   </script>
 
-  <script src="/hsnlogix-staging/hsnlogix-tracking.js?v=shared-header"></script>
+  <script src="/hsnlogix-staging/hsnlogix-tracking.js?v=1791538510"></script>
 
   <!-- Cal.com embed bootstrap — deferred to end of body to avoid blocking render -->
   <script>

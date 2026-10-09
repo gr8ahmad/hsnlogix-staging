@@ -7,6 +7,8 @@
   --line: rgba(255,255,255,0.08);
   --accent: #82FF1F;
   --accent-on-light: #2F7A00;
+  --content-max: 1320px;
+  --content-pad: 40px;
 }
 
 /* ============================================
@@ -72,22 +74,6 @@
     box-sizing: border-box;
     position: relative;
     z-index: 1;
-}
-
-/* Ticker sits above the pattern layer when nested inside the hero */
-.customer-hero .stats-ticker {
-    position: relative;
-    z-index: 1;
-}
-
-/* Override the generic .stats-container max-width (1320px) that belongs to
-   the stats-cards section — the ticker's inner container must span the full
-   hero width so the scrolling track isn't constrained to 1240px */
-.stats-ticker .stats-container {
-    max-width: none;
-    padding: 0;
-    gap: 0;
-    justify-content: flex-start;
 }
 
 .customer-hero__headline {
@@ -172,6 +158,74 @@
 
 .cta-button.cta-button--dark:hover {
     box-shadow: 0 16px 48px rgba(10, 10, 10, 0.28);
+}
+
+/* ─── Credibility strip ───────────────────────────────────────────────────── */
+.credibility-strip {
+  background: var(--bg-base);
+  padding: 48px 0;
+}
+.credibility-strip__inner {
+  max-width: 1320px;
+  margin-inline: auto;
+  padding-inline: 40px;
+  box-sizing: border-box;
+}
+.credibility-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.credibility-item {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 32px 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.credibility-item__number {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: clamp(28px, 2.2vw, 42px);
+  letter-spacing: -1px;
+  line-height: 1.1;
+  color: #82FF1F;
+  margin: 0;
+}
+.credibility-item__label {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.1px;
+  line-height: 1.4;
+  color: rgba(255,255,255,0.72);
+  margin: 0;
+}
+@media (max-width: 900px) {
+  .credibility-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .credibility-strip {
+    padding: 36px 0;
+  }
+  .credibility-strip__inner {
+    padding-inline: 20px;
+  }
+  .credibility-item {
+    padding: 24px 16px;
+  }
+  .credibility-item__number {
+    font-size: 28px;
+  }
 }
 
 @media (min-width: 641px) {
@@ -1129,10 +1183,14 @@
 /* ─── Page Hero Include ───────────────────────────────────────────────────── */
 .page-hero {
   background-color: #EEF3E9;
-  margin: -60px -40px 0;
-  padding: 60px 40px 48px;
+  padding: 60px 0 48px;
   position: relative;
   overflow: hidden;
+  margin-bottom: 100px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .page-hero .hero-pattern {
   position: absolute;
@@ -1143,7 +1201,11 @@
 .page-hero__inner {
   position: relative;
   z-index: 1;
-  max-width: 860px;
+  max-width: var(--content-max);
+  margin-inline: auto;
+  padding-inline: var(--content-pad);
+  box-sizing: border-box;
+  width: 100%;
 }
 /* Breadcrumb nav inside page-hero */
 .page-hero nav .breadcrumbs__inner {
@@ -1195,10 +1257,27 @@
   line-height: 1.65;
   max-width: 600px;
 }
-@media (max-width: 640px) {
+/* Page content container (all non-hero content on inner pages) */
+.page-content {
+  max-width: var(--content-max);
+  margin-inline: auto;
+  padding-inline: var(--content-pad);
+  box-sizing: border-box;
+}
+@media (max-width: 1024px) {
   .page-hero {
-    margin: -40px -20px 0;
-    padding: 48px 20px 36px;
+    margin-bottom: 72px;
+    min-height: 340px;
+  }
+}
+@media (max-width: 640px) {
+  :root {
+    --content-pad: 20px;
+  }
+  .page-hero {
+    padding: 48px 0 36px;
+    margin-bottom: 48px;
+    min-height: 280px;
   }
   .page-hero__heading { font-size: 30px; letter-spacing: -0.8px; }
 }
@@ -1346,4 +1425,127 @@ button.faq-trigger {
 .footer-contact__link:hover svg,
 .footer-contact__link:hover img {
   opacity: 1;
+}
+
+/* ── Cookie consent banner ── */
+.hsn-cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: var(--bg-lifted, #0A1314);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 14px 24px;
+  box-sizing: border-box;
+}
+.hsn-cookie-banner__inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.hsn-cookie-banner__text {
+  flex: 1 1 280px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.82);
+  margin: 0;
+}
+.hsn-cookie-banner__link {
+  color: var(--accent, #82FF1F);
+  text-decoration: underline;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.hsn-cookie-banner__actions {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.hsn-cookie-banner__btn {
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 8px 18px;
+  border-radius: 100px;
+  border: 1.5px solid rgba(255,255,255,0.35);
+  background: transparent;
+  color: rgba(255,255,255,0.88);
+  cursor: pointer;
+  transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hsn-cookie-banner__btn { transition: none; }
+}
+.hsn-cookie-banner__btn:hover {
+  border-color: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.08);
+}
+.hsn-cookie-banner__btn--accept:hover {
+  border-color: var(--accent, #82FF1F);
+  color: var(--accent, #82FF1F);
+}
+.hsn-cookie-banner__btn:focus-visible {
+  outline: 2px solid var(--accent, #82FF1F);
+  outline-offset: 2px;
+}
+@media (max-width: 560px) {
+  .hsn-cookie-banner { padding: 14px 16px; }
+  .hsn-cookie-banner__inner { gap: 12px; }
+  .hsn-cookie-banner__actions { width: 100%; }
+  .hsn-cookie-banner__btn { flex: 1; text-align: center; }
+}
+
+/* Footer "Cookie settings" button — inherits .footer-legal__link styles */
+button.footer-legal__link {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* Phase 19: Featured services cards and 5-card addon grid */
+.featured-services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 32px;
+}
+.featured-card {
+  display: flex;
+  flex-direction: column;
+}
+.featured-card .addon-desc {
+  display: block;
+}
+@media (max-width: 900px) {
+  .featured-services {
+    grid-template-columns: 1fr;
+  }
+}
+
+.addon-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+.addon-grid .addon-card {
+  flex: 0 0 calc(20% - 14px);
+  min-width: 160px;
+}
+@media (max-width: 900px) {
+  .addon-grid .addon-card {
+    flex: 0 0 calc(50% - 8px);
+  }
+}
+@media (max-width: 560px) {
+  .addon-grid .addon-card {
+    flex: 0 0 100%;
+  }
 }

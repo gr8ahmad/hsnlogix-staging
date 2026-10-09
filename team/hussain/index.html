@@ -11,31 +11,55 @@
   <link rel="manifest" href="/hsnlogix-staging/site.webmanifest" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Senior Shopify Theme Developer & Front-End Specialist. Book a free consultation to discuss custom themes, integrations, and how to elevate your store.">
+  <meta name="description" content="Founder & Lead Shopify Developer at HSNLOGIX. Custom Shopify themes, speed optimization, and Shopify 2.0 builds for D2C brands. Book a free consultation.">
   <meta name="robots" content="noindex, nofollow">
   <link rel="canonical" href="https://hsnlogix.com/team/hussain/">
-  <meta property="og:title" content="Hussain Ahmad — Shopify Theme Developer | HSNLOGIX">
-  <meta property="og:description" content="Senior Shopify Theme Developer & Front-End Specialist. Book a free consultation to discuss custom themes, integrations, and how to elevate your store.">
+  <meta property="og:title" content="Hussain Ahmad — Founder & Lead Shopify Developer | HSNLOGIX">
+  <meta property="og:description" content="Founder & Lead Shopify Developer at HSNLOGIX. Custom Shopify themes, speed optimization, and Shopify 2.0 builds for D2C brands. Book a free consultation.">
   <meta property="og:type" content="profile">
   <meta property="og:url" content="https://hsnlogix.com/team/hussain/">
   <meta property="og:image" content="https://hsnlogix.com/HSNLogix-logo.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Hussain Ahmad — Shopify Theme Developer | HSNLOGIX">
-  <meta name="twitter:description" content="Senior Shopify Theme Developer & Front-End Specialist. Book a free consultation to discuss custom themes, integrations, and how to elevate your store.">
+  <meta name="twitter:title" content="Hussain Ahmad — Founder & Lead Shopify Developer | HSNLOGIX">
+  <meta name="twitter:description" content="Founder & Lead Shopify Developer at HSNLOGIX. Custom Shopify themes, speed optimization, and Shopify 2.0 builds for D2C brands. Book a free consultation.">
   <meta name="twitter:image" content="https://hsnlogix.com/HSNLogix-logo.jpg">
-  <title>Hussain Ahmad — Shopify Theme Developer | HSNLOGIX</title>
+  <title>Hussain Ahmad — Founder & Lead Shopify Developer | HSNLOGIX</title>
 
-  <link rel="stylesheet" href="/hsnlogix-staging/style.css?v=shared-header">
-  <link rel="stylesheet" href="/hsnlogix-staging/style-additions.css?v=shared-header">
+  <link rel="stylesheet" href="/hsnlogix-staging/style.css?v=1791538510">
+  <link rel="stylesheet" href="/hsnlogix-staging/style-additions.css?v=1791538510">
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2XBBSKSGBJ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+  <!-- Analytics: Consent Mode v2 defaults + GA4 (production only) -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent','default',{
+    ad_storage:'denied',
+    ad_user_data:'denied',
+    ad_personalization:'denied',
+    analytics_storage:'denied',
+    wait_for_update:500
+  });
+  try {
+    var _hsn_c = localStorage.getItem('hsn_consent');
+    if (_hsn_c === 'granted' || _hsn_c === 'denied') {
+      gtag('consent','update',{
+        analytics_storage: _hsn_c,
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied'
+      });
+    }
+  } catch(e) {}
+  if (location.hostname === 'hsnlogix.com' || location.hostname === 'www.hsnlogix.com') {
+    var _ga4s = document.createElement('script');
+    _ga4s.async = true;
+    _ga4s.src = 'https://www.googletagmanager.com/gtag/js?id=G-2XBBSKSGBJ';
+    document.head.appendChild(_ga4s);
     gtag('js', new Date());
     gtag('config', 'G-2XBBSKSGBJ');
-  </script>
+  }
+</script>
+
 
   <script type="application/ld+json">
   {
@@ -44,7 +68,7 @@
     "@id": "https://hsnlogix.com/team/hussain/#person",
     "name": "Hussain Ahmad",
     "url": "https://hsnlogix.com/team/hussain/",
-    "jobTitle": "Shopify Developer",
+    "jobTitle": "Founder & Lead Shopify Developer",
     "worksFor": {
       "@type": "Organization",
       "@id": "https://hsnlogix.com/#organization",
@@ -300,6 +324,67 @@
     justify-content: space-between;
   }
 }
+
+/* ── Bio section ── */
+.hussain-bio {
+  background: #FFFFFF;
+  padding: 72px 40px;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(10,10,10,0.08);
+}
+.hussain-bio__inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.hussain-bio__heading {
+  font-family: 'Manrope', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: #0A0A0A;
+  margin: 0 0 24px;
+  letter-spacing: -0.5px;
+}
+.hussain-bio__body p {
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  color: #333;
+  margin: 0 0 16px;
+}
+.hussain-bio__body a {
+  color: #0A6640;
+  text-decoration: none;
+  font-weight: 600;
+}
+.hussain-bio__body a:hover {
+  text-decoration: underline;
+}
+.hussain-bio__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 28px;
+}
+.hussain-bio__link {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: #0A6640;
+  text-decoration: none;
+  padding: 7px 16px;
+  border-radius: 100px;
+  border: 1px solid rgba(10,102,64,0.25);
+  transition: background 0.18s ease, color 0.18s ease;
+}
+.hussain-bio__link:hover {
+  background: #0A6640;
+  color: #FFFFFF;
+}
+@media (max-width: 640px) {
+  .hussain-bio {
+    padding: 56px 24px;
+  }
+}
 </style>
 
 <section class="profile-section">
@@ -317,7 +402,7 @@
     <div class="profile-section__photo-col">
       <img
         src="/hsnlogix-staging/hussain-profile-picture.webp"
-        alt="Hussain Ahmad — Shopify Theme Developer"
+        alt="Hussain Ahmad — Founder &amp; Lead Shopify Developer"
         class="profile-section__photo"
         width="200" height="257"
       >
@@ -331,7 +416,7 @@
       </div>
 
       <h1 class="profile-section__name">Hussain Ahmad</h1>
-      <p class="profile-section__title">Shopify Theme Developer &amp; Front-End Specialist</p>
+      <p class="profile-section__title">Founder &amp; Lead Shopify Developer</p>
 
       <a
         href="https://www.upwork.com/freelancers/~01e91c15509859436e"
@@ -368,6 +453,22 @@
       </div>
     </div>
 
+  </div>
+</section>
+
+<section class="hussain-bio">
+  <div class="hussain-bio__inner">
+    <h2 class="hussain-bio__heading">About Hussain</h2>
+    <div class="hussain-bio__body">
+      <p>I'm Hussain, founder of HSNLOGIX and a Shopify developer with 7+ years of hands-on experience and 100+ Shopify projects delivered. I started out building on Upwork, where I'm a Top Rated freelancer with 92 client reviews, and HSNLOGIX grew out of that work.</p>
+      <p>I focus on D2C brands: custom themes built from Figma, Shopify 2.0 sections and metafields, speed optimization, app integrations, and B2B and wholesale setups. My clients are based in the US, Canada, the UK and Singapore.</p>
+      <p>I write clean, mobile-first Liquid code and stay involved in every project personally, so you work directly with the person building your store. If you're planning a build, a fix or a migration, <a href="https://cal.com/hsnlogix" data-cal-link="hsnlogix" data-cal-config='{"layout":"month_view"}' rel="noopener">book a call</a> and we'll work out the right scope together.</p>
+    </div>
+    <nav class="hussain-bio__links" aria-label="Profile navigation">
+      <a href="/hsnlogix-staging/services/" class="hussain-bio__link">Services</a>
+      <a href="/hsnlogix-staging/case-studies/" class="hussain-bio__link">Case Studies</a>
+      <a href="/hsnlogix-staging/testimonials/" class="hussain-bio__link">Testimonials</a>
+    </nav>
   </div>
 </section>
 
@@ -650,11 +751,84 @@
       <div class="footer-legal">
         <a href="/hsnlogix-staging/privacy-policy/" class="footer-legal__link">Privacy Policy</a>
         <a href="/hsnlogix-staging/terms-of-service/" class="footer-legal__link">Terms of Service</a>
+        <button type="button" id="hsn-cookie-settings" class="footer-legal__link">Cookie settings</button>
       </div>
     </div>
   </div>
 
 </footer>
+
+  <!-- Cookie consent banner -->
+<div id="hsn-cookie-banner" class="hsn-cookie-banner" role="region" aria-label="Cookie consent" hidden>
+  <div class="hsn-cookie-banner__inner">
+    <p class="hsn-cookie-banner__text">
+      We use cookies to understand how visitors use this site. You can accept or reject analytics cookies.
+      <a href="/hsnlogix-staging/privacy-policy/" class="hsn-cookie-banner__link">Privacy Policy</a>
+    </p>
+    <div class="hsn-cookie-banner__actions">
+      <button type="button" id="hsn-cookie-reject" class="hsn-cookie-banner__btn">Reject</button>
+      <button type="button" id="hsn-cookie-accept" class="hsn-cookie-banner__btn hsn-cookie-banner__btn--accept">Accept</button>
+    </div>
+  </div>
+</div>
+<script>
+(function () {
+  var banner = document.getElementById('hsn-cookie-banner');
+
+  function showBanner() {
+    if (banner) banner.removeAttribute('hidden');
+  }
+
+  function hideBanner() {
+    if (banner) banner.setAttribute('hidden', '');
+  }
+
+  function handleChoice(choice) {
+    try { localStorage.setItem('hsn_consent', choice); } catch(e) {}
+    if (typeof gtag === 'function') {
+      gtag('consent', 'update', {
+        analytics_storage: choice,
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied'
+      });
+    }
+    document.dispatchEvent(new CustomEvent('hsn_consent_update', {
+      detail: { analytics_storage: choice }
+    }));
+    hideBanner();
+  }
+
+  var savedConsent = null;
+  try { savedConsent = localStorage.getItem('hsn_consent'); } catch(e) {}
+  if (!savedConsent) {
+    showBanner();
+  }
+
+  var acceptBtn = document.getElementById('hsn-cookie-accept');
+  var rejectBtn = document.getElementById('hsn-cookie-reject');
+  if (acceptBtn) acceptBtn.addEventListener('click', function () { handleChoice('granted'); });
+  if (rejectBtn) rejectBtn.addEventListener('click', function () { handleChoice('denied'); });
+
+  var settingsBtn = document.getElementById('hsn-cookie-settings');
+  if (settingsBtn) {
+    settingsBtn.addEventListener('click', function () {
+      try { localStorage.removeItem('hsn_consent'); } catch(e) {}
+      showBanner();
+    });
+  } else {
+    document.addEventListener('DOMContentLoaded', function () {
+      var btn = document.getElementById('hsn-cookie-settings');
+      if (btn) {
+        btn.addEventListener('click', function () {
+          try { localStorage.removeItem('hsn_consent'); } catch(e) {}
+          showBanner();
+        });
+      }
+    });
+  }
+})();
+</script>
 
 
   <script>
@@ -681,7 +855,7 @@
 })();
   </script>
 
-  <script src="/hsnlogix-staging/hsnlogix-tracking.js?v=shared-header"></script>
+  <script src="/hsnlogix-staging/hsnlogix-tracking.js?v=1791538510"></script>
 
   <!-- Cal.com embed bootstrap — deferred to end of body to avoid blocking render -->
   <script>

@@ -21,8 +21,8 @@
 <meta property="og:url" content="https://hsnlogix.com/">
   <title>HSNLOGIX | Shopify Development &amp; Ecommerce Growth</title>
 
-  <link rel="stylesheet" href="style.css?v=shared-header">
-  <link rel="stylesheet" href="style-additions.css?v=shared-header">
+  <link rel="stylesheet" href="style.css?v=1791538510">
+  <link rel="stylesheet" href="style-additions.css?v=1791538510">
   <link rel="stylesheet" href="aos.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="aos.css"></noscript>
 
@@ -91,14 +91,36 @@
 }
 </script>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2XBBSKSGBJ"></script>
+<!-- Analytics: Consent Mode v2 defaults + GA4 (production only) -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-2XBBSKSGBJ');
+  gtag('consent','default',{
+    ad_storage:'denied',
+    ad_user_data:'denied',
+    ad_personalization:'denied',
+    analytics_storage:'denied',
+    wait_for_update:500
+  });
+  try {
+    var _hsn_c = localStorage.getItem('hsn_consent');
+    if (_hsn_c === 'granted' || _hsn_c === 'denied') {
+      gtag('consent','update',{
+        analytics_storage: _hsn_c,
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied'
+      });
+    }
+  } catch(e) {}
+  if (location.hostname === 'hsnlogix.com' || location.hostname === 'www.hsnlogix.com') {
+    var _ga4s = document.createElement('script');
+    _ga4s.async = true;
+    _ga4s.src = 'https://www.googletagmanager.com/gtag/js?id=G-2XBBSKSGBJ';
+    document.head.appendChild(_ga4s);
+    gtag('js', new Date());
+    gtag('config', 'G-2XBBSKSGBJ');
+  }
 </script>
 
 
@@ -179,12 +201,13 @@
         </div>
         <div class="container customer-hero__inner">
             <div class="hero-agency-text">
-                <h1 class="customer-hero__headline">Your Shopify store shouldn't hold your growth back.</h1>
+                <h1 class="customer-hero__headline">Shopify Development Built for Growth, Speed &amp; Conversion</h1>
+                <p class="customer-hero__tagline">Your Shopify store shouldn't hold your growth back.</p>
                 <p class="customer-hero__subhead">We build and scale Shopify stores with custom development and performance engineering, for brands that need more than off-the-shelf themes and apps.</p>
                 <div class="customer-hero__cta-group">
                     <a href="https://cal.com/hsnlogix" data-cal-link="hsnlogix" data-cal-config='{"layout":"month_view"}' rel="noopener" class="cta-button">
                         <div class="button-text">
-                            <p>Discuss Your Store</p>
+                            <p>Book a Free Strategy Call</p>
                         </div>
                         <div class="button-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
@@ -194,7 +217,7 @@
                     </a>
                     <a href="#projects" class="cta-button cta-button--ghost">
                         <div class="button-text">
-                            <p>See Our Work</p>
+                            <p>View Our Work</p>
                         </div>
                         <div class="button-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
@@ -205,112 +228,30 @@
                 </div>
             </div>
         </div>
-        <!-- Stats ticker pinned to the bottom of the hero -->
-        <div class="stats-ticker" id="hsnlogix-stats-ticker">
-            <div class="stats-container">
-                <section class="ticker-section">
-                    <ul class="ticker-list">
-                        <li class="ticker-item">
-                            <div class="ticker-content">
-                                <div class="ticker-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-                                        <path d="M218.29,182.17a12,12,0,0,1-16.47,4.12L140,149.19V216a12,12,0,0,1-24,0V149.19l-61.82,37.1a12,12,0,1,1-12.35-20.58L104.68,128,41.83,90.29A12,12,0,1,1,54.18,69.71L116,106.81V40a12,12,0,0,1,24,0v66.81l61.82-37.1a12,12,0,1,1,12.35,20.58L151.32,128l62.85,37.71A12,12,0,0,1,218.29,182.17Z"></path>
-                                    </svg>
-                                </div>
-                                <div class="ticker-text">
-                                    <p class="ticker-number">7+ /</p>
-                                    <p class="ticker-label">years Shopify dev</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="ticker-item">
-                            <div class="ticker-content">
-                                <div class="ticker-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-                                        <path d="M218.29,182.17a12,12,0,0,1-16.47,4.12L140,149.19V216a12,12,0,0,1-24,0V149.19l-61.82,37.1a12,12,0,1,1-12.35-20.58L104.68,128,41.83,90.29A12,12,0,1,1,54.18,69.71L116,106.81V40a12,12,0,0,1,24,0v66.81l61.82-37.1a12,12,0,1,1,12.35,20.58L151.32,128l62.85,37.71A12,12,0,0,1,218.29,182.17Z"></path>
-                                    </svg>
-                                </div>
-                                <div class="ticker-text">
-                                    <p class="ticker-number">95%+ /</p>
-                                    <p class="ticker-label">client retention</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="ticker-item">
-                            <div class="ticker-content">
-                                <div class="ticker-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-                                        <path d="M218.29,182.17a12,12,0,0,1-16.47,4.12L140,149.19V216a12,12,0,0,1-24,0V149.19l-61.82,37.1a12,12,0,1,1-12.35-20.58L104.68,128,41.83,90.29A12,12,0,1,1,54.18,69.71L116,106.81V40a12,12,0,0,1,24,0v66.81l61.82-37.1a12,12,0,1,1,12.35,20.58L151.32,128l62.85,37.71A12,12,0,0,1,218.29,182.17Z"></path>
-                                    </svg>
-                                </div>
-                                <div class="ticker-text">
-                                    <p class="ticker-number">180+ /</p>
-                                    <p class="ticker-label">projects completed</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="ticker-item">
-                            <div class="ticker-content">
-                                <div class="ticker-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-                                        <path d="M218.29,182.17a12,12,0,0,1-16.47,4.12L140,149.19V216a12,12,0,0,1-24,0V149.19l-61.82,37.1a12,12,0,1,1-12.35-20.58L104.68,128,41.83,90.29A12,12,0,1,1,54.18,69.71L116,106.81V40a12,12,0,0,1,24,0v66.81l61.82-37.1a12,12,0,1,1,12.35,20.58L151.32,128l62.85,37.71A12,12,0,0,1,218.29,182.17Z"></path>
-                                    </svg>
-                                </div>
-                                <div class="ticker-text">
-                                    <p class="ticker-number">Top Rated /</p>
-                                    <p class="ticker-label">on Upwork</p>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </section>
-            </div>
-        </div>
-        <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    const ticker = document.getElementById('hsnlogix-stats-ticker');
-    const track = ticker.querySelector('.ticker-list');
-    const items = Array.from(track.children);
-
-    const trackGap = parseFloat(getComputedStyle(track).gap) || parseFloat(getComputedStyle(track).columnGap) || 0;
-    let loopWidth = 0;
-    items.forEach(item => {
-      const style = getComputedStyle(item);
-      loopWidth += item.offsetWidth + parseFloat(style.marginLeft) + parseFloat(style.marginRight) + trackGap;
-    });
-
-    // Duplicate enough times to fill the container at any viewport width
-    const copiesNeeded = Math.ceil((ticker.offsetWidth * 2) / loopWidth) + 1;
-    for (let i = 0; i < copiesNeeded; i++) {
-      items.forEach(item => track.appendChild(item.cloneNode(true)));
-    }
-
-    let pos = 0;
-    let currentRate = 1, targetRate = 1;
-    const baseSpeed = window.innerWidth <= 768
-      ? loopWidth / 40
-      : loopWidth / 50;
-    let lastTime = performance.now();
-
-    function animate(time) {
-      const dt = (time - lastTime) / 500;
-      lastTime = time;
-      currentRate += (targetRate - currentRate) * 0.25;
-
-      pos = (pos - baseSpeed * currentRate * dt) % loopWidth;
-      track.style.transform = `translateX(${pos}px)`;
-
-      requestAnimationFrame(animate);
-    }
-
-    requestAnimationFrame(animate);
-
-    ticker.addEventListener('mouseenter', () => targetRate = 0.35);
-    ticker.addEventListener('mouseleave', () => targetRate = 1);
-  });
-</script>
     </section>
+
+<section class="credibility-strip" aria-label="Credentials">
+  <div class="credibility-strip__inner">
+    <ul class="credibility-list">
+      <li class="credibility-item">
+        <p class="credibility-item__number">180+</p>
+        <p class="credibility-item__label">Projects completed</p>
+      </li>
+      <li class="credibility-item">
+        <p class="credibility-item__number">Top Rated</p>
+        <p class="credibility-item__label">on Upwork</p>
+      </li>
+      <li class="credibility-item">
+        <p class="credibility-item__number">7+</p>
+        <p class="credibility-item__label">Years of Shopify development</p>
+      </li>
+      <li class="credibility-item">
+        <p class="credibility-item__number">CRO</p>
+        <p class="credibility-item__label">for D2C brands</p>
+      </li>
+    </ul>
+  </div>
+</section>
 
   <main>
 
@@ -323,14 +264,38 @@
                         <span class="badge-text">services</span>
                     </div>
                     <div class="headline-container">
-                        <div class="headline-part">
-                            <h2 class="headline-text">How can we help</h2>
-                        </div>
-                        <h2 class="headline-text">Your business grow</h2>
+                        <h2 class="headline-text">Shopify Development Services</h2>
                     </div>
                 </div>
-                <p class="header-description">Achieving goals for businesses and entrepreneurs around the globe.</p>
+                <p class="header-description">Custom themes, store setup, speed optimization and app integrations, plus the specialist work below.</p>
             </div>
+
+<div class="featured-services">
+  <a href="/hsnlogix-staging/services/platform-migration/" class="addon-card featured-card">
+    <div class="addon-visual"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="8" height="10" rx="1"></rect><path d="M10 12h8"></path><polyline points="15 9 18 12 15 15"></polyline></svg></div>
+    <div class="addon-body">
+      <span class="addon-title">Shopify Migration Development</span>
+      <p class="addon-desc">Moving from WooCommerce, Wix or Magento? We plan the move first: URL and 301 redirect mapping, product and customer data transfer, a staged rollout and a rollback plan.</p>
+      <span class="addon-link">Learn more &rarr;</span>
+    </div>
+  </a>
+  <a href="/hsnlogix-staging/services/b2b-wholesale/" class="addon-card featured-card">
+    <div class="addon-visual"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
+    <div class="addon-body">
+      <span class="addon-title">Large Commerce Setups</span>
+      <p class="addon-desc">Big catalogs, many variants, B2B pricing or custom integrations need a structure that stays fast and manageable. We build it that way from the start.</p>
+      <span class="addon-link">Learn more &rarr;</span>
+    </div>
+  </a>
+  <a href="/hsnlogix-staging/services/theme-development/" class="addon-card featured-card">
+    <div class="addon-visual"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l7 4v6c0 5-3.5 8-7 10-3.5-2-7-5-7-10V6l7-4z"></path></svg></div>
+    <div class="addon-body">
+      <span class="addon-title">Built to Grow Into Shopify Plus</span>
+      <p class="addon-desc">Heading toward Shopify Plus? We structure your theme, catalog and integrations so the move doesn't mean a rebuild.</p>
+      <span class="addon-link">Learn more &rarr;</span>
+    </div>
+  </a>
+</div>
 
 <div class="accordion-container">
     <!-- Custom Theme Development (Open) -->
@@ -456,7 +421,7 @@
 <div class="addon-services">
     <div>
         <div class="addon-services-label">Also available</div>
-        <div class="addon-services-heading">Additional services</div>
+        <div class="addon-services-heading">More Shopify Solutions</div>
     </div>
     <div class="addon-grid">
         <a href="/hsnlogix-staging/services/website-audit/" class="addon-card">
@@ -499,22 +464,7 @@
                 <span class="addon-link">Learn more &rarr;</span>
             </div>
         </a>
-        <a href="/hsnlogix-staging/services/platform-migration/" class="addon-card">
-            <div class="addon-visual"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="8" height="10" rx="1"></rect><path d="M10 12h8"></path><polyline points="15 9 18 12 15 15"></polyline></svg></div>
-            <div class="addon-body">
-                <span class="addon-title">Platform Migration</span>
-                <p class="addon-desc">Seamless moves from WooCommerce, Wix, or Magento to Shopify — data, SEO, and history preserved.</p>
-                <span class="addon-link">Learn more &rarr;</span>
-            </div>
-        </a>
-        <a href="/hsnlogix-staging/services/b2b-wholesale/" class="addon-card">
-            <div class="addon-visual"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
-            <div class="addon-body">
-                <span class="addon-title">B2B &amp; Wholesale Setup</span>
-                <p class="addon-desc">Tiered pricing and wholesale flows built for Shopify, serving retail and B2B buyers from one store.</p>
-                <span class="addon-link">Learn more &rarr;</span>
-            </div>
-        </a>
+
     </div>
 </div>
         </div>
@@ -530,7 +480,7 @@
                 <div class="status-indicator"></div>
                 <div class="process-tag">Featured Projects</div>
             </div>
-            <h2 class="process-title">We blend creativity with <br /> technical expertise</h2>
+            <h2 class="process-title">Shopify Stores We've Built &amp; Improved</h2>
         </div>
 
         <!-- Dot-grid pattern: reuses hero-pattern classes; dark-bg overrides applied in style-additions.css -->
@@ -1255,7 +1205,7 @@
             <div class="hsn-logix-avatar">
               <div class="hsn-logix-profile-pic">
                 <div class="hsn-logix-img-wrapper" data-aos="fade-right" data-aos-duration="750" data-aos-delay="150">
-                  <img src="/hsnlogix-staging/hussain-profile-picture.webp" alt="Hussain Ahmad - Senior Shopify Developer" loading="eager" width="200" height="257">
+                  <img src="/hsnlogix-staging/hussain-profile-picture.webp" alt="Hussain Ahmad — Founder &amp; Lead Shopify Developer" loading="eager" width="200" height="257">
                 </div>
               </div>
             </div>
@@ -1264,7 +1214,7 @@
             <div class="profile-name">
               <h3 class="name">Hussain Ahmad</h3>
               <div class="title">
-                <p class="title-text">Senior Shopify Theme Developer</p>
+                <p class="title-text">Founder &amp; Lead Shopify Developer</p>
                 <a href="https://www.upwork.com/freelancers/~01e91c15509859436e" target="_blank" rel="noopener" class="founder-upwork-badge">
                   <img src="/hsnlogix-staging/upwork-icon.webp" alt="" width="22" height="22">
                   Top Rated on Upwork
@@ -1396,14 +1346,87 @@
       <div class="footer-legal">
         <a href="/hsnlogix-staging/privacy-policy/" class="footer-legal__link">Privacy Policy</a>
         <a href="/hsnlogix-staging/terms-of-service/" class="footer-legal__link">Terms of Service</a>
+        <button type="button" id="hsn-cookie-settings" class="footer-legal__link">Cookie settings</button>
       </div>
     </div>
   </div>
 
 </footer>
 
+<!-- Cookie consent banner -->
+<div id="hsn-cookie-banner" class="hsn-cookie-banner" role="region" aria-label="Cookie consent" hidden>
+  <div class="hsn-cookie-banner__inner">
+    <p class="hsn-cookie-banner__text">
+      We use cookies to understand how visitors use this site. You can accept or reject analytics cookies.
+      <a href="/hsnlogix-staging/privacy-policy/" class="hsn-cookie-banner__link">Privacy Policy</a>
+    </p>
+    <div class="hsn-cookie-banner__actions">
+      <button type="button" id="hsn-cookie-reject" class="hsn-cookie-banner__btn">Reject</button>
+      <button type="button" id="hsn-cookie-accept" class="hsn-cookie-banner__btn hsn-cookie-banner__btn--accept">Accept</button>
+    </div>
+  </div>
+</div>
+<script>
+(function () {
+  var banner = document.getElementById('hsn-cookie-banner');
 
-    <script src="aos.js?v=shared-header"></script>
+  function showBanner() {
+    if (banner) banner.removeAttribute('hidden');
+  }
+
+  function hideBanner() {
+    if (banner) banner.setAttribute('hidden', '');
+  }
+
+  function handleChoice(choice) {
+    try { localStorage.setItem('hsn_consent', choice); } catch(e) {}
+    if (typeof gtag === 'function') {
+      gtag('consent', 'update', {
+        analytics_storage: choice,
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied'
+      });
+    }
+    document.dispatchEvent(new CustomEvent('hsn_consent_update', {
+      detail: { analytics_storage: choice }
+    }));
+    hideBanner();
+  }
+
+  var savedConsent = null;
+  try { savedConsent = localStorage.getItem('hsn_consent'); } catch(e) {}
+  if (!savedConsent) {
+    showBanner();
+  }
+
+  var acceptBtn = document.getElementById('hsn-cookie-accept');
+  var rejectBtn = document.getElementById('hsn-cookie-reject');
+  if (acceptBtn) acceptBtn.addEventListener('click', function () { handleChoice('granted'); });
+  if (rejectBtn) rejectBtn.addEventListener('click', function () { handleChoice('denied'); });
+
+  var settingsBtn = document.getElementById('hsn-cookie-settings');
+  if (settingsBtn) {
+    settingsBtn.addEventListener('click', function () {
+      try { localStorage.removeItem('hsn_consent'); } catch(e) {}
+      showBanner();
+    });
+  } else {
+    document.addEventListener('DOMContentLoaded', function () {
+      var btn = document.getElementById('hsn-cookie-settings');
+      if (btn) {
+        btn.addEventListener('click', function () {
+          try { localStorage.removeItem('hsn_consent'); } catch(e) {}
+          showBanner();
+        });
+      }
+    });
+  }
+})();
+</script>
+
+
+    <script src="aos.js?v=1791538510"></script>
   <script>
     // Defer AOS init until after load + next frame so it doesn't
     // force a synchronous layout recalc right after the aos.css media-swap.
@@ -1540,7 +1563,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   </script>
 
-<script src="hsnlogix-tracking.js?v=shared-header"></script>
+<script src="hsnlogix-tracking.js?v=1791538510"></script>
 
 <!-- Cal.com embed bootstrap — deferred to end of body to avoid blocking render -->
 <script>
