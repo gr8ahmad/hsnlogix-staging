@@ -623,7 +623,6 @@
 /* Grid: horizontal padding + gutters.
    Target the grid containers directly so the process-header (which already
    has its own padding: 0 40px) doesn't get double-padded. */
-.projects-section .projects-grid,
 .projects-section .projects-small-container {
     padding-left: 40px;
     padding-right: 40px;
@@ -1845,12 +1844,10 @@ padding: 20px 30px;
 .blog-strip-section {
   background: #fff;
   border-top: 1px solid rgba(0,0,0,0.08);
-  padding: 60px 40px;
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
-.blog-strip-inner {
-  max-width: 1240px;
-  margin: 0 auto;
-}
+
 .blog-strip-header {
   display: flex;
   align-items: flex-end;
