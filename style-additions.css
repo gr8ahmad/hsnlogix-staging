@@ -1206,6 +1206,7 @@
   line-height: 1.65;
   max-width: 600px;
 }
+.page-hero__lede--2 { margin-top: 8px; }
 /* Page content container (all non-hero content on inner pages) */
 .page-content {
   max-width: var(--content-max);
@@ -1953,3 +1954,18 @@ padding: 20px 30px;
   margin-right: 6px;
   display: inline-block;
 }
+
+/* -- Phase 25C: services index groups -- */
+.services-group-heading { font-size: 20px; font-weight: 700; color: #0A1314; margin: 40px 0 4px; }
+.services-group-desc { color: rgba(2,9,10,0.55); font-size: 15px; margin: 0 0 16px; }
+.services-index-cta { text-align: center; padding: 48px 0 60px; border-top: 1px solid rgba(0,0,0,0.08); margin-top: 40px; }
+.services-index-cta h2 { font-size: 22px; font-weight: 700; color: #0A1314; margin: 0 0 10px; }
+.services-index-cta > p { color: rgba(2,9,10,0.55); font-size: 16px; margin: 0 0 24px; }
+.services-index-cta__actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+
+/* -- Phase 25C: contact page next steps -- */
+.contact-page__next-steps { border-top: 1px solid rgba(0,0,0,0.08); padding-top: 28px; margin-top: 28px; }
+.contact-page__next-heading { font-size: 16px; font-weight: 700; color: #0A1314; margin: 0 0 14px; text-transform: uppercase; letter-spacing: 0.04em; }
+.contact-page__next-list { padding: 0; margin: 0; list-style: none; counter-reset: next-steps; display: flex; flex-direction: column; gap: 10px; }
+.contact-page__next-list li { counter-increment: next-steps; display: flex; gap: 12px; color: rgba(2,9,10,0.7); font-size: 15px; line-height: 1.5; align-items: flex-start; }
+.contact-page__next-list li::before { content: counter(next-steps); min-width: 24px; height: 24px; border-radius: 50%; background: var(--accent); color: #001; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
