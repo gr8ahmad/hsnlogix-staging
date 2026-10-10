@@ -503,6 +503,7 @@
     border-radius: 8px;
     object-fit: cover;
     aspect-ratio: 4 / 3;
+    height: auto;
 }
 
 /* Mobile: stack to 1 column, remove divider borders */
@@ -1481,38 +1482,14 @@ button.accordion-question {
   cursor: pointer;
   width: 100%;
   text-align: left;
-  padding: 0;
+  padding: 20px 0;
   color: inherit;
   font: inherit;
 }
+.accordion-item.active button.accordion-question{
+padding: 20px 30px;
+}
 
-/* Phase 20: Featured Projects two-column header */
-.process-header {
-  flex-direction: row;
-  align-items: flex-end;
-  justify-content: space-between;
-}
-.process-header__desc {
-  flex: 1;
-  max-width: 350px;
-  font-weight: 600;
-  font-size: 18px;
-  letter-spacing: -0.72px;
-  line-height: 1.5;
-  color: rgba(255,255,255,0.5);
-  text-wrap: balance;
-  margin-bottom: 14px;
-}
-@media (max-width: 900px) {
-  .process-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .process-header__desc {
-    max-width: 100%;
-    margin-top: 12px;
-  }
-}
 
 /* ============================================
    Phase 20c: Contact / Lead Form
@@ -1785,16 +1762,6 @@ button.accordion-question {
   font-weight: 400;
   letter-spacing: -2px;
   line-height: 1.1;
-}
-.how-we-work-header__desc {
-  max-width: 320px;
-  font-weight: 600;
-  font-size: 17px;
-  letter-spacing: -0.5px;
-  line-height: 1.5;
-  color: #d1d1d1;
-  text-wrap: balance;
-  margin: 0;
 }
 .how-we-work-steps {
   list-style: none;

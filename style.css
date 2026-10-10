@@ -821,6 +821,7 @@ section.hsnlogix-portfolio {
  letter-spacing: -2.8px;
  line-height: 77px;
  text-wrap: balance;
+ max-width: 700px;
  }
 /* Process steps */
  .process-steps {
@@ -1004,7 +1005,7 @@ body {
  align-items: flex-start;
  gap: 0px;
  width: 100%;
- height: 154px;
+ max-width: 700px;
  }
 .headline-part {
  opacity: 0.6;
@@ -1051,7 +1052,6 @@ body {
  display: flex;
  align-items: center;
  gap: 8px;
- height: 20px;
  }
 .availability-text {
  font-weight: 600;
@@ -1059,16 +1059,6 @@ body {
  letter-spacing: -0.42px;
  line-height: 20px;
  color: #2F2F2F;
- }
-.testimonials-header .description {
- opacity: 0.7;
- font-weight: 600;
- font-size: 24px;
- letter-spacing: -0.96px;
- line-height: 36px;
- color: #2F2F2F;
- max-width: 500px;
- width: 100%;
  }
 .cta-button:hover {
  transform: translateY(-2px);
@@ -1111,7 +1101,7 @@ body {
  flex-direction: column;
  align-items: center;
  justify-content: center;
- gap: 40px;
+ gap: 80px;
  flex: 1;
  width: 100%;
  position: relative;
@@ -1160,7 +1150,6 @@ body {
  justify-content: flex-start;
  gap: 0px;
  width: 100%;
- height: 154px;
 }
 .headline-part {
  opacity: 0.6;
@@ -1213,11 +1202,17 @@ body {
  transition: all 0.3s ease;
 }
 .accordion-question:hover {
- background-color: rgba(255, 255, 255, 0.05);
+ background-color: rgba(255, 255, 255, 0.058);
+}
+.accordion-item.active button.accordion-question {
+   background-color: rgba(255, 255, 255, 0.08);
 }
 .accordion-question:hover span.question-number.closed {
     color: #82FF1F;
     opacity: 1;
+}
+.accordion-item.active .accordion-answer {
+  background-color: rgba(255, 255, 255, 0.05);
 }
 .question-number {
  font-weight: 600;
@@ -1241,6 +1236,7 @@ body {
 }
 .faq-section .question-title {
     color: inherit;
+    text-align: left;
 }
 .accordion-icon {
  border: 1px solid #525252;
