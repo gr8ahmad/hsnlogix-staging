@@ -1928,3 +1928,28 @@ padding: 20px 30px;
 @media (prefers-reduced-motion: reduce) {
   .blog-strip-card { transition: none; }
 }
+
+/* ── Phase 25D: class-based slider overflow (works alongside #hsnlogix-portfolio-slider in style.css) ── */
+.hsn-auto-slider { overflow-x: hidden; overflow-y: visible; }
+
+/* ── Phase 25D: testimonials page Upwork CTA ── */
+.testimonials-upwork-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 40px 0 60px;
+  text-align: center;
+}
+.testimonials-upwork-note {
+  color: rgba(2,9,10,0.5);
+  font-size: 15px;
+  margin: 0;
+}
+.testimonials-upwork-icon {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 6px;
+  display: inline-block;
+}

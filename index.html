@@ -21,8 +21,8 @@
 <meta property="og:url" content="https://hsnlogix.com/">
   <title>Shopify Development Agency | HSNLOGIX</title>
 
-  <link rel="stylesheet" href="style.css?v=1791635601">
-  <link rel="stylesheet" href="style-additions.css?v=1791635601">
+  <link rel="stylesheet" href="style.css?v=1791636698">
+  <link rel="stylesheet" href="style-additions.css?v=1791636698">
   <link rel="stylesheet" href="aos.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="aos.css"></noscript>
 
@@ -795,7 +795,7 @@
         </div>
     </div>
 <h2 class="sr-only">What Clients Say</h2>
-<div id="hsnlogix-portfolio-slider">
+<div id="hsnlogix-portfolio-slider" class="hsn-auto-slider">
   <div class="hsnlogix-slider-track">
 
     <div class="hsnlogix-slider-item">
@@ -992,39 +992,41 @@
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    const slider = document.getElementById('hsnlogix-portfolio-slider');
-    if (!slider) return;
-    const track = slider.querySelector('.hsnlogix-slider-track');
-    const items = Array.from(track.children);
+    document.querySelectorAll('.hsn-auto-slider').forEach(function (slider) {
+      if (slider.dataset.sliderInit) return;
+      slider.dataset.sliderInit = '1';
+      const track = slider.querySelector('.hsnlogix-slider-track');
+      const items = Array.from(track.children);
 
-    let loopWidth = 0;
-    items.forEach(item => {
-      const style = getComputedStyle(item);
-      loopWidth += item.offsetWidth + parseFloat(style.marginLeft) + parseFloat(style.marginRight);
-    });
+      let loopWidth = 0;
+      items.forEach(item => {
+        const style = getComputedStyle(item);
+        loopWidth += item.offsetWidth + parseFloat(style.marginLeft) + parseFloat(style.marginRight);
+      });
 
-    items.forEach(item => { const clone = item.cloneNode(true); clone.setAttribute('aria-hidden', 'true'); track.appendChild(clone); });
+      items.forEach(item => { const clone = item.cloneNode(true); clone.setAttribute('aria-hidden', 'true'); track.appendChild(clone); });
 
-    let pos = 0;
-    let currentRate = 1, targetRate = 1;
-    const baseSpeed = window.innerWidth <= 768
-      ? loopWidth / 40
-      : loopWidth / 50;
-    let lastTime = performance.now();
+      let pos = 0;
+      let currentRate = 1, targetRate = 1;
+      const baseSpeed = window.innerWidth <= 768
+        ? loopWidth / 40
+        : loopWidth / 50;
+      let lastTime = performance.now();
 
-    function animate(time) {
-      const dt = (time - lastTime) / 1000;
-      lastTime = time;
-      currentRate += (targetRate - currentRate) * 0.25;
-      pos = (pos + baseSpeed * currentRate * dt) % loopWidth;
-      track.style.transform = `translateX(${-pos}px)`;
+      function animate(time) {
+        const dt = (time - lastTime) / 1000;
+        lastTime = time;
+        currentRate += (targetRate - currentRate) * 0.25;
+        pos = (pos + baseSpeed * currentRate * dt) % loopWidth;
+        track.style.transform = `translateX(${-pos}px)`;
+        requestAnimationFrame(animate);
+      }
+
       requestAnimationFrame(animate);
-    }
 
-    requestAnimationFrame(animate);
-
-    slider.addEventListener('mouseenter', () => targetRate = 0.35);
-    slider.addEventListener('mouseleave', () => targetRate = 1);
+      slider.addEventListener('mouseenter', () => targetRate = 0.35);
+      slider.addEventListener('mouseleave', () => targetRate = 1);
+    });
   });
 </script>
 
@@ -1645,7 +1647,7 @@
 })();
 </script>
 
-    <script src="aos.js?v=1791635601"></script>
+    <script src="aos.js?v=1791636698"></script>
   <script>
     // Defer AOS init until after load + next frame so it doesn't
     // force a synchronous layout recalc right after the aos.css media-swap.
@@ -1777,7 +1779,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   </script>
 
-<script src="hsnlogix-tracking.js?v=1791635601"></script>
+<script src="hsnlogix-tracking.js?v=1791636698"></script>
 
 <!-- Cal.com embed bootstrap — deferred to end of body to avoid blocking render -->
 <script>
