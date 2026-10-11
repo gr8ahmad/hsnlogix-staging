@@ -1135,7 +1135,6 @@
   padding: 60px 0 48px;
   position: relative;
   overflow: hidden;
-  margin-bottom: 100px;
   min-height: 400px;
   display: flex;
   flex-direction: column;
@@ -1230,6 +1229,9 @@
     min-height: 280px;
   }
   .page-hero__heading { font-size: 30px; letter-spacing: -0.8px; }
+}
+.blog-main section.hsnlogix-portfolio {
+  padding-bottom: 0;
 }
 
 /* ─── Service Hero (moved from _layouts/service.html inline style) ─────── */
