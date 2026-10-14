@@ -2138,3 +2138,13 @@ article.blog-post.service-page {
   outline-offset: 4px;
   border-radius: 4px;
 }
+
+/* Inner pages: hero banner is full-bleed on phones (no side or top inset) */
+@media (max-width: 640px) {
+  main.blog-main { padding: 0 0 80px; }
+  .blog-main > *:not(.page-hero):not(.page-content):not(section):not(.hsnlogix-portfolio) {
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+  }
+}
