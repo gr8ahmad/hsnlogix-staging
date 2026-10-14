@@ -2024,3 +2024,30 @@ article.blog-post.service-page {
     line-height: 1.2;
   }
 }
+
+/* Featured Projects on phones: line the heading and cards up with the 24px gutter used by the Services section above.
+   (Section 15px + inner 16px + grid 40px padding used to stack up and push the cards ~71px in from the screen edge.) */
+@media (max-width: 768px) {
+  .projects-section {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .projects-section .projects-inner {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .projects-section .process-header,
+  .projects-section .projects-grid,
+  .projects-section .projects-small-container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .projects-section .projects-grid {
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+  .projects-section .projects-small-container,
+  .projects-section .projects-grid-small {
+    gap: 24px;
+  }
+}
