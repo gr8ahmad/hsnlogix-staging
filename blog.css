@@ -471,7 +471,7 @@
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    color: #888;
+    color: #666;
 }
 
 .quick-fact-value {
@@ -777,3 +777,10 @@
     }
 }
 
+/* Wide tables (e.g. pricing plans) scroll inside the article instead of widening the page on phones */
+.blog-post-body table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
