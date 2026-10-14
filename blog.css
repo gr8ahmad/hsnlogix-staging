@@ -7,6 +7,7 @@
 
 .blog-main {
     min-height: 60vh;
+    padding-bottom: 80px;
 }
 
 /* ---------- Blog index ---------- */
@@ -502,7 +503,7 @@
     font-weight: 800;
     font-size: 24px;
     color: #0A0A0A;
-    margin-bottom: 16px;
+    margin-bottom: 30px;
     letter-spacing: -0.5px;
 }
 
@@ -521,6 +522,7 @@
 
 .service-cta {
     margin-top: 40px;
+    margin-bottom: 30px;
 }
 
 /* ─── Service numbered steps (reuses .wl-process-step cards) ──────────────── */
@@ -547,6 +549,7 @@
     overflow: hidden;
     text-decoration: none;
     transition: border-color 0.2s ease;
+    padding-left: 30px;
 }
 .service-proof-card:hover {
     border-color: #82FF1F;
@@ -764,6 +767,7 @@
     font-size: 24px;
     color: #0A0A0A;
     margin-bottom: 20px;
+    text-align: left;
 }
 
 @media (max-width: 640px) {

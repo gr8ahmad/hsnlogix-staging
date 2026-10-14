@@ -1490,7 +1490,7 @@ body {
   line-height: 1.2;
  }
  .services-section .accordion-question {
-  padding: 22px 0;
+  padding: 22px 15px !important;
  }
  .addon-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -3698,7 +3698,7 @@ border: 0;
      letter-spacing: -0.8px;
   }
   .services-section {
-    padding: 40px 20px;
+    padding: 40px 24px;
   }
   .headline-text {
     font-size: 36px;
@@ -3727,7 +3727,7 @@ border: 0;
      margin-left: 70px;
   }
   .accordion-answer {
-    padding: 30px 20px 20px 0px;
+    padding: 30px 20px 20px 20px;
   }
   .service-description {
     width: 100%;
@@ -3776,7 +3776,9 @@ a.project-card-small {
 
 }
 .services-container {
+  padding: 0;
   padding-top: 20px;
+
 }
 
 }

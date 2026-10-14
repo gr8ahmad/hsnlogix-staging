@@ -45,6 +45,7 @@
    background (rgb(255,255,255)), so white text is invisible there. */
 .service-section .faq-questions .question-title {
     color: #0A0A0A;
+    text-align: left;
 }
 /* White-label page scoped fix (subset of the above, kept for specificity). */
 .white-label-page .service-section .question-title,
@@ -1230,8 +1231,16 @@
   }
   .page-hero__heading { font-size: 30px; letter-spacing: -0.8px; }
 }
+
 .blog-main section.hsnlogix-portfolio {
   padding-bottom: 0;
+  padding-top: 0;
+}
+.blog-main section.hsnlogix-portfolio .hsnlogix-slider-track{
+padding-top: 0;
+}
+.blog-main .page-hero {
+  margin-bottom: 80px;
 }
 
 /* ─── Service Hero (moved from _layouts/service.html inline style) ─────── */
@@ -1283,7 +1292,7 @@
   box-sizing: border-box;
 }
 .faq-page .faq-item + .faq-item { border-top: 1px solid rgba(0,0,0,0.07); }
-.faq-page .question-title { color: #0A0A0A; }
+.faq-page .question-title { color: #0A0A0A;text-align: left; }
 .faq-page .question-number { color: rgba(0,0,0,0.35); }
 .faq-page__cta {
   margin-top: 64px;
@@ -1543,7 +1552,7 @@ padding: 20px 30px;
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.55);
+  color: inherit;
   margin-bottom: 6px;
 }
 .contact-form__optional {
@@ -1559,16 +1568,20 @@ padding: 20px 30px;
   box-sizing: border-box;
   background: var(--bg-card);
   border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 10px;
+  border-radius: 7px;
   color: #fff;
   font-family: 'Manrope', sans-serif;
   font-size: 15px;
   font-weight: 500;
-  padding: 12px 14px;
+  padding: 14px 14px;
   outline: none;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
   -webkit-appearance: none;
   appearance: none;
+}
+article.blog-post.service-page.white-label-page,
+article.blog-post.service-page {
+  max-width: 1000px;
 }
 .contact-form__input::placeholder {
   color: rgba(255,255,255,0.22);
@@ -1714,7 +1727,13 @@ padding: 20px 30px;
 }
 
 /* Phase 20d: contact page layout */
-.contact-page { max-width: 940px; margin: 0 auto; }
+.contact-page { max-width: 1080px; margin: 0 auto; }
+.contact-page__form-col {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    background: #f7faf3;
+    padding: 30px;
+}
 .contact-page__layout { display: grid; grid-template-columns: 1fr 300px; gap: 56px; align-items: start; }
 .contact-page__alt-heading { font-size: 20px; font-weight: 700; color: #0A1314; margin: 0 0 12px; letter-spacing: -0.5px; }
 .contact-page__alt-body { font-size: 15px; line-height: 1.7; color: rgba(2,9,10,0.65); margin-bottom: 24px; }
@@ -1831,7 +1850,7 @@ padding: 20px 30px;
   .how-we-work-step:nth-last-child(-n+2) { border-bottom: none; }
 }
 @media (max-width: 560px) {
-  .how-we-work-section { padding: 48px 20px; }
+  .how-we-work-section { padding: 48px 24px; }
   .how-we-work-header { flex-direction: column; align-items: flex-start; gap: 16px; }
   .how-we-work-header__desc { max-width: 100%; }
   .how-we-work-steps { grid-template-columns: 1fr; }
@@ -1848,7 +1867,7 @@ padding: 20px 30px;
   background: #fff;
   border-top: 1px solid rgba(0,0,0,0.08);
   padding-top: 60px;
-  padding-bottom: 60px;
+  padding-bottom: 80px;
 }
 
 .blog-strip-header {
@@ -1941,7 +1960,7 @@ padding: 20px 30px;
   flex-direction: column;
   align-items: center;
   gap: 16px;
-  padding: 40px 0 60px;
+  padding: 40px 0 80px;
   text-align: center;
 }
 .testimonials-upwork-note {
@@ -1960,7 +1979,7 @@ padding: 20px 30px;
 /* -- Phase 25C: services index groups -- */
 .services-group-heading { font-size: 20px; font-weight: 700; color: #0A1314; margin: 40px 0 4px; }
 .services-group-desc { color: rgba(2,9,10,0.55); font-size: 15px; margin: 0 0 16px; }
-.services-index-cta { text-align: center; padding: 48px 0 60px; border-top: 1px solid rgba(0,0,0,0.08); margin-top: 40px; }
+.services-index-cta { text-align: center; padding: 48px 0 60px;  margin-top: 40px; }
 .services-index-cta h2 { font-size: 22px; font-weight: 700; color: #0A1314; margin: 0 0 10px; }
 .services-index-cta > p { color: rgba(2,9,10,0.55); font-size: 16px; margin: 0 0 24px; }
 .services-index-cta__actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
