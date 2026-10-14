@@ -2148,3 +2148,37 @@ article.blog-post.service-page {
     box-sizing: border-box;
   }
 }
+
+/* ─── Audit batch 1: nav, skip link, contact ─────────────────────────────── */
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -64px;
+  z-index: 2000;
+  background: #0a0a0a;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: top 0.15s ease;
+}
+.skip-link:focus { top: 12px; outline: 3px solid #82FF1F; outline-offset: 2px; }
+main:focus { outline: none; }
+
+/* Header links: Services + Case Studies from 481px, Blog + For Agencies from 1100px */
+.header-inline-nav { gap: 22px; }
+@media (max-width: 1099px) {
+  .header-inline-link--wide { display: none; }
+}
+@media (min-width: 1100px) {
+  .nav-drawer__link--narrow-only { display: none; }
+}
+@media (min-width: 481px) and (max-width: 640px) {
+  .header-inline-nav { gap: 14px; margin-right: 12px; }
+  .header-inline-link { font-size: 12px; }
+}
+
+.contact-page__alt-email-link { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.contact-page__alt-email-link:hover { color: #000; }
+.contact-page__reply-note { font-size: 13px; color: #5a5f57; margin: 8px 0 0; }

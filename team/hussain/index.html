@@ -25,8 +25,8 @@
   <meta name="twitter:image" content="https://hsnlogix.com/HSNLogix-logo.jpg">
   <title>Hussain Ahmad | Founder & Lead Shopify Developer | HSNLOGIX</title>
 
-  <link rel="stylesheet" href="/hsnlogix-staging/style.css?v=1791993883">
-  <link rel="stylesheet" href="/hsnlogix-staging/style-additions.css?v=1791993883">
+  <link rel="stylesheet" href="/hsnlogix-staging/style.css?v=1792001080">
+  <link rel="stylesheet" href="/hsnlogix-staging/style-additions.css?v=1792001080">
 
   <!-- Analytics: Consent Mode v2 defaults + GA4 (production only) -->
 <script>
@@ -64,22 +64,33 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "@id": "https://hsnlogix.com/team/hussain/#person",
-    "name": "Hussain Ahmad",
-    "url": "https://hsnlogix.com/team/hussain/",
-    "jobTitle": "Founder & Lead Shopify Developer",
-    "worksFor": {
-      "@type": "Organization",
-      "@id": "https://hsnlogix.com/#organization",
-      "name": "HSNLOGIX",
-      "url": "https://hsnlogix.com"
-    }
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://hsnlogix.com/team/hussain/#person",
+        "name": "Hussain Ahmad",
+        "url": "https://hsnlogix.com/team/hussain/",
+        "jobTitle": "Founder & Lead Shopify Developer",
+        "sameAs": ["https://www.upwork.com/freelancers/~01e91c15509859436e"],
+        "worksFor": {"@id": "https://hsnlogix.com/#organization"}
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://hsnlogix.com/#organization",
+        "name": "HSNLOGIX",
+        "url": "https://hsnlogix.com",
+        "logo": "https://hsnlogix.com/HSNLogix-logo.jpg",
+        "email": "hussain@hsnlogix.com",
+        "sameAs": ["https://www.linkedin.com/company/hsnlogix"],
+        "founder": {"@id": "https://hsnlogix.com/team/hussain/#person"}
+      }
+    ]
   }
   </script>
 
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
   <div class="container site-header__inner">
     <!-- Logo — far left -->
@@ -94,8 +105,10 @@
     <div class="header-right">
       <!-- Inline nav links (hidden below 480px, those widths use the drawer) -->
       <nav class="header-inline-nav" aria-label="Primary navigation">
+        <a href="/hsnlogix-staging/services/" class="header-inline-link">Services</a>
         <a href="/hsnlogix-staging/case-studies/" class="header-inline-link">Case Studies</a>
-        <a href="/hsnlogix-staging/testimonials/" class="header-inline-link">Testimonials</a>
+        <a href="/hsnlogix-staging/blog/" class="header-inline-link header-inline-link--wide">Blog</a>
+        <a href="/hsnlogix-staging/white-label/" class="header-inline-link header-inline-link--wide">For Agencies</a>
       </nav>
 
       <!-- Book a Call -->
@@ -132,19 +145,19 @@
     </button>
     <nav class="nav-drawer__nav">
         <!-- Shown in drawer only when inline header links are hidden (< 480px) -->
+        <a href="/hsnlogix-staging/services/" class="nav-drawer__link nav-drawer__link--mobile-only">Services</a>
         <a href="/hsnlogix-staging/case-studies/" class="nav-drawer__link nav-drawer__link--mobile-only">Case Studies</a>
-        <a href="/hsnlogix-staging/testimonials/" class="nav-drawer__link nav-drawer__link--mobile-only">Testimonials</a>
         <!-- Always in drawer -->
-        <a href="/hsnlogix-staging/services/" class="nav-drawer__link">Services</a>
+        <a href="/hsnlogix-staging/testimonials/" class="nav-drawer__link">Testimonials</a>
         <a href="/hsnlogix-staging/faq/" class="nav-drawer__link">FAQs</a>
-        <a href="/hsnlogix-staging/blog/" class="nav-drawer__link">Blog</a>
-        <a href="/hsnlogix-staging/white-label/" class="nav-drawer__link">For Agencies</a>
+        <a href="/hsnlogix-staging/blog/" class="nav-drawer__link nav-drawer__link--narrow-only">Blog</a>
+        <a href="/hsnlogix-staging/white-label/" class="nav-drawer__link nav-drawer__link--narrow-only">For Agencies</a>
         <a href="/hsnlogix-staging/contact/" class="nav-drawer__link">Contact</a>
     </nav>
 </aside>
 
 
-  <main>
+  <main id="main">
     <style>
 /* ── Profile section ── */
 .profile-section {
@@ -848,12 +861,28 @@
 })();
   </script>
 
-  <script src="/hsnlogix-staging/hsnlogix-tracking.js?v=1791993883"></script>
+  <script src="/hsnlogix-staging/hsnlogix-tracking.js?v=1792001080"></script>
 
-  <!-- Cal.com embed bootstrap — deferred to end of body to avoid blocking render -->
-  <script>
-  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-  Cal("init", {origin:"https://cal.com"});
-  </script>
+  <!-- Cal.com embed: loaded after the page is idle or on first interaction, so it never blocks first render.
+     Until it loads, booking links still work as normal links to cal.com/hsnlogix. -->
+<script>
+(function () {
+  var started = false;
+  function loadCal() {
+    if (started) return;
+    started = true;
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", {origin: "https://cal.com"});
+  }
+  ["pointerdown", "keydown", "scroll", "touchstart"].forEach(function (ev) {
+    window.addEventListener(ev, loadCal, { once: true, passive: true });
+  });
+  window.addEventListener("load", function () {
+    if ("requestIdleCallback" in window) { requestIdleCallback(loadCal, { timeout: 4000 }); }
+    else { setTimeout(loadCal, 3000); }
+  });
+})();
+</script>
+
 </body>
 </html>

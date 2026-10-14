@@ -16,6 +16,7 @@
   <link rel="canonical" href="https://hsnlogix.com/white-label/">
   <meta property="og:title" content="White-Label Shopify Development for Agencies | HSNLOGIX">
   <meta property="og:description" content="White-label Shopify development for agencies: CRO, custom theme builds, Liquid functionality and large-scale commerce setups, delivered under your brand.">
+  <meta property="og:site_name" content="HSNLOGIX">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://hsnlogix.com/white-label/">
   <meta property="og:image" content="https://hsnlogix.com/HSNLogix-logo.jpg">
@@ -25,9 +26,9 @@
   <meta name="twitter:image" content="https://hsnlogix.com/HSNLogix-logo.jpg">
   <title>White-Label Shopify Development for Agencies | HSNLOGIX</title>
 
-  <link rel="stylesheet" href="/hsnlogix-staging/style.css?v=1791993883">
-  <link rel="stylesheet" href="/hsnlogix-staging/style-additions.css?v=1791993883">
-  <link rel="stylesheet" href="/hsnlogix-staging/blog.css?v=1791993883">
+  <link rel="stylesheet" href="/hsnlogix-staging/style.css?v=1792001080">
+  <link rel="stylesheet" href="/hsnlogix-staging/style-additions.css?v=1792001080">
+  <link rel="stylesheet" href="/hsnlogix-staging/blog.css?v=1792001080">
 
   <!-- Analytics: Consent Mode v2 defaults + GA4 (production only) -->
 <script>
@@ -67,11 +68,12 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organization",
+        "@type": "ProfessionalService",
         "@id": "https://hsnlogix.com/#organization",
         "name": "HSNLOGIX",
         "url": "https://hsnlogix.com",
         "logo": "https://hsnlogix.com/HSNLogix-logo.jpg",
+        "email": "hussain@hsnlogix.com",
         "sameAs": ["https://www.linkedin.com/company/hsnlogix"]
       },
       {
@@ -80,6 +82,7 @@
         "name": "Hussain Ahmad",
         "jobTitle": "Founder & Lead Shopify Developer",
         "url": "https://hsnlogix.com/team/hussain/",
+        "sameAs": ["https://www.upwork.com/freelancers/~01e91c15509859436e"],
         "worksFor": {"@id": "https://hsnlogix.com/#organization"}
       }
     ]
@@ -88,6 +91,7 @@
 
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
   <div class="container site-header__inner">
     <!-- Logo — far left -->
@@ -102,8 +106,10 @@
     <div class="header-right">
       <!-- Inline nav links (hidden below 480px, those widths use the drawer) -->
       <nav class="header-inline-nav" aria-label="Primary navigation">
+        <a href="/hsnlogix-staging/services/" class="header-inline-link">Services</a>
         <a href="/hsnlogix-staging/case-studies/" class="header-inline-link">Case Studies</a>
-        <a href="/hsnlogix-staging/testimonials/" class="header-inline-link">Testimonials</a>
+        <a href="/hsnlogix-staging/blog/" class="header-inline-link header-inline-link--wide">Blog</a>
+        <a href="/hsnlogix-staging/white-label/" class="header-inline-link header-inline-link--wide">For Agencies</a>
       </nav>
 
       <!-- Book a Call -->
@@ -140,19 +146,19 @@
     </button>
     <nav class="nav-drawer__nav">
         <!-- Shown in drawer only when inline header links are hidden (< 480px) -->
+        <a href="/hsnlogix-staging/services/" class="nav-drawer__link nav-drawer__link--mobile-only">Services</a>
         <a href="/hsnlogix-staging/case-studies/" class="nav-drawer__link nav-drawer__link--mobile-only">Case Studies</a>
-        <a href="/hsnlogix-staging/testimonials/" class="nav-drawer__link nav-drawer__link--mobile-only">Testimonials</a>
         <!-- Always in drawer -->
-        <a href="/hsnlogix-staging/services/" class="nav-drawer__link">Services</a>
+        <a href="/hsnlogix-staging/testimonials/" class="nav-drawer__link">Testimonials</a>
         <a href="/hsnlogix-staging/faq/" class="nav-drawer__link">FAQs</a>
-        <a href="/hsnlogix-staging/blog/" class="nav-drawer__link">Blog</a>
-        <a href="/hsnlogix-staging/white-label/" class="nav-drawer__link">For Agencies</a>
+        <a href="/hsnlogix-staging/blog/" class="nav-drawer__link nav-drawer__link--narrow-only">Blog</a>
+        <a href="/hsnlogix-staging/white-label/" class="nav-drawer__link nav-drawer__link--narrow-only">For Agencies</a>
         <a href="/hsnlogix-staging/contact/" class="nav-drawer__link">Contact</a>
     </nav>
 </aside>
 
 
-  <main class="blog-main">
+  <main class="blog-main" id="main">
     
 <section class="page-hero">
   <div class="hero-pattern" aria-hidden="true">
@@ -164,7 +170,7 @@
     <div class="tag-badge page-hero__eyebrow-wrap">
       <div class="tag-text">Agencies</div>
     </div>
-    <h1 class="page-hero__heading"><span class="ph-pale">White-Label Development</span><span class="ph-dark">for Agencies</span></h1>
+    <h1 class="page-hero__heading"><span class="ph-pale">White-Label Development</span> <span class="ph-dark">for Agencies</span></h1>
     <p class="page-hero__lede">Shopify Growth, Without Adding Headcount</p>
     
   </div>
@@ -286,7 +292,7 @@
     <div class="faq-questions">
       <div class="faq-item">
         <div class="faq-question">
-          <button type="button" class="question-content faq-trigger" aria-expanded="false">
+          <button type="button" class="question-content faq-trigger" aria-expanded="false" aria-controls="wl-faq-answer-1">
             <div class="question-text">
               <p class="question-number">01/</p>
               <p class="question-title">How does the NDA work?</p>
@@ -297,7 +303,7 @@
               </svg>
             </div>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="wl-faq-answer-1">
             <p>Every white-label engagement starts with an NDA before any project details are shared. We don't disclose client names, project scope, or the arrangement itself.</p>
           </div>
         </div>
@@ -305,7 +311,7 @@
 
       <div class="faq-item">
         <div class="faq-question">
-          <button type="button" class="question-content faq-trigger" aria-expanded="false">
+          <button type="button" class="question-content faq-trigger" aria-expanded="false" aria-controls="wl-faq-answer-2">
             <div class="question-text">
               <p class="question-number">02/</p>
               <p class="question-title">Will we talk to your client directly?</p>
@@ -316,7 +322,7 @@
               </svg>
             </div>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="wl-faq-answer-2">
             <p>No, unless you want us to. All communication runs through you by default.</p>
           </div>
         </div>
@@ -324,7 +330,7 @@
 
       <div class="faq-item">
         <div class="faq-question">
-          <button type="button" class="question-content faq-trigger" aria-expanded="false">
+          <button type="button" class="question-content faq-trigger" aria-expanded="false" aria-controls="wl-faq-answer-3">
             <div class="question-text">
               <p class="question-number">03/</p>
               <p class="question-title">What's the minimum project size?</p>
@@ -335,7 +341,7 @@
               </svg>
             </div>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="wl-faq-answer-3">
             <p>No fixed minimum: we're happy to start with a small trial project so you can evaluate the work before committing to anything ongoing.</p>
           </div>
         </div>
@@ -604,12 +610,28 @@ document.addEventListener('DOMContentLoaded', function() {
 })();
   </script>
 
-  <script src="/hsnlogix-staging/hsnlogix-tracking.js?v=1791993883"></script>
+  <script src="/hsnlogix-staging/hsnlogix-tracking.js?v=1792001080"></script>
 
-  <!-- Cal.com embed bootstrap — deferred to end of body to avoid blocking render -->
-  <script>
-  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-  Cal("init", {origin:"https://cal.com"});
-  </script>
+  <!-- Cal.com embed: loaded after the page is idle or on first interaction, so it never blocks first render.
+     Until it loads, booking links still work as normal links to cal.com/hsnlogix. -->
+<script>
+(function () {
+  var started = false;
+  function loadCal() {
+    if (started) return;
+    started = true;
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", {origin: "https://cal.com"});
+  }
+  ["pointerdown", "keydown", "scroll", "touchstart"].forEach(function (ev) {
+    window.addEventListener(ev, loadCal, { once: true, passive: true });
+  });
+  window.addEventListener("load", function () {
+    if ("requestIdleCallback" in window) { requestIdleCallback(loadCal, { timeout: 4000 }); }
+    else { setTimeout(loadCal, 3000); }
+  });
+})();
+</script>
+
 </body>
 </html>

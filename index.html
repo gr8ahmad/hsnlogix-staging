@@ -19,10 +19,15 @@
 <meta property="og:image" content="https://hsnlogix.com/HSNLogix-logo.jpg">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://hsnlogix.com/">
+<meta property="og:site_name" content="HSNLOGIX">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Shopify Development Agency | HSNLOGIX">
+<meta name="twitter:description" content="HSNLOGIX: Shopify specialists building custom themes, faster load times and smoother checkouts for DTC brands that have outgrown off-the-shelf themes and apps.">
+<meta name="twitter:image" content="https://hsnlogix.com/HSNLogix-logo.jpg">
   <title>Shopify Development Agency | HSNLOGIX</title>
 
-  <link rel="stylesheet" href="style.css?v=1791993883">
-  <link rel="stylesheet" href="style-additions.css?v=1791993883">
+  <link rel="stylesheet" href="style.css?v=1792001080">
+  <link rel="stylesheet" href="style-additions.css?v=1792001080">
   <link rel="stylesheet" href="aos.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="aos.css"></noscript>
 
@@ -30,16 +35,28 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "@id": "https://hsnlogix.com/#organization",
-  "name": "HSNLOGIX",
-  "url": "https://hsnlogix.com",
-  "logo": "https://hsnlogix.com/HSNLogix-logo.jpg",
-  "description": "Shopify specialists building custom themes, faster load times and smoother checkouts for DTC brands that have outgrown off-the-shelf themes and apps.",
-  "sameAs": [
-    "https://www.linkedin.com/company/hsnlogix"
-  ],
-  "founder": {"@id": "https://hsnlogix.com/team/hussain/#person"}
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://hsnlogix.com/#organization",
+      "name": "HSNLOGIX",
+      "url": "https://hsnlogix.com",
+      "logo": "https://hsnlogix.com/HSNLogix-logo.jpg",
+      "email": "hussain@hsnlogix.com",
+      "description": "Shopify specialists building custom themes, faster load times and smoother checkouts for DTC brands that have outgrown off-the-shelf themes and apps.",
+      "sameAs": ["https://www.linkedin.com/company/hsnlogix"],
+      "founder": {"@id": "https://hsnlogix.com/team/hussain/#person"}
+    },
+    {
+      "@type": "Person",
+      "@id": "https://hsnlogix.com/team/hussain/#person",
+      "name": "Hussain Ahmad",
+      "jobTitle": "Founder & Lead Shopify Developer",
+      "url": "https://hsnlogix.com/team/hussain/",
+      "sameAs": ["https://www.upwork.com/freelancers/~01e91c15509859436e"],
+      "worksFor": {"@id": "https://hsnlogix.com/#organization"}
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -135,6 +152,7 @@
 
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <!-- HEADER -->
 <header class="site-header">
   <div class="container site-header__inner">
@@ -150,8 +168,10 @@
     <div class="header-right">
       <!-- Inline nav links (hidden below 480px, those widths use the drawer) -->
       <nav class="header-inline-nav" aria-label="Primary navigation">
+        <a href="/hsnlogix-staging/services/" class="header-inline-link">Services</a>
         <a href="/hsnlogix-staging/case-studies/" class="header-inline-link">Case Studies</a>
-        <a href="/hsnlogix-staging/testimonials/" class="header-inline-link">Testimonials</a>
+        <a href="/hsnlogix-staging/blog/" class="header-inline-link header-inline-link--wide">Blog</a>
+        <a href="/hsnlogix-staging/white-label/" class="header-inline-link header-inline-link--wide">For Agencies</a>
       </nav>
 
       <!-- Book a Call -->
@@ -188,18 +208,19 @@
     </button>
     <nav class="nav-drawer__nav">
         <!-- Shown in drawer only when inline header links are hidden (< 480px) -->
+        <a href="/hsnlogix-staging/services/" class="nav-drawer__link nav-drawer__link--mobile-only">Services</a>
         <a href="/hsnlogix-staging/case-studies/" class="nav-drawer__link nav-drawer__link--mobile-only">Case Studies</a>
-        <a href="/hsnlogix-staging/testimonials/" class="nav-drawer__link nav-drawer__link--mobile-only">Testimonials</a>
         <!-- Always in drawer -->
-        <a href="/hsnlogix-staging/services/" class="nav-drawer__link">Services</a>
+        <a href="/hsnlogix-staging/testimonials/" class="nav-drawer__link">Testimonials</a>
         <a href="/hsnlogix-staging/faq/" class="nav-drawer__link">FAQs</a>
-        <a href="/hsnlogix-staging/blog/" class="nav-drawer__link">Blog</a>
-        <a href="/hsnlogix-staging/white-label/" class="nav-drawer__link">For Agencies</a>
+        <a href="/hsnlogix-staging/blog/" class="nav-drawer__link nav-drawer__link--narrow-only">Blog</a>
+        <a href="/hsnlogix-staging/white-label/" class="nav-drawer__link nav-drawer__link--narrow-only">For Agencies</a>
         <a href="/hsnlogix-staging/contact/" class="nav-drawer__link">Contact</a>
     </nav>
 </aside>
 
 
+  <main id="main">
     <!-- Customer-first hero (sits above the personal hero and stats ticker) -->
     <section class="customer-hero">
         <!-- Pattern 1: dot-grid + glow blobs + accent dots -->
@@ -336,7 +357,6 @@
 </script>
     </section>
 
-  <main>
 
 <section class="services-section" id="services">
     <div class="services-container container">
@@ -817,6 +837,7 @@
           <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
         </div>
         <div aria-hidden="true" class="air3-rating-value-text">5.0</div>
+        <span class="sr-only">Rated 5 out of 5 stars</span>
       </div>
     </div>
   </div>
@@ -844,6 +865,7 @@
           <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
         </div>
         <div aria-hidden="true" class="air3-rating-value-text">5.0</div>
+        <span class="sr-only">Rated 5 out of 5 stars</span>
       </div>
     </div>
   </div>
@@ -871,6 +893,7 @@
           <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
         </div>
         <div aria-hidden="true" class="air3-rating-value-text">5.0</div>
+        <span class="sr-only">Rated 5 out of 5 stars</span>
       </div>
     </div>
   </div>
@@ -898,6 +921,7 @@
           <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
         </div>
         <div aria-hidden="true" class="air3-rating-value-text">5.0</div>
+        <span class="sr-only">Rated 5 out of 5 stars</span>
       </div>
     </div>
   </div>
@@ -925,6 +949,7 @@
           <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
         </div>
         <div aria-hidden="true" class="air3-rating-value-text">5.0</div>
+        <span class="sr-only">Rated 5 out of 5 stars</span>
       </div>
     </div>
   </div>
@@ -952,6 +977,7 @@
           <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
         </div>
         <div aria-hidden="true" class="air3-rating-value-text">5.0</div>
+        <span class="sr-only">Rated 5 out of 5 stars</span>
       </div>
     </div>
   </div>
@@ -979,6 +1005,7 @@
           <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
         </div>
         <div aria-hidden="true" class="air3-rating-value-text">5.0</div>
+        <span class="sr-only">Rated 5 out of 5 stars</span>
       </div>
     </div>
   </div>
@@ -1053,13 +1080,13 @@
       <a href="/hsnlogix-staging/blog/how-much-does-a-custom-shopify-store-cost-2026/" class="blog-strip-card">
         <p class="blog-strip-card__date">August 16, 2026</p>
         <h3 class="blog-strip-card__title">How Much Does a Custom Shopify Store Actually Cost in 2026?</h3>
-        <p class="blog-strip-card__excerpt">Discover how much a custom Shopify store costs in 2026, including Shopify plans, themes, development, custom function...</p>
+        <p class="blog-strip-card__excerpt">What a custom Shopify store costs in 2026: Shopify plans, themes, development, apps and ongoing maintenance, with realistic budgets by business stage....</p>
       </a>
       
       <a href="/hsnlogix-staging/blog/why-custom-shopify-code-outperforms-app-integrations/" class="blog-strip-card">
         <p class="blog-strip-card__date">August 15, 2026</p>
         <h3 class="blog-strip-card__title">Why Custom Shopify Code Outperforms App Integrations</h3>
-        <p class="blog-strip-card__excerpt">Why custom Shopify code outperforms app integrations: fewer scripts, better performance, lower app costs, and a more ...</p>
+        <p class="blog-strip-card__excerpt">Why custom Shopify code outperforms app integrations: fewer scripts, better performance, lower app costs, and a more conversion-focused storefront.</p>
       </a>
       
     </div>
@@ -1647,7 +1674,7 @@
 })();
 </script>
 
-    <script src="aos.js?v=1791993883"></script>
+    <script src="aos.js?v=1792001080"></script>
   <script>
     // Defer AOS init until after load + next frame so it doesn't
     // force a synchronous layout recalc right after the aos.css media-swap.
@@ -1779,12 +1806,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
   </script>
 
-<script src="hsnlogix-tracking.js?v=1791993883"></script>
+<script src="hsnlogix-tracking.js?v=1792001080"></script>
 
-<!-- Cal.com embed bootstrap — deferred to end of body to avoid blocking render -->
+<!-- Cal.com embed: loaded after the page is idle or on first interaction, so it never blocks first render.
+     Until it loads, booking links still work as normal links to cal.com/hsnlogix. -->
 <script>
-(function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-Cal("init", {origin:"https://cal.com"});
+(function () {
+  var started = false;
+  function loadCal() {
+    if (started) return;
+    started = true;
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", {origin: "https://cal.com"});
+  }
+  ["pointerdown", "keydown", "scroll", "touchstart"].forEach(function (ev) {
+    window.addEventListener(ev, loadCal, { once: true, passive: true });
+  });
+  window.addEventListener("load", function () {
+    if ("requestIdleCallback" in window) { requestIdleCallback(loadCal, { timeout: 4000 }); }
+    else { setTimeout(loadCal, 3000); }
+  });
+})();
 </script>
+
 </body>
 </html>
