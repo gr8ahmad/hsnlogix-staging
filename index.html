@@ -26,8 +26,8 @@
 <meta name="twitter:image" content="https://hsnlogix.com/HSNLogix-logo.jpg">
   <title>Shopify Development Agency | HSNLOGIX</title>
 
-  <link rel="stylesheet" href="style.css?v=1792001080">
-  <link rel="stylesheet" href="style-additions.css?v=1792001080">
+  <link rel="stylesheet" href="style.css?v=1792001904">
+  <link rel="stylesheet" href="style-additions.css?v=1792001904">
   <link rel="stylesheet" href="aos.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="aos.css"></noscript>
 
@@ -56,63 +56,6 @@
       "sameAs": ["https://www.upwork.com/freelancers/~01e91c15509859436e"],
       "worksFor": {"@id": "https://hsnlogix.com/#organization"}
     }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What's your usual project timeline?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Most theme development or customization projects are completed within 1 to 4 weeks, depending on the scope and level of detail required. Once we understand your requirements, we'll share a clear timeline with milestones for design setup, development, testing, and final delivery."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you provide ongoing support after the project?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes! We offer ongoing maintenance and support for Shopify stores. This can include performance improvements, bug fixes, layout tweaks, and updates to keep your theme running smoothly as your business evolves."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can you follow my existing brand guidelines?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Definitely. We make sure your Shopify store fully aligns with your brand's look and feel, colors, typography, layout, and visual tone. Whether you already have detailed brand guidelines or just a reference design, we can implement them precisely and maintain consistency across all pages."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do you handle revisions and feedback?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Revisions are part of the process. We provide structured feedback rounds where you can review progress and suggest adjustments. We value clear communication and make sure your feedback is implemented quickly and accurately until everything looks and functions as intended."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How much does a Shopify project typically cost?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Smaller work like store setup, audits, or troubleshooting typically starts around $500 to $1,000. Custom Shopify development and design, and Shopify Plus development, typically run $1,500 to $5,000+ depending on scope. Ongoing maintenance and support starts at $400 per month."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How much does a migration development project typically cost?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Migration development projects typically range from $500 to $1,500, depending on the platforms involved, store size, data requirements, integrations, and overall migration scope. We will confirm the exact cost after reviewing your current store and requirements."
-      }
-    }
-    
   ]
 }
 </script>
@@ -261,6 +204,7 @@
         </div>
         <!-- Stats ticker pinned to the bottom of the hero -->
         <div class="stats-ticker" id="hsnlogix-stats-ticker">
+            <button type="button" class="ticker-pause" id="ticker-pause" aria-pressed="false">Pause</button>
             <div class="stats-container">
                 <section class="ticker-section">
                     <ul class="ticker-list">
@@ -337,14 +281,23 @@
       ? loopWidth / 30
       : loopWidth / 38;
     let lastTime = performance.now();
+    let paused = false;
+    const pauseBtn = document.getElementById('ticker-pause');
+    pauseBtn.addEventListener('click', () => {
+      paused = !paused;
+      pauseBtn.setAttribute('aria-pressed', paused ? 'true' : 'false');
+      pauseBtn.textContent = paused ? 'Play' : 'Pause';
+    });
 
     function animate(time) {
       const dt = (time - lastTime) / 500;
       lastTime = time;
       currentRate += (targetRate - currentRate) * 0.25;
 
-      pos = (pos - baseSpeed * currentRate * dt) % loopWidth;
-      track.style.transform = `translateX(${pos}px)`;
+      if (!paused) {
+        pos = (pos - baseSpeed * currentRate * dt) % loopWidth;
+        track.style.transform = `translateX(${pos}px)`;
+      }
 
       requestAnimationFrame(animate);
     }
@@ -391,7 +344,7 @@
                     <p class="service-hook-text">Custom Shopify themes, built to convert. Fast, scalable, fully yours.</p>
                 </div>
                 <div class="answer-desc">
-                    <p class="service-description">Our team builds fully custom Shopify themes from scratch or tailored to your existing brand guidelines, engineered for speed, mobile responsiveness, and real conversion lift. Whether you need a completely bespoke storefront or a refined version of your current theme, we handle the design, development, and testing so it launches exactly how it should.</p>
+                    <p class="service-description">Led by founder Hussain Ahmad, we build fully custom Shopify themes from scratch or tailored to your existing brand guidelines, engineered for speed, mobile responsiveness, and real conversion lift. Whether you need a completely bespoke storefront or a refined version of your current theme, we handle the design, development, and testing so it launches exactly how it should.</p>
                     <a href="/hsnlogix-staging/services/theme-development/" class="service-learn-more">Learn more &rarr;</a>
                 </div>
                 <div class="answer-img">
@@ -403,10 +356,10 @@
 
     <div class="accordion-divider"></div>
 
-    <!-- 2. Shopify Migration Development -->
+    <!-- 2. Platform Migration -->
     <div class="accordion-item">
         <button class="accordion-question" aria-expanded="false" aria-controls="acc-migration">
-            <h3 class="question-title">Shopify Migration Development</h3>
+            <h3 class="question-title">Platform Migration</h3>
             <div class="accordion-icon">
                 <div class="plus-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -433,10 +386,10 @@
 
     <div class="accordion-divider"></div>
 
-    <!-- 3. Large Catalogs, B2B and Shopify Plus -->
+    <!-- 3. B2B & Wholesale Setup -->
     <div class="accordion-item">
         <button class="accordion-question" aria-expanded="false" aria-controls="acc-b2b">
-            <h3 class="question-title">Large Catalogs, B2B and Shopify Plus</h3>
+            <h3 class="question-title">B2B & Wholesale Setup</h3>
             <div class="accordion-icon">
                 <div class="plus-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -815,247 +768,166 @@
         </div>
     </div>
 <h2 class="sr-only">What Clients Say</h2>
-<div id="hsnlogix-portfolio-slider" class="hsn-auto-slider">
-  <div class="hsnlogix-slider-track">
 
-    <div class="hsnlogix-slider-item">
-<div class="testimonial-card">
-  <div class="testimonial-header">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true" viewBox="0 0 24 24" role="img"><path vector-effect="non-scaling-stroke" stroke="var(--icon-color, #001e00)" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5" d="M12 21a9 9 0 100-18 9 9 0 000 18z"></path><path vector-effect="non-scaling-stroke" stroke="var(--icon-color, #001e00)" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5" d="M12 11.73a2.97 2.97 0 100-5.94 2.97 2.97 0 000 5.94zm0 1.89c-2.88 0-5.31 2.34-5.31 5.31v.36C8.22 20.37 10.02 21 12 21c1.98 0 3.78-.63 5.31-1.71v-.36c0-2.88-2.43-5.31-5.31-5.31z"></path></svg>
-    <div class="testimonial-rating">
-      <div data-v-a20e6904="" data-ev-sublocation="!rating" class="air3-rating wm-feedback-scores">
-        <svg xmlns="http://www.w3.org/2000/svg" class="air3-rating-hidden-icon" style="display: none;">
-          <symbol id="air3-rs" viewBox="0 0 38 38">
-            <path d="M21.28 2.63l3.57 9.6 9.85.55c.49.03.96.2 1.34.52.4.31.68.74.84 1.23.15.49.16 1.02.03 1.51-.14.5-.41.94-.79 1.27l-7.67 6.5 2.57 9.98c.12.5.09 1.03-.08 1.52-.17.49-.47.9-.87 1.21a2.36 2.36 0 01-2.76.06L19 30.95l-8.3 5.59a2.35 2.35 0 01-2.74-.04c-.4-.3-.7-.71-.88-1.2a2.72 2.72 0 01-.1-1.51l2.55-9.95-7.65-6.53a2.58 2.58 0 01-.79-1.27 2.7 2.7 0 01.03-1.51c.16-.49.45-.92.83-1.23.4-.31.86-.5 1.35-.52l9.85-.55 3.57-9.6c.18-.49.5-.9.9-1.19a2.37 2.37 0 012.76 0c.4.3.72.7.9 1.19z"></path>
-          </symbol>
-        </svg>
-        <div class="air3-rating-foreground" style="width: 117px;">
-          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
-          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
-          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
-          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
-          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="tm-star" viewBox="0 0 38 38"><path d="M21.28 2.63l3.57 9.6 9.85.55c.49.03.96.2 1.34.52.4.31.68.74.84 1.23.15.49.16 1.02.03 1.51-.14.5-.41.94-.79 1.27l-7.67 6.5 2.57 9.98c.12.5.09 1.03-.08 1.52-.17.49-.47.9-.87 1.21a2.36 2.36 0 01-2.76.06L19 30.95l-8.3 5.59a2.35 2.35 0 01-2.74-.04c-.4-.3-.7-.71-.88-1.2a2.72 2.72 0 01-.1-1.51l2.55-9.95-7.65-6.53a2.58 2.58 0 01-.79-1.27 2.7 2.7 0 01.03-1.51c.16-.49.45-.92.83-1.23.4-.31.86-.5 1.35-.52l9.85-.55 3.57-9.6c.18-.49.5-.9.9-1.19a2.37 2.37 0 012.76 0c.4.3.72.7.9 1.19z"/></symbol>
+</svg>
+
+<div class="tm-carousel" data-tm-carousel>
+  <div class="tm-carousel__controls">
+    <button type="button" class="tm-carousel__btn" data-tm-prev aria-label="Previous reviews">&larr;</button>
+    <button type="button" class="tm-carousel__btn" data-tm-next aria-label="Next reviews">&rarr;</button>
+  </div>
+  <ul class="tm-list tm-list--carousel" tabindex="0" aria-label="Client reviews">
+
+
+    <li class="tm-item">
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          
+          <span class="testimonial-avatar testimonial-avatar--initials" aria-hidden="true">D</span>
+          
+          <div class="testimonial-rating">
+            <span class="tm-stars" aria-hidden="true">
+              <svg><use href="#tm-star"/></svg><svg><use href="#tm-star"/></svg><svg><use href="#tm-star"/></svg><svg><use href="#tm-star"/></svg><svg><use href="#tm-star"/></svg>
+            </span>
+            <span class="air3-rating-value-text" aria-hidden="true">5.0</span>
+            <span class="sr-only">Rated 5 out of 5 stars</span>
+          </div>
         </div>
-        <div aria-hidden="true" class="air3-rating-value-text">5.0</div>
-        <span class="sr-only">Rated 5 out of 5 stars</span>
+        <p class="testimonial-text">Glad I found Hussain. Hard to find people who are proactive in their work, get things done at all hours and don't whine and complain when you want things to be done so everything looks tip top. I will hire him on future work for sure.</p>
+        <p class="testimonial-author">Dante C</p>
       </div>
-    </div>
-  </div>
-  <p class="testimonial-text">Glad I found Hussain. Hard to find people who are proactive in their work, get things done at all hours and don't whine and complain when you want things to be done so everything looks tip top. I will hire him on future work for sure.</p>
-  <p class="testimonial-author">Dante C</p>
-</div>
-    </div>
+    </li>
 
-    <div class="hsnlogix-slider-item">
-<div class="testimonial-card">
-  <div class="testimonial-header">
-    <img src="/hsnlogix-staging/aal-maghrabi.webp" alt="Aal Moghrabi profile photo" class="testimonial-avatar" loading="lazy" width="48" height="48">
-    <div class="testimonial-rating">
-      <div data-v-a20e6904="" data-ev-sublocation="!rating" class="air3-rating wm-feedback-scores">
-        <svg xmlns="http://www.w3.org/2000/svg" class="air3-rating-hidden-icon" style="display: none;">
-          <symbol id="air3-rs" viewBox="0 0 38 38">
-            <path d="M21.28 2.63l3.57 9.6 9.85.55c.49.03.96.2 1.34.52.4.31.68.74.84 1.23.15.49.16 1.02.03 1.51-.14.5-.41.94-.79 1.27l-7.67 6.5 2.57 9.98c.12.5.09 1.03-.08 1.52-.17.49-.47.9-.87 1.21a2.36 2.36 0 01-2.76.06L19 30.95l-8.3 5.59a2.35 2.35 0 01-2.74-.04c-.4-.3-.7-.71-.88-1.2a2.72 2.72 0 01-.1-1.51l2.55-9.95-7.65-6.53a2.58 2.58 0 01-.79-1.27 2.7 2.7 0 01.03-1.51c.16-.49.45-.92.83-1.23.4-.31.86-.5 1.35-.52l9.85-.55 3.57-9.6c.18-.49.5-.9.9-1.19a2.37 2.37 0 012.76 0c.4.3.72.7.9 1.19z"></path>
-          </symbol>
-        </svg>
-        <div class="air3-rating-foreground" style="width: 117px;">
-          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
-          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
-          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
-          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
-          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
+    <li class="tm-item">
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          
+          <img src="/hsnlogix-staging/aal-maghrabi.webp" alt="" class="testimonial-avatar" loading="lazy" width="48" height="48">
+          
+          <div class="testimonial-rating">
+            <span class="tm-stars" aria-hidden="true">
+              <svg><use href="#tm-star"/></svg><svg><use href="#tm-star"/></svg><svg><use href="#tm-star"/></svg><svg><use href="#tm-star"/></svg><svg><use href="#tm-star"/></svg>
+            </span>
+            <span class="air3-rating-value-text" aria-hidden="true">5.0</span>
+            <span class="sr-only">Rated 5 out of 5 stars</span>
+          </div>
         </div>
-        <div aria-hidden="true" class="air3-rating-value-text">5.0</div>
-        <span class="sr-only">Rated 5 out of 5 stars</span>
+        <p class="testimonial-text">Brilliant & definitely recommend! -- We loved working with Hussain as he is very professional, talented and responsive. He's good at what he does and even though it's the first time he works on our theme, he quickly understood what's needed and handled it very smoothly as if he's been doing it for years. He builds a proper infrastructure from scratch in a clean and scalable way. Would love to collaborate again! :)</p>
+        <p class="testimonial-author">Aal Moghrabi</p>
       </div>
-    </div>
-  </div>
-  <p class="testimonial-text">Brilliant &amp; definitely recommend! -- We loved working with Hussain as he is very professional, talented and responsive. He's good at what he does and even though it's the first time he works on our theme, he quickly understood what's needed and handled it very smoothly as if he's been doing it for years. He builds a proper infrastructure from scratch in a clean and scalable way. Would love to collaborate again! :)</p>
-  <p class="testimonial-author">Aal MOGHRABI</p>
-</div>
-    </div>
+    </li>
 
-    <div class="hsnlogix-slider-item">
-<div class="testimonial-card">
-  <div class="testimonial-header">
-    <img src="/hsnlogix-staging/GaryM.webp" alt="Gary M profile photo" class="testimonial-avatar" loading="lazy" width="48" height="48">
-    <div class="testimonial-rating">
-      <div data-v-a20e6904="" data-ev-sublocation="!rating" class="air3-rating wm-feedback-scores">
-        <svg xmlns="http://www.w3.org/2000/svg" class="air3-rating-hidden-icon" style="display: none;">
-          <symbol id="air3-rs" viewBox="0 0 38 38">
-            <path d="M21.28 2.63l3.57 9.6 9.85.55c.49.03.96.2 1.34.52.4.31.68.74.84 1.23.15.49.16 1.02.03 1.51-.14.5-.41.94-.79 1.27l-7.67 6.5 2.57 9.98c.12.5.09 1.03-.08 1.52-.17.49-.47.9-.87 1.21a2.36 2.36 0 01-2.76.06L19 30.95l-8.3 5.59a2.35 2.35 0 01-2.74-.04c-.4-.3-.7-.71-.88-1.2a2.72 2.72 0 01-.1-1.51l2.55-9.95-7.65-6.53a2.58 2.58 0 01-.79-1.27 2.7 2.7 0 01.03-1.51c.16-.49.45-.92.83-1.23.4-.31.86-.5 1.35-.52l9.85-.55 3.57-9.6c.18-.49.5-.9.9-1.19a2.37 2.37 0 012.76 0c.4.3.72.7.9 1.19z"></path>
-          </symbol>
-        </svg>
-        <div class="air3-rating-foreground" style="width: 117px;">
-          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
-          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
-          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
-          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
-          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
+    <li class="tm-item">
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          
+          <img src="/hsnlogix-staging/GaryM.webp" alt="" class="testimonial-avatar" loading="lazy" width="48" height="48">
+          
+          <div class="testimonial-rating">
+            <span class="tm-stars" aria-hidden="true">
+              <svg><use href="#tm-star"/></svg><svg><use href="#tm-star"/></svg><svg><use href="#tm-star"/></svg><svg><use href="#tm-star"/></svg><svg><use href="#tm-star"/></svg>
+            </span>
+            <span class="air3-rating-value-text" aria-hidden="true">5.0</span>
+            <span class="sr-only">Rated 5 out of 5 stars</span>
+          </div>
         </div>
-        <div aria-hidden="true" class="air3-rating-value-text">5.0</div>
-        <span class="sr-only">Rated 5 out of 5 stars</span>
+        <p class="testimonial-text">This guy is an absolute magician when it comes to shopify. I have been a member here for 13 years and I know a good honest freelancer when I find one. Do yourself a huge favour and hire Hussain A he is awesome AAA+++</p>
+        <p class="testimonial-author">Gary M</p>
       </div>
-    </div>
-  </div>
-  <p class="testimonial-text">This guy is an absolute magician when it comes to shopify. I have been a member here for 13 years and I know a good honest freelancer when I find one. Do yourself a huge favour and hire Hussain A he is awesome AAA+++</p>
-  <p class="testimonial-author">Gary M</p>
-</div>
-    </div>
+    </li>
 
-    <div class="hsnlogix-slider-item">
-<div class="testimonial-card">
-  <div class="testimonial-header">
-    <img src="/hsnlogix-staging/kenny.webp" alt="Kenny Dubroff profile photo" class="testimonial-avatar" loading="lazy" width="48" height="48">
-    <div class="testimonial-rating">
-      <div data-v-a20e6904="" data-ev-sublocation="!rating" class="air3-rating wm-feedback-scores">
-        <svg xmlns="http://www.w3.org/2000/svg" class="air3-rating-hidden-icon" style="display: none;">
-          <symbol id="air3-rs" viewBox="0 0 38 38">
-            <path d="M21.28 2.63l3.57 9.6 9.85.55c.49.03.96.2 1.34.52.4.31.68.74.84 1.23.15.49.16 1.02.03 1.51-.14.5-.41.94-.79 1.27l-7.67 6.5 2.57 9.98c.12.5.09 1.03-.08 1.52-.17.49-.47.9-.87 1.21a2.36 2.36 0 01-2.76.06L19 30.95l-8.3 5.59a2.35 2.35 0 01-2.74-.04c-.4-.3-.7-.71-.88-1.2a2.72 2.72 0 01-.1-1.51l2.55-9.95-7.65-6.53a2.58 2.58 0 01-.79-1.27 2.7 2.7 0 01.03-1.51c.16-.49.45-.92.83-1.23.4-.31.86-.5 1.35-.52l9.85-.55 3.57-9.6c.18-.49.5-.9.9-1.19a2.37 2.37 0 012.76 0c.4.3.72.7.9 1.19z"></path>
-          </symbol>
-        </svg>
-        <div class="air3-rating-foreground" style="width: 117px;">
-          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
-          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
-          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
-          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
-          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
+    <li class="tm-item">
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          
+          <img src="/hsnlogix-staging/kenny.webp" alt="" class="testimonial-avatar" loading="lazy" width="48" height="48">
+          
+          <div class="testimonial-rating">
+            <span class="tm-stars" aria-hidden="true">
+              <svg><use href="#tm-star"/></svg><svg><use href="#tm-star"/></svg><svg><use href="#tm-star"/></svg><svg><use href="#tm-star"/></svg><svg><use href="#tm-star"/></svg>
+            </span>
+            <span class="air3-rating-value-text" aria-hidden="true">5.0</span>
+            <span class="sr-only">Rated 5 out of 5 stars</span>
+          </div>
         </div>
-        <div aria-hidden="true" class="air3-rating-value-text">5.0</div>
-        <span class="sr-only">Rated 5 out of 5 stars</span>
+        <p class="testimonial-text">Hussain was an absolute pleasure to work with, and I will hire him again in the future. He completed all requirements on time, and to my satisfaction. On the rare occasion something didn't look the way I intended, he happily went back and changed it until I was satisfied. In addition, he's very courteous and respectful. I highly recommend Hussain to anyone needing front end web design work.</p>
+        <p class="testimonial-author">Kenny Dubroff</p>
       </div>
-    </div>
-  </div>
-  <p class="testimonial-text">Hussain was an absolute pleasure to work with, and I will hire him again in the future. He completed all requirements on time, and to my satisfaction. On the rare occasion something didn't look the way I intended, he happily went back and changed it until I was satisfied. In addition, he's very courteous and respectful. I highly recommend Hussain to anyone needing front end web design work.</p>
-  <p class="testimonial-author">Kenny Dubroff</p>
-</div>
-    </div>
+    </li>
 
-    <div class="hsnlogix-slider-item">
-<div class="testimonial-card">
-  <div class="testimonial-header">
-    <img src="/hsnlogix-staging/ShacharS.webp" alt="Shachar S profile photo" class="testimonial-avatar" loading="lazy" width="48" height="48">
-    <div class="testimonial-rating">
-      <div data-v-a20e6904="" data-ev-sublocation="!rating" class="air3-rating wm-feedback-scores">
-        <svg xmlns="http://www.w3.org/2000/svg" class="air3-rating-hidden-icon" style="display: none;">
-          <symbol id="air3-rs" viewBox="0 0 38 38">
-            <path d="M21.28 2.63l3.57 9.6 9.85.55c.49.03.96.2 1.34.52.4.31.68.74.84 1.23.15.49.16 1.02.03 1.51-.14.5-.41.94-.79 1.27l-7.67 6.5 2.57 9.98c.12.5.09 1.03-.08 1.52-.17.49-.47.9-.87 1.21a2.36 2.36 0 01-2.76.06L19 30.95l-8.3 5.59a2.35 2.35 0 01-2.74-.04c-.4-.3-.7-.71-.88-1.2a2.72 2.72 0 01-.1-1.51l2.55-9.95-7.65-6.53a2.58 2.58 0 01-.79-1.27 2.7 2.7 0 01.03-1.51c.16-.49.45-.92.83-1.23.4-.31.86-.5 1.35-.52l9.85-.55 3.57-9.6c.18-.49.5-.9.9-1.19a2.37 2.37 0 012.76 0c.4.3.72.7.9 1.19z"></path>
-          </symbol>
-        </svg>
-        <div class="air3-rating-foreground" style="width: 117px;">
-          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
-          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
-          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
-          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
-          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
+    <li class="tm-item">
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          
+          <img src="/hsnlogix-staging/ShacharS.webp" alt="" class="testimonial-avatar" loading="lazy" width="48" height="48">
+          
+          <div class="testimonial-rating">
+            <span class="tm-stars" aria-hidden="true">
+              <svg><use href="#tm-star"/></svg><svg><use href="#tm-star"/></svg><svg><use href="#tm-star"/></svg><svg><use href="#tm-star"/></svg><svg><use href="#tm-star"/></svg>
+            </span>
+            <span class="air3-rating-value-text" aria-hidden="true">5.0</span>
+            <span class="sr-only">Rated 5 out of 5 stars</span>
+          </div>
         </div>
-        <div aria-hidden="true" class="air3-rating-value-text">5.0</div>
-        <span class="sr-only">Rated 5 out of 5 stars</span>
+        <p class="testimonial-text">It was amazing work and i really like working with Hussain. He is truely professional and very kind person. I will work with him again and recommend anyone to work with him. Thank you for a great project!</p>
+        <p class="testimonial-author">Shachar S</p>
       </div>
-    </div>
-  </div>
-  <p class="testimonial-text">It was amazing work and i really like working with Hussain. He is truely professional and very kind person. I will work with him again and recommend anyone to work with him. Thank you for a great project!</p>
-  <p class="testimonial-author">Shachar S</p>
-</div>
-    </div>
+    </li>
 
-    <div class="hsnlogix-slider-item">
-<div class="testimonial-card">
-  <div class="testimonial-header">
-    <img src="/hsnlogix-staging/andrew.webp" alt="Andrew Chwalik profile photo" class="testimonial-avatar" loading="lazy" width="48" height="48">
-    <div class="testimonial-rating">
-      <div data-v-a20e6904="" data-ev-sublocation="!rating" class="air3-rating wm-feedback-scores">
-        <svg xmlns="http://www.w3.org/2000/svg" class="air3-rating-hidden-icon" style="display: none;">
-          <symbol id="air3-rs" viewBox="0 0 38 38">
-            <path d="M21.28 2.63l3.57 9.6 9.85.55c.49.03.96.2 1.34.52.4.31.68.74.84 1.23.15.49.16 1.02.03 1.51-.14.5-.41.94-.79 1.27l-7.67 6.5 2.57 9.98c.12.5.09 1.03-.08 1.52-.17.49-.47.9-.87 1.21a2.36 2.36 0 01-2.76.06L19 30.95l-8.3 5.59a2.35 2.35 0 01-2.74-.04c-.4-.3-.7-.71-.88-1.2a2.72 2.72 0 01-.1-1.51l2.55-9.95-7.65-6.53a2.58 2.58 0 01-.79-1.27 2.7 2.7 0 01.03-1.51c.16-.49.45-.92.83-1.23.4-.31.86-.5 1.35-.52l9.85-.55 3.57-9.6c.18-.49.5-.9.9-1.19a2.37 2.37 0 012.76 0c.4.3.72.7.9 1.19z"></path>
-          </symbol>
-        </svg>
-        <div class="air3-rating-foreground" style="width: 117px;">
-          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
-          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
-          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
-          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
-          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
+    <li class="tm-item">
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          
+          <img src="/hsnlogix-staging/andrew.webp" alt="" class="testimonial-avatar" loading="lazy" width="48" height="48">
+          
+          <div class="testimonial-rating">
+            <span class="tm-stars" aria-hidden="true">
+              <svg><use href="#tm-star"/></svg><svg><use href="#tm-star"/></svg><svg><use href="#tm-star"/></svg><svg><use href="#tm-star"/></svg><svg><use href="#tm-star"/></svg>
+            </span>
+            <span class="air3-rating-value-text" aria-hidden="true">5.0</span>
+            <span class="sr-only">Rated 5 out of 5 stars</span>
+          </div>
         </div>
-        <div aria-hidden="true" class="air3-rating-value-text">5.0</div>
-        <span class="sr-only">Rated 5 out of 5 stars</span>
+        <p class="testimonial-text">Huge fan of Hussain! He originally built two stunning sites from my Figma files. Everything looked solid. … He went through and made sure everything was perfectly polished to my liking. … Awesome work!</p>
+        <p class="testimonial-author">Andrew Chwalik</p>
       </div>
-    </div>
-  </div>
-  <p class="testimonial-text">Huge fan of Hussain! He originally built two stunning sites from my Figma files. Everything looked solid. … He went through and made sure everything was perfectly polished to my liking. … Awesome work!</p>
-  <p class="testimonial-author">Andrew Chwalik</p>
-</div>
-    </div>
+    </li>
 
-    <div class="hsnlogix-slider-item">
-<div class="testimonial-card">
-  <div class="testimonial-header">
-    <img src="/hsnlogix-staging/craig.webp" alt="Craig Marty profile photo" class="testimonial-avatar" loading="lazy" width="48" height="48">
-    <div class="testimonial-rating">
-      <div data-v-a20e6904="" data-ev-sublocation="!rating" class="air3-rating wm-feedback-scores">
-        <svg xmlns="http://www.w3.org/2000/svg" class="air3-rating-hidden-icon" style="display: none;">
-          <symbol id="air3-rs" viewBox="0 0 38 38">
-            <path d="M21.28 2.63l3.57 9.6 9.85.55c.49.03.96.2 1.34.52.4.31.68.74.84 1.23.15.49.16 1.02.03 1.51-.14.5-.41.94-.79 1.27l-7.67 6.5 2.57 9.98c.12.5.09 1.03-.08 1.52-.17.49-.47.9-.87 1.21a2.36 2.36 0 01-2.76.06L19 30.95l-8.3 5.59a2.35 2.35 0 01-2.74-.04c-.4-.3-.7-.71-.88-1.2a2.72 2.72 0 01-.1-1.51l2.55-9.95-7.65-6.53a2.58 2.58 0 01-.79-1.27 2.7 2.7 0 01.03-1.51c.16-.49.45-.92.83-1.23.4-.31.86-.5 1.35-.52l9.85-.55 3.57-9.6c.18-.49.5-.9.9-1.19a2.37 2.37 0 012.76 0c.4.3.72.7.9 1.19z"></path>
-          </symbol>
-        </svg>
-        <div class="air3-rating-foreground" style="width: 117px;">
-          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
-          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
-          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
-          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
-          <svg aria-hidden="true"><use xlink:href="#air3-rs"></use></svg>
+    <li class="tm-item">
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          
+          <img src="/hsnlogix-staging/craig.webp" alt="" class="testimonial-avatar" loading="lazy" width="48" height="48">
+          
+          <div class="testimonial-rating">
+            <span class="tm-stars" aria-hidden="true">
+              <svg><use href="#tm-star"/></svg><svg><use href="#tm-star"/></svg><svg><use href="#tm-star"/></svg><svg><use href="#tm-star"/></svg><svg><use href="#tm-star"/></svg>
+            </span>
+            <span class="air3-rating-value-text" aria-hidden="true">5.0</span>
+            <span class="sr-only">Rated 5 out of 5 stars</span>
+          </div>
         </div>
-        <div aria-hidden="true" class="air3-rating-value-text">5.0</div>
-        <span class="sr-only">Rated 5 out of 5 stars</span>
+        <p class="testimonial-text">Hussain is a professional web developer. Besides that, he is also a great communicator which is a rare combination. I recommend everyone hire Hussain for website jobs.</p>
+        <p class="testimonial-author">Craig Marty</p>
       </div>
-    </div>
-  </div>
-  <p class="testimonial-text">Hussain is a professional web developer. Besides that, he is also a great communicator which is a rare combination. I recommend everyone hire Hussain for website jobs.</p>
-  <p class="testimonial-author">Craig Marty</p>
-</div>
-    </div>
+    </li>
 
-  </div>
+  </ul>
+
 </div>
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    document.querySelectorAll('.hsn-auto-slider').forEach(function (slider) {
-      if (slider.dataset.sliderInit) return;
-      slider.dataset.sliderInit = '1';
-      const track = slider.querySelector('.hsnlogix-slider-track');
-      const items = Array.from(track.children);
-
-      let loopWidth = 0;
-      items.forEach(item => {
-        const style = getComputedStyle(item);
-        loopWidth += item.offsetWidth + parseFloat(style.marginLeft) + parseFloat(style.marginRight);
-      });
-
-      items.forEach(item => { const clone = item.cloneNode(true); clone.setAttribute('aria-hidden', 'true'); track.appendChild(clone); });
-
-      let pos = 0;
-      let currentRate = 1, targetRate = 1;
-      const baseSpeed = window.innerWidth <= 768
-        ? loopWidth / 40
-        : loopWidth / 50;
-      let lastTime = performance.now();
-
-      function animate(time) {
-        const dt = (time - lastTime) / 1000;
-        lastTime = time;
-        currentRate += (targetRate - currentRate) * 0.25;
-        pos = (pos + baseSpeed * currentRate * dt) % loopWidth;
-        track.style.transform = `translateX(${-pos}px)`;
-        requestAnimationFrame(animate);
-      }
-
-      requestAnimationFrame(animate);
-
-      slider.addEventListener('mouseenter', () => targetRate = 0.35);
-      slider.addEventListener('mouseleave', () => targetRate = 1);
-    });
+(function () {
+  document.querySelectorAll('[data-tm-carousel]').forEach(function (root) {
+    var list = root.querySelector('.tm-list');
+    function step(dir) { list.scrollBy({ left: dir * Math.max(280, list.clientWidth * 0.8), behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }); }
+    root.querySelector('[data-tm-prev]').addEventListener('click', function () { step(-1); });
+    root.querySelector('[data-tm-next]').addEventListener('click', function () { step(1); });
   });
+})();
 </script>
+
 
 
 
@@ -1115,7 +987,7 @@
             
             <div class="faq-item">
                 <div class="faq-question">
-                    <button type="button" class="question-content faq-trigger" aria-expanded="false">
+                    <button type="button" class="question-content faq-trigger" aria-expanded="false" aria-controls="home-faq-answer-1">
                         <div class="question-text">
                             <p class="question-number">01/</p>
                             <p class="question-title">What's your usual project timeline?</p>
@@ -1126,7 +998,7 @@
                             </svg>
                         </div>
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="home-faq-answer-1">
                         <p>Most theme development or customization projects are completed within 1 to 4 weeks, depending on the scope and level of detail required. Once we understand your requirements, we'll share a clear timeline with milestones for design setup, development, testing, and final delivery.</p>
                     </div>
                 </div>
@@ -1134,7 +1006,7 @@
             
             <div class="faq-item">
                 <div class="faq-question">
-                    <button type="button" class="question-content faq-trigger" aria-expanded="false">
+                    <button type="button" class="question-content faq-trigger" aria-expanded="false" aria-controls="home-faq-answer-2">
                         <div class="question-text">
                             <p class="question-number">02/</p>
                             <p class="question-title">Do you provide ongoing support after the project?</p>
@@ -1145,15 +1017,15 @@
                             </svg>
                         </div>
                     </button>
-                    <div class="faq-answer">
-                        <p>Yes! We offer ongoing maintenance and support for Shopify stores. This can include performance improvements, bug fixes, layout tweaks, and updates to keep your theme running smoothly as your business evolves.</p>
+                    <div class="faq-answer" id="home-faq-answer-2">
+                        <p>Yes. We offer ongoing maintenance and support for Shopify stores. This can include performance improvements, bug fixes, layout tweaks, and updates to keep your theme running smoothly as your business evolves.</p>
                     </div>
                 </div>
             </div>
             
             <div class="faq-item">
                 <div class="faq-question">
-                    <button type="button" class="question-content faq-trigger" aria-expanded="false">
+                    <button type="button" class="question-content faq-trigger" aria-expanded="false" aria-controls="home-faq-answer-3">
                         <div class="question-text">
                             <p class="question-number">03/</p>
                             <p class="question-title">Can you follow my existing brand guidelines?</p>
@@ -1164,15 +1036,15 @@
                             </svg>
                         </div>
                     </button>
-                    <div class="faq-answer">
-                        <p>Definitely. We make sure your Shopify store fully aligns with your brand's look and feel, colors, typography, layout, and visual tone. Whether you already have detailed brand guidelines or just a reference design, we can implement them precisely and maintain consistency across all pages.</p>
+                    <div class="faq-answer" id="home-faq-answer-3">
+                        <p>Yes. We make sure your Shopify store fully aligns with your brand's look and feel, colors, typography, layout, and visual tone. Whether you already have detailed brand guidelines or just a reference design, we can implement them precisely and maintain consistency across all pages.</p>
                     </div>
                 </div>
             </div>
             
             <div class="faq-item">
                 <div class="faq-question">
-                    <button type="button" class="question-content faq-trigger" aria-expanded="false">
+                    <button type="button" class="question-content faq-trigger" aria-expanded="false" aria-controls="home-faq-answer-4">
                         <div class="question-text">
                             <p class="question-number">04/</p>
                             <p class="question-title">How do you handle revisions and feedback?</p>
@@ -1183,46 +1055,8 @@
                             </svg>
                         </div>
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="home-faq-answer-4">
                         <p>Revisions are part of the process. We provide structured feedback rounds where you can review progress and suggest adjustments. We value clear communication and make sure your feedback is implemented quickly and accurately until everything looks and functions as intended.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">
-                    <button type="button" class="question-content faq-trigger" aria-expanded="false">
-                        <div class="question-text">
-                            <p class="question-number">05/</p>
-                            <p class="question-title">How much does a Shopify project typically cost?</p>
-                        </div>
-                        <div class="question-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" aria-hidden="true">
-                                <path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path>
-                            </svg>
-                        </div>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Smaller work like store setup, audits, or troubleshooting typically starts around $500 to $1,000. Custom Shopify development and design, and Shopify Plus development, typically run $1,500 to $5,000+ depending on scope. Ongoing maintenance and support starts at $400 per month.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">
-                    <button type="button" class="question-content faq-trigger" aria-expanded="false">
-                        <div class="question-text">
-                            <p class="question-number">06/</p>
-                            <p class="question-title">How much does a migration development project typically cost?</p>
-                        </div>
-                        <div class="question-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" aria-hidden="true">
-                                <path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path>
-                            </svg>
-                        </div>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Migration development projects typically range from $500 to $1,500, depending on the platforms involved, store size, data requirements, integrations, and overall migration scope. We will confirm the exact cost after reviewing your current store and requirements.</p>
                     </div>
                 </div>
             </div>
@@ -1674,7 +1508,7 @@
 })();
 </script>
 
-    <script src="aos.js?v=1792001080"></script>
+    <script src="aos.js?v=1792001904"></script>
   <script>
     // Defer AOS init until after load + next frame so it doesn't
     // force a synchronous layout recalc right after the aos.css media-swap.
@@ -1760,34 +1594,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Off-canvas nav drawer (slides in from the right)
-(function () {
-  var menuToggle = document.querySelector('.menu-toggle');
-  var navDrawer = document.getElementById('navDrawer');
-  var navOverlay = document.getElementById('navOverlay');
-  var navDrawerClose = document.getElementById('navDrawerClose');
 
-  function openDrawer() {
-    navDrawer.classList.add('active');
-    navOverlay.classList.add('active');
-    document.body.style.overflow = 'hidden';
-    if (menuToggle) menuToggle.setAttribute('aria-expanded', 'true');
-  }
-  function closeDrawer() {
-    navDrawer.classList.remove('active');
-    navOverlay.classList.remove('active');
-    document.body.style.overflow = '';
-    if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
-  }
-
-  if (menuToggle) menuToggle.addEventListener('click', openDrawer);
-  if (navDrawerClose) navDrawerClose.addEventListener('click', closeDrawer);
-  if (navOverlay) navOverlay.addEventListener('click', closeDrawer);
-
-  document.querySelectorAll('.nav-drawer__link').forEach(function (link) {
-    link.addEventListener('click', closeDrawer);
-  });
-})();
 
 // Transparent header: apply opaque background once page is scrolled
 (function () {
@@ -1805,8 +1612,51 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   </script>
+<script>
+// Off-canvas nav drawer (slides in from the right)
+(function () {
+  var menuToggle = document.querySelector('.menu-toggle');
+  var navDrawer = document.getElementById('navDrawer');
+  var navOverlay = document.getElementById('navOverlay');
+  var navDrawerClose = document.getElementById('navDrawerClose');
+  if (!navDrawer) return;
 
-<script src="hsnlogix-tracking.js?v=1792001080"></script>
+  // Closed drawer must not be reachable by keyboard or screen reader
+  navDrawer.setAttribute('inert', '');
+
+  function openDrawer() {
+    navDrawer.removeAttribute('inert');
+    navDrawer.classList.add('active');
+    navOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    if (menuToggle) { menuToggle.setAttribute('aria-expanded', 'true'); menuToggle.setAttribute('aria-label', 'Close menu'); }
+    var first = navDrawer.querySelector('.nav-drawer__link:not([style*="display: none"])');
+    var target = (navDrawerClose || first);
+    if (target) target.focus();
+  }
+  function closeDrawer(returnFocus) {
+    navDrawer.classList.remove('active');
+    navOverlay.classList.remove('active');
+    navDrawer.setAttribute('inert', '');
+    document.body.style.overflow = '';
+    if (menuToggle) { menuToggle.setAttribute('aria-expanded', 'false'); menuToggle.setAttribute('aria-label', 'Open menu'); if (returnFocus) menuToggle.focus(); }
+  }
+
+  if (menuToggle) menuToggle.addEventListener('click', openDrawer);
+  if (navDrawerClose) navDrawerClose.addEventListener('click', function () { closeDrawer(true); });
+  if (navOverlay) navOverlay.addEventListener('click', function () { closeDrawer(true); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && navDrawer.classList.contains('active')) closeDrawer(true);
+  });
+
+  document.querySelectorAll('.nav-drawer__link').forEach(function (link) {
+    link.addEventListener('click', function () { closeDrawer(false); });
+  });
+})();
+</script>
+
+
+<script src="hsnlogix-tracking.js?v=1792001904"></script>
 
 <!-- Cal.com embed: loaded after the page is idle or on first interaction, so it never blocks first render.
      Until it loads, booking links still work as normal links to cal.com/hsnlogix. -->

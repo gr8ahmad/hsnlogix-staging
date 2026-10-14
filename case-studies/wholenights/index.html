@@ -26,9 +26,9 @@
   <meta name="twitter:image" content="https://hsnlogix.com/whole-nights.webp">
   <title>B2B Wholesale Shopify Store for WholeNights | HSNLOGIX</title>
 
-  <link rel="stylesheet" href="/hsnlogix-staging/style.css?v=1792001080">
-  <link rel="stylesheet" href="/hsnlogix-staging/style-additions.css?v=1792001080">
-  <link rel="stylesheet" href="/hsnlogix-staging/blog.css?v=1792001080">
+  <link rel="stylesheet" href="/hsnlogix-staging/style.css?v=1792001904">
+  <link rel="stylesheet" href="/hsnlogix-staging/style-additions.css?v=1792001904">
+  <link rel="stylesheet" href="/hsnlogix-staging/blog.css?v=1792001904">
 
   <!-- Analytics: Consent Mode v2 defaults + GA4 (production only) -->
 <script>
@@ -492,29 +492,43 @@
   var navDrawer = document.getElementById('navDrawer');
   var navOverlay = document.getElementById('navOverlay');
   var navDrawerClose = document.getElementById('navDrawerClose');
+  if (!navDrawer) return;
+
+  // Closed drawer must not be reachable by keyboard or screen reader
+  navDrawer.setAttribute('inert', '');
 
   function openDrawer() {
+    navDrawer.removeAttribute('inert');
     navDrawer.classList.add('active');
     navOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
-    if (menuToggle) menuToggle.setAttribute('aria-expanded', 'true');
+    if (menuToggle) { menuToggle.setAttribute('aria-expanded', 'true'); menuToggle.setAttribute('aria-label', 'Close menu'); }
+    var first = navDrawer.querySelector('.nav-drawer__link:not([style*="display: none"])');
+    var target = (navDrawerClose || first);
+    if (target) target.focus();
   }
-  function closeDrawer() {
+  function closeDrawer(returnFocus) {
     navDrawer.classList.remove('active');
     navOverlay.classList.remove('active');
+    navDrawer.setAttribute('inert', '');
     document.body.style.overflow = '';
-    if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
+    if (menuToggle) { menuToggle.setAttribute('aria-expanded', 'false'); menuToggle.setAttribute('aria-label', 'Open menu'); if (returnFocus) menuToggle.focus(); }
   }
 
   if (menuToggle) menuToggle.addEventListener('click', openDrawer);
-  if (navDrawerClose) navDrawerClose.addEventListener('click', closeDrawer);
-  if (navOverlay) navOverlay.addEventListener('click', closeDrawer);
+  if (navDrawerClose) navDrawerClose.addEventListener('click', function () { closeDrawer(true); });
+  if (navOverlay) navOverlay.addEventListener('click', function () { closeDrawer(true); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && navDrawer.classList.contains('active')) closeDrawer(true);
+  });
 
   document.querySelectorAll('.nav-drawer__link').forEach(function (link) {
-    link.addEventListener('click', closeDrawer);
+    link.addEventListener('click', function () { closeDrawer(false); });
   });
 })();
+</script>
 
+  <script>
 // Transparent header: apply opaque background once page is scrolled
 (function () {
   var header = document.querySelector('.site-header');
@@ -530,7 +544,7 @@
 })();
   </script>
 
-  <script src="/hsnlogix-staging/hsnlogix-tracking.js?v=1792001080"></script>
+  <script src="/hsnlogix-staging/hsnlogix-tracking.js?v=1792001904"></script>
 
   <!-- Cal.com embed: loaded after the page is idle or on first interaction, so it never blocks first render.
      Until it loads, booking links still work as normal links to cal.com/hsnlogix. -->

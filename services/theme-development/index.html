@@ -26,9 +26,9 @@
   <meta name="twitter:image" content="https://hsnlogix.com/HSNLogix-logo.jpg">
   <title>Custom Shopify Theme Development | HSNLOGIX</title>
 
-  <link rel="stylesheet" href="/hsnlogix-staging/style.css?v=1792001080">
-  <link rel="stylesheet" href="/hsnlogix-staging/style-additions.css?v=1792001080">
-  <link rel="stylesheet" href="/hsnlogix-staging/blog.css?v=1792001080">
+  <link rel="stylesheet" href="/hsnlogix-staging/style.css?v=1792001904">
+  <link rel="stylesheet" href="/hsnlogix-staging/style-additions.css?v=1792001904">
+  <link rel="stylesheet" href="/hsnlogix-staging/blog.css?v=1792001904">
 
   <!-- Analytics: Consent Mode v2 defaults + GA4 (production only) -->
 <script>
@@ -226,7 +226,7 @@
       <div class="service-hero__cta">
         <a href="https://cal.com/hsnlogix" data-cal-link="hsnlogix" data-cal-config='{"layout":"month_view"}' rel="noopener" class="cta-button">
           <div class="button-text">
-            <p>Start your custom theme</p>
+            <p>Book a free theme strategy call</p>
           </div>
           <div class="button-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>
@@ -272,9 +272,24 @@
 
   
   <div class="service-section">
-    <h2 class="service-section-title">Why a custom Shopify theme pays off</h2>
+    <h2 class="service-section-title">Timeline, pricing and what you get</h2>
     <div class="blog-post-body">
-      <p>A generic theme can only take a store so far. Off-the-shelf templates are built to work for thousands of different businesses at once, which means they rarely fit any one brand precisely, and every unused feature they carry still adds weight to the page. A custom theme is built around what your store actually needs, nothing more, which is often the difference between a store that merely looks fine and one that’s fast enough and clear enough to convert.</p>
+      <p>A custom theme project typically takes <strong>1 to 4 weeks</strong>, depending on scope and how much custom functionality the store needs. Custom Shopify builds typically run <strong>$1,500 to $5,000+</strong>, with the final figure set after a short scoping call, so you know the number before any work starts.</p>
+
+<p><strong>What a build is held to</strong></p>
+
+<ul>
+  <li>Custom Liquid sections built around your store, with no unnecessary app dependencies.</li>
+  <li>Performance-conscious and mobile-first from day one, tested across devices and browsers before launch.</li>
+  <li>Launch documentation, so your team can make basic edits without a developer.</li>
+  <li>Clean code that is yours to modify and extend after final payment.</li>
+</ul>
+
+<blockquote>
+  <p>“He’s good at what he does and even though it’s the first time he works on our theme, he quickly understood what’s needed and handled it very smoothly as if he’s been doing it for years. He builds a proper infrastructure from scratch in a clean and scalable way.”</p>
+
+  <p>Aal Moghrabi, Upwork client review</p>
+</blockquote>
 
     </div>
   </div>
@@ -549,7 +564,7 @@
   <div class="service-cta">
     <a href="https://cal.com/hsnlogix" data-cal-link="hsnlogix" data-cal-config='{"layout":"month_view"}' rel="noopener" class="cta-button">
       <div class="button-text">
-        <p>Start your custom theme</p>
+        <p>Book a free theme strategy call</p>
       </div>
       <div class="button-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
@@ -747,29 +762,43 @@
   var navDrawer = document.getElementById('navDrawer');
   var navOverlay = document.getElementById('navOverlay');
   var navDrawerClose = document.getElementById('navDrawerClose');
+  if (!navDrawer) return;
+
+  // Closed drawer must not be reachable by keyboard or screen reader
+  navDrawer.setAttribute('inert', '');
 
   function openDrawer() {
+    navDrawer.removeAttribute('inert');
     navDrawer.classList.add('active');
     navOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
-    if (menuToggle) menuToggle.setAttribute('aria-expanded', 'true');
+    if (menuToggle) { menuToggle.setAttribute('aria-expanded', 'true'); menuToggle.setAttribute('aria-label', 'Close menu'); }
+    var first = navDrawer.querySelector('.nav-drawer__link:not([style*="display: none"])');
+    var target = (navDrawerClose || first);
+    if (target) target.focus();
   }
-  function closeDrawer() {
+  function closeDrawer(returnFocus) {
     navDrawer.classList.remove('active');
     navOverlay.classList.remove('active');
+    navDrawer.setAttribute('inert', '');
     document.body.style.overflow = '';
-    if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
+    if (menuToggle) { menuToggle.setAttribute('aria-expanded', 'false'); menuToggle.setAttribute('aria-label', 'Open menu'); if (returnFocus) menuToggle.focus(); }
   }
 
   if (menuToggle) menuToggle.addEventListener('click', openDrawer);
-  if (navDrawerClose) navDrawerClose.addEventListener('click', closeDrawer);
-  if (navOverlay) navOverlay.addEventListener('click', closeDrawer);
+  if (navDrawerClose) navDrawerClose.addEventListener('click', function () { closeDrawer(true); });
+  if (navOverlay) navOverlay.addEventListener('click', function () { closeDrawer(true); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && navDrawer.classList.contains('active')) closeDrawer(true);
+  });
 
   document.querySelectorAll('.nav-drawer__link').forEach(function (link) {
-    link.addEventListener('click', closeDrawer);
+    link.addEventListener('click', function () { closeDrawer(false); });
   });
 })();
+</script>
 
+  <script>
 // Transparent header: apply opaque background once page is scrolled
 (function () {
   var header = document.querySelector('.site-header');
@@ -785,7 +814,7 @@
 })();
   </script>
 
-  <script src="/hsnlogix-staging/hsnlogix-tracking.js?v=1792001080"></script>
+  <script src="/hsnlogix-staging/hsnlogix-tracking.js?v=1792001904"></script>
 
   <!-- Cal.com embed: loaded after the page is idle or on first interaction, so it never blocks first render.
      Until it loads, booking links still work as normal links to cal.com/hsnlogix. -->

@@ -2182,3 +2182,70 @@ main:focus { outline: none; }
 .contact-page__alt-email-link { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
 .contact-page__alt-email-link:hover { color: #000; }
 .contact-page__reply-note { font-size: 13px; color: #5a5f57; margin: 8px 0 0; }
+
+/* ─── Testimonials: static grid + manual carousel (no auto-motion) ───────── */
+.tm-list { list-style: none; margin: 0; padding: 0; }
+.tm-list--grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  padding: 40px 0 24px;
+}
+.tm-list--grid .testimonial-card { max-width: none; }
+.tm-item { display: flex; }
+.tm-item .testimonial-card { width: 100%; height: 100%; display: flex; flex-direction: column; box-sizing: border-box; }
+.tm-item .testimonial-author { margin: auto 0 0; }
+.tm-item .testimonial-text { margin: 10px 0 18px; }
+.testimonial-avatar--initials {
+  display: inline-flex; align-items: center; justify-content: center;
+  flex: 0 0 48px; background: #E4EBDD; color: #2F4A22; font-weight: 700; font-size: 18px;
+}
+.tm-stars { display: inline-flex; gap: 2px; margin-right: 8px; }
+.tm-stars svg { width: 18px; height: 18px; fill: #debe1b; }
+.testimonial-rating { display: flex; align-items: center; }
+
+.tm-carousel { position: relative; }
+.tm-carousel__controls { display: flex; justify-content: flex-end; gap: 8px; padding: 0 40px 12px; }
+.tm-carousel__btn {
+  width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(0,0,0,0.15);
+  background: #fff; color: #0a0a0a; font-size: 18px; cursor: pointer; line-height: 1;
+}
+.tm-carousel__btn:hover { background: #82FF1F; border-color: #82FF1F; }
+.tm-carousel__btn:focus-visible, .tm-list--carousel:focus-visible { outline: 3px solid #3d7f00; outline-offset: 2px; }
+.tm-list--carousel {
+  display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory;
+  padding: 8px 40px 24px; scrollbar-width: thin; -webkit-overflow-scrolling: touch;
+}
+.tm-list--carousel .tm-item { flex: 0 0 min(360px, 85vw); scroll-snap-align: start; }
+.tm-list--carousel .testimonial-card { max-width: none; }
+@media (max-width: 768px) {
+  .tm-carousel__controls { padding: 0 24px 12px; }
+  .tm-list--carousel { padding: 8px 24px 24px; scroll-padding-left: 24px; }
+}
+.testimonials-cta-heading { font-size: 24px; font-weight: 700; color: #0A1314; margin: 0 0 4px; }
+
+/* ─── Blog post: author box and CTA ─────────────────────────────────────── */
+.post-author { border-top: 1px solid rgba(0,0,0,0.1); margin-top: 48px; padding-top: 24px; }
+.post-author__name { font-weight: 700; font-size: 18px; color: #0A1314; margin: 0; }
+.post-author__role { font-size: 14px; color: #4f5a4a; margin: 2px 0 10px; }
+.post-author__bio { font-size: 15px; line-height: 1.6; color: #3a3f38; margin: 0; }
+.post-author__bio a { color: #1f5200; text-decoration: underline; text-underline-offset: 3px; }
+.post-cta { margin: 36px 0 8px; padding: 32px; border-radius: 16px; background: #EEF3E9; display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+.post-cta__title { font-size: 22px; font-weight: 700; margin: 0; color: #0A1314; }
+.post-cta__text { margin: 0 0 12px; color: #3a3f38; font-size: 16px; }
+@media (max-width: 640px) { .post-cta { padding: 24px 20px; } }
+
+/* Ticker pause control (WCAG 2.2.2); hidden when motion is reduced since the ticker does not move */
+.ticker-pause {
+  position: absolute; right: 16px; top: -34px; z-index: 3;
+  font: 600 12px/1 'Manrope', sans-serif; letter-spacing: .04em; text-transform: uppercase;
+  padding: 8px 12px; min-height: 32px; border-radius: 999px; cursor: pointer;
+  border: 1px solid rgba(255,255,255,.35); background: rgba(10,10,10,.75); color: #fff;
+}
+.ticker-pause:hover { background: #82FF1F; color: #0a0a0a; border-color: #82FF1F; }
+.ticker-pause:focus-visible { outline: 3px solid #82FF1F; outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { .ticker-pause { display: none; } }
+
+/* Contrast: faded accordion numbers were 1.3:1 on white; now 4.5:1 or better */
+.faq-item .question-number,
+.faq-page .faq-item .question-number { color: #6b6b6b; }

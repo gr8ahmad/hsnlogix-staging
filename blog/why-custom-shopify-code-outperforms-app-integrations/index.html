@@ -26,9 +26,9 @@
   <meta name="twitter:image" content="https://hsnlogix.com/blog-images/featured-custom-code-vs-apps.webp">
   <title>Custom Code vs App Integrations on Shopify | HSNLOGIX Blog</title>
 
-  <link rel="stylesheet" href="/hsnlogix-staging/style.css?v=1792001080">
-  <link rel="stylesheet" href="/hsnlogix-staging/style-additions.css?v=1792001080">
-  <link rel="stylesheet" href="/hsnlogix-staging/blog.css?v=1792001080">
+  <link rel="stylesheet" href="/hsnlogix-staging/style.css?v=1792001904">
+  <link rel="stylesheet" href="/hsnlogix-staging/style-additions.css?v=1792001904">
+  <link rel="stylesheet" href="/hsnlogix-staging/blog.css?v=1792001904">
 
   <!-- Analytics: Consent Mode v2 defaults + GA4 (production only) -->
 <script>
@@ -232,7 +232,7 @@
 
 <p>These cumulative delays in page loading, as more apps are added to your store, can lead to reduced conversions. Users experiencing delays on a website may simply abandon the site and move on to another.</p>
 
-<p>The performance impact varies considerably depending on how each app is implemented, what resources it loads, and where those resources are loaded. Shopify itself recommends auditing third-party apps because they can add JavaScript that negatively affects storefront responsiveness.</p>
+<p>The performance impact varies considerably depending on how each app is implemented, what resources it loads, and where those resources are loaded. Third-party apps can add JavaScript that negatively affects storefront responsiveness, which is why auditing them regularly is good practice.</p>
 
 <h2 id="the-real-cost-of-app-stacking">The Real Cost of App Stacking</h2>
 
@@ -242,7 +242,7 @@
 
 <p>Store owners tend to assume it’s their theme, their host, or just “how Shopify is.” As more apps and third-party integrations are added, their combined JavaScript, network requests, and other resources can increase the amount of work the browser has to perform, causing page loading delays.</p>
 
-<p>That delay compounds directly into lost revenue through reduced user engagement. A store carrying additional app-driven delay isn’t losing a few sales at the margins, it’s losing a meaningful share of every visitor who arrives.</p>
+<p>That delay compounds directly into lost revenue through reduced user engagement. A store carrying additional app-driven delay can lose visitors who leave before the page is usable.</p>
 
 <p>Interactivity matters alongside load time too. Slower response to a tap, click, or filter selection tends to cost conversions in the same way slow page loads do, even after accounting for load time separately.</p>
 
@@ -268,7 +268,7 @@
 
 <h2 id="when-an-additional-app-actually-makes-sense">When an Additional App Actually Makes Sense</h2>
 
-<p>It’s also important to realize that app stacking is not inherently bad, that would be an oversimplification. It becomes an unnecessary burden on website performance when an app adds page-loading time, contributes to lower conversions, and provides functionality that could be achieved just as effectively with custom code.</p>
+<p>It’s also important to realize that app stacking is not inherently bad. Saying so would be an oversimplification. It becomes an unnecessary burden on website performance when an app adds page-loading time, contributes to lower conversions, and provides functionality that could be achieved just as effectively with custom code.</p>
 
 <p>Apps make sense when they connect a store to something genuinely external, a real third-party service that Shopify itself has no native way to provide. Payment gateways beyond Shopify’s own checkout, real-time shipping-rate calculations from a specific carrier, syncing inventory with a physical point-of-sale system or an external warehouse, or pulling live data from a service that lives outside the store entirely, these require an actual connection to someone else’s infrastructure, and building that from scratch in Liquid would mean rebuilding a piece of a business no ecommerce agency should be reinventing.</p>
 
@@ -290,6 +290,23 @@
 
 <p><a href="https://cal.com/hsnlogix" data-cal-link="hsnlogix" data-cal-config="{&quot;layout&quot;:&quot;month_view&quot;}" rel="noopener">If you have a Shopify project, book a call now to discuss the details →</a></p>
 
+  </div>
+
+  <aside class="post-author" aria-label="About the author">
+    <p class="post-author__name">Hussain Ahmad</p>
+    <p class="post-author__role">Founder &amp; Lead Shopify Developer, HSNLOGIX</p>
+    <p class="post-author__bio">Hussain has been building Shopify stores for DTC brands for 7+ years. <a href="/hsnlogix-staging/team/hussain/">Read his profile</a> or see <a href="/hsnlogix-staging/case-studies/">recent case studies</a>.</p>
+  </aside>
+
+  <div class="post-cta">
+    <h2 class="post-cta__title">Have a Shopify project in mind?</h2>
+    <p class="post-cta__text">Book a free strategy call and get a clear scope and quote for your store.</p>
+    <a href="https://cal.com/hsnlogix" data-cal-link="hsnlogix" data-cal-config='{"layout":"month_view"}' rel="noopener" class="cta-button">
+      <div class="button-text"><p>Book a Free Strategy Call</p></div>
+      <div class="button-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>
+      </div>
+    </a>
   </div>
 </article>
 </div>
@@ -479,29 +496,43 @@
   var navDrawer = document.getElementById('navDrawer');
   var navOverlay = document.getElementById('navOverlay');
   var navDrawerClose = document.getElementById('navDrawerClose');
+  if (!navDrawer) return;
+
+  // Closed drawer must not be reachable by keyboard or screen reader
+  navDrawer.setAttribute('inert', '');
 
   function openDrawer() {
+    navDrawer.removeAttribute('inert');
     navDrawer.classList.add('active');
     navOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
-    if (menuToggle) menuToggle.setAttribute('aria-expanded', 'true');
+    if (menuToggle) { menuToggle.setAttribute('aria-expanded', 'true'); menuToggle.setAttribute('aria-label', 'Close menu'); }
+    var first = navDrawer.querySelector('.nav-drawer__link:not([style*="display: none"])');
+    var target = (navDrawerClose || first);
+    if (target) target.focus();
   }
-  function closeDrawer() {
+  function closeDrawer(returnFocus) {
     navDrawer.classList.remove('active');
     navOverlay.classList.remove('active');
+    navDrawer.setAttribute('inert', '');
     document.body.style.overflow = '';
-    if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
+    if (menuToggle) { menuToggle.setAttribute('aria-expanded', 'false'); menuToggle.setAttribute('aria-label', 'Open menu'); if (returnFocus) menuToggle.focus(); }
   }
 
   if (menuToggle) menuToggle.addEventListener('click', openDrawer);
-  if (navDrawerClose) navDrawerClose.addEventListener('click', closeDrawer);
-  if (navOverlay) navOverlay.addEventListener('click', closeDrawer);
+  if (navDrawerClose) navDrawerClose.addEventListener('click', function () { closeDrawer(true); });
+  if (navOverlay) navOverlay.addEventListener('click', function () { closeDrawer(true); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && navDrawer.classList.contains('active')) closeDrawer(true);
+  });
 
   document.querySelectorAll('.nav-drawer__link').forEach(function (link) {
-    link.addEventListener('click', closeDrawer);
+    link.addEventListener('click', function () { closeDrawer(false); });
   });
 })();
+</script>
 
+  <script>
 // Transparent header: apply opaque background once page is scrolled
 (function () {
   var header = document.querySelector('.site-header');
@@ -517,7 +548,7 @@
 })();
   </script>
 
-  <script src="/hsnlogix-staging/hsnlogix-tracking.js?v=1792001080"></script>
+  <script src="/hsnlogix-staging/hsnlogix-tracking.js?v=1792001904"></script>
 
   <!-- Cal.com embed: loaded after the page is idle or on first interaction, so it never blocks first render.
      Until it loads, booking links still work as normal links to cal.com/hsnlogix. -->

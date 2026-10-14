@@ -25,8 +25,8 @@
   <meta name="twitter:image" content="https://hsnlogix.com/HSNLogix-logo.jpg">
   <title>Hussain Ahmad | Founder & Lead Shopify Developer | HSNLOGIX</title>
 
-  <link rel="stylesheet" href="/hsnlogix-staging/style.css?v=1792001080">
-  <link rel="stylesheet" href="/hsnlogix-staging/style-additions.css?v=1792001080">
+  <link rel="stylesheet" href="/hsnlogix-staging/style.css?v=1792001904">
+  <link rel="stylesheet" href="/hsnlogix-staging/style-additions.css?v=1792001904">
 
   <!-- Analytics: Consent Mode v2 defaults + GA4 (production only) -->
 <script>
@@ -838,18 +838,7 @@
 
 
   <script>
-(function () {
-  var menuToggle = document.querySelector('.menu-toggle');
-  var navDrawer = document.getElementById('navDrawer');
-  var navOverlay = document.getElementById('navOverlay');
-  var navDrawerClose = document.getElementById('navDrawerClose');
-  function openDrawer() { navDrawer.classList.add('active'); navOverlay.classList.add('active'); document.body.style.overflow = 'hidden'; if (menuToggle) menuToggle.setAttribute('aria-expanded', 'true'); }
-  function closeDrawer() { navDrawer.classList.remove('active'); navOverlay.classList.remove('active'); document.body.style.overflow = ''; if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false'); }
-  if (menuToggle) menuToggle.addEventListener('click', openDrawer);
-  if (navDrawerClose) navDrawerClose.addEventListener('click', closeDrawer);
-  if (navOverlay) navOverlay.addEventListener('click', closeDrawer);
-  document.querySelectorAll('.nav-drawer__link').forEach(function (link) { link.addEventListener('click', closeDrawer); });
-})();
+
 (function () {
   var header = document.querySelector('.site-header');
   function updateHeader() {
@@ -860,8 +849,51 @@
   updateHeader();
 })();
   </script>
+  <script>
+// Off-canvas nav drawer (slides in from the right)
+(function () {
+  var menuToggle = document.querySelector('.menu-toggle');
+  var navDrawer = document.getElementById('navDrawer');
+  var navOverlay = document.getElementById('navOverlay');
+  var navDrawerClose = document.getElementById('navDrawerClose');
+  if (!navDrawer) return;
 
-  <script src="/hsnlogix-staging/hsnlogix-tracking.js?v=1792001080"></script>
+  // Closed drawer must not be reachable by keyboard or screen reader
+  navDrawer.setAttribute('inert', '');
+
+  function openDrawer() {
+    navDrawer.removeAttribute('inert');
+    navDrawer.classList.add('active');
+    navOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    if (menuToggle) { menuToggle.setAttribute('aria-expanded', 'true'); menuToggle.setAttribute('aria-label', 'Close menu'); }
+    var first = navDrawer.querySelector('.nav-drawer__link:not([style*="display: none"])');
+    var target = (navDrawerClose || first);
+    if (target) target.focus();
+  }
+  function closeDrawer(returnFocus) {
+    navDrawer.classList.remove('active');
+    navOverlay.classList.remove('active');
+    navDrawer.setAttribute('inert', '');
+    document.body.style.overflow = '';
+    if (menuToggle) { menuToggle.setAttribute('aria-expanded', 'false'); menuToggle.setAttribute('aria-label', 'Open menu'); if (returnFocus) menuToggle.focus(); }
+  }
+
+  if (menuToggle) menuToggle.addEventListener('click', openDrawer);
+  if (navDrawerClose) navDrawerClose.addEventListener('click', function () { closeDrawer(true); });
+  if (navOverlay) navOverlay.addEventListener('click', function () { closeDrawer(true); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && navDrawer.classList.contains('active')) closeDrawer(true);
+  });
+
+  document.querySelectorAll('.nav-drawer__link').forEach(function (link) {
+    link.addEventListener('click', function () { closeDrawer(false); });
+  });
+})();
+</script>
+
+
+  <script src="/hsnlogix-staging/hsnlogix-tracking.js?v=1792001904"></script>
 
   <!-- Cal.com embed: loaded after the page is idle or on first interaction, so it never blocks first render.
      Until it loads, booking links still work as normal links to cal.com/hsnlogix. -->
