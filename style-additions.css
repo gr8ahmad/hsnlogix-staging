@@ -2204,24 +2204,6 @@ main:focus { outline: none; }
 .tm-stars svg { width: 18px; height: 18px; fill: #debe1b; }
 .testimonial-rating { display: flex; align-items: center; }
 
-.tm-carousel { position: relative; }
-.tm-carousel__controls { display: flex; justify-content: flex-end; gap: 8px; padding: 0 40px 12px; }
-.tm-carousel__btn {
-  width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(0,0,0,0.15);
-  background: #fff; color: #0a0a0a; font-size: 18px; cursor: pointer; line-height: 1;
-}
-.tm-carousel__btn:hover { background: #82FF1F; border-color: #82FF1F; }
-.tm-carousel__btn:focus-visible, .tm-list--carousel:focus-visible { outline: 3px solid #3d7f00; outline-offset: 2px; }
-.tm-list--carousel {
-  display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory;
-  padding: 8px 40px 24px; scrollbar-width: thin; -webkit-overflow-scrolling: touch;
-}
-.tm-list--carousel .tm-item { flex: 0 0 min(360px, 85vw); scroll-snap-align: start; }
-.tm-list--carousel .testimonial-card { max-width: none; }
-@media (max-width: 768px) {
-  .tm-carousel__controls { padding: 0 24px 12px; }
-  .tm-list--carousel { padding: 8px 24px 24px; scroll-padding-left: 24px; }
-}
 .testimonials-cta-heading { font-size: 24px; font-weight: 700; color: #0A1314; margin: 0 0 4px; }
 
 /* ─── Blog post: author box and CTA ─────────────────────────────────────── */
@@ -2235,17 +2217,28 @@ main:focus { outline: none; }
 .post-cta__text { margin: 0 0 12px; color: #3a3f38; font-size: 16px; }
 @media (max-width: 640px) { .post-cta { padding: 24px 20px; } }
 
-/* Ticker pause control (WCAG 2.2.2); hidden when motion is reduced since the ticker does not move */
-.ticker-pause {
-  position: absolute; right: 16px; top: -34px; z-index: 3;
-  font: 600 12px/1 'Manrope', sans-serif; letter-spacing: .04em; text-transform: uppercase;
-  padding: 8px 12px; min-height: 32px; border-radius: 999px; cursor: pointer;
-  border: 1px solid rgba(255,255,255,.35); background: rgba(10,10,10,.75); color: #fff;
-}
-.ticker-pause:hover { background: #82FF1F; color: #0a0a0a; border-color: #82FF1F; }
-.ticker-pause:focus-visible { outline: 3px solid #82FF1F; outline-offset: 2px; }
-@media (prefers-reduced-motion: reduce) { .ticker-pause { display: none; } }
-
 /* Contrast: faded accordion numbers were 1.3:1 on white; now 4.5:1 or better */
 .faq-item .question-number,
 .faq-page .faq-item .question-number { color: #6b6b6b; }
+
+/* ─── Home: testimonials marquee, section CTAs, blog vs FAQ distinction ──── */
+.hsn-auto-slider .hsnlogix-slider-item { width: min(360px, 85vw); display: flex; }
+.hsn-auto-slider .testimonial-card { max-width: none; width: 100%; height: auto; }
+.hsn-auto-slider .testimonial-author { margin-top: auto; }
+@media (prefers-reduced-motion: reduce) {
+  .hsn-auto-slider { overflow-x: auto; }
+}
+.section-cta { display: flex; justify-content: center; padding: 32px 24px 0; }
+#testimonials .section-cta { padding-bottom: 8px; }
+.blog-strip-section .section-cta { padding: 40px 0 0; }
+
+/* Blog band: tinted background with clear top and bottom edges so it reads as its own section, separate from the white FAQ */
+.blog-strip-section {
+  background: #EEF3E9;
+  border-top: 1px solid rgba(0,0,0,0.08);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  position: relative;
+}
+.blog-strip-section .blog-strip-card { background: #fff; border-color: rgba(0,0,0,0.1); box-shadow: 0 2px 8px rgba(10,19,20,0.05); }
+.blog-strip-section .blog-strip-card:hover { background: #fff; border-color: rgba(0,0,0,0.25); box-shadow: 0 6px 18px rgba(10,19,20,0.1); }
+.faq-section { padding-top: 40px; }
