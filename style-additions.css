@@ -2242,3 +2242,245 @@ main:focus { outline: none; }
 .blog-strip-section .blog-strip-card { background: #fff; border-color: rgba(0,0,0,0.1); box-shadow: 0 2px 8px rgba(10,19,20,0.05); }
 .blog-strip-section .blog-strip-card:hover { background: #fff; border-color: rgba(0,0,0,0.25); box-shadow: 0 6px 18px rgba(10,19,20,0.1); }
 .faq-section { padding-top: 40px; }
+
+/* Team profile pages (shared by /team/*) */
+/* ── Profile section ── */
+.profile-section {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: #02090A;
+  padding: 120px 40px 100px;
+  box-sizing: border-box;
+}
+
+.profile-section__pattern {
+  background-image: radial-gradient(circle, rgba(255,255,255,0.055) 1.5px, transparent 1.5px);
+  background-size: 40px 40px;
+  z-index: 0;
+}
+.profile-section__pattern .hero-pattern__blob--dark { display: none; }
+.profile-section__pattern .hero-pattern__blob--green {
+  background: rgba(130, 255, 31, 0.10);
+  width: 600px;
+  height: 600px;
+  right: -80px;
+  top: -120px;
+  left: auto;
+}
+
+.profile-section__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1320px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+/* Photo column */
+.profile-section__photo-col {
+  flex-shrink: 0;
+}
+.profile-section__photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  border: 2px solid #82FF1F;
+  box-shadow: 0 0 24px rgba(130, 255, 31, 0.18);
+  display: block;
+}
+
+/* Body column */
+.profile-section__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.profile-section__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(130, 255, 31, 0.08);
+  border: 1px solid rgba(130, 255, 31, 0.22);
+  border-radius: 100px;
+  padding: 6px 14px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #82FF1F;
+  margin-bottom: 20px;
+}
+.profile-section__eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #82FF1F;
+  flex-shrink: 0;
+}
+
+.profile-section__name {
+  font-family: 'Manrope', sans-serif;
+  font-size: 56px;
+  font-weight: 800;
+  letter-spacing: -2px;
+  color: #fff;
+  margin: 0 0 10px;
+  line-height: 1.05;
+}
+
+.profile-section__title {
+  font-family: 'Manrope', sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0 0 24px;
+}
+
+.profile-section__upwork {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 100px;
+  padding: 8px 16px 8px 12px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 36px;
+  transition: border-color 0.2s, background 0.2s;
+}
+.profile-section__upwork:hover {
+  background: rgba(255, 255, 255, 0.10);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.profile-section__upwork img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.profile-section__bio {
+  font-family: 'Manrope', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.68);
+  max-width: 580px;
+  margin: 0 0 40px;
+}
+.profile-section__bio .hl {
+  color: #82FF1F;
+  font-weight: 700;
+}
+
+.profile-section__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* ── Mobile ── */
+@media (max-width: 800px) {
+  .profile-section {
+    padding: 96px 24px 80px;
+  }
+  .profile-section__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+  .profile-section__photo {
+    width: 90px;
+    height: 90px;
+  }
+  .profile-section__name {
+    font-size: 40px;
+    letter-spacing: -1.5px;
+  }
+  .profile-section__bio {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-section__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .profile-section__actions .cta-button {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+/* ── Bio section ── */
+.hussain-bio {
+  background: #FFFFFF;
+  padding: 72px 40px;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(10,10,10,0.08);
+}
+.hussain-bio__inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.hussain-bio__heading {
+  font-family: 'Manrope', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: #0A0A0A;
+  margin: 0 0 24px;
+  letter-spacing: -0.5px;
+}
+.hussain-bio__body p {
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  color: #333;
+  margin: 0 0 16px;
+}
+.hussain-bio__body a {
+  color: #0A6640;
+  text-decoration: none;
+  font-weight: 600;
+}
+.hussain-bio__body a:hover {
+  text-decoration: underline;
+}
+.hussain-bio__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 28px;
+}
+.hussain-bio__link {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: #0A6640;
+  text-decoration: none;
+  padding: 7px 16px;
+  border-radius: 100px;
+  border: 1px solid rgba(10,102,64,0.25);
+  transition: background 0.18s ease, color 0.18s ease;
+}
+.hussain-bio__link:hover {
+  background: #0A6640;
+  color: #FFFFFF;
+}
+@media (max-width: 640px) {
+  .hussain-bio {
+    padding: 56px 24px;
+  }
+}
