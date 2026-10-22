@@ -2484,3 +2484,7 @@ main:focus { outline: none; }
     padding: 56px 24px;
   }
 }
+
+/* Blog images keep their aspect ratio when scaled down on narrow screens */
+article.blog-post .blog-post-body img,
+article.blog-post .blog-post-featured-image img { height: auto; }

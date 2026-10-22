@@ -26,9 +26,9 @@
   <meta name="twitter:image" content="https://hsnlogix.com/blog-images/featured-shopify-add-to-cart-not-working.webp">
   <title>Shopify Add to Cart Button Not Working? 7 Fixes | HSNLOGIX</title>
 
-  <link rel="stylesheet" href="/hsnlogix-staging/style.css?v=1792682316">
-  <link rel="stylesheet" href="/hsnlogix-staging/style-additions.css?v=1792682316">
-  <link rel="stylesheet" href="/hsnlogix-staging/blog.css?v=1792682316">
+  <link rel="stylesheet" href="/hsnlogix-staging/style.css?v=1792682574">
+  <link rel="stylesheet" href="/hsnlogix-staging/style-additions.css?v=1792682574">
+  <link rel="stylesheet" href="/hsnlogix-staging/blog.css?v=1792682574">
 
   <!-- Analytics: Consent Mode v2 defaults + GA4 (production only) -->
 <script>
@@ -268,6 +268,8 @@
   <li><strong>B2B.</strong> If you sell to business customers, quantity rules on a catalog (minimums, maximums or increments) can stop a buyer from adding certain quantities.</li>
 </ul>
 
+<p><img src="/hsnlogix-staging/blog-images/inbody-add-to-cart-inventory-check.webp" alt="Checklist graphic: product status Active, sales channel Online Store, and a variant with inventory 0 that shows as sold out." width="1200" height="675" loading="lazy" decoding="async" /></p>
+
 <h2 id="3-compare-products-and-templates">3. Compare products and templates</h2>
 
 <p>Test three or four different products. If the button fails on only some of them, check which product template each one uses in the admin, because different templates can show different layouts and settings. If every product fails, suspect your theme, an app or a site-wide script instead.</p>
@@ -278,11 +280,15 @@
 
 <p>If it fails only on mobile, switch the theme editor to the mobile view, review the product section’s mobile settings, then confirm on a real phone. If the button seems unclickable in one spot, a chat widget, cookie banner or pop-up may be sitting on top of it. Turn those off temporarily and test again.</p>
 
+<p><img src="/hsnlogix-staging/blog-images/inbody-add-to-cart-mobile-overlay.webp" alt="Phone mockup where a chat widget and a cookie banner cover the add to cart button." width="1200" height="675" loading="lazy" decoding="async" /></p>
+
 <h2 id="5-test-apps-for-a-conflict-with-your-theme">5. Test apps for a conflict with your theme</h2>
 
 <p>Apps that change the product page or the cart are a common cause. An app can attach to your theme as an app block, as an app embed, or through code added directly to theme files. In the theme editor, open App embeds, switch off the app you suspect, save, and test in a private window. If the app has no embed, check its settings or documentation.</p>
 
 <p>If you installed or updated an app just before the problem began, uninstalling it temporarily is a fair test, and Shopify’s troubleshooting guide suggests it. Read the app’s documentation first, because removing an app can delete its settings or data. If the button still fails after removal, the app is probably not the cause. One caution from our own work: some apps leave code behind in theme files after they are removed, so a developer may need to look for leftovers.</p>
+
+<p><img src="/hsnlogix-staging/blog-images/inbody-add-to-cart-app-embeds.webp" alt="App embeds list with one app switched off to test for a conflict." width="1200" height="675" loading="lazy" decoding="async" /></p>
 
 <h2 id="6-look-for-a-javascript-error-and-a-failed-cart-request">6. Look for a JavaScript error and a failed cart request</h2>
 
@@ -296,17 +302,21 @@
 
 <p>A 422 status means Shopify refused the request, so read the response message. Shopify’s <a href="https://shopify.dev/docs/api/ajax/reference/cart">Cart API reference</a> lists two common causes: the product is sold out, or all of its remaining stock is already in the cart. A 422 is its own clue, separate from console errors, and does not by itself prove your JavaScript is broken. The file name in a console error usually shows whether your theme or an app is responsible. Fixing it generally means editing Liquid or JavaScript, which is not beginner work.</p>
 
+<p><img src="/hsnlogix-staging/blog-images/inbody-add-to-cart-console-network.webp" alt="Browser console showing a red JavaScript error and the Network tab showing a cart/add.js request with a 422 status." width="1200" height="675" loading="lazy" decoding="async" /></p>
+
 <h2 id="7-test-a-fresh-theme-then-repair-your-code">7. Test a fresh theme, then repair your code</h2>
 
 <p>Add a free theme from the Shopify Theme Store (you do not need to publish it) and use Actions, then Preview, to test the button there. If it works in the fresh theme but not in yours, the problem is in your theme code or settings. If it fails in every theme, look at your admin settings and apps again. If it fails even in an updated, unmodified copy of your own theme, contact the theme’s support team.</p>
 
 <p>If you know which file was changed before the problem started, open it in the code editor (Online Store, Themes, Actions, Edit code) and restore an earlier version from the file’s history. Restoring an old version replaces the file as it is now, and the history is limited, so copy the current contents first. Duplicate your theme as a backup before any code edit, and only edit code if you know HTML, CSS and basic Liquid.</p>
 
+<p><img src="/hsnlogix-staging/blog-images/inbody-add-to-cart-restore-version.webp" alt="Three steps: duplicate your theme, open the file history, restore an earlier version." width="1200" height="675" loading="lazy" decoding="async" /></p>
+
 <h2 id="how-to-confirm-the-fix-worked">How to confirm the fix worked</h2>
 
 <p>Test in a private window on desktop and on a real phone, using more than one product and more than one variant. Confirm that the cart updates and that you can reach checkout. No single fix works for every store, because themes, apps and settings differ. If the problem returns later, repeat the checks above and note which step changes the result.</p>
 
-<p><img src="/hsnlogix-staging/blog-images/inbody-add-to-cart-troubleshooting-flowchart.webp" alt="Flowchart: does the button work in a fresh theme? No points to your admin settings and apps, yes points to your theme code or settings." width="1200" height="700" loading="lazy" decoding="async" /></p>
+<p><img src="/hsnlogix-staging/blog-images/inbody-add-to-cart-troubleshooting-flowchart.webp" alt="Flowchart: does the button work in a fresh theme? No points to your admin settings and apps, yes points to your theme code or settings." width="1200" height="675" loading="lazy" decoding="async" /></p>
 
 <h2 id="frequently-asked-questions">Frequently asked questions</h2>
 
@@ -594,7 +604,7 @@
 })();
   </script>
 
-  <script src="/hsnlogix-staging/hsnlogix-tracking.js?v=1792682316"></script>
+  <script src="/hsnlogix-staging/hsnlogix-tracking.js?v=1792682574"></script>
 
   <!-- Cal.com embed: loaded after the page is idle or on first interaction, so it never blocks first render.
      Until it loads, booking links still work as normal links to cal.com/hsnlogix. -->
