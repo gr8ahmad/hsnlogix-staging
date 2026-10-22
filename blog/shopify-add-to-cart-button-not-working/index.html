@@ -26,9 +26,9 @@
   <meta name="twitter:image" content="https://hsnlogix.com/blog-images/featured-shopify-add-to-cart-not-working.webp">
   <title>Shopify Add to Cart Button Not Working? 7 Fixes | HSNLOGIX</title>
 
-  <link rel="stylesheet" href="/hsnlogix-staging/style.css?v=1792680329">
-  <link rel="stylesheet" href="/hsnlogix-staging/style-additions.css?v=1792680329">
-  <link rel="stylesheet" href="/hsnlogix-staging/blog.css?v=1792680329">
+  <link rel="stylesheet" href="/hsnlogix-staging/style.css?v=1792680800">
+  <link rel="stylesheet" href="/hsnlogix-staging/style-additions.css?v=1792680800">
+  <link rel="stylesheet" href="/hsnlogix-staging/blog.css?v=1792680800">
 
   <!-- Analytics: Consent Mode v2 defaults + GA4 (production only) -->
 <script>
@@ -232,6 +232,18 @@
 
 <p>Before you start, write down exactly what happens. Is the button missing, greyed out with “Sold out”, unresponsive when clicked, or broken only on mobile? The symptom tells you which steps matter most.</p>
 
+<h2 id="match-your-symptom-to-the-right-check">Match your symptom to the right check</h2>
+
+<p>Most add to cart problems fall into one of five patterns. Use this list to jump to the steps most likely to help:</p>
+
+<ul>
+  <li><strong>Add to cart button missing or not showing:</strong> check that the product is active and available on the Online Store (step 2), then your theme’s button colors and settings (step 4).</li>
+  <li><strong>Button greyed out or showing “Sold out” when you have stock:</strong> check the exact variant, your inventory locations and your markets (step 2).</li>
+  <li><strong>Button not clickable, or nothing happens when you click it:</strong> look for an app conflict, a pop-up covering the button, or a JavaScript error (steps 4, 5 and 6).</li>
+  <li><strong>Add to cart not working on mobile only:</strong> start with the device checks and the mobile view of your theme (steps 1 and 4).</li>
+  <li><strong>Button works on some products but not others:</strong> compare product templates and variants (steps 2 and 3).</li>
+</ul>
+
 <h2 id="1-rule-out-a-device-browser-or-network-problem">1. Rule out a device, browser or network problem</h2>
 
 <p>A fault that shows up only on your own device is not a store problem, which is why Shopify’s <a href="https://help.shopify.com/en/manual/online-store/themes/theme-support/troubleshooting">theme troubleshooting guide</a> begins with local checks. Clear your cache and cookies, then test in a private window, a second browser and a second device. Switch to mobile data, update your browser, and make sure no VPN, firewall or ad blocker is getting in the way. If the button works everywhere except one device, your store is probably fine.</p>
@@ -295,6 +307,28 @@
 <p>Test in a private window on desktop and on a real phone, using more than one product and more than one variant. Confirm that the cart updates and that you can reach checkout. No single fix works for every store, because themes, apps and settings differ. If the problem returns later, repeat the checks above and note which step changes the result.</p>
 
 <p><img src="/hsnlogix-staging/blog-images/inbody-add-to-cart-troubleshooting-flowchart.webp" alt="Flowchart: does the button work in a fresh theme? No points to your admin settings and apps, yes points to your theme code or settings." width="1200" height="700" loading="lazy" decoding="async" /></p>
+
+<h2 id="frequently-asked-questions">Frequently asked questions</h2>
+
+<h3 id="why-is-my-shopify-add-to-cart-button-greyed-out">Why is my Shopify add to cart button greyed out?</h3>
+
+<p>Usually the selected variant is sold out or unavailable, or no variant has been selected yet. Check inventory for that exact variant, including which locations fulfill online orders, and make sure the product is available in the customer’s market (step 2).</p>
+
+<h3 id="why-is-my-add-to-cart-button-missing-on-shopify">Why is my add to cart button missing on Shopify?</h3>
+
+<p>The most common reasons are a product that is not active or not available on the Online Store sales channel, a market catalog that excludes the product, or theme button colors that make the button invisible (steps 2 and 4).</p>
+
+<h3 id="why-does-add-to-cart-work-on-desktop-but-not-on-mobile">Why does add to cart work on desktop but not on mobile?</h3>
+
+<p>Check your theme’s mobile settings first, then look for a chat widget, cookie banner or pop-up sitting over the button on small screens. Test on a real phone as well as in the theme editor’s mobile view (step 4).</p>
+
+<h3 id="can-a-shopify-app-break-the-add-to-cart-button">Can a Shopify app break the add to cart button?</h3>
+
+<p>Yes. Apps that change the product page or cart can conflict with your theme or with each other. Switch the suspect app off under App embeds in the theme editor and test again in a private window (step 5).</p>
+
+<h3 id="how-do-i-tell-whether-my-theme-or-an-app-is-the-problem">How do I tell whether my theme or an app is the problem?</h3>
+
+<p>Preview a free Shopify theme and test the button there. If it works in the fresh theme, the problem is in your theme code or settings. If it fails there too, look at your admin settings and apps (step 7).</p>
 
 <h2 id="when-to-bring-in-a-shopify-developer">When to bring in a Shopify developer</h2>
 
@@ -560,7 +594,7 @@
 })();
   </script>
 
-  <script src="/hsnlogix-staging/hsnlogix-tracking.js?v=1792680329"></script>
+  <script src="/hsnlogix-staging/hsnlogix-tracking.js?v=1792680800"></script>
 
   <!-- Cal.com embed: loaded after the page is idle or on first interaction, so it never blocks first render.
      Until it loads, booking links still work as normal links to cal.com/hsnlogix. -->
