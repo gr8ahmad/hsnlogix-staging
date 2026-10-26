@@ -2522,3 +2522,8 @@ article.blog-post .blog-post-featured-image img { height: auto; }
     .hero-code__body { font-size: 9.5px; padding: 12px 14px 0; }
     .hero-code__chip { font-size: 10px; padding: 6px 9px; }
 }
+@media (min-width: 1025px) {
+    .customer-hero__inner { padding-top: 100px; }
+    .customer-hero__subhead { max-width: 600px; }
+}
+@media (min-width: 1025px) { .hero-code__chip { top: 8px; bottom: auto; right: 10px; } }
